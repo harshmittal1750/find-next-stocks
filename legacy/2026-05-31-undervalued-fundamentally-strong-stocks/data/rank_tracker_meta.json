@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-22T16:08:40+05:30",
+  "repository": "/Users/harshmittal/Documents/data_visually",
+  "ranking_path": "research/2026-05-31-undervalued-fundamentally-strong-stocks/data/final_ranking.csv",
+  "semantics": {
+    "rank_delta": "old_rank - new_rank; positive means moved up",
+    "score_delta": "new_score - old_score; positive means score improved"
+  },
+  "working": {
+    "rows": 1353,
+    "path": "/Users/harshmittal/Documents/data_visually/research/2026-05-31-undervalued-fundamentally-strong-stocks/data/final_ranking.csv"
+  },
+  "staged": {
+    "available": true,
+    "rows": 1353,
+    "blob": "7743505316bb14a73ddafd5c0ffa776532c1b052"
+  },
+  "pushed": {
+    "available": true,
+    "rows": 1353,
+    "ref": "origin/main",
+    "commit": "e92e7f754d5001154aeedab26408232389552934",
+    "upstream_configured": true
+  },
+  "head_commit": "e92e7f754d5001154aeedab26408232389552934",
+  "comparisons": {
+    "working_vs_staged": {
+      "became unranked": 29,
+      "down": 624,
+      "unchanged": 6,
+      "up": 694
+    },
+    "staged_vs_pushed": {
+      "down": 651,
+      "unchanged": 10,
+      "up": 692
+    },
+    "working_vs_pushed": {
+      "became unranked": 29,
+      "down": 635,
+      "unchanged": 4,
+      "up": 685
+    }
+  }
+}

@@ -1,0 +1,39 @@
+# Secrets and local configuration
+.env
+.env.local
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+*.egg-info/
+
+# JavaScript
+node_modules/
+.next/
+out/
+
+# Local and generated data
+data/raw/**
+!data/raw/README.md
+data/warehouse/**
+!data/warehouse/README.md
+data/exports/**
+!data/exports/README.md
+*.duckdb
+*.duckdb.wal
+
+# Runtime
+logs/
+.DS_Store
+
+# Legacy runtime artifacts
+legacy/**/.venv/
+legacy/**/data/cache/
+legacy/**/logs/
+legacy/**/__pycache__/
+legacy/**/.vercel/

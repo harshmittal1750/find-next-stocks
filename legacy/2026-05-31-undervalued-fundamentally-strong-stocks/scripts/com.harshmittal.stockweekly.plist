@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.harshmittal.stockweekly</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/harshmittal/Documents/data_visually/research/2026-05-31-undervalued-fundamentally-strong-stocks/scripts/run_weekly.sh</string>
+    </array>
+
+    <!-- Saturday (Weekday 6) at 09:00 local time. launchd runs a missed job on next wake. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>6</integer>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/harshmittal/Documents/data_visually/research/2026-05-31-undervalued-fundamentally-strong-stocks/logs/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/harshmittal/Documents/data_visually/research/2026-05-31-undervalued-fundamentally-strong-stocks/logs/launchd.err.log</string>
+</dict>
+</plist>

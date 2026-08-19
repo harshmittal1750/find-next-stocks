@@ -1,0 +1,25 @@
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-findstocks}
+      POSTGRES_USER: ${POSTGRES_USER:-findstocks}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-findstocks}
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - timescale-data:/var/lib/postgresql/data
+      - ./infra/db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-findstocks} -d ${POSTGRES_DB:-findstocks}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  timescale-data:

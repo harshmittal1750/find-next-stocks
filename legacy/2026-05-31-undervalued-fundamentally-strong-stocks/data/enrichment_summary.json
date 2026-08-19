@@ -1,0 +1,19 @@
+{
+  "run_at": "2026-07-22T02:47:44",
+  "target_coverage": 75.0,
+  "targeted_stocks": 59,
+  "fields_recovered": 0,
+  "audited_fields_total": 420,
+  "providers": {},
+  "coverage_before": {
+    "mean": 88.64,
+    "below_60": 2,
+    "minimum": 56.9
+  },
+  "coverage_after_raw_enrichment": {
+    "mean": 88.64,
+    "below_60": 2,
+    "minimum": 56.9
+  },
+  "target_mean_gain": 0.0
+}

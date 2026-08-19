@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "description": "Manual corrections are used only when the automated provider returns an impossible value and an official filing is available.",
+  "stocks": {
+    "GALLANTT": {
+      "promoter_pct": 70.0,
+      "as_of": "2026-03-31",
+      "source": "https://nsearchives.nseindia.com/corporate/GALLANTT_07052026012604_GIL_Presentation_FY26.pdf",
+      "reason": "Yahoo heldPercentInsiders returned 1.07481 (107.481%); Gallantt's NSE-hosted FY26 investor presentation reports promoter holding of 70.00%."
+    }
+  }
+}

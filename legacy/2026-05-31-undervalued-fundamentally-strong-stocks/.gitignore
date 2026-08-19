@@ -1,0 +1,3 @@
+# Rebuildable local API/download caches. Source snapshots remain under data/history/.
+data/cache/
+scripts/__pycache__/
