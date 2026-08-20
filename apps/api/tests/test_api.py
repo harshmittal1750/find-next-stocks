@@ -66,3 +66,30 @@ def test_refresh_request_rejects_unavailable_provider(monkeypatch) -> None:
 
     assert response.status_code == 422
     assert response.json()["detail"] == "Unavailable providers: bse"
+
+
+def test_quality_coverage_separates_obtainable_from_raw() -> None:
+    response = client.get("/api/v1/quality/coverage")
+
+    assert response.status_code == 200
+    payload = response.json()
+    # Excluding cells nobody can supply must never make coverage look worse.
+    assert payload["obtainable_coverage_pct"] >= payload["raw_coverage_pct"]
+    assert payload["gaps"]["analyst"] > 0
+    assert payload["stocks"] > 0
+
+
+def test_quality_gaps_explains_each_blank() -> None:
+    response = client.get("/api/v1/quality/gaps/OMAXE")
+
+    assert response.status_code == 200
+    gaps = response.json()["gaps"]
+    # A blank rank is the model declining to score, not a provider failing us.
+    assert gaps["rank"] == "derived"
+    # No broker covers this stock, so the target price cannot exist.
+    assert gaps["recommendationMean"] == "analyst"
+    assert "recoverable" not in {gaps.get("rank"), gaps.get("recommendationMean")}
+
+
+def test_quality_gaps_rejects_an_unknown_ticker() -> None:
+    assert client.get("/api/v1/quality/gaps/NOSUCHTICKER").status_code == 404

@@ -10,6 +10,7 @@ from threading import RLock
 from typing import Any, Protocol
 from uuid import uuid4
 
+from find_next_pipeline.diagnostics import FailureTally
 from find_next_pipeline.models import ProviderResult
 from find_next_pipeline.normalization import select_canonical_metrics
 from find_next_pipeline.postgres_store import PostgresObservationWarehouse
@@ -297,6 +298,9 @@ class RefreshJobManager:
         processed = 0
         observations = 0
         issues = 0
+        # Failures are tallied by kind rather than overwriting one another, so a rare
+        # schema error is not buried under twenty identical rate-limit failures.
+        failures = FailureTally()
         for batch in batches:
             try:
                 result: ProviderResult = asyncio.run(provider.fetch(batch))
@@ -304,6 +308,12 @@ class RefreshJobManager:
                 persisted = self.warehouse.write(store.drain_saved(), normalized)
                 observations += persisted.observations
                 issues += len(result.issues)
+                # Providers report most failures as issues rather than raising, so this
+                # is the path that actually carries a rate limit or a schema change.
+                for issue in result.issues:
+                    # raw_value carries the ticker; `field` is the literal "ticker".
+                    subject = issue.raw_value if isinstance(issue.raw_value, str) else None
+                    failures.record_issue(issue.code, issue.message, subject=subject)
                 self._increment_totals(
                     job_id,
                     observations=persisted.observations,
@@ -319,17 +329,20 @@ class RefreshJobManager:
                         observations=0,
                         raw_responses=persisted.raw_responses,
                     )
-                self._set_stage_message(job_id, spec.provider, f"Latest batch failed: {exc}")
+                failures.record(exc, subject=batch[0] if batch else None)
+                self._set_stage_message(job_id, spec.provider, failures.summary())
             processed += len(batch)
             self._progress_stage(job_id, spec.provider, processed, observations)
 
+        breakdown = f" — {failures.summary()}" if failures else ""
         if observations == 0 and issues:
             status = "failed"
-            message = f"No usable observations; {issues} provider issue(s)"
+            message = f"No usable observations; {issues} provider issue(s){breakdown}"
         elif issues:
             status = "completed"
             message = (
-                f"Stored {observations:,} observations with {issues} provider issue(s)"
+                f"Stored {observations:,} observations with "
+                f"{issues} provider issue(s){breakdown}"
             )
         else:
             status = "completed"

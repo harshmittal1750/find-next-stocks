@@ -165,3 +165,50 @@ def test_second_start_reuses_the_active_job() -> None:
 
     assert already_running is True
     assert second["job_id"] == first["job_id"]
+
+
+class FlakyProvider:
+    """Fails every batch: the same error repeatedly, plus one distinct one."""
+
+    def __init__(self) -> None:
+        self.calls = 0
+
+    async def fetch(self, tickers: list[str]) -> ProviderResult:
+        self.calls += 1
+        if self.calls == 1:
+            raise ValueError("expected columns missing")
+        raise TimeoutError(f"Too Many Requests. Retry after {self.calls * 10}s")
+
+
+def test_repeated_batch_failures_are_reported_by_kind_and_count() -> None:
+    """Regression: each failure used to overwrite the last stage message.
+
+    Twenty rate-limit errors and one schema error reported only whichever landed last,
+    hiding both how often it happened and the rarer failure that actually needs a fix.
+    """
+    manager = RefreshJobManager(
+        "postgresql://unused",
+        [
+            ProviderSpec(
+                provider="flaky",
+                label="Flaky provider",
+                factory=lambda client: FlakyProvider(),
+                batch_size=1,
+            )
+        ],
+        warehouse=FakeWarehouse(),
+    )
+    stocks = [{"ticker": t, "shortName": t} for t in ("AAA", "BBB", "CCC", "DDD")]
+
+    started, _ = manager.start(stocks)
+    job = wait_for_terminal(manager, started["job_id"])
+    manager.shutdown()
+
+    stage = {item["stage_id"]: item for item in job["stages"]}["flaky"]
+    message = stage["message"]
+
+    # The three timeouts are counted, not collapsed to one.
+    assert "3x TimeoutError" in message
+    # And the single schema failure survives alongside them.
+    assert "ValueError" in message
+    assert stage["status"] == "failed"

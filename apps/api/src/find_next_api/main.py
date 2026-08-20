@@ -4,6 +4,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
+from find_next_pipeline.coverage import coverage_summary, explain_gap, is_blank
 from pydantic import BaseModel
 
 from find_next_api.config import get_settings
@@ -130,6 +131,39 @@ def stock(ticker: str) -> dict[str, Any]:
     if result is None:
         raise HTTPException(status_code=404, detail=f"Unknown ticker: {ticker.upper()}")
     return result
+
+
+@app.get("/api/v1/quality/coverage")
+def quality_coverage() -> dict[str, Any]:
+    """Completeness split by *why* each value is missing.
+
+    `raw_coverage_pct` counts every blank against us. `obtainable_coverage_pct` counts
+    only cells a provider could actually supply, which is the number that reflects
+    fetching progress rather than the sector and profitability mix of the universe.
+    """
+    return coverage_summary(repository.load()["stocks"])
+
+
+@app.get("/api/v1/quality/gaps/{ticker}")
+def quality_gaps(ticker: str) -> dict[str, Any]:
+    """Per-field explanation of every blank on one stock.
+
+    Lets the dashboard say "no broker covers this stock" instead of rendering a dash
+    that looks like a fetching failure.
+    """
+    symbol = ticker.strip().upper()
+    stock = next(
+        (item for item in repository.load()["stocks"] if item.get("ticker") == symbol),
+        None,
+    )
+    if stock is None:
+        raise HTTPException(status_code=404, detail=f"Unknown ticker '{symbol}'")
+    gaps = {
+        field: explain_gap(field, stock).value
+        for field in stock
+        if is_blank(stock.get(field))
+    }
+    return {"ticker": symbol, "gaps": gaps}
 
 
 @app.get("/api/v1/quality/issues")
