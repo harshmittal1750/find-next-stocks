@@ -16,15 +16,21 @@ from find_next_pipeline.normalization import select_canonical_metrics
 from find_next_pipeline.postgres_store import PostgresObservationWarehouse
 from find_next_pipeline.providers import (
     AlphaVantageProvider,
+    BseFundamentalsProvider,
+    DerivedMetricsProvider,
+    NseDeliveryProvider,
     NseValuationProvider,
     UpstoxQuoteProvider,
     YahooChartProvider,
+    YahooHoldersProvider,
 )
 from find_next_pipeline.providers.base import MarketDataProvider
+from find_next_pipeline.providers.derived import BENCHMARK_TICKER
 from find_next_pipeline.providers.http import ArchivedHttpClient
 from find_next_pipeline.raw_store import RawJsonStore
 
 from find_next_api.config import Settings
+from find_next_api.scoring_jobs import run_scoring
 
 TERMINAL_STATUSES = {"completed", "completed_with_warnings", "failed"}
 
@@ -36,6 +42,8 @@ class ObservationWarehouse(Protocol):
 
     def write(self, saved_envelopes, observations): ...
 
+    def write_price_bars(self, price_bars) -> int: ...
+
 
 @dataclass(frozen=True)
 class ProviderSpec:
@@ -44,16 +52,29 @@ class ProviderSpec:
     factory: Callable[[ArchivedHttpClient], MarketDataProvider] | None
     batch_size: int | None = None
     skip_reason: str | None = None
+    # Symbols to fetch beyond the stock universe. Only Yahoo takes any: the NIFTY 50
+    # series beta is measured against is not a stock, so it is not in `stocks`, and the
+    # other providers (BSE, delivery, holders) have nothing to say about an index.
+    extra_tickers: tuple[str, ...] = ()
 
 
-def provider_specs(settings: Settings) -> list[ProviderSpec]:
+def provider_specs(
+    settings: Settings, warehouse: PostgresObservationWarehouse | None = None
+) -> list[ProviderSpec]:
     upstox_token = settings.upstox_token
     alpha_key = settings.alpha_vantage_api_key.get_secret_value()
-    return [
+    specs = [
         ProviderSpec(
             provider="nse",
             label="NSE daily valuation",
             factory=lambda client: NseValuationProvider(client),
+        ),
+        ProviderSpec(
+            provider="nse_delivery",
+            label="NSE delivery percentage",
+            # One whole-market file per session covers every symbol, so the universe is
+            # fetched in ~20 requests rather than 1,353. No batching.
+            factory=lambda client: NseDeliveryProvider(client),
         ),
         ProviderSpec(
             provider="upstox",
@@ -70,6 +91,15 @@ def provider_specs(settings: Settings) -> list[ProviderSpec]:
             label="Yahoo market history",
             factory=lambda client: YahooChartProvider(client),
             batch_size=max(1, settings.refresh_yahoo_batch_size),
+            extra_tickers=(BENCHMARK_TICKER,),
+        ),
+        ProviderSpec(
+            provider="yahoo_holders",
+            label="Yahoo ownership",
+            # One call per stock through yfinance, which handles Yahoo's rotating
+            # cookie+crumb. Batched so progress advances and a throttle shows up early.
+            factory=lambda client: YahooHoldersProvider(),
+            batch_size=100,
         ),
         ProviderSpec(
             provider="alpha_vantage",
@@ -80,14 +110,19 @@ def provider_specs(settings: Settings) -> list[ProviderSpec]:
             batch_size=max(1, settings.refresh_alpha_vantage_batch_size),
             skip_reason=None if alpha_key else "Add ALPHA_VANTAGE_API_KEY to .env",
         ),
+        # BSE was previously left disabled because its fundamentals endpoint is private
+        # and undocumented. Enabled by owner decision: the same endpoint is already in
+        # continuous use by the legacy pipeline, so declining it here bought no
+        # protection while leaving Yahoo as a single point of failure for 17 of the 18
+        # fields. It stays a private API — expect it to change without notice, and treat
+        # a schema break as routine rather than exceptional.
         ProviderSpec(
             provider="bse",
             label="BSE fundamentals",
-            factory=None,
-            skip_reason=(
-                "No supported official BSE fundamentals API is configured; "
-                "the preserved private endpoint is intentionally not called"
-            ),
+            factory=lambda client: BseFundamentalsProvider(client),
+            # One request per stock, so batch for progress reporting. The provider caps
+            # its own in-flight requests; this only controls how often the UI advances.
+            batch_size=100,
         ),
         ProviderSpec(
             provider="fmp",
@@ -96,6 +131,17 @@ def provider_specs(settings: Settings) -> list[ProviderSpec]:
             skip_reason="Provider adapter has not been migrated to the new pipeline",
         ),
     ]
+    if warehouse is not None:
+        # Reads price_bars written by the providers above (Yahoo today), so it must run
+        # after them — appending here keeps it last without an explicit stage ordering.
+        specs.append(
+            ProviderSpec(
+                provider="derived",
+                label="Derived indicators (RSI)",
+                factory=lambda client: DerivedMetricsProvider(warehouse),
+            )
+        )
+    return specs
 
 
 class RefreshJobManager:
@@ -106,11 +152,16 @@ class RefreshJobManager:
         *,
         warehouse: ObservationWarehouse | None = None,
         raw_store_factory: Callable[[], RawJsonStore] = RawJsonStore,
+        repository: Any | None = None,
     ) -> None:
         self.database_url = database_url
         self.specs = specs
         self.warehouse = warehouse or PostgresObservationWarehouse(database_url)
         self.raw_store_factory = raw_store_factory
+        # Optional: a DashboardRepository, used only by the publish stage to (re)score
+        # the universe. None in tests that don't care about scoring — the stage still
+        # runs, it just has nothing to score against and reports that in its message.
+        self.repository = repository
         self._jobs: dict[str, dict[str, Any]] = {}
         self._latest_job_id: str | None = None
         self._active_job_id: str | None = None
@@ -243,14 +294,39 @@ class RefreshJobManager:
                 warnings = warnings or stage_warning
 
             self._start_stage(job_id, "publish", len(stocks))
-            self._finish_stage(
-                job_id,
-                "publish",
-                status="completed",
-                processed=len(stocks),
-                observations=0,
-                message="Latest valid observations are now visible to the dashboard",
-            )
+            if self.repository is None:
+                self._finish_stage(
+                    job_id,
+                    "publish",
+                    status="completed",
+                    processed=len(stocks),
+                    observations=0,
+                    message="Latest valid observations are now visible to the dashboard",
+                )
+            else:
+                try:
+                    summary = run_scoring(self.repository, self.warehouse)
+                    self._finish_stage(
+                        job_id,
+                        "publish",
+                        status="completed",
+                        processed=len(stocks),
+                        observations=0,
+                        message=(
+                            f"Scored {summary['universe']:,} stocks "
+                            f"({summary['ranked']:,} ranked, {summary['unranked']:,} unranked)"
+                        ),
+                    )
+                except Exception as exc:
+                    warnings = True
+                    self._finish_stage(
+                        job_id,
+                        "publish",
+                        status="failed",
+                        processed=len(stocks),
+                        observations=0,
+                        message=f"Scoring failed: {exc}",
+                    )
             final_status = "completed_with_warnings" if warnings else "completed"
             self._update_job(
                 job_id,
@@ -286,6 +362,8 @@ class RefreshJobManager:
         provider = spec.factory(client) if spec.factory else None
         if provider is None:
             return True
+        if spec.extra_tickers:
+            tickers = [*tickers, *(t for t in spec.extra_tickers if t not in tickers)]
         batches = (
             [tickers]
             if spec.batch_size is None
@@ -307,6 +385,8 @@ class RefreshJobManager:
                 _, normalized = select_canonical_metrics(result.observations)
                 persisted = self.warehouse.write(store.drain_saved(), normalized)
                 observations += persisted.observations
+                if result.price_bars:
+                    self.warehouse.write_price_bars(result.price_bars)
                 issues += len(result.issues)
                 # Providers report most failures as issues rather than raising, so this
                 # is the path that actually carries a rate limit or a schema change.

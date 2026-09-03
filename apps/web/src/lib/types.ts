@@ -48,6 +48,8 @@ export type Stock = {
   fiftyDayAverage?: number | null;
   twoHundredDayAverage?: number | null;
   beta?: number | null;
+  rsi14?: number | null;
+  rsiSignal?: "oversold" | "neutral" | "overbought" | null;
   data_cov: number | null;
   quality_cov?: number | null;
   valuation_cov?: number | null;
@@ -64,13 +66,10 @@ export type Stock = {
   score_vs_staged?: number | null;
   rank_chg?: number | null;
   price_chg_pct?: number | null;
-  live_fields?: Record<
-    string,
-    {
-      provider: string;
-      observed_at: string;
-    }
-  >;
+  // Which source resolved each field: "observation" (live fetch), "ranking" (this
+  // run's scoring output) or "archive" (the imported CSV snapshot). Sent for every
+  // stock; the explorer uses it to mark archived values as not freshly fetched.
+  field_origins?: Record<string, string>;
   data_quality?: DataQuality;
 };
 

@@ -2,11 +2,17 @@ from __future__ import annotations
 
 from datetime import date, timedelta
 
+import pytest
 from find_next_pipeline.derivations import (
     beta,
     beta_from_closes,
     daily_returns,
+    moving_average,
+    pct_above_low,
+    pct_below_high,
     price_change_pct,
+    rsi,
+    rsi_signal,
     trailing_peg,
 )
 
@@ -127,3 +133,81 @@ def test_price_change_handles_missing_and_empty_input() -> None:
     # A baseline earlier than every observation cannot be resolved.
     closes = _series([100.0, 105.0])
     assert price_change_pct(closes, date(2025, 1, 1), date(2025, 6, 1)) is None
+
+
+# Wilder's worked series from New Concepts in Technical Trading Systems.
+WILDER_CLOSES = [
+    44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10, 45.42, 45.84, 46.08,
+    45.89, 46.03, 45.61, 46.28, 46.28, 46.00, 46.03, 46.41, 46.22, 45.64,
+]
+
+
+def test_rsi_uses_the_sma_seeded_wilder_convention() -> None:
+    """Pins which RSI we compute — there are two in the wild and they disagree badly.
+
+    Seeding with a 14-period SMA then smoothing (what charts do) gives 57.92 here.
+    Running an EWM from the first change instead — the naive pandas one-liner — gives
+    43.2 on the same closes. A 15-point gap straddles the 30/70 lines, so picking the
+    wrong one would mislabel stocks as oversold.
+    """
+    assert rsi(WILDER_CLOSES) == pytest.approx(57.92, abs=0.02)
+
+
+def test_rsi_needs_more_than_period_closes() -> None:
+    assert rsi([1.0] * 14) is None
+    assert rsi([]) is None
+
+
+def test_monotonic_series_pin_the_bounds() -> None:
+    assert rsi([float(i) for i in range(1, 40)]) == 100.0
+    assert rsi([float(i) for i in range(40, 1, -1)]) == 0.0
+
+
+def test_flat_series_is_neutral_not_a_divide_by_zero() -> None:
+    assert rsi([50.0] * 40) == 50.0
+
+
+def test_warmup_length_changes_the_answer() -> None:
+    """Why the full series is passed: a short window gives a different number."""
+    long_series = [float(50 + (i % 7) - 3) for i in range(200)]
+    assert rsi(long_series) != rsi(long_series[-15:])
+
+
+def test_signal_thresholds() -> None:
+    assert rsi_signal(22.0) == "oversold"
+    assert rsi_signal(30.0) == "oversold"
+    assert rsi_signal(55.0) == "neutral"
+    assert rsi_signal(70.0) == "overbought"
+    assert rsi_signal(None) is None
+
+
+def test_moving_average_uses_the_most_recent_window() -> None:
+    closes = [float(i) for i in range(1, 11)]      # 1..10
+    assert moving_average(closes, 3) == 9.0        # mean of 8, 9, 10
+    assert moving_average(closes, 10) == 5.5
+    # A stock that has not traded long enough gets no average, not a short one.
+    assert moving_average(closes, 11) is None
+
+
+def test_pct_below_high_and_above_low() -> None:
+    closes = [100.0, 150.0, 120.0]                 # peak 150, trough 100, last 120
+    assert pct_below_high(closes) == 20.0
+    assert pct_above_low(closes) == 20.0
+
+
+def test_at_the_high_is_zero_below_it() -> None:
+    closes = [50.0, 80.0, 100.0]
+    assert pct_below_high(closes) == 0.0
+    assert pct_above_low(closes) == 100.0
+
+
+def test_window_limits_the_lookback() -> None:
+    """An all-time high outside the window must not count as the 52-week high."""
+    closes = [999.0] + [100.0] * 300
+    assert pct_below_high(closes, window=252) == 0.0
+
+
+def test_price_extremes_handle_empty_input() -> None:
+    assert pct_below_high([]) is None
+    assert pct_above_low([]) is None
+    assert moving_average([], 5) is None

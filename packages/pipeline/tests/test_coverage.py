@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import json
-
 from find_next_pipeline.coverage import (
     GapReason,
     canonical_field,
@@ -10,7 +8,6 @@ from find_next_pipeline.coverage import (
     explain_gap,
     is_blank,
 )
-from find_next_pipeline.paths import SNAPSHOT_DIR
 
 
 def test_both_field_vocabularies_map_to_one_name() -> None:
@@ -162,13 +159,39 @@ def test_summary_handles_an_empty_universe() -> None:
     assert coverage_summary([])["stocks"] == 0
 
 
-def test_real_snapshot_is_mostly_unobtainable_gaps() -> None:
-    """The dashboard's own data: most blanks cannot be filled by any provider."""
-    payload = json.loads((SNAPSHOT_DIR / "dashboard-data.json").read_text())
-    summary = coverage_summary(payload["stocks"])
+def test_obtainable_coverage_never_scores_worse_than_raw() -> None:
+    """The two headline numbers, on a universe shaped like the real one.
 
-    assert summary["stocks"] == payload["record_count"]
-    # Obtainable coverage must be at least as good as raw coverage by construction.
+    This used to load data/snapshots/dashboard-data.json, a tracked 2.3 MB file that was
+    deleted with the JSON fallback it fed. The assertions never needed the real file --
+    they are properties of coverage_summary, and a universe built here proves them
+    without a fixture that can rot.
+    """
+    covered = {
+        "ticker": "COVERED",
+        "roe_pct": 18.0,
+        "trailingPE": 22.0,
+        "recommendationMean": 2.1,
+        "numberOfAnalystOpinions": 14,
+        "targetMeanPrice": 900.0,
+    }
+    # Most of the universe: real companies that simply have no broker coverage.
+    uncovered = [
+        {
+            "ticker": f"UNCOVERED{index}",
+            "roe_pct": 12.0,
+            "trailingPE": 15.0,
+            "recommendationMean": None,
+            "numberOfAnalystOpinions": None,
+            "targetMeanPrice": None,
+        }
+        for index in range(9)
+    ]
+    summary = coverage_summary([covered, *uncovered])
+
+    assert summary["stocks"] == 10
+    # Obtainable coverage discounts gaps nobody could have filled, so by construction it
+    # can never be the worse of the two.
     assert summary["obtainable_coverage_pct"] >= summary["raw_coverage_pct"]
-    # And the analyst bucket must be non-trivial: hundreds of these names are uncovered.
+    # And the analyst bucket has to absorb those blanks rather than blaming the fetcher.
     assert summary["gaps"]["analyst"] > 0

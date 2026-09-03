@@ -1,7 +1,7 @@
-from datetime import datetime
 
+import pytest
 from find_next_api.repository import (
-    apply_live_metrics,
+    DashboardRepository,
     merge_stock_sources,
     normalize_database_url,
     parse_database_record,
@@ -43,37 +43,14 @@ def test_ranking_values_win_and_supporting_fields_fill_gaps() -> None:
     assert stocks[0]["promoter_pct"] == 70
 
 
-def test_live_metrics_override_archived_values_and_recalculate_coverage() -> None:
-    stocks = [
-        {
-            "ticker": "GALLANTT",
-            "sector": "Basic Materials",
-            "currentPrice": 600,
-            "fiftyTwoWeekHigh": 900,
-            "fiftyTwoWeekLow": 500,
-            "trailingPE": 30,
-            "roe_pct": 18,
-            "returnOnAssets": 0.1,
-            "profitMargins": 0.1,
-            "debtToEquity": 20,
-            "currentRatio": 2,
-        }
-    ]
-    rows = [
-        {
-            "ticker": "GALLANTT",
-            "field": "current_price",
-            "numeric_value": 630,
-            "text_value": None,
-            "provider": "upstox",
-            "observed_at": datetime.fromisoformat("2026-07-23T10:00:00+00:00"),
-        }
-    ]
+def test_load_raises_instead_of_serving_a_stale_fallback() -> None:
+    """Regression: a database failure must not look like a successful response.
 
-    updated = apply_live_metrics(stocks, rows)[0]
-
-    assert updated["currentPrice"] == 630
-    assert updated["pct_below_52w_high"] == 30
-    assert updated["pct_above_52w_low"] == 26
-    assert updated["live_fields"]["currentPrice"]["provider"] == "upstox"
-    assert updated["data_cov"] > 0
+    A tracked dashboard-data.json used to sit behind `load()` under a bare except. On
+    2026-09-04 a broken column reference sent it down that path and the API returned
+    200 OK with six-week-old data for all 1,353 stocks; only `data_status: "fallback"`
+    said otherwise, and nothing watched it. There is no fallback now, so the absence of
+    a usable database has to raise.
+    """
+    with pytest.raises(RuntimeError, match="DATABASE_URL"):
+        DashboardRepository(database_url=None).load()

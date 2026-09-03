@@ -1,0 +1,1354 @@
+ticker,shortName,sector,current_rank,current_score,current_score_status,staged_rank,staged_score,staged_score_status,pushed_rank,pushed_score,pushed_score_status,rank_vs_staged,score_vs_staged,movement_vs_staged,staged_rank_vs_pushed,staged_score_vs_pushed,staged_movement_vs_pushed,rank_vs_pushed,score_vs_pushed,movement_vs_pushed
+GESHIP,THE GE SHPG.LTD,Industrials,1,68,ranked,1,66.4,ranked,1,66.4,ranked,0,1.6,unchanged,0,0,unchanged,0,1.6,unchanged
+NATIONALUM,NATIONAL ALUMINIUM CO LTD,Basic Materials,2,67.1,ranked,42,59.2,ranked,42,59.2,ranked,40,7.9,up,0,0,unchanged,40,7.9,up
+OFSS,ORACLE FIN SERV SOFT LTD.,Technology,3,66.8,ranked,4,62,ranked,4,62,ranked,1,4.8,up,0,0,unchanged,1,4.8,up
+SOTL,SAVITA OIL TECHNOLO. LTD,Basic Materials,4,65.6,ranked,161,56.4,ranked,161,56.4,ranked,157,9.2,up,0,0,unchanged,157,9.2,up
+PANAMAPET,PANAMA PETROCHEM LTD,Energy,5,64.7,ranked,33,59.6,ranked,33,59.6,ranked,28,5.1,up,0,0,unchanged,28,5.1,up
+HINDCOPPER,HINDUSTAN COPPER LTD,Basic Materials,6,64.2,ranked,12,61.4,ranked,12,61.4,ranked,6,2.8,up,0,0,unchanged,6,2.8,up
+HINDZINC,HINDUSTAN ZINC LIMITED,Basic Materials,7,64.1,ranked,19,60.6,ranked,19,60.6,ranked,12,3.5,up,0,0,unchanged,12,3.5,up
+MCX,MULTI COMMODITY EXCHANGE,Financial Services,8,63.5,ranked,2,63,ranked,2,63,ranked,-6,0.5,down,0,0,unchanged,-6,0.5,down
+GPPL,GUJARAT PIPAVAV PORT LTD,Industrials,9,63.5,ranked,8,61.6,ranked,8,61.6,ranked,-1,1.9,down,0,0,unchanged,-1,1.9,down
+EMMVEE,EMMVEE PHOTOVOLTAIC PWR L,Technology,10,63.4,ranked,83,57.9,ranked,83,57.9,ranked,73,5.5,up,0,0,unchanged,73,5.5,up
+DBCORP,D.B.CORP LTD,Communication Services,11,63.4,ranked,272,54.6,ranked,272,54.6,ranked,261,8.8,up,0,0,unchanged,261,8.8,up
+EXPLEOSOL,EXPLEO SOLUTIONS LIMITED,Technology,12,63.1,ranked,25,60.2,ranked,25,60.2,ranked,13,2.9,up,0,0,unchanged,13,2.9,up
+LOTUSDEV,SRI LOTUS DEVLPRS N RTY L,Industrials,13,62.9,ranked,224,55.2,ranked,224,55.2,ranked,211,7.7,up,0,0,unchanged,211,7.7,up
+GANDHAR,GANDHAR OIL REFINE IND L,Energy,14,62.8,ranked,256,54.8,ranked,256,54.8,ranked,242,8,up,0,0,unchanged,242,8,up
+GANDHITUBE,GANDHI SPL. TUBES LTD,Industrials,15,62.8,ranked,112,57.2,ranked,112,57.2,ranked,97,5.6,up,0,0,unchanged,97,5.6,up
+CHENNPETRO,CHENNAI PETROLEUM CORP LT,Energy,16,62.8,ranked,144,56.6,ranked,144,56.6,ranked,128,6.2,up,0,0,unchanged,128,6.2,up
+PETRONET,PETRONET LNG LIMITED,Energy,17,62.6,ranked,43,59.2,ranked,43,59.2,ranked,26,3.4,up,0,0,unchanged,26,3.4,up
+IMFA,INDIAN METALS & FERRO,Basic Materials,18,62.5,ranked,70,58.4,ranked,70,58.4,ranked,52,4.1,up,0,0,unchanged,52,4.1,up
+MUTHOOTFIN,MUTHOOT FINANCE LIMITED,Financial Services,19,62.4,ranked,9,61.5,ranked,9,61.5,ranked,-10,0.9,down,0,0,unchanged,-10,0.9,down
+GROWW,BILLIONBRAINS GARAGE VN L,Financial Services,20,62.4,ranked,30,59.8,ranked,30,59.8,ranked,10,2.6,up,0,0,unchanged,10,2.6,up
+PNGSREVA,PNGS REVA DIAMOND JEWEL L,Consumer Cyclical,21,62.2,ranked,48,59.1,ranked,48,59.1,ranked,27,3.1,up,0,0,unchanged,27,3.1,up
+SIYSIL,SIYARAM SILK MILLS LTD,Consumer Cyclical,22,62.2,ranked,67,58.5,ranked,67,58.5,ranked,45,3.7,up,0,0,unchanged,45,3.7,up
+GRINFRA,G R INFRAPROJECTS LIMITED,Industrials,23,62.1,ranked,356,53.7,ranked,356,53.7,ranked,333,8.4,up,0,0,unchanged,333,8.4,up
+CRAMC,CANARA ROBECO AMC LIMITED,Financial Services,24,62.1,ranked,139,56.7,ranked,139,56.7,ranked,115,5.4,up,0,0,unchanged,115,5.4,up
+GHCL,GHCL LIMITED,Basic Materials,25,62,ranked,127,56.9,ranked,127,56.9,ranked,102,5.1,up,0,0,unchanged,102,5.1,up
+HUHTAMAKI,HUHTAMAKI INDIA LIMITED,Consumer Cyclical,26,62,ranked,725,50.1,ranked,725,50.1,ranked,699,11.9,up,0,0,unchanged,699,11.9,up
+GULFOILLUB,GULF OIL LUB. IND. LTD.,Basic Materials,27,61.9,ranked,73,58.3,ranked,73,58.3,ranked,46,3.6,up,0,0,unchanged,46,3.6,up
+WONDERLA,WONDERLA HOLIDAYS LTD.,Consumer Cyclical,28,61.9,ranked,119,57.1,ranked,119,57.1,ranked,91,4.8,up,0,0,unchanged,91,4.8,up
+SUNTV,SUN TV NETWORK LIMITED,Communication Services,29,61.8,ranked,156,56.5,ranked,156,56.5,ranked,127,5.3,up,0,0,unchanged,127,5.3,up
+GLENMARK,GLENMARK PHARMACEUTICALS,Healthcare,30,61.6,ranked,114,57.2,ranked,114,57.2,ranked,84,4.4,up,0,0,unchanged,84,4.4,up
+ZFCVINDIA,ZF COM VE CTR SYS IND LTD,Consumer Cyclical,31,61.6,ranked,223,55.2,ranked,223,55.2,ranked,192,6.4,up,0,0,unchanged,192,6.4,up
+AEROENTER,AEROFLEX ENTERPRISES LTD,Basic Materials,32,61.4,ranked,116,57.1,ranked,116,57.1,ranked,84,4.3,up,0,0,unchanged,84,4.3,up
+OIL,OIL INDIA LTD,Energy,33,61.3,ranked,263,54.8,ranked,263,54.8,ranked,230,6.5,up,0,0,unchanged,230,6.5,up
+KIRIINDUS,KIRI INDUSTRIES LIMITED,Basic Materials,34,61.2,ranked,99,57.4,ranked,99,57.4,ranked,65,3.8,up,0,0,unchanged,65,3.8,up
+GNFC,GUJ NAR VAL FER & CHEM L,Basic Materials,35,61.2,ranked,273,54.6,ranked,273,54.6,ranked,238,6.6,up,0,0,unchanged,238,6.6,up
+HDFCAMC,HDFC AMC LIMITED,Financial Services,36,61.2,ranked,56,58.8,ranked,56,58.8,ranked,20,2.4,up,0,0,unchanged,20,2.4,up
+STYL,SESHAASAI TECHNOLOGIES L,Technology,37,61.2,ranked,34,59.6,ranked,34,59.6,ranked,-3,1.6,down,0,0,unchanged,-3,1.6,down
+SPORTKING,SPORTKING INDIA LIMITED,Consumer Cyclical,38,61.2,ranked,796,49.3,ranked,796,49.3,ranked,758,11.9,up,0,0,unchanged,758,11.9,up
+SJS,SJS ENTERPRISES LIMITED,Consumer Cyclical,39,61.1,ranked,36,59.6,ranked,36,59.6,ranked,-3,1.5,down,0,0,unchanged,-3,1.5,down
+CENTENKA,CENTURY ENKA LTD,Consumer Cyclical,40,61,ranked,152,56.5,ranked,152,56.5,ranked,112,4.5,up,0,0,unchanged,112,4.5,up
+PIXTRANS,PIX TRANSMISSIONS LIMITED,Industrials,41,61,ranked,407,53.1,ranked,407,53.1,ranked,366,7.9,up,0,0,unchanged,366,7.9,up
+IOC,INDIAN OIL CORP LTD,Energy,42,61,ranked,102,57.4,ranked,102,57.4,ranked,60,3.6,up,0,0,unchanged,60,3.6,up
+VEEDOL,VEEDOL CORPORATION LTD,Basic Materials,43,60.9,ranked,210,55.4,ranked,210,55.4,ranked,167,5.5,up,0,0,unchanged,167,5.5,up
+CPPLUS,ADITYA INFOTECH LIMITED,Industrials,44,60.9,ranked,122,57.1,ranked,122,57.1,ranked,78,3.8,up,0,0,unchanged,78,3.8,up
+MAYURUNIQ,MAYUR UNIQUOTERS LTD,Consumer Cyclical,45,60.8,ranked,65,58.6,ranked,65,58.6,ranked,20,2.2,up,0,0,unchanged,20,2.2,up
+LLOYDSME,LLOYDS METALS N ENERGY L,Basic Materials,46,60.7,ranked,155,56.5,ranked,155,56.5,ranked,109,4.2,up,0,0,unchanged,109,4.2,up
+KENNAMET,KENNAMETAL INDIA LIMITED,Industrials,47,60.5,ranked,182,55.9,ranked,182,55.9,ranked,135,4.6,up,0,0,unchanged,135,4.6,up
+PFIZER,PFIZER LTD,Healthcare,48,60.5,ranked,165,56.3,ranked,165,56.3,ranked,117,4.2,up,0,0,unchanged,117,4.2,up
+APTUS,APTUS VALUE HSG FIN I LTD,Financial Services,49,60.5,ranked,3,63,ranked,3,63,ranked,-46,-2.5,down,0,0,unchanged,-46,-2.5,down
+UNIPARTS,UNIPARTS INDIA LIMITED,Industrials,50,60.4,ranked,22,60.4,ranked,22,60.4,ranked,-28,0,down,0,0,unchanged,-28,0,down
+DIVISLAB,DIVI S LABORATORIES LTD,Healthcare,51,60.4,ranked,391,53.3,ranked,391,53.3,ranked,340,7.1,up,0,0,unchanged,340,7.1,up
+BSOFT,BIRLASOFT LIMITED,Technology,52,60.4,ranked,90,57.7,ranked,90,57.7,ranked,38,2.7,up,0,0,unchanged,38,2.7,up
+APCOTEXIND,APCOTEX INDUSTRIES LIMITE,Basic Materials,53,60.3,ranked,265,54.8,ranked,265,54.8,ranked,212,5.5,up,0,0,unchanged,212,5.5,up
+IGIL,INTL GEMOLOGICAL INST LTD,Basic Materials,54,60.2,ranked,143,56.6,ranked,143,56.6,ranked,89,3.6,up,0,0,unchanged,89,3.6,up
+GUJALKALI,GUJARAT ALKALIES & CHEM,Basic Materials,55,60.1,ranked,328,53.9,ranked,328,53.9,ranked,273,6.2,up,0,0,unchanged,273,6.2,up
+ALIVUS,ALIVUS LIFE SCIENCES LTD,Healthcare,56,60.1,ranked,81,58,ranked,81,58,ranked,25,2.1,up,0,0,unchanged,25,2.1,up
+KISSHT,ONEMI TECHNOLOGY SOL LTD,Financial Services,57,60,ranked,17,60.9,ranked,17,60.9,ranked,-40,-0.9,down,0,0,unchanged,-40,-0.9,down
+BCG,BRIGHTCOM GROUP LIMITED,Communication Services,58,59.9,ranked,150,56.5,ranked,150,56.5,ranked,92,3.4,up,0,0,unchanged,92,3.4,up
+THYROCARE,THYROCARE TECH LTD,Healthcare,59,59.8,ranked,27,60.2,ranked,27,60.2,ranked,-32,-0.4,down,0,0,unchanged,-32,-0.4,down
+BAJAJCON,BAJAJ CONSUMER CARE LTD,Consumer Defensive,60,59.8,ranked,452,52.6,ranked,452,52.6,ranked,392,7.2,up,0,0,unchanged,392,7.2,up
+MOIL,MOIL LIMITED,Basic Materials,61,59.8,ranked,811,49.1,ranked,811,49.1,ranked,750,10.7,up,0,0,unchanged,750,10.7,up
+SAGILITY,SAGILITY LIMITED,Healthcare,62,59.7,ranked,104,57.4,ranked,104,57.4,ranked,42,2.3,up,0,0,unchanged,42,2.3,up
+KKCL,KEWAL KIRAN CLOTHING LTD,Consumer Cyclical,63,59.6,ranked,185,55.8,ranked,185,55.8,ranked,122,3.8,up,0,0,unchanged,122,3.8,up
+APOLLOTYRE,APOLLO TYRES LTD,Consumer Cyclical,64,59.5,ranked,80,58,ranked,80,58,ranked,16,1.5,up,0,0,unchanged,16,1.5,up
+BEPL,BHANSALI ENG. POLYMERS LT,Basic Materials,65,59.4,ranked,283,54.4,ranked,283,54.4,ranked,218,5,up,0,0,unchanged,218,5,up
+ONGC,OIL AND NATURAL GAS CORP.,Energy,66,59.4,ranked,120,57.1,ranked,120,57.1,ranked,54,2.3,up,0,0,unchanged,54,2.3,up
+ICICIAMC,ICICI PRUDENTIAL AMC LTD,Financial Services,67,59.4,ranked,55,58.8,ranked,55,58.8,ranked,-12,0.6,down,0,0,unchanged,-12,0.6,down
+EIHOTEL,EIH LIMITED,Consumer Cyclical,68,59.4,ranked,308,54.2,ranked,308,54.2,ranked,240,5.2,up,0,0,unchanged,240,5.2,up
+NEWGEN,NEWGEN SOFTWARE TECH LTD,Technology,69,59.4,ranked,351,53.7,ranked,351,53.7,ranked,282,5.7,up,0,0,unchanged,282,5.7,up
+VENUSREM,VENUS REMEDIES LIMITED,Healthcare,70,59.3,ranked,66,58.5,ranked,66,58.5,ranked,-4,0.8,down,0,0,unchanged,-4,0.8,down
+BBTC,BOMBAY BURMAH TRADING COR,Consumer Defensive,71,59.3,ranked,38,59.3,ranked,38,59.3,ranked,-33,0,down,0,0,unchanged,-33,0,down
+GIPCL,GUJ IND POW CO. LTD,Utilities,72,59.3,ranked,88,57.7,ranked,88,57.7,ranked,16,1.6,up,0,0,unchanged,16,1.6,up
+COALINDIA,COAL INDIA LTD,Energy,73,59.3,ranked,37,59.4,ranked,37,59.4,ranked,-36,-0.1,down,0,0,unchanged,-36,-0.1,down
+SHAREINDIA,SHARE IND. SECURITIES LTD,Financial Services,74,59.2,ranked,100,57.4,ranked,100,57.4,ranked,26,1.8,up,0,0,unchanged,26,1.8,up
+GKENERGY,GK ENERGY LIMITED,Utilities,75,59.2,ranked,49,59,ranked,49,59,ranked,-26,0.2,down,0,0,unchanged,-26,0.2,down
+COFORGE,COFORGE LIMITED,Technology,76,59.2,ranked,15,61.2,ranked,15,61.2,ranked,-61,-2,down,0,0,unchanged,-61,-2,down
+CASTROLIND,CASTROL INDIA LIMITED,Energy,77,59.2,ranked,434,52.8,ranked,434,52.8,ranked,357,6.4,up,0,0,unchanged,357,6.4,up
+AGI,AGI GREENPAC LIMITED,Consumer Cyclical,78,59.2,ranked,142,56.6,ranked,142,56.6,ranked,64,2.6,up,0,0,unchanged,64,2.6,up
+GOLDIAM,GOLDIAM INTERNATIONAL LTD,Consumer Cyclical,79,59,ranked,386,53.3,ranked,386,53.3,ranked,307,5.7,up,0,0,unchanged,307,5.7,up
+ANTELOPUS,ANTELOPUS SELAN ENRGY LTD,Energy,80,59,ranked,47,59.1,ranked,47,59.1,ranked,-33,-0.1,down,0,0,unchanged,-33,-0.1,down
+TECHM,TECH MAHINDRA LIMITED,Technology,81,58.9,ranked,374,53.4,ranked,374,53.4,ranked,293,5.5,up,0,0,unchanged,293,5.5,up
+PRUDENT,PRUDENT CORP ADV SER LTD,Financial Services,82,58.9,ranked,352,53.7,ranked,352,53.7,ranked,270,5.2,up,0,0,unchanged,270,5.2,up
+MAHABANK,BANK OF MAHARASHTRA,Financial Services,83,58.8,ranked,225,55.2,ranked,225,55.2,ranked,142,3.6,up,0,0,unchanged,142,3.6,up
+JUNIPER,JUNIPER HOTELS LIMITED,Consumer Cyclical,84,58.8,ranked,390,53.3,ranked,390,53.3,ranked,306,5.5,up,0,0,unchanged,306,5.5,up
+ATUL,ATUL LTD,Basic Materials,85,58.7,ranked,439,52.8,ranked,439,52.8,ranked,354,5.9,up,0,0,unchanged,354,5.9,up
+SHANTIGOLD,SHANTI GOLD INTERNATION L,Consumer Cyclical,86,58.7,ranked,58,58.7,ranked,58,58.7,ranked,-28,0,down,0,0,unchanged,-28,0,down
+DEEPINDS,DEEP INDUSTRIES LIMITED,Energy,87,58.6,ranked,221,55.2,ranked,221,55.2,ranked,134,3.4,up,0,0,unchanged,134,3.4,up
+NAM-INDIA,NIPPON L I A M LTD,Financial Services,88,58.6,ranked,10,61.5,ranked,10,61.5,ranked,-78,-2.9,down,0,0,unchanged,-78,-2.9,down
+GLAND,GLAND PHARMA LIMITED,Healthcare,89,58.6,ranked,68,58.5,ranked,68,58.5,ranked,-21,0.1,down,0,0,unchanged,-21,0.1,down
+CRISIL,CRISIL LTD,Financial Services,90,58.6,ranked,28,60.1,ranked,28,60.1,ranked,-62,-1.5,down,0,0,unchanged,-62,-1.5,down
+HEROMOTOCO,HERO MOTOCORP LIMITED,Consumer Cyclical,91,58.5,ranked,40,59.3,ranked,40,59.3,ranked,-51,-0.8,down,0,0,unchanged,-51,-0.8,down
+VEDL,VEDANTA LIMITED,Basic Materials,92,58.5,ranked,103,57.4,ranked,103,57.4,ranked,11,1.1,up,0,0,unchanged,11,1.1,up
+VIYASH,VIYASH SCIENTIFIC LIMITED,Healthcare,93,58.5,ranked,51,59,ranked,51,59,ranked,-42,-0.5,down,0,0,unchanged,-42,-0.5,down
+BLS,BLS INTL SERVS LTD,Industrials,94,58.5,ranked,92,57.6,ranked,92,57.6,ranked,-2,0.9,down,0,0,unchanged,-2,0.9,down
+INDIASHLTR,INDIA SHELTER FIN CORP L,Financial Services,95,58.5,ranked,7,61.7,ranked,7,61.7,ranked,-88,-3.2,down,0,0,unchanged,-88,-3.2,down
+VIDHIING,VIDHI SPCLTY F INGRDNTS L,Basic Materials,96,58.3,ranked,388,53.3,ranked,388,53.3,ranked,292,5,up,0,0,unchanged,292,5,up
+ATLANTAELE,ATLANTA ELECTRICALS LTD,Industrials,97,58.3,ranked,75,58.2,ranked,75,58.2,ranked,-22,0.1,down,0,0,unchanged,-22,0.1,down
+INDOTHAI,INDO THAI SEC LTD,Financial Services,98,58.2,ranked,716,50.2,ranked,716,50.2,ranked,618,8,up,0,0,unchanged,618,8,up
+RSYSTEMS,R SYS INTERNATIONAL LTD,Technology,99,58.2,ranked,251,54.9,ranked,251,54.9,ranked,152,3.3,up,0,0,unchanged,152,3.3,up
+TCS,TATA CONSULTANCY SERV LT,Technology,100,58.2,ranked,91,57.7,ranked,91,57.7,ranked,-9,0.5,down,0,0,unchanged,-9,0.5,down
+SHRIRAMFIN,SHRIRAM FINANCE LIMITED,Financial Services,101,58.2,ranked,126,56.9,ranked,126,56.9,ranked,25,1.3,up,0,0,unchanged,25,1.3,up
+OBEROIRLTY,OBEROI REALTY LIMITED,Real Estate,102,58.2,ranked,319,54,ranked,319,54,ranked,217,4.2,up,0,0,unchanged,217,4.2,up
+ITCHOTELS,ITC HOTELS LIMITED,Consumer Cyclical,103,58.2,ranked,232,55.1,ranked,232,55.1,ranked,129,3.1,up,0,0,unchanged,129,3.1,up
+SANOFI,SANOFI INDIA LIMITED,Healthcare,104,58.2,ranked,590,51.3,ranked,590,51.3,ranked,486,6.9,up,0,0,unchanged,486,6.9,up
+VRLLOG,VRL LOGISTICS LIMITED,Industrials,105,58.2,ranked,478,52.4,ranked,478,52.4,ranked,373,5.8,up,0,0,unchanged,373,5.8,up
+DDEVPLSTIK,DDEV PLASTIKS IND LTD,Basic Materials,106,58.2,ranked,240,55.1,ranked,240,55.1,ranked,134,3.1,up,0,0,unchanged,134,3.1,up
+JSWDULUX,JSW DULUX LIMITED,Consumer Discretionary,107,58.1,ranked,525,51.9,ranked,525,51.9,ranked,418,6.2,up,0,0,unchanged,418,6.2,up
+EMAMILTD,EMAMI LIMITED,Consumer Defensive,108,58.1,ranked,125,57,ranked,125,57,ranked,17,1.1,up,0,0,unchanged,17,1.1,up
+HINDALCO,HINDALCO  INDUSTRIES  LTD,Basic Materials,109,58.1,ranked,682,50.5,ranked,682,50.5,ranked,573,7.6,up,0,0,unchanged,573,7.6,up
+CREDITACC,CREDITACCESS GRAMEEN LTD,Financial Services,110,58.1,ranked,153,56.5,ranked,153,56.5,ranked,43,1.6,up,0,0,unchanged,43,1.6,up
+LTM,LTM LIMITED,Technology,111,58,ranked,121,57.1,ranked,121,57.1,ranked,10,0.9,up,0,0,unchanged,10,0.9,up
+MRPL,MRPL,Energy,112,58,ranked,411,53,ranked,411,53,ranked,299,5,up,0,0,unchanged,299,5,up
+KIRLFER,KIRLOSKAR FERROUS IND LTD,Industrials,113,58,ranked,157,56.5,ranked,157,56.5,ranked,44,1.5,up,0,0,unchanged,44,1.5,up
+ZAGGLE,ZAGGLE PREPA OCEAN SER L,Technology,114,58,ranked,11,61.4,ranked,11,61.4,ranked,-103,-3.4,down,0,0,unchanged,-103,-3.4,down
+TBZ,TRIB BHIMJI ZAVERI LTD,Consumer Cyclical,115,57.9,ranked,203,55.5,ranked,203,55.5,ranked,88,2.4,up,0,0,unchanged,88,2.4,up
+IIFL,IIFL FINANCE LIMITED,Financial Services,116,57.9,ranked,59,58.7,ranked,59,58.7,ranked,-57,-0.8,down,0,0,unchanged,-57,-0.8,down
+FINCABLES,FINOLEX CABLES LTD,Industrials,117,57.9,ranked,313,54.1,ranked,313,54.1,ranked,196,3.8,up,0,0,unchanged,196,3.8,up
+ECLERX,ECLERX SERVICES LTD,Technology,118,57.9,ranked,136,56.8,ranked,136,56.8,ranked,18,1.1,up,0,0,unchanged,18,1.1,up
+BHARTIARTL,BHARTI AIRTEL LIMITED,Communication Services,119,57.8,ranked,287,54.4,ranked,287,54.4,ranked,168,3.4,up,0,0,unchanged,168,3.4,up
+NAVINFLUOR,NAVIN FLUORINE INT. LTD,Basic Materials,120,57.8,ranked,168,56.2,ranked,168,56.2,ranked,48,1.6,up,0,0,unchanged,48,1.6,up
+KARURVYSYA,KARUR VYSYA BANK LTD,Financial Services,121,57.8,ranked,288,54.4,ranked,288,54.4,ranked,167,3.4,up,0,0,unchanged,167,3.4,up
+THELEELA,LEELA PALACES HOTEL LTD,Consumer Cyclical,122,57.8,ranked,475,52.4,ranked,475,52.4,ranked,353,5.4,up,0,0,unchanged,353,5.4,up
+DIVGIITTS,DIVGI TORQTRANSFER SYST L,Consumer Cyclical,123,57.8,ranked,106,57.4,ranked,106,57.4,ranked,-17,0.4,down,0,0,unchanged,-17,0.4,down
+VADILALIND,VADILAL INDUSTRIES LTD,Consumer Defensive,124,57.7,ranked,186,55.8,ranked,186,55.8,ranked,62,1.9,up,0,0,unchanged,62,1.9,up
+BAJAJ-AUTO,BAJAJ AUTO LIMITED,Consumer Cyclical,125,57.7,ranked,98,57.5,ranked,98,57.5,ranked,-27,0.2,down,0,0,unchanged,-27,0.2,down
+ITC,ITC LTD,Consumer Defensive,126,57.6,ranked,316,54.1,ranked,316,54.1,ranked,190,3.5,up,0,0,unchanged,190,3.5,up
+ACMESOLAR,ACME SOLAR HOLDINGS LTD,Utilities,127,57.6,ranked,460,52.6,ranked,460,52.6,ranked,333,5,up,0,0,unchanged,333,5,up
+KAJARIACER,KAJARIA CERAMICS LTD,Industrials,128,57.6,ranked,31,59.8,ranked,31,59.8,ranked,-97,-2.2,down,0,0,unchanged,-97,-2.2,down
+USHAMART,USHA MARTIN LTD.,Basic Materials,129,57.6,ranked,140,56.7,ranked,140,56.7,ranked,11,0.9,up,0,0,unchanged,11,0.9,up
+AUTOAXLES,AUTOMOTIVE AXLES LIMITED,Consumer Cyclical,130,57.6,ranked,46,59.2,ranked,46,59.2,ranked,-84,-1.6,down,0,0,unchanged,-84,-1.6,down
+BRIGHOTEL,BRIGADE HOTEL VENTURE LTD,Consumer Cyclical,131,57.6,ranked,135,56.8,ranked,135,56.8,ranked,4,0.8,up,0,0,unchanged,4,0.8,up
+GARUDA,GARUDA CONSTRUCT N ENG L,Industrials,132,57.5,ranked,54,58.8,ranked,54,58.8,ranked,-78,-1.3,down,0,0,unchanged,-78,-1.3,down
+IRMENERGY,IRM ENERGY LIMITED,Utilities,133,57.5,ranked,646,50.8,ranked,646,50.8,ranked,513,6.7,up,0,0,unchanged,513,6.7,up
+REDINGTON,REDINGTON LIMITED,Technology,134,57.5,ranked,713,50.2,ranked,713,50.2,ranked,579,7.3,up,0,0,unchanged,579,7.3,up
+DPABHUSHAN,D. P. ABHUSHAN LIMITED,Consumer Cyclical,135,57.4,ranked,199,55.6,ranked,199,55.6,ranked,64,1.8,up,0,0,unchanged,64,1.8,up
+LICI,LIFE INSURA CORP OF INDIA,Financial Services,136,57.4,ranked,171,56.1,ranked,171,56.1,ranked,35,1.3,up,0,0,unchanged,35,1.3,up
+VSSL,VARDHMAN SPC STEEL LTD,Basic Materials,137,57.3,ranked,117,57.1,ranked,117,57.1,ranked,-20,0.2,down,0,0,unchanged,-20,0.2,down
+AVTNPL,AVT NATURAL PRODUCTS LTD,Basic Materials,138,57.3,ranked,258,54.8,ranked,258,54.8,ranked,120,2.5,up,0,0,unchanged,120,2.5,up
+STYLAMIND,STYLAM INDUSTRIES LIMITED,Consumer Cyclical,139,57.3,ranked,297,54.3,ranked,297,54.3,ranked,158,3,up,0,0,unchanged,158,3,up
+MPSLTD,MPS LIMITED,Communication Services,140,57.3,ranked,197,55.7,ranked,197,55.7,ranked,57,1.6,up,0,0,unchanged,57,1.6,up
+LAOPALA,LA OPALA RG LIMITED,Consumer Cyclical,141,57.3,ranked,109,57.3,ranked,109,57.3,ranked,-32,0,down,0,0,unchanged,-32,0,down
+JARO,JARO INS OF TEC MG N RE L,Consumer Defensive,142,57.2,ranked,591,51.3,ranked,591,51.3,ranked,449,5.9,up,0,0,unchanged,449,5.9,up
+INDOBORAX,INDO BORAX & CHEMICAL LTD,Basic Materials,143,57.2,ranked,115,57.1,ranked,115,57.1,ranked,-28,0.1,down,0,0,unchanged,-28,0.1,down
+BSE,BSE LIMITED,Financial Services,144,57.2,ranked,76,58.1,ranked,76,58.1,ranked,-68,-0.9,down,0,0,unchanged,-68,-0.9,down
+ANANDRATHI,ANAND RATHI WEALTH LTD,Financial Services,145,57.2,ranked,154,56.5,ranked,154,56.5,ranked,9,0.7,up,0,0,unchanged,9,0.7,up
+GALAXYSURF,GALAXY SURFACTANTS LTD,Basic Materials,146,57.2,ranked,291,54.4,ranked,291,54.4,ranked,145,2.8,up,0,0,unchanged,145,2.8,up
+REFEX,REFEX INDUSTRIES LIMITED,Energy,147,57.1,ranked,180,55.9,ranked,180,55.9,ranked,33,1.2,up,0,0,unchanged,33,1.2,up
+SOMANYCERA,SOMANY CERAMICS LIMITED,Industrials,148,57.1,ranked,431,52.9,ranked,431,52.9,ranked,283,4.2,up,0,0,unchanged,283,4.2,up
+GVPIL,GE POWER INDIA LIMITED,Industrials,149,57,ranked,361,53.5,ranked,361,53.5,ranked,212,3.5,up,0,0,unchanged,212,3.5,up
+VAIBHAVGBL,VAIBHAV GLOBAL LIMITED,Consumer Cyclical,150,57,ranked,113,57.2,ranked,113,57.2,ranked,-37,-0.2,down,0,0,unchanged,-37,-0.2,down
+GMBREW,G M BREWERIES LTD,Consumer Defensive,151,57,ranked,191,55.7,ranked,191,55.7,ranked,40,1.3,up,0,0,unchanged,40,1.3,up
+SHARDAMOTR,SHARDA MOTOR INDS LTD,Consumer Cyclical,152,56.9,ranked,71,58.3,ranked,71,58.3,ranked,-81,-1.4,down,0,0,unchanged,-81,-1.4,down
+MAHSEAMLES,MAHARASHTRA SEAMLESS LTD,Basic Materials,153,56.9,ranked,503,52.1,ranked,503,52.1,ranked,350,4.8,up,0,0,unchanged,350,4.8,up
+KRBL,KRBL LIMITED,Consumer Defensive,154,56.9,ranked,233,55.1,ranked,233,55.1,ranked,79,1.8,up,0,0,unchanged,79,1.8,up
+SPARC,SUN PHARMA ADV.RES.CO.LTD,Healthcare,155,56.8,ranked,60,58.6,ranked,60,58.6,ranked,-95,-1.8,down,0,0,unchanged,-95,-1.8,down
+ESABINDIA,ESAB INDIA LTD,Industrials,156,56.8,ranked,488,52.2,ranked,488,52.2,ranked,332,4.6,up,0,0,unchanged,332,4.6,up
+BALUFORGE,BALU FORGE INDUSTRIES LTD,Industrials,157,56.8,ranked,535,51.8,ranked,535,51.8,ranked,378,5,up,0,0,unchanged,378,5,up
+BPCL,BHARAT PETROLEUM CORP  LT,Energy,158,56.8,ranked,130,56.9,ranked,130,56.9,ranked,-28,-0.1,down,0,0,unchanged,-28,-0.1,down
+ACUTAAS,ACUTAAS CHEMICALS LIMITED,Basic Materials,159,56.8,ranked,35,59.6,ranked,35,59.6,ranked,-124,-2.8,down,0,0,unchanged,-124,-2.8,down
+TDPOWERSYS,TD POWER SYSTEMS LTD.,Industrials,160,56.8,ranked,237,55.1,ranked,237,55.1,ranked,77,1.7,up,0,0,unchanged,77,1.7,up
+CLSEL,CHAMAN LAL SETIA EXP LTD,Consumer Defensive,161,56.7,ranked,217,55.3,ranked,217,55.3,ranked,56,1.4,up,0,0,unchanged,56,1.4,up
+EICHERMOT,EICHER MOTORS LTD,Consumer Cyclical,162,56.7,ranked,212,55.4,ranked,212,55.4,ranked,50,1.3,up,0,0,unchanged,50,1.3,up
+WELCORP,WELSPUN CORP LIMITED,Basic Materials,163,56.7,ranked,483,52.3,ranked,483,52.3,ranked,320,4.4,up,0,0,unchanged,320,4.4,up
+IEX,INDIAN ENERGY EXC LTD,Financial Services,164,56.7,ranked,163,56.4,ranked,163,56.4,ranked,-1,0.3,down,0,0,unchanged,-1,0.3,down
+CLEAN,CLEAN SCIENCE & TECH LTD,Basic Materials,165,56.7,ranked,485,52.3,ranked,485,52.3,ranked,320,4.4,up,0,0,unchanged,320,4.4,up
+SAREGAMA,SAREGAMA INDIA LIMITED,Communication Services,166,56.7,ranked,573,51.5,ranked,573,51.5,ranked,407,5.2,up,0,0,unchanged,407,5.2,up
+TIIL,TECHNOCRAFT IND LTD,Industrials,167,56.7,ranked,421,53,ranked,421,53,ranked,254,3.7,up,0,0,unchanged,254,3.7,up
+MSTCLTD,MSTC LIMITED,Industrials,168,56.6,ranked,151,56.5,ranked,151,56.5,ranked,-17,0.1,down,0,0,unchanged,-17,0.1,down
+SHARDACROP,SHARDA CROPCHEM LTD.,Basic Materials,169,56.6,ranked,5,62,ranked,5,62,ranked,-164,-5.4,down,0,0,unchanged,-164,-5.4,down
+JUSTDIAL,JUSTDIAL LTD.,Communication Services,170,56.6,ranked,201,55.5,ranked,201,55.5,ranked,31,1.1,up,0,0,unchanged,31,1.1,up
+INDIANB,INDIAN BANK,Financial Services,171,56.6,ranked,87,57.8,ranked,87,57.8,ranked,-84,-1.2,down,0,0,unchanged,-84,-1.2,down
+AJANTPHARM,AJANTA PHARMA LIMITED,Healthcare,172,56.6,ranked,167,56.2,ranked,167,56.2,ranked,-5,0.4,down,0,0,unchanged,-5,0.4,down
+EMCURE,EMCURE PHARMACEUTICALS L,Healthcare,173,56.6,ranked,477,52.4,ranked,477,52.4,ranked,304,4.2,up,0,0,unchanged,304,4.2,up
+MTARTECH,MTAR TECHNOLOGIES LIMITED,Industrials,174,56.6,ranked,260,54.8,ranked,260,54.8,ranked,86,1.8,up,0,0,unchanged,86,1.8,up
+MARKSANS,MARKSANS PHARMA LIMITED,Healthcare,175,56.6,ranked,249,55,ranked,249,55,ranked,74,1.6,up,0,0,unchanged,74,1.6,up
+MASFIN,MAS FINANCIAL SERV LTD,Financial Services,176,56.6,ranked,584,51.4,ranked,584,51.4,ranked,408,5.2,up,0,0,unchanged,408,5.2,up
+PRINCEPIPE,PRINCE PIPES FITTINGS LTD,Industrials,177,56.6,ranked,430,52.9,ranked,430,52.9,ranked,253,3.7,up,0,0,unchanged,253,3.7,up
+JAYNECOIND,JAYASWAL NECO INDUSTR LTD,Basic Materials,178,56.5,ranked,443,52.7,ranked,443,52.7,ranked,265,3.8,up,0,0,unchanged,265,3.8,up
+M&M,MAHINDRA & MAHINDRA LTD,Consumer Cyclical,179,56.5,ranked,164,56.4,ranked,164,56.4,ranked,-15,0.1,down,0,0,unchanged,-15,0.1,down
+LODHA,LODHA DEVELOPERS LIMITED,Real Estate,180,56.5,ranked,323,54,ranked,323,54,ranked,143,2.5,up,0,0,unchanged,143,2.5,up
+M&MFIN,M&M FIN. SERVICES LTD,Financial Services,181,56.5,ranked,188,55.8,ranked,188,55.8,ranked,7,0.7,up,0,0,unchanged,7,0.7,up
+HUDCO,HSG & URBAN DEV CORPN LTD,Financial Services,182,56.5,ranked,162,56.4,ranked,162,56.4,ranked,-20,0.1,down,0,0,unchanged,-20,0.1,down
+IRCTC,INDIAN RAIL TOUR CORP LTD,Consumer Cyclical,183,56.4,ranked,235,55.1,ranked,235,55.1,ranked,52,1.3,up,0,0,unchanged,52,1.3,up
+RRKABEL,R R KABEL LIMITED,Industrials,184,56.4,ranked,450,52.7,ranked,450,52.7,ranked,266,3.7,up,0,0,unchanged,266,3.7,up
+MANYAVAR,VEDANT FASHIONS LIMITED,Consumer Cyclical,185,56.4,ranked,177,56,ranked,177,56,ranked,-8,0.4,down,0,0,unchanged,-8,0.4,down
+SBCL,SHIVALIK BIMETAL CON. LTD,Industrials,186,56.4,ranked,281,54.5,ranked,281,54.5,ranked,95,1.9,up,0,0,unchanged,95,1.9,up
+NIITMTS,NIIT LEARNING SYSTEMS LTD,Consumer Defensive,187,56.4,ranked,20,60.5,ranked,20,60.5,ranked,-167,-4.1,down,0,0,unchanged,-167,-4.1,down
+PCJEWELLER,PC JEWELLER LTD,Consumer Cyclical,188,56.3,ranked,132,56.8,ranked,132,56.8,ranked,-56,-0.5,down,0,0,unchanged,-56,-0.5,down
+AFFLE,AFFLE 3I LIMITED,Communication Services,189,56.3,ranked,133,56.8,ranked,133,56.8,ranked,-56,-0.5,down,0,0,unchanged,-56,-0.5,down
+INFOBEAN,INFOBEANS TECHNO. LTD.,Technology,190,56.2,ranked,6,61.8,ranked,6,61.8,ranked,-184,-5.6,down,0,0,unchanged,-184,-5.6,down
+RPTECH,RASHI PERIPHERALS LIMITED,Technology,191,56.2,ranked,231,55.1,ranked,231,55.1,ranked,40,1.1,up,0,0,unchanged,40,1.1,up
+WSTCSTPAPR,WEST COAST PAPER MILLS LT,Basic Materials,192,56.2,ranked,554,51.6,ranked,554,51.6,ranked,362,4.6,up,0,0,unchanged,362,4.6,up
+SOLARWORLD,SOLARWORLD ENERGY SOL LTD,Technology,193,56.2,ranked,94,57.5,ranked,94,57.5,ranked,-99,-1.3,down,0,0,unchanged,-99,-1.3,down
+SRM,SRM CONTRACTORS LIMITED,Industrials,194,56.2,ranked,169,56.1,ranked,169,56.1,ranked,-25,0.1,down,0,0,unchanged,-25,0.1,down
+OMNI,OMNITECH ENGINEERING LTD,Industrials,195,56.2,ranked,404,53.1,ranked,404,53.1,ranked,209,3.1,up,0,0,unchanged,209,3.1,up
+LINCOLN,LINCOLN PHARMA LTD,Healthcare,196,56.2,ranked,502,52.1,ranked,502,52.1,ranked,306,4.1,up,0,0,unchanged,306,4.1,up
+JBCHEPHARM,J B CHEMICALS AND PHARMA,Healthcare,197,56.2,ranked,173,56.1,ranked,173,56.1,ranked,-24,0.1,down,0,0,unchanged,-24,0.1,down
+LALPATHLAB,DR. LAL PATH LABS LTD.,Healthcare,198,56.2,ranked,395,53.3,ranked,395,53.3,ranked,197,2.9,up,0,0,unchanged,197,2.9,up
+VINATIORGA,VINATI ORGANICS LTD,Basic Materials,199,56.2,ranked,376,53.4,ranked,376,53.4,ranked,177,2.8,up,0,0,unchanged,177,2.8,up
+VGUARD,V-GUARD IND LTD.,Industrials,200,56.2,ranked,497,52.2,ranked,497,52.2,ranked,297,4,up,0,0,unchanged,297,4,up
+VOLTAMP,VOLTAMP TRANSFORMERS LTD,Industrials,201,56.2,ranked,419,53,ranked,419,53,ranked,218,3.2,up,0,0,unchanged,218,3.2,up
+SEAMECLTD,SEAMEC LIMITED,Industrials,202,56.1,ranked,32,59.6,ranked,32,59.6,ranked,-170,-3.5,down,0,0,unchanged,-170,-3.5,down
+CHOLAFIN,CHOLAMANDALAM IN & FIN CO,Financial Services,203,56.1,ranked,392,53.3,ranked,392,53.3,ranked,189,2.8,up,0,0,unchanged,189,2.8,up
+CAMS,COMPUTER AGE MNGT SER LTD,Technology,204,56.1,ranked,248,55,ranked,248,55,ranked,44,1.1,up,0,0,unchanged,44,1.1,up
+GAIL,GAIL (INDIA) LTD,Utilities,205,56,ranked,853,48.6,ranked,853,48.6,ranked,648,7.4,up,0,0,unchanged,648,7.4,up
+RUBICON,RUBICON RESEARCH LIMITED,Healthcare,206,56,ranked,69,58.4,ranked,69,58.4,ranked,-137,-2.4,down,0,0,unchanged,-137,-2.4,down
+HOMEFIRST,HOME FIRST FIN CO IND LTD,Financial Services,207,56,ranked,89,57.7,ranked,89,57.7,ranked,-118,-1.7,down,0,0,unchanged,-118,-1.7,down
+TIMETECHNO,TIME TECHNOPLAST LTD.,Consumer Cyclical,208,56,ranked,205,55.5,ranked,205,55.5,ranked,-3,0.5,down,0,0,unchanged,-3,0.5,down
+JKPAPER,JK PAPER LIMITED,Basic Materials,209,56,ranked,149,56.6,ranked,149,56.6,ranked,-60,-0.6,down,0,0,unchanged,-60,-0.6,down
+MEDIASSIST,MEDI ASSIST HEALTH SER L,Healthcare,210,56,ranked,62,58.6,ranked,62,58.6,ranked,-148,-2.6,down,0,0,unchanged,-148,-2.6,down
+SHK,S H KELKAR AND CO. LTD.,Basic Materials,211,56,ranked,1009,46.6,ranked,1009,46.6,ranked,798,9.4,up,0,0,unchanged,798,9.4,up
+BUILDPRO,SHANKARA BUILDPRO LIMITED,Consumer Cyclical,212,55.9,ranked,339,53.8,ranked,339,53.8,ranked,127,2.1,up,0,0,unchanged,127,2.1,up
+RSL,RAJPUTANA STAINLESS LTD,Basic Materials,213,55.9,ranked,793,49.4,ranked,793,49.4,ranked,580,6.5,up,0,0,unchanged,580,6.5,up
+IPCALAB,IPCA LABORATORIES LTD,Healthcare,214,55.9,ranked,52,59,ranked,52,59,ranked,-162,-3.1,down,0,0,unchanged,-162,-3.1,down
+UJJIVANSFB,UJJIVAN SMALL FINANC BANK,Financial Services,215,55.9,ranked,218,55.3,ranked,218,55.3,ranked,3,0.6,up,0,0,unchanged,3,0.6,up
+NEPHROPLUS,NEPHROCARE HEALTH SERV L,Healthcare,216,55.9,ranked,379,53.4,ranked,379,53.4,ranked,163,2.5,up,0,0,unchanged,163,2.5,up
+CAPILLARY,CAPILLARY TECHNO INDIA L,Technology,217,55.9,ranked,359,53.6,ranked,359,53.6,ranked,142,2.3,up,0,0,unchanged,142,2.3,up
+NITINSPIN,NITIN SPINNERS LIMITED,Consumer Cyclical,218,55.9,ranked,612,51.2,ranked,612,51.2,ranked,394,4.7,up,0,0,unchanged,394,4.7,up
+STEELCAS,STEELCAST LIMITED,Basic Materials,219,55.8,ranked,717,50.2,ranked,717,50.2,ranked,498,5.6,up,0,0,unchanged,498,5.6,up
+SCI,SHIPPING CORP OF INDIA LT,Industrials,220,55.8,ranked,792,49.4,ranked,792,49.4,ranked,572,6.4,up,0,0,unchanged,572,6.4,up
+CELLO,CELLO WORLD LIMITED,Consumer Cyclical,221,55.8,ranked,190,55.8,ranked,190,55.8,ranked,-31,0,down,0,0,unchanged,-31,0,down
+GVT&D,GE VERNOVA T&D INDIA LTD,Industrials,222,55.8,ranked,145,56.6,ranked,145,56.6,ranked,-77,-0.8,down,0,0,unchanged,-77,-0.8,down
+ANGELONE,ANGEL ONE LIMITED,Financial Services,223,55.8,ranked,380,53.4,ranked,380,53.4,ranked,157,2.4,up,0,0,unchanged,157,2.4,up
+ZENSARTECH,ZENSAR TECHNOLOGIES  LTD,Technology,224,55.8,ranked,148,56.6,ranked,148,56.6,ranked,-76,-0.8,down,0,0,unchanged,-76,-0.8,down
+CRIZAC,CRIZAC LIMITED,Consumer Defensive,225,55.8,ranked,16,61.2,ranked,16,61.2,ranked,-209,-5.4,down,0,0,unchanged,-209,-5.4,down
+ROUTE,ROUTE MOBILE LIMITED,Communication Services,226,55.8,ranked,45,59.2,ranked,45,59.2,ranked,-181,-3.4,down,0,0,unchanged,-181,-3.4,down
+GPIL,GODAWARI POW & ISP LTD,Basic Materials,227,55.7,ranked,345,53.8,ranked,345,53.8,ranked,118,1.9,up,0,0,unchanged,118,1.9,up
+SUNPHARMA,SUN PHARMACEUTICAL IND L,Healthcare,228,55.7,ranked,77,58.1,ranked,77,58.1,ranked,-151,-2.4,down,0,0,unchanged,-151,-2.4,down
+ABSLAMC,ADIT BIRL SUN LIF AMC LTD,Financial Services,229,55.7,ranked,195,55.7,ranked,195,55.7,ranked,-34,0,down,0,0,unchanged,-34,0,down
+NEULANDLAB,NEULAND LAB LTD.,Healthcare,230,55.7,ranked,661,50.7,ranked,661,50.7,ranked,431,5,up,0,0,unchanged,431,5,up
+RUSTOMJEE,KEYSTONE REALTORS LIMITED,Real Estate,231,55.7,ranked,1041,46.1,ranked,1041,46.1,ranked,810,9.6,up,0,0,unchanged,810,9.6,up
+JPOLYINVST,JIND POL INV & FIN CO LTD,Financial Services,232,55.6,ranked,13,61.2,ranked,13,61.2,ranked,-219,-5.6,down,0,0,unchanged,-219,-5.6,down
+SGFIN,SG FINSERVE LIMITED,Financial Services,233,55.6,ranked,384,53.3,ranked,384,53.3,ranked,151,2.3,up,0,0,unchanged,151,2.3,up
+SESHAPAPER,SESHASAYEE PAPER & BOARDS,Basic Materials,234,55.6,ranked,945,47.6,ranked,945,47.6,ranked,711,8,up,0,0,unchanged,711,8,up
+ALLDIGI,ALLDIGI TECH LIMITED,Industrials,235,55.6,ranked,61,58.6,ranked,61,58.6,ranked,-174,-3,down,0,0,unchanged,-174,-3,down
+IFGLEXPOR,IFGL REFRACTORIES LIMITED,Basic Materials,236,55.6,ranked,222,55.2,ranked,222,55.2,ranked,-14,0.4,down,0,0,unchanged,-14,0.4,down
+KFINTECH,KFIN TECHNOLOGIES LIMITED,Technology,237,55.6,ranked,174,56.1,ranked,174,56.1,ranked,-63,-0.5,down,0,0,unchanged,-63,-0.5,down
+TIPSMUSIC,TIPS MUSIC LIMITED,Communication Services,238,55.6,ranked,44,59.2,ranked,44,59.2,ranked,-194,-3.6,down,0,0,unchanged,-194,-3.6,down
+FLAIR,FLAIR WRITING INDUST LTD,Industrials,239,55.6,ranked,137,56.8,ranked,137,56.8,ranked,-102,-1.2,down,0,0,unchanged,-102,-1.2,down
+SIEMENS,SIEMENS LTD,Industrials,240,55.6,ranked,1156,43.7,ranked,1156,43.7,ranked,916,11.9,up,0,0,unchanged,916,11.9,up
+LTFOODS,LT FOODS LIMITED,Consumer Defensive,241,55.6,ranked,336,53.9,ranked,336,53.9,ranked,95,1.7,up,0,0,unchanged,95,1.7,up
+SKYGOLD,SKY GOLD AND DIAMONDS LTD,Consumer Cyclical,242,55.6,ranked,377,53.4,ranked,377,53.4,ranked,135,2.2,up,0,0,unchanged,135,2.2,up
+AKUMS,AKUMS DRUGS AND PHARMA L,Healthcare,243,55.6,ranked,611,51.2,ranked,611,51.2,ranked,368,4.4,up,0,0,unchanged,368,4.4,up
+SURYODAY,SURYODAY SMALL FIN BK LTD,Financial Services,244,55.6,ranked,617,51.1,ranked,617,51.1,ranked,373,4.5,up,0,0,unchanged,373,4.5,up
+RPEL,RAGHAV PRODUCTIVITY ENH L,Basic Materials,245,55.5,ranked,170,56.1,ranked,170,56.1,ranked,-75,-0.6,down,0,0,unchanged,-75,-0.6,down
+CMSINFO,CMS INFO SYSTEMS LIMITED,Industrials,246,55.5,ranked,214,55.4,ranked,214,55.4,ranked,-32,0.1,down,0,0,unchanged,-32,0.1,down
+BEL,BHARAT ELECTRONICS LTD,Industrials,247,55.5,ranked,279,54.5,ranked,279,54.5,ranked,32,1,up,0,0,unchanged,32,1,up
+PIDILITIND,PIDILITE INDUSTRIES LTD,Basic Materials,248,55.5,ranked,252,54.9,ranked,252,54.9,ranked,4,0.6,up,0,0,unchanged,4,0.6,up
+ENGINERSIN,ENGINEERS INDIA LTD,Industrials,249,55.5,ranked,903,48.1,ranked,903,48.1,ranked,654,7.4,up,0,0,unchanged,654,7.4,up
+EUROPRATIK,EURO PRATIK SALES LIMITED,Basic Materials,250,55.4,ranked,216,55.3,ranked,216,55.3,ranked,-34,0.1,down,0,0,unchanged,-34,0.1,down
+GRWRHITECH,GARWARE HI-TECH FILMS LTD,Basic Materials,251,55.4,ranked,425,52.9,ranked,425,52.9,ranked,174,2.5,up,0,0,unchanged,174,2.5,up
+CARERATING,CARE RATINGS LIMITED,Financial Services,252,55.4,ranked,268,54.7,ranked,268,54.7,ranked,16,0.7,up,0,0,unchanged,16,0.7,up
+INDIGOPNTS,INDIGO PAINTS LIMITED,Basic Materials,253,55.4,ranked,598,51.3,ranked,598,51.3,ranked,345,4.1,up,0,0,unchanged,345,4.1,up
+ARVSMART,ARVIND SMARTSPACES LTD,Real Estate,254,55.4,ranked,776,49.6,ranked,776,49.6,ranked,522,5.8,up,0,0,unchanged,522,5.8,up
+ACCELYA,ACCELYA SOLN INDIA LTD,Technology,255,55.3,ranked,494,52.2,ranked,494,52.2,ranked,239,3.1,up,0,0,unchanged,239,3.1,up
+GKSL,GUJARAT KIDNEY N SUP SP L,Healthcare,256,55.3,ranked,304,54.2,ranked,304,54.2,ranked,48,1.1,up,0,0,unchanged,48,1.1,up
+HYUNDAI,HYUNDAI MOTOR INDIA LTD,Consumer Cyclical,257,55.3,ranked,298,54.3,ranked,298,54.3,ranked,41,1,up,0,0,unchanged,41,1,up
+INDGN,INDEGENE LIMITED,Healthcare,258,55.3,ranked,522,52,ranked,522,52,ranked,264,3.3,up,0,0,unchanged,264,3.3,up
+TCI,TRANSPORT CORPN OF INDIA,Industrials,259,55.3,ranked,105,57.4,ranked,105,57.4,ranked,-154,-2.1,down,0,0,unchanged,-154,-2.1,down
+TMCV,TATA MOTORS LIMITED,Consumer Cyclical,260,55.3,ranked,741,49.8,ranked,741,49.8,ranked,481,5.5,up,0,0,unchanged,481,5.5,up
+CANBK,CANARA BANK,Financial Services,261,55.3,ranked,778,49.5,ranked,778,49.5,ranked,517,5.8,up,0,0,unchanged,517,5.8,up
+BANKINDIA,BANK OF INDIA,Financial Services,262,55.3,ranked,901,48.1,ranked,901,48.1,ranked,639,7.2,up,0,0,unchanged,639,7.2,up
+EMUDHRA,EMUDHRA LIMITED,Technology,263,55.3,ranked,255,54.9,ranked,255,54.9,ranked,-8,0.4,down,0,0,unchanged,-8,0.4,down
+ROLEXRINGS,ROLEX RINGS LIMITED,Industrials,264,55.3,ranked,371,53.4,ranked,371,53.4,ranked,107,1.9,up,0,0,unchanged,107,1.9,up
+SANDUMA,SANDUR MANG & IRON ORES L,Basic Materials,265,55.2,ranked,327,53.9,ranked,327,53.9,ranked,62,1.3,up,0,0,unchanged,62,1.3,up
+DCMSHRIRAM,DCM SHRIRAM LIMITED,Industrials,266,55.2,ranked,578,51.4,ranked,578,51.4,ranked,312,3.8,up,0,0,unchanged,312,3.8,up
+EPL,EPL LIMITED,Consumer Cyclical,267,55.2,ranked,141,56.7,ranked,141,56.7,ranked,-126,-1.5,down,0,0,unchanged,-126,-1.5,down
+SBIN,STATE BANK OF INDIA,Financial Services,268,55.2,ranked,244,55.1,ranked,244,55.1,ranked,-24,0.1,down,0,0,unchanged,-24,0.1,down
+LUPIN,LUPIN LIMITED,Healthcare,269,55.2,ranked,23,60.4,ranked,23,60.4,ranked,-246,-5.2,down,0,0,unchanged,-246,-5.2,down
+GLAXO,GLAXOSMITHKLINE PHARMA LT,Healthcare,270,55.2,ranked,84,57.9,ranked,84,57.9,ranked,-186,-2.7,down,0,0,unchanged,-186,-2.7,down
+PARKHOSPS,PARK MEDI WORLD LIMITED,Healthcare,271,55.2,ranked,79,58,ranked,79,58,ranked,-192,-2.8,down,0,0,unchanged,-192,-2.8,down
+CANFINHOME,CAN FIN HOMES LTD,Financial Services,272,55.2,ranked,123,57.1,ranked,123,57.1,ranked,-149,-1.9,down,0,0,unchanged,-149,-1.9,down
+KIRLPNU,KIRLOSKAR PNEUMATIC COM L,Industrials,273,55.2,ranked,64,58.6,ranked,64,58.6,ranked,-209,-3.4,down,0,0,unchanged,-209,-3.4,down
+PNGJL,P N GADGIL JEWELLERS LTD,Consumer Cyclical,274,55.2,ranked,381,53.4,ranked,381,53.4,ranked,107,1.8,up,0,0,unchanged,107,1.8,up
+JGCHEM,J.G.CHEMICALS LIMITED,Basic Materials,275,55.1,ranked,414,53,ranked,414,53,ranked,139,2.1,up,0,0,unchanged,139,2.1,up
+SKMEGGPROD,SKM EGG PROD EXPORT(I) LT,Consumer Defensive,276,55.1,ranked,18,60.7,ranked,18,60.7,ranked,-258,-5.6,down,0,0,unchanged,-258,-5.6,down
+DHANUKA,DHANUKA AGRITECH LTD,Basic Materials,277,55.1,ranked,82,58,ranked,82,58,ranked,-195,-2.9,down,0,0,unchanged,-195,-2.9,down
+SUNTECK,SUNTECK REALTY LIMITED,Real Estate,278,55.1,ranked,97,57.5,ranked,97,57.5,ranked,-181,-2.4,down,0,0,unchanged,-181,-2.4,down
+NPST,NETWORK PEOPLE SRV TECH L,Technology,279,55,ranked,101,57.4,ranked,101,57.4,ranked,-178,-2.4,down,0,0,unchanged,-178,-2.4,down
+SYNCOMF,SYNCOM FORMU (I) LTD,Healthcare,280,55,ranked,499,52.1,ranked,499,52.1,ranked,219,2.9,up,0,0,unchanged,219,2.9,up
+SMCGLOBAL,SMC GLOBAL SECURITIES LTD,Financial Services,281,55,ranked,435,52.8,ranked,435,52.8,ranked,154,2.2,up,0,0,unchanged,154,2.2,up
+INDRAMEDCO,INDRAPRASTHA MEDICAL CORP,Healthcare,282,55,ranked,239,55.1,ranked,239,55.1,ranked,-43,-0.1,down,0,0,unchanged,-43,-0.1,down
+VIMTALABS,VIMTA LABS LIMITED,Healthcare,283,54.9,ranked,362,53.5,ranked,362,53.5,ranked,79,1.4,up,0,0,unchanged,79,1.4,up
+AEROFLEX,AEROFLEX INDUSTRIES LTD,Industrials,284,54.9,ranked,729,50,ranked,729,50,ranked,445,4.9,up,0,0,unchanged,445,4.9,up
+LGBBROSLTD,LG BALAKRISHNAN & BROS,Consumer Cyclical,285,54.9,ranked,469,52.5,ranked,469,52.5,ranked,184,2.4,up,0,0,unchanged,184,2.4,up
+BAJFINANCE,BAJAJ FINANCE LIMITED,Financial Services,286,54.9,ranked,194,55.7,ranked,194,55.7,ranked,-92,-0.8,down,0,0,unchanged,-92,-0.8,down
+ABBOTINDIA,ABBOTT INDIA LIMITED,Healthcare,287,54.9,ranked,228,55.2,ranked,228,55.2,ranked,-59,-0.3,down,0,0,unchanged,-59,-0.3,down
+RADICO,RADICO KHAITAN LTD,Consumer Defensive,288,54.9,ranked,640,50.8,ranked,640,50.8,ranked,352,4.1,up,0,0,unchanged,352,4.1,up
+INDIAMART,INDIAMART INTERMESH LTD,Communication Services,289,54.9,ranked,451,52.7,ranked,451,52.7,ranked,162,2.2,up,0,0,unchanged,162,2.2,up
+DCBBANK,DCB BANK LIMITED,Financial Services,290,54.9,ranked,486,52.3,ranked,486,52.3,ranked,196,2.6,up,0,0,unchanged,196,2.6,up
+ADOR,ADOR WELDING LTD,Industrials,291,54.9,ranked,536,51.8,ranked,536,51.8,ranked,245,3.1,up,0,0,unchanged,245,3.1,up
+GILLETTE,GILLETTE INDIA LTD,Consumer Defensive,292,54.8,ranked,208,55.4,ranked,208,55.4,ranked,-84,-0.6,down,0,0,unchanged,-84,-0.6,down
+MCLOUD,MAGELLANIC CLOUD LIMITED,Technology,293,54.8,ranked,318,54,ranked,318,54,ranked,25,0.8,up,0,0,unchanged,25,0.8,up
+GULPOLY,GULSHAN POLYOLS LIMITED,Basic Materials,294,54.8,ranked,568,51.5,ranked,568,51.5,ranked,274,3.3,up,0,0,unchanged,274,3.3,up
+INDNIPPON,INDIA NIPPON ELECT  LTD,Consumer Cyclical,295,54.8,ranked,456,52.6,ranked,456,52.6,ranked,161,2.2,up,0,0,unchanged,161,2.2,up
+INFY,INFOSYS LIMITED,Technology,296,54.8,ranked,282,54.5,ranked,282,54.5,ranked,-14,0.3,down,0,0,unchanged,-14,0.3,down
+SONACOMS,SONA BLW PRECISION FRGS L,Consumer Cyclical,297,54.8,ranked,581,51.4,ranked,581,51.4,ranked,284,3.4,up,0,0,unchanged,284,3.4,up
+ICRA,ICRA LIMITED,Financial Services,298,54.8,ranked,343,53.8,ranked,343,53.8,ranked,45,1,up,0,0,unchanged,45,1,up
+AJMERA,AJMERA REALTY & INF I LTD,Real Estate,299,54.8,ranked,14,61.2,ranked,14,61.2,ranked,-285,-6.4,down,0,0,unchanged,-285,-6.4,down
+CAPITALSFB,CAPITAL SMALL FIN BANK L,Financial Services,300,54.8,ranked,382,53.4,ranked,382,53.4,ranked,82,1.4,up,0,0,unchanged,82,1.4,up
+CONFIPET,CONFIDENCE PETRO IND LTD.,Energy,301,54.7,ranked,767,49.7,ranked,767,49.7,ranked,466,5,up,0,0,unchanged,466,5,up
+EPIGRAL,EPIGRAL LIMITED,Basic Materials,302,54.7,ranked,846,48.7,ranked,846,48.7,ranked,544,6,up,0,0,unchanged,544,6,up
+CONCORDBIO,CONCORD BIOTECH LIMITED,Healthcare,303,54.7,ranked,685,50.5,ranked,685,50.5,ranked,382,4.2,up,0,0,unchanged,382,4.2,up
+JSLL,JEENA SIKHO LIFECARE LTD,Healthcare,304,54.7,ranked,134,56.8,ranked,134,56.8,ranked,-170,-2.1,down,0,0,unchanged,-170,-2.1,down
+STYRENIX,STYRENIX PERFORMANCE LTD,Basic Materials,305,54.7,ranked,264,54.8,ranked,264,54.8,ranked,-41,-0.1,down,0,0,unchanged,-41,-0.1,down
+QUESS,QUESS CORP LIMITED,Industrials,306,54.7,ranked,373,53.4,ranked,373,53.4,ranked,67,1.3,up,0,0,unchanged,67,1.3,up
+CUPID,CUPID LIMITED,Consumer Defensive,307,54.6,ranked,179,55.9,ranked,179,55.9,ranked,-128,-1.3,down,0,0,unchanged,-128,-1.3,down
+TMB,TAMILNAD MERCA BANK LTD,Financial Services,308,54.6,ranked,487,52.2,ranked,487,52.2,ranked,179,2.4,up,0,0,unchanged,179,2.4,up
+SANGHVIMOV,SANGHVI MOVERS LTD,Industrials,309,54.6,ranked,246,55,ranked,246,55,ranked,-63,-0.4,down,0,0,unchanged,-63,-0.4,down
+DYCL,DYNAMIC CABLES LIMITED,Industrials,310,54.6,ranked,791,49.4,ranked,791,49.4,ranked,481,5.2,up,0,0,unchanged,481,5.2,up
+TINNARUBR,TINNA RUBBER AND INFR LTD,Basic Materials,311,54.6,ranked,701,50.3,ranked,701,50.3,ranked,390,4.3,up,0,0,unchanged,390,4.3,up
+RAIN,RAIN INDUSTRIES LIMITED,Basic Materials,312,54.6,ranked,1054,46,ranked,1054,46,ranked,742,8.6,up,0,0,unchanged,742,8.6,up
+STUDDS,STUDDS ACCESSORIES LTD,Consumer Cyclical,313,54.6,ranked,332,53.9,ranked,332,53.9,ranked,19,0.7,up,0,0,unchanged,19,0.7,up
+PFC,POWER FIN CORP LTD.,Financial Services,314,54.6,ranked,184,55.9,ranked,184,55.9,ranked,-130,-1.3,down,0,0,unchanged,-130,-1.3,down
+PREMIERENE,PREMIER ENERGIES LIMITED,Technology,315,54.6,ranked,353,53.7,ranked,353,53.7,ranked,38,0.9,up,0,0,unchanged,38,0.9,up
+CAPLIPOINT,CAPLIN POINT LAB LTD.,Healthcare,316,54.6,ranked,85,57.9,ranked,85,57.9,ranked,-231,-3.3,down,0,0,unchanged,-231,-3.3,down
+ORIENTELEC,ORIENT ELECTRIC LIMITED,Consumer Cyclical,317,54.6,ranked,707,50.3,ranked,707,50.3,ranked,390,4.3,up,0,0,unchanged,390,4.3,up
+IOLCP,IOL CHEM AND PHARMA LTD,Healthcare,318,54.6,ranked,441,52.8,ranked,441,52.8,ranked,123,1.8,up,0,0,unchanged,123,1.8,up
+JTLIND,JTL INDUSTRIES LIMITED,Basic Materials,319,54.6,ranked,586,51.4,ranked,586,51.4,ranked,267,3.2,up,0,0,unchanged,267,3.2,up
+GANECOS,GANESHA ECOSPHERE LIMITED,Consumer Cyclical,320,54.6,ranked,699,50.4,ranked,699,50.4,ranked,379,4.2,up,0,0,unchanged,379,4.2,up
+EIHAHOTELS,EIH ASSOCIATED HOTELS LTD,Consumer Cyclical,321,54.5,ranked,284,54.4,ranked,284,54.4,ranked,-37,0.1,down,0,0,unchanged,-37,0.1,down
+IKIO,IKIO TECHNOLOGIES LIMITED,Technology,322,54.5,ranked,785,49.5,ranked,785,49.5,ranked,463,5,up,0,0,unchanged,463,5,up
+FILATEX,FILATEX INDIA LTD,Consumer Cyclical,323,54.5,ranked,529,51.9,ranked,529,51.9,ranked,206,2.6,up,0,0,unchanged,206,2.6,up
+CHAMBLFERT,CHAMBAL FERTILIZERS LTD,Basic Materials,324,54.5,ranked,96,57.5,ranked,96,57.5,ranked,-228,-3,down,0,0,unchanged,-228,-3,down
+UTIAMC,UTI ASSET MNGMT CO LTD,Financial Services,325,54.5,ranked,446,52.7,ranked,446,52.7,ranked,121,1.8,up,0,0,unchanged,121,1.8,up
+FORCEMOT,FORCE MOTORS LIMITED,Consumer Cyclical,326,54.4,ranked,762,49.7,ranked,762,49.7,ranked,436,4.7,up,0,0,unchanged,436,4.7,up
+SKFINDUS,SKF IND (INDUSTRIAL) LTD,Industrials,327,54.4,ranked,670,50.6,ranked,670,50.6,ranked,343,3.8,up,0,0,unchanged,343,3.8,up
+HCLTECH,HCL TECHNOLOGIES LTD,Technology,328,54.4,ranked,198,55.7,ranked,198,55.7,ranked,-130,-1.3,down,0,0,unchanged,-130,-1.3,down
+SOLARINDS,SOLAR INDUSTRIES (I) LTD,Basic Materials,329,54.4,ranked,449,52.7,ranked,449,52.7,ranked,120,1.7,up,0,0,unchanged,120,1.7,up
+CGCL,CAPRI GLOBAL CAPITAL LTD,Financial Services,330,54.4,ranked,537,51.8,ranked,537,51.8,ranked,207,2.6,up,0,0,unchanged,207,2.6,up
+PGIL,PEARL GLOBAL IND LIMITED,Consumer Cyclical,331,54.4,ranked,564,51.6,ranked,564,51.6,ranked,233,2.8,up,0,0,unchanged,233,2.8,up
+TANLA,TANLA PLATFORMS LIMITED,Technology,332,54.4,ranked,315,54.1,ranked,315,54.1,ranked,-17,0.3,down,0,0,unchanged,-17,0.3,down
+SSWL,STEEL STRIPS WHEELS LTD.,Consumer Cyclical,333,54.4,ranked,479,52.3,ranked,479,52.3,ranked,146,2.1,up,0,0,unchanged,146,2.1,up
+GNA,GNA AXLES LIMITED,Consumer Cyclical,334,54.4,ranked,412,53,ranked,412,53,ranked,78,1.4,up,0,0,unchanged,78,1.4,up
+SHRINGARMS,SHRINGAR HOU OF MANGALS L,Consumer Cyclical,335,54.3,ranked,74,58.2,ranked,74,58.2,ranked,-261,-3.9,down,0,0,unchanged,-261,-3.9,down
+HDFCBANK,HDFC BANK LTD,Financial Services,336,54.3,ranked,242,55.1,ranked,242,55.1,ranked,-94,-0.8,down,0,0,unchanged,-94,-0.8,down
+NUVAMA,NUVAMA WEALTH MANAGE LTD,Financial Services,337,54.3,ranked,496,52.2,ranked,496,52.2,ranked,159,2.1,up,0,0,unchanged,159,2.1,up
+AWL,AWL AGRI BUSINESS LIMITED,Consumer Defensive,338,54.3,ranked,675,50.6,ranked,675,50.6,ranked,337,3.7,up,0,0,unchanged,337,3.7,up
+HAPPYFORGE,HAPPY FORGINGS LIMITED,Industrials,339,54.3,ranked,346,53.8,ranked,346,53.8,ranked,7,0.5,up,0,0,unchanged,7,0.5,up
+GENUSPOWER,GENUS POWER INFRASTRU LTD,Industrials,340,54.3,ranked,408,53.1,ranked,408,53.1,ranked,68,1.2,up,0,0,unchanged,68,1.2,up
+ELLEN,ELLENBARRIE INDUS GASES L,Basic Materials,341,54.3,ranked,625,51,ranked,625,51,ranked,284,3.3,up,0,0,unchanged,284,3.3,up
+TTKHLTCARE,TTK HEALTHCARE LIMITED,Healthcare,342,54.2,ranked,415,53,ranked,415,53,ranked,73,1.2,up,0,0,unchanged,73,1.2,up
+MONTECARLO,MONTE CARLO FASHIONS LTD.,Consumer Cyclical,343,54.2,ranked,403,53.1,ranked,403,53.1,ranked,60,1.1,up,0,0,unchanged,60,1.1,up
+VENKEYS,VENKY S (INDIA) LIMITED,Consumer Defensive,344,54.2,ranked,528,51.9,ranked,528,51.9,ranked,184,2.3,up,0,0,unchanged,184,2.3,up
+AUROPHARMA,AUROBINDO PHARMA LTD,Healthcare,345,54.2,ranked,569,51.5,ranked,569,51.5,ranked,224,2.7,up,0,0,unchanged,224,2.7,up
+SUPREMEIND,SUPREME INDUSTRIES LTD,Industrials,346,54.2,ranked,354,53.7,ranked,354,53.7,ranked,8,0.5,up,0,0,unchanged,8,0.5,up
+MANAPPURAM,MANAPPURAM FINANCE LTD,Financial Services,347,54.2,ranked,1029,46.3,ranked,1029,46.3,ranked,682,7.9,up,0,0,unchanged,682,7.9,up
+TRAVELFOOD,TRAVEL FOOD SERVICES LTD,Consumer Cyclical,348,54.2,ranked,187,55.8,ranked,187,55.8,ranked,-161,-1.6,down,0,0,unchanged,-161,-1.6,down
+GAEL,GUJARAT AMBUJA EXPORTS LT,Consumer Defensive,349,54.2,ranked,276,54.6,ranked,276,54.6,ranked,-73,-0.4,down,0,0,unchanged,-73,-0.4,down
+MASTEK,MASTEK LTD,Technology,350,54.2,ranked,93,57.6,ranked,93,57.6,ranked,-257,-3.4,down,0,0,unchanged,-257,-3.4,down
+AWFIS,AWFIS SPACE SOLUTIONS LTD,Industrials,351,54.2,ranked,458,52.6,ranked,458,52.6,ranked,107,1.6,up,0,0,unchanged,107,1.6,up
+DOLPHIN,DOLPHIN OFF ENT (IND) L,Energy,352,54.1,ranked,159,56.4,ranked,159,56.4,ranked,-193,-2.3,down,0,0,unchanged,-193,-2.3,down
+VENTIVE,VENTIVE HOSPITALITY LTD,Consumer Cyclical,353,54.1,ranked,714,50.2,ranked,714,50.2,ranked,361,3.9,up,0,0,unchanged,361,3.9,up
+POLYPLEX,POLYPLEX CORPORATION LTD,Basic Materials,354,54,ranked,739,49.9,ranked,739,49.9,ranked,385,4.1,up,0,0,unchanged,385,4.1,up
+SANGAMIND,SANGAM (INDIA) LTD,Consumer Cyclical,355,54,ranked,754,49.8,ranked,754,49.8,ranked,399,4.2,up,0,0,unchanged,399,4.2,up
+JAGSNPHARM,JAGSONPAL PHARMACEUTICALS,Healthcare,356,54,ranked,200,55.6,ranked,200,55.6,ranked,-156,-1.6,down,0,0,unchanged,-156,-1.6,down
+ALEMBICLTD,ALEMBIC LIMITED,Real Estate,357,54,ranked,492,52.2,ranked,492,52.2,ranked,135,1.8,up,0,0,unchanged,135,1.8,up
+RHIM,RHI MAGNESITA INDIA LTD,Industrials,358,54,ranked,534,51.8,ranked,534,51.8,ranked,176,2.2,up,0,0,unchanged,176,2.2,up
+JKIL,JKUMAR INFR.LTD.,Industrials,359,54,ranked,310,54.2,ranked,310,54.2,ranked,-49,-0.2,down,0,0,unchanged,-49,-0.2,down
+POLYCAB,POLYCAB INDIA LIMITED,Industrials,360,54,ranked,847,48.7,ranked,847,48.7,ranked,487,5.3,up,0,0,unchanged,487,5.3,up
+HINDPETRO,HINDUSTAN PETROLEUM CORP,Energy,361,54,ranked,334,53.9,ranked,334,53.9,ranked,-27,0.1,down,0,0,unchanged,-27,0.1,down
+SEDEMAC,SEDEMAC MECHATRONICS LTD,Consumer Cyclical,362,54,ranked,72,58.3,ranked,72,58.3,ranked,-290,-4.3,down,0,0,unchanged,-290,-4.3,down
+FEDFINA,FEDBANK FINANCIAL SER L,Financial Services,363,54,ranked,520,52,ranked,520,52,ranked,157,2,up,0,0,unchanged,157,2,up
+POCL,PONDY OXIDES & CHEM LTD,Basic Materials,364,54,ranked,86,57.9,ranked,86,57.9,ranked,-278,-3.9,down,0,0,unchanged,-278,-3.9,down
+HBLENGINE,HBL ENGINEERING LTD,Industrials,365,53.9,ranked,111,57.2,ranked,111,57.2,ranked,-254,-3.3,down,0,0,unchanged,-254,-3.3,down
+HMAAGRO,HMA AGRO INDUSTRIES LTD,Consumer Defensive,366,53.9,ranked,943,47.6,ranked,943,47.6,ranked,577,6.3,up,0,0,unchanged,577,6.3,up
+NESTLEIND,NESTLE INDIA LIMITED,Consumer Defensive,367,53.9,ranked,521,52,ranked,521,52,ranked,154,1.9,up,0,0,unchanged,154,1.9,up
+INDHOTEL,THE INDIAN HOTELS CO. LTD,Consumer Cyclical,368,53.9,ranked,333,53.9,ranked,333,53.9,ranked,-35,0,down,0,0,unchanged,-35,0,down
+NMDC,NMDC LTD.,Basic Materials,369,53.9,ranked,24,60.4,ranked,24,60.4,ranked,-345,-6.5,down,0,0,unchanged,-345,-6.5,down
+SCHAEFFLER,SCHAEFFLER INDIA LIMITED,Consumer Cyclical,370,53.9,ranked,491,52.2,ranked,491,52.2,ranked,121,1.7,up,0,0,unchanged,121,1.7,up
+KPRMILL,KPR MILL LTD.,Consumer Cyclical,371,53.9,ranked,394,53.3,ranked,394,53.3,ranked,23,0.6,up,0,0,unchanged,23,0.6,up
+DEEPAKNTR,DEEPAK NITRITE LTD,Basic Materials,372,53.9,ranked,1196,42.9,ranked,1196,42.9,ranked,824,11,up,0,0,unchanged,824,11,up
+SHADOWFAX,SHADOWFAX TECHNOLOGIES L,Industrials,373,53.9,ranked,764,49.7,ranked,764,49.7,ranked,391,4.2,up,0,0,unchanged,391,4.2,up
+SANOFICONR,SANOFI CONS HEALTHC IND L,Healthcare,374,53.9,ranked,577,51.4,ranked,577,51.4,ranked,203,2.5,up,0,0,unchanged,203,2.5,up
+STAR,STRIDES PHARMA SCI LTD,Healthcare,375,53.9,ranked,337,53.9,ranked,337,53.9,ranked,-38,0,down,0,0,unchanged,-38,0,down
+RATEGAIN,RATEGAIN TRAVEL TECHN LTD,Technology,376,53.9,ranked,539,51.8,ranked,539,51.8,ranked,163,2.1,up,0,0,unchanged,163,2.1,up
+MANINFRA,MAN INFRA LTD,Industrials,377,53.8,ranked,1008,46.7,ranked,1008,46.7,ranked,631,7.1,up,0,0,unchanged,631,7.1,up
+SILVERTUC,SILVER TOUCH TECHNO LTD,Technology,378,53.8,ranked,860,48.6,ranked,860,48.6,ranked,482,5.2,up,0,0,unchanged,482,5.2,up
+CANTABIL,CANTABIL RETAIL LTD,Consumer Cyclical,379,53.8,ranked,277,54.5,ranked,277,54.5,ranked,-102,-0.7,down,0,0,unchanged,-102,-0.7,down
+HESTERBIO,HESTER BIOSCIENCES LTD,Healthcare,380,53.8,ranked,505,52.1,ranked,505,52.1,ranked,125,1.7,up,0,0,unchanged,125,1.7,up
+MANALIPETC,MANALI PETROCHEMICALS LT,Basic Materials,381,53.8,ranked,448,52.7,ranked,448,52.7,ranked,67,1.1,up,0,0,unchanged,67,1.1,up
+ADANIPOWER,ADANI POWER LTD,Utilities,382,53.8,ranked,510,52.1,ranked,510,52.1,ranked,128,1.7,up,0,0,unchanged,128,1.7,up
+INDUSTOWER,INDUS TOWERS LIMITED,Communication Services,383,53.8,ranked,511,52.1,ranked,511,52.1,ranked,128,1.7,up,0,0,unchanged,128,1.7,up
+WAAREEENER,WAAREE ENERGIES LIMITED,Technology,384,53.8,ranked,280,54.5,ranked,280,54.5,ranked,-104,-0.7,down,0,0,unchanged,-104,-0.7,down
+NAUKRI,INFO EDGE (I) LTD,Communication Services,385,53.8,ranked,178,56,ranked,178,56,ranked,-207,-2.2,down,0,0,unchanged,-207,-2.2,down
+LUMAXIND,LUMAX INDUSTRIES LTD,Consumer Cyclical,386,53.8,ranked,585,51.4,ranked,585,51.4,ranked,199,2.4,up,0,0,unchanged,199,2.4,up
+GANESHHOU,GANESH HOUSING LIMITED,Real Estate,387,53.7,ranked,454,52.6,ranked,454,52.6,ranked,67,1.1,up,0,0,unchanged,67,1.1,up
+ANDHRSUGAR,ANDHRA SUGARS LTD,Basic Materials,388,53.7,ranked,751,49.8,ranked,751,49.8,ranked,363,3.9,up,0,0,unchanged,363,3.9,up
+HAL,HINDUSTAN AERONAUTICS LTD,Industrials,389,53.7,ranked,673,50.6,ranked,673,50.6,ranked,284,3.1,up,0,0,unchanged,284,3.1,up
+GRANULES,GRANULES INDIA LIMITED,Healthcare,390,53.7,ranked,350,53.8,ranked,350,53.8,ranked,-40,-0.1,down,0,0,unchanged,-40,-0.1,down
+SPLPETRO,SUPREME PETROCHEM LIMITED,Basic Materials,391,53.7,ranked,904,48.1,ranked,904,48.1,ranked,513,5.6,up,0,0,unchanged,513,5.6,up
+RAMRAT,RAM RATNA WIRES LIMITED,Industrials,392,53.6,ranked,765,49.7,ranked,765,49.7,ranked,373,3.9,up,0,0,unchanged,373,3.9,up
+SATIN,SATIN CREDIT NET LTD,Financial Services,393,53.6,ranked,363,53.5,ranked,363,53.5,ranked,-30,0.1,down,0,0,unchanged,-30,0.1,down
+RISHABH,RISHABH INSTRUMENTS LTD,Technology,394,53.6,ranked,321,54,ranked,321,54,ranked,-73,-0.4,down,0,0,unchanged,-73,-0.4,down
+PERSISTENT,PERSISTENT SYSTEMS LTD,Technology,395,53.6,ranked,409,53.1,ranked,409,53.1,ranked,14,0.5,up,0,0,unchanged,14,0.5,up
+GMMPFAUDLR,GMM PFAUDLER LIMITED,Industrials,396,53.6,ranked,828,48.9,ranked,828,48.9,ranked,432,4.7,up,0,0,unchanged,432,4.7,up
+KINGFA,KINGFA SCI & TEC IND LTD.,Basic Materials,397,53.5,ranked,245,55,ranked,245,55,ranked,-152,-1.5,down,0,0,unchanged,-152,-1.5,down
+KERNEX,KERNEX MICROSYS(I) LTD,Technology,398,53.5,ranked,271,54.6,ranked,271,54.6,ranked,-127,-1.1,down,0,0,unchanged,-127,-1.1,down
+ASTRAL,ASTRAL LIMITED,Industrials,399,53.5,ranked,560,51.6,ranked,560,51.6,ranked,161,1.9,up,0,0,unchanged,161,1.9,up
+MSUMI,MOTHERSON SUMI WRNG IND L,Consumer Cyclical,400,53.5,ranked,306,54.2,ranked,306,54.2,ranked,-94,-0.7,down,0,0,unchanged,-94,-0.7,down
+KSCL,KAVERI SEED CO. LTD.,Basic Materials,401,53.5,ranked,402,53.2,ranked,402,53.2,ranked,1,0.3,up,0,0,unchanged,1,0.3,up
+AURIONPRO,AURIONPRO SOLN LTD,Technology,402,53.5,ranked,158,56.5,ranked,158,56.5,ranked,-244,-3,down,0,0,unchanged,-244,-3,down
+ICICIBANK,ICICI BANK LTD.,Financial Services,403,53.5,ranked,243,55.1,ranked,243,55.1,ranked,-160,-1.6,down,0,0,unchanged,-160,-1.6,down
+PIRAMALFIN,PIRAMAL FINANCE LIMITED,Financial Services,404,53.5,ranked,1068,45.7,ranked,1068,45.7,ranked,664,7.8,up,0,0,unchanged,664,7.8,up
+PRIVISCL,PRIVI SPECIALITY CHE LTD,Basic Materials,405,53.5,ranked,468,52.5,ranked,468,52.5,ranked,63,1,up,0,0,unchanged,63,1,up
+BLUEDART,BLUE DART EXPRESS LTD,Industrials,406,53.5,ranked,723,50.1,ranked,723,50.1,ranked,317,3.4,up,0,0,unchanged,317,3.4,up
+ASKAUTOLTD,ASK AUTOMOTIVE LIMITED,Consumer Cyclical,407,53.5,ranked,368,53.5,ranked,368,53.5,ranked,-39,0,down,0,0,unchanged,-39,0,down
+FIEMIND,FIEM INDUSTRIES LIMITED,Consumer Cyclical,408,53.5,ranked,219,55.3,ranked,219,55.3,ranked,-189,-1.8,down,0,0,unchanged,-189,-1.8,down
+GOPAL,GOPAL SNACKS LIMITED,Consumer Defensive,409,53.5,ranked,1061,45.8,ranked,1061,45.8,ranked,652,7.7,up,0,0,unchanged,652,7.7,up
+LAXMIDENTL,LAXMI DENTAL LIMITED,Healthcare,410,53.5,ranked,63,58.6,ranked,63,58.6,ranked,-347,-5.1,down,0,0,unchanged,-347,-5.1,down
+DIACABS,DIAMOND POWER INFRA LTD,Industrials,411,53.4,ranked,566,51.5,ranked,566,51.5,ranked,155,1.9,up,0,0,unchanged,155,1.9,up
+WEALTH,WEALTH FRST PORT. MG. LTD,Financial Services,412,53.4,ranked,78,58,ranked,78,58,ranked,-334,-4.6,down,0,0,unchanged,-334,-4.6,down
+BANCOINDIA,BANCO PRODUCTS (I) LTD,Consumer Cyclical,413,53.4,ranked,294,54.3,ranked,294,54.3,ranked,-119,-0.9,down,0,0,unchanged,-119,-0.9,down
+FCL,FINEOTEX CHEMICAL LIMITED,Basic Materials,414,53.4,ranked,550,51.7,ranked,550,51.7,ranked,136,1.7,up,0,0,unchanged,136,1.7,up
+AYE,AYE FINANCE LIMITED,Financial Services,415,53.4,ranked,619,51.1,ranked,619,51.1,ranked,204,2.3,up,0,0,unchanged,204,2.3,up
+CUB,CITY UNION BANK LTD,Financial Services,416,53.4,ranked,289,54.4,ranked,289,54.4,ranked,-127,-1,down,0,0,unchanged,-127,-1,down
+POWERMECH,POWER MECH PROJECTS LTD.,Industrials,417,53.4,ranked,686,50.5,ranked,686,50.5,ranked,269,2.9,up,0,0,unchanged,269,2.9,up
+MOLDTKPAC,MOLD-TEK PACKAGING LTD,Consumer Cyclical,418,53.4,ranked,324,54,ranked,324,54,ranked,-94,-0.6,down,0,0,unchanged,-94,-0.6,down
+MONARCH,MONARCH NETWORTH CAP LTD,Financial Services,419,53.3,ranked,21,60.4,ranked,21,60.4,ranked,-398,-7.1,down,0,0,unchanged,-398,-7.1,down
+TRUALT,TRUALT BIOENERGY LIMITED,Energy,420,53.3,ranked,1247,41.4,ranked,1247,41.4,ranked,827,11.9,up,0,0,unchanged,827,11.9,up
+KROSS,KROSS LIMITED,Consumer Cyclical,421,53.3,ranked,413,53,ranked,413,53,ranked,-8,0.3,down,0,0,unchanged,-8,0.3,down
+PGHL,PROCTER & GAMBLE HEALTH L,Healthcare,422,53.3,ranked,107,57.3,ranked,107,57.3,ranked,-315,-4,down,0,0,unchanged,-315,-4,down
+POWERINDIA,HITACHI ENERGY INDIA LTD,Industrials,423,53.3,ranked,711,50.2,ranked,711,50.2,ranked,288,3.1,up,0,0,unchanged,288,3.1,up
+THANGAMAYL,THANGAMAYIL JEWELLERY LTD,Consumer Cyclical,424,53.3,ranked,563,51.6,ranked,563,51.6,ranked,139,1.7,up,0,0,unchanged,139,1.7,up
+LUMAXTECH,LUMAX AUTO TECH LTD,Consumer Cyclical,425,53.3,ranked,652,50.8,ranked,652,50.8,ranked,227,2.5,up,0,0,unchanged,227,2.5,up
+EBGNG,GNG ELECTRONICS LIMITED,Technology,426,53.3,ranked,29,59.9,ranked,29,59.9,ranked,-397,-6.6,down,0,0,unchanged,-397,-6.6,down
+AIIL,AUTHUM INVEST & INFRA LTD,Financial Services,427,53.2,ranked,735,49.9,ranked,735,49.9,ranked,308,3.3,up,0,0,unchanged,308,3.3,up
+WEBELSOLAR,WEBSOL ENERGY SYSTEM LTD,Technology,428,53.2,ranked,57,58.7,ranked,57,58.7,ranked,-371,-5.5,down,0,0,unchanged,-371,-5.5,down
+SAKSOFT,SAKSOFT LIMITED,Technology,429,53.2,ranked,138,56.7,ranked,138,56.7,ranked,-291,-3.5,down,0,0,unchanged,-291,-3.5,down
+BOROSCI,BOROSIL SCIENTIFIC LTD,Consumer Cyclical,430,53.2,ranked,400,53.2,ranked,400,53.2,ranked,-30,0,down,0,0,unchanged,-30,0,down
+KCP,KCP LTD,Basic Materials,431,53.2,ranked,555,51.6,ranked,555,51.6,ranked,124,1.6,up,0,0,unchanged,124,1.6,up
+NTPC,NTPC LTD,Utilities,432,53.2,ranked,482,52.3,ranked,482,52.3,ranked,50,0.9,up,0,0,unchanged,50,0.9,up
+ANTHEM,ANTHEM BIOSCIENCES LTD,Healthcare,433,53.2,ranked,26,60.2,ranked,26,60.2,ranked,-407,-7,down,0,0,unchanged,-407,-7,down
+EXCELSOFT,EXCELSOFT TECHNOLOGIES L,Technology,434,53.2,ranked,890,48.3,ranked,890,48.3,ranked,456,4.9,up,0,0,unchanged,456,4.9,up
+CUMMINSIND,CUMMINS INDIA LTD,Industrials,435,53.2,ranked,196,55.7,ranked,196,55.7,ranked,-239,-2.5,down,0,0,unchanged,-239,-2.5,down
+UPL,UPL LIMITED,Basic Materials,436,53.2,ranked,620,51.1,ranked,620,51.1,ranked,184,2.1,up,0,0,unchanged,184,2.1,up
+CCL,CCL PRODUCTS (I) LTD,Consumer Defensive,437,53.2,ranked,461,52.6,ranked,461,52.6,ranked,24,0.6,up,0,0,unchanged,24,0.6,up
+VIJAYA,VIJAYA DIAGNOSTIC CEN LTD,Healthcare,438,53.2,ranked,547,51.7,ranked,547,51.7,ranked,109,1.5,up,0,0,unchanged,109,1.5,up
+MAPMYINDIA,C.E. INFO SYSTEMS LIMITED,Technology,439,53.2,ranked,349,53.8,ranked,349,53.8,ranked,-90,-0.6,down,0,0,unchanged,-90,-0.6,down
+EFCIL,EFC (I) LIMITED,Real Estate,440,53.2,ranked,118,57.1,ranked,118,57.1,ranked,-322,-3.9,down,0,0,unchanged,-322,-3.9,down
+SAKAR,SAKAR HEALTHCARE LIMITED,Healthcare,441,53.1,ranked,533,51.8,ranked,533,51.8,ranked,92,1.3,up,0,0,unchanged,92,1.3,up
+NAVKARCORP,NAVKAR CORPORATION LTD.,Industrials,442,53.1,ranked,501,52.1,ranked,501,52.1,ranked,59,1,up,0,0,unchanged,59,1,up
+GRASIM,GRASIM INDUSTRIES LTD,Basic Materials,443,53.1,ranked,691,50.4,ranked,691,50.4,ranked,248,2.7,up,0,0,unchanged,248,2.7,up
+ENRIN,SIEMENS ENERGY INDIA LTD,Utilities,444,53.1,ranked,934,47.7,ranked,934,47.7,ranked,490,5.4,up,0,0,unchanged,490,5.4,up
+SWARAJENG,SWARAJ ENGINES LTD,Consumer Cyclical,445,53.1,ranked,462,52.6,ranked,462,52.6,ranked,17,0.5,up,0,0,unchanged,17,0.5,up
+SASKEN,SASKEN TECHNOLOGIES LTD,Technology,446,53,ranked,447,52.7,ranked,447,52.7,ranked,1,0.3,up,0,0,unchanged,1,0.3,up
+RPGLIFE,RPG LIFE SCIENCES LTD,Healthcare,447,53,ranked,689,50.4,ranked,689,50.4,ranked,242,2.6,up,0,0,unchanged,242,2.6,up
+IVALUE,IVALUE INFOSOLUTIONS LTD,Technology,448,53,ranked,436,52.8,ranked,436,52.8,ranked,-12,0.2,down,0,0,unchanged,-12,0.2,down
+JSWSTEEL,JSW STEEL LIMITED,Basic Materials,449,53,ranked,624,51,ranked,624,51,ranked,175,2,up,0,0,unchanged,175,2,up
+MARICO,MARICO LIMITED,Consumer Defensive,450,53,ranked,301,54.3,ranked,301,54.3,ranked,-149,-1.3,down,0,0,unchanged,-149,-1.3,down
+AEGISLOG,AEGIS LOGISTICS LIMITED,Energy,451,53,ranked,608,51.2,ranked,608,51.2,ranked,157,1.8,up,0,0,unchanged,157,1.8,up
+PARADEEP,PARADEEP PHOSPHATES LTD,Basic Materials,452,53,ranked,887,48.3,ranked,887,48.3,ranked,435,4.7,up,0,0,unchanged,435,4.7,up
+KTKBANK,KARNATAKA BANK LIMITED,Financial Services,453,53,ranked,980,47,ranked,980,47,ranked,527,6,up,0,0,unchanged,527,6,up
+CARTRADE,CARTRADE TECH LIMITED,Consumer Cyclical,454,53,ranked,108,57.3,ranked,108,57.3,ranked,-346,-4.3,down,0,0,unchanged,-346,-4.3,down
+TTKPRESTIG,TTK PRESTIGE LTD,Consumer Cyclical,455,53,ranked,549,51.7,ranked,549,51.7,ranked,94,1.3,up,0,0,unchanged,94,1.3,up
+AJAXENGG,AJAX ENGINEERING LIMITED,Industrials,456,53,ranked,262,54.8,ranked,262,54.8,ranked,-194,-1.8,down,0,0,unchanged,-194,-1.8,down
+UDS,UPDATER SERVICES LIMITED,Industrials,457,53,ranked,665,50.7,ranked,665,50.7,ranked,208,2.3,up,0,0,unchanged,208,2.3,up
+TAJGVK,TAJ GVK HOTELS & RESORTS,Consumer Cyclical,458,52.9,ranked,39,59.3,ranked,39,59.3,ranked,-419,-6.4,down,0,0,unchanged,-419,-6.4,down
+DODLA,DODLA DAIRY LIMITED,Consumer Defensive,459,52.9,ranked,523,52,ranked,523,52,ranked,64,0.9,up,0,0,unchanged,64,0.9,up
+DAMCAPITAL,DAM CAPITAL ADVISORS LTD,Financial Services,460,52.8,ranked,490,52.2,ranked,490,52.2,ranked,30,0.6,up,0,0,unchanged,30,0.6,up
+63MOONS,63 MOONS TECHNOLOGIES LTD,Technology,461,52.8,ranked,576,51.4,ranked,576,51.4,ranked,115,1.4,up,0,0,unchanged,115,1.4,up
+RGL,RENAISSANCE GLOBAL LTD,Consumer Cyclical,462,52.8,ranked,432,52.8,ranked,432,52.8,ranked,-30,0,down,0,0,unchanged,-30,0,down
+ADVENZYMES,ADVANCED ENZYME TECH LTD,Basic Materials,463,52.8,ranked,227,55.2,ranked,227,55.2,ranked,-236,-2.4,down,0,0,unchanged,-236,-2.4,down
+NETWEB,NETWEB TECH INDIA LTD,Technology,464,52.8,ranked,649,50.8,ranked,649,50.8,ranked,185,2,up,0,0,unchanged,185,2,up
+DEEPAKFERT,DEEPAK FERTILIZERS & PETR,Basic Materials,465,52.8,ranked,1163,43.6,ranked,1163,43.6,ranked,698,9.2,up,0,0,unchanged,698,9.2,up
+RAJRATAN,RAJRATAN GLOBAL WIRE LTD,Basic Materials,466,52.8,ranked,1086,45.3,ranked,1086,45.3,ranked,620,7.5,up,0,0,unchanged,620,7.5,up
+ALGOQUANT,ALGOQUANT FINTECH LIMITED,Financial Services,467,52.7,ranked,326,53.9,ranked,326,53.9,ranked,-141,-1.2,down,0,0,unchanged,-141,-1.2,down
+MUKANDLTD,MUKAND LTD.,Basic Materials,468,52.7,ranked,552,51.6,ranked,552,51.6,ranked,84,1.1,up,0,0,unchanged,84,1.1,up
+LEMONTREE,LEMON TREE HOTELS LTD,Consumer Cyclical,469,52.7,ranked,417,53,ranked,417,53,ranked,-52,-0.3,down,0,0,unchanged,-52,-0.3,down
+GSFC,GUJ STATE FERT & CHEM LTD,Basic Materials,470,52.7,ranked,907,48.1,ranked,907,48.1,ranked,437,4.6,up,0,0,unchanged,437,4.6,up
+NORTHARC,NORTHERN ARC CAPITAL LTD,Financial Services,471,52.7,ranked,296,54.3,ranked,296,54.3,ranked,-175,-1.6,down,0,0,unchanged,-175,-1.6,down
+RUPA,RUPA & COMPANY LTD,Consumer Cyclical,472,52.7,ranked,587,51.4,ranked,587,51.4,ranked,115,1.3,up,0,0,unchanged,115,1.3,up
+VSTIND,VST INDUSTRIES LTD,Consumer Defensive,473,52.6,ranked,176,56,ranked,176,56,ranked,-297,-3.4,down,0,0,unchanged,-297,-3.4,down
+GOKULAGRO,GOKUL AGRO RESOURCES LTD,Consumer Defensive,474,52.6,ranked,753,49.8,ranked,753,49.8,ranked,279,2.8,up,0,0,unchanged,279,2.8,up
+BALMLAWRIE,BALMER LAWRIE & CO LTD,Industrials,475,52.6,ranked,387,53.3,ranked,387,53.3,ranked,-88,-0.7,down,0,0,unchanged,-88,-0.7,down
+JSWINFRA,JSW INFRASTRUCTURE LTD,Industrials,476,52.6,ranked,684,50.5,ranked,684,50.5,ranked,208,2.1,up,0,0,unchanged,208,2.1,up
+STARHEALTH,STAR HEALTH & AL INS CO L,Financial Services,477,52.6,ranked,742,49.8,ranked,742,49.8,ranked,265,2.8,up,0,0,unchanged,265,2.8,up
+HEXT,HEXAWARE TECHNOLOGIES LTD,Technology,478,52.6,ranked,253,54.9,ranked,253,54.9,ranked,-225,-2.3,down,0,0,unchanged,-225,-2.3,down
+SAFARI,SAFARI IND (INDIA) LTD,Consumer Cyclical,479,52.6,ranked,314,54.1,ranked,314,54.1,ranked,-165,-1.5,down,0,0,unchanged,-165,-1.5,down
+MARUTI,MARUTI SUZUKI INDIA LTD.,Consumer Cyclical,480,52.6,ranked,369,53.5,ranked,369,53.5,ranked,-111,-0.9,down,0,0,unchanged,-111,-0.9,down
+SAIL,STEEL AUTHORITY OF INDIA,Basic Materials,481,52.6,ranked,909,48,ranked,909,48,ranked,428,4.6,up,0,0,unchanged,428,4.6,up
+HAVELLS,HAVELLS INDIA LIMITED,Industrials,482,52.6,ranked,782,49.5,ranked,782,49.5,ranked,300,3.1,up,0,0,unchanged,300,3.1,up
+GRAPHITE,GRAPHITE INDIA LTD,Industrials,483,52.6,ranked,880,48.4,ranked,880,48.4,ranked,397,4.2,up,0,0,unchanged,397,4.2,up
+SBFC,SBFC FINANCE LIMITED,Financial Services,484,52.6,ranked,267,54.7,ranked,267,54.7,ranked,-217,-2.1,down,0,0,unchanged,-217,-2.1,down
+MANORAMA,MANORAMA INDUSTRIES LTD,Consumer Defensive,485,52.6,ranked,309,54.2,ranked,309,54.2,ranked,-176,-1.6,down,0,0,unchanged,-176,-1.6,down
+SURYAROSNI,SURYA ROSHNI LTD,Basic Materials,486,52.6,ranked,1050,46,ranked,1050,46,ranked,564,6.6,up,0,0,unchanged,564,6.6,up
+JAICORPLTD,JAI CORP LIMITED,Basic Materials,487,52.5,ranked,340,53.8,ranked,340,53.8,ranked,-147,-1.3,down,0,0,unchanged,-147,-1.3,down
+IZMO,IZMO LIMITED,Technology,488,52.5,ranked,181,55.9,ranked,181,55.9,ranked,-307,-3.4,down,0,0,unchanged,-307,-3.4,down
+KALAMANDIR,SAI SILKS (KALAMANDIR) L,Consumer Cyclical,489,52.5,ranked,709,50.2,ranked,709,50.2,ranked,220,2.3,up,0,0,unchanged,220,2.3,up
+RECLTD,REC LIMITED,Financial Services,490,52.5,ranked,365,53.5,ranked,365,53.5,ranked,-125,-1,down,0,0,unchanged,-125,-1,down
+MEDANTA,GLOBAL HEALTH LIMITED,Healthcare,491,52.5,ranked,459,52.6,ranked,459,52.6,ranked,-32,-0.1,down,0,0,unchanged,-32,-0.1,down
+UTLSOLAR,FUJIYAMA POWER SYSTEMS L,Technology,492,52.5,ranked,53,58.9,ranked,53,58.9,ranked,-439,-6.4,down,0,0,unchanged,-439,-6.4,down
+PNCINFRA,PNC INFRATECH LTD.,Industrials,493,52.5,ranked,175,56.1,ranked,175,56.1,ranked,-318,-3.6,down,0,0,unchanged,-318,-3.6,down
+INTERARCH,INTERARCH BLDNG SOLTN LTD,Industrials,494,52.5,ranked,463,52.6,ranked,463,52.6,ranked,-31,-0.1,down,0,0,unchanged,-31,-0.1,down
+UNIONBANK,UNION BANK OF INDIA,Financial Services,495,52.5,ranked,424,52.9,ranked,424,52.9,ranked,-71,-0.4,down,0,0,unchanged,-71,-0.4,down
+LAURUSLABS,LAURUS LABS LIMITED,Healthcare,496,52.5,ranked,1111,44.7,ranked,1111,44.7,ranked,615,7.8,up,0,0,unchanged,615,7.8,up
+GABRIEL,GABRIEL INDIA LTD,Consumer Cyclical,497,52.5,ranked,1012,46.5,ranked,1012,46.5,ranked,515,6,up,0,0,unchanged,515,6,up
+APLLTD,ALEMBIC PHARMA LTD,Healthcare,498,52.5,ranked,367,53.5,ranked,367,53.5,ranked,-131,-1,down,0,0,unchanged,-131,-1,down
+JUBLINGREA,JUBILANT INGREVIA LIMITED,Basic Materials,499,52.5,ranked,696,50.4,ranked,696,50.4,ranked,197,2.1,up,0,0,unchanged,197,2.1,up
+SHILPAMED,SHILPA MEDICARE LTD,Healthcare,500,52.5,ranked,596,51.3,ranked,596,51.3,ranked,96,1.2,up,0,0,unchanged,96,1.2,up
+LLOYDSENGG,LLOYDS ENGG WORK LIMITED,Industrials,501,52.4,ranked,543,51.7,ranked,543,51.7,ranked,42,0.7,up,0,0,unchanged,42,0.7,up
+DIFFNKG,DIFFUSION ENGINEERS LTD,Industrials,502,52.4,ranked,389,53.3,ranked,389,53.3,ranked,-113,-0.9,down,0,0,unchanged,-113,-0.9,down
+CERA,CERA SANITARYWARE LTD,Industrials,503,52.4,ranked,654,50.8,ranked,654,50.8,ranked,151,1.6,up,0,0,unchanged,151,1.6,up
+AXISBANK,AXIS BANK LIMITED,Financial Services,504,52.4,ranked,498,52.2,ranked,498,52.2,ranked,-6,0.2,down,0,0,unchanged,-6,0.2,down
+JSL,JINDAL STAINLESS LIMITED,Basic Materials,505,52.4,ranked,270,54.7,ranked,270,54.7,ranked,-235,-2.3,down,0,0,unchanged,-235,-2.3,down
+MPHASIS,MPHASIS LIMITED,Technology,506,52.4,ranked,442,52.8,ranked,442,52.8,ranked,-64,-0.4,down,0,0,unchanged,-64,-0.4,down
+INNOVACAP,INNOVA CAPTAB LIMITED,Healthcare,507,52.4,ranked,348,53.8,ranked,348,53.8,ranked,-159,-1.4,down,0,0,unchanged,-159,-1.4,down
+SIRCA,SIRCA PAINT INDIA LIMITED,Basic Materials,508,52.4,ranked,206,55.5,ranked,206,55.5,ranked,-302,-3.1,down,0,0,unchanged,-302,-3.1,down
+NIRLON,NIRLON LTD,Real Estate,509,52.3,ranked,641,50.8,ranked,641,50.8,ranked,132,1.5,up,0,0,unchanged,132,1.5,up
+NUCLEUS,NUCLEUS SOFTWARE EXPORTS,Technology,510,52.3,ranked,470,52.5,ranked,470,52.5,ranked,-40,-0.2,down,0,0,unchanged,-40,-0.2,down
+TVSMOTOR,TVS MOTOR COMPANY  LTD,Consumer Cyclical,511,52.3,ranked,777,49.5,ranked,777,49.5,ranked,266,2.8,up,0,0,unchanged,266,2.8,up
+MOTHERSON,SAMVRDHNA MTHRSN INTL LTD,Consumer Cyclical,512,52.3,ranked,726,50,ranked,726,50,ranked,214,2.3,up,0,0,unchanged,214,2.3,up
+BAYERCROP,BAYER CROPSCIENCE LTD,Basic Materials,513,52.3,ranked,189,55.8,ranked,189,55.8,ranked,-324,-3.5,down,0,0,unchanged,-324,-3.5,down
+RAINBOW,RAINBOW CHILDRENS MED LTD,Healthcare,514,52.3,ranked,290,54.4,ranked,290,54.4,ranked,-224,-2.1,down,0,0,unchanged,-224,-2.1,down
+GODFRYPHLP,GODFREY PHILLIPS INDIA LT,Consumer Defensive,515,52.2,ranked,124,57,ranked,124,57,ranked,-391,-4.8,down,0,0,unchanged,-391,-4.8,down
+TECHNOE,TECHNO ELEC & ENG CO. LTD,Industrials,516,52.2,ranked,426,52.9,ranked,426,52.9,ranked,-90,-0.7,down,0,0,unchanged,-90,-0.7,down
+SUPRIYA,SUPRIYA LIFESCIENCE LTD,Healthcare,517,52.2,ranked,128,56.9,ranked,128,56.9,ranked,-389,-4.7,down,0,0,unchanged,-389,-4.7,down
+ASIANPAINT,ASIAN PAINTS LIMITED,Basic Materials,518,52.2,ranked,427,52.9,ranked,427,52.9,ranked,-91,-0.7,down,0,0,unchanged,-91,-0.7,down
+CHOLAHLDNG,CHOLAMANDALAM FIN HOL LTD,Financial Services,519,52.2,ranked,561,51.6,ranked,561,51.6,ranked,42,0.6,up,0,0,unchanged,42,0.6,up
+VTL,VARDHMAN TEXTILES LIMITED,Consumer Cyclical,520,52.2,ranked,920,47.9,ranked,920,47.9,ranked,400,4.3,up,0,0,unchanged,400,4.3,up
+GOODLUCK,GOODLUCK INDIA LIMITED,Basic Materials,521,52.2,ranked,1006,46.7,ranked,1006,46.7,ranked,485,5.5,up,0,0,unchanged,485,5.5,up
+TCPLPACK,TCPL PACKAGING LIMITED,Consumer Cyclical,522,52.1,ranked,928,47.8,ranked,928,47.8,ranked,406,4.3,up,0,0,unchanged,406,4.3,up
+STALLION,STALLION IND FLUOROCHEM L,Basic Materials,523,52.1,ranked,690,50.4,ranked,690,50.4,ranked,167,1.7,up,0,0,unchanged,167,1.7,up
+APEX,APEX FROZEN FOODS LIMITED,Consumer Defensive,524,52.1,ranked,730,50,ranked,730,50,ranked,206,2.1,up,0,0,unchanged,206,2.1,up
+KRSNAA,KRSNAA DIAGNOSTICS LTD,Healthcare,525,52.1,ranked,292,54.4,ranked,292,54.4,ranked,-233,-2.3,down,0,0,unchanged,-233,-2.3,down
+RELIANCE,RELIANCE INDUSTRIES LTD,Energy,526,52.1,ranked,445,52.7,ranked,445,52.7,ranked,-81,-0.6,down,0,0,unchanged,-81,-0.6,down
+ADANIENSOL,ADANI ENERGY SOLUTION LTD,Utilities,527,52.1,ranked,1071,45.6,ranked,1071,45.6,ranked,544,6.5,up,0,0,unchanged,544,6.5,up
+ANANTRAJ,ANANT RAJ LIMITED,Real Estate,528,52.1,ranked,312,54.1,ranked,312,54.1,ranked,-216,-2,down,0,0,unchanged,-216,-2,down
+HONASA,HONASA CONSUMER LIMITED,Consumer Defensive,529,52.1,ranked,416,53,ranked,416,53,ranked,-113,-0.9,down,0,0,unchanged,-113,-0.9,down
+GARFIBRES,GARWARE TECH FIBRES LTD,Consumer Cyclical,530,52.1,ranked,622,51.1,ranked,622,51.1,ranked,92,1,up,0,0,unchanged,92,1,up
+SAMHI,SAMHI HOTELS LIMITED,Consumer Cyclical,531,52.1,ranked,269,54.7,ranked,269,54.7,ranked,-262,-2.6,down,0,0,unchanged,-262,-2.6,down
+IIFLCAPS,IIFL CAPITAL SERVICES LTD,Financial Services,532,52,ranked,474,52.4,ranked,474,52.4,ranked,-58,-0.4,down,0,0,unchanged,-58,-0.4,down
+EDELWEISS,EDELWEISS FIN SERV LTD,Financial Services,533,52,ranked,1036,46.2,ranked,1036,46.2,ranked,503,5.8,up,0,0,unchanged,503,5.8,up
+ALICON,ALICON CASTALLOY LIMITED,Industrials,534,52,ranked,1052,46,ranked,1052,46,ranked,518,6,up,0,0,unchanged,518,6,up
+MGL,MAHANAGAR GAS LTD.,Utilities,535,52,ranked,440,52.8,ranked,440,52.8,ranked,-95,-0.8,down,0,0,unchanged,-95,-0.8,down
+GATEWAY,GATEWAY DISTRIPARKS LTD,Industrials,536,52,ranked,211,55.4,ranked,211,55.4,ranked,-325,-3.4,down,0,0,unchanged,-325,-3.4,down
+ULTRACEMCO,ULTRATECH CEMENT LIMITED,Basic Materials,537,52,ranked,666,50.7,ranked,666,50.7,ranked,129,1.3,up,0,0,unchanged,129,1.3,up
+BHARTIHEXA,BHARTI HEXACOM LIMITED,Communication Services,538,52,ranked,647,50.8,ranked,647,50.8,ranked,109,1.2,up,0,0,unchanged,109,1.2,up
+FEDERALBNK,FEDERAL BANK LTD,Financial Services,539,52,ranked,693,50.4,ranked,693,50.4,ranked,154,1.6,up,0,0,unchanged,154,1.6,up
+APARINDS,APAR INDUSTRIES LTD.,Industrials,540,52,ranked,953,47.4,ranked,953,47.4,ranked,413,4.6,up,0,0,unchanged,413,4.6,up
+BASF,BASF INDIA LTD,Basic Materials,541,52,ranked,851,48.6,ranked,851,48.6,ranked,310,3.4,up,0,0,unchanged,310,3.4,up
+BORORENEW,BOROSIL RENEWABLES LTD,Technology,542,51.9,ranked,317,54,ranked,317,54,ranked,-225,-2.1,down,0,0,unchanged,-225,-2.1,down
+FDC,FDC LIMITED,Healthcare,543,51.9,ranked,50,59,ranked,50,59,ranked,-493,-7.1,down,0,0,unchanged,-493,-7.1,down
+JAGRAN,JAGRAN PRAKASHAN LIMITED,Communication Services,544,51.9,ranked,663,50.7,ranked,663,50.7,ranked,119,1.2,up,0,0,unchanged,119,1.2,up
+ETERNAL,ETERNAL LIMITED,Consumer Cyclical,545,51.9,ranked,192,55.7,ranked,192,55.7,ranked,-353,-3.8,down,0,0,unchanged,-353,-3.8,down
+FIVESTAR,FIVE-STAR BUS FIN LTD,Financial Services,546,51.9,ranked,172,56.1,ranked,172,56.1,ranked,-374,-4.2,down,0,0,unchanged,-374,-4.2,down
+CYIENT,CYIENT LIMITED,Industrials,547,51.9,ranked,817,49,ranked,817,49,ranked,270,2.9,up,0,0,unchanged,270,2.9,up
+MBEL,M AND B ENGINEERING LTD,Industrials,548,51.9,ranked,322,54,ranked,322,54,ranked,-226,-2.1,down,0,0,unchanged,-226,-2.1,down
+VESUVIUS,VESUVIUS INDIA LTD,Industrials,549,51.8,ranked,615,51.1,ranked,615,51.1,ranked,66,0.7,up,0,0,unchanged,66,0.7,up
+V2RETAIL,V2 RETAIL LIMITED,Consumer Cyclical,550,51.8,ranked,657,50.7,ranked,657,50.7,ranked,107,1.1,up,0,0,unchanged,107,1.1,up
+TFCILTD,TOURISM FINANCE CORP. OF,Financial Services,551,51.8,ranked,968,47.2,ranked,968,47.2,ranked,417,4.6,up,0,0,unchanged,417,4.6,up
+ADANIPORTS,ADANI PORT & SEZ LTD,Industrials,552,51.8,ranked,558,51.6,ranked,558,51.6,ranked,6,0.2,up,0,0,unchanged,6,0.2,up
+KALYANKJIL,KALYAN JEWELLERS IND LTD,Consumer Cyclical,553,51.8,ranked,545,51.7,ranked,545,51.7,ranked,-8,0.1,down,0,0,unchanged,-8,0.1,down
+BRIGADE,BRIGADE ENTER. LTD,Real Estate,554,51.8,ranked,802,49.2,ranked,802,49.2,ranked,248,2.6,up,0,0,unchanged,248,2.6,up
+DOLLAR,DOLLAR INDUSTRIES LIMITED,Consumer Cyclical,555,51.8,ranked,423,53,ranked,423,53,ranked,-132,-1.2,down,0,0,unchanged,-132,-1.2,down
+IGPL,I G PETROCHEMICALS LTD,Basic Materials,556,51.8,ranked,1023,46.4,ranked,1023,46.4,ranked,467,5.4,up,0,0,unchanged,467,5.4,up
+SUNCLAY,SUNDARAM CLAYTON LIMITED,Industrials,557,51.7,ranked,766,49.7,ranked,766,49.7,ranked,209,2,up,0,0,unchanged,209,2,up
+MOTISONS,MOTISONS JEWELLERS LTD,Consumer Cyclical,558,51.7,ranked,542,51.7,ranked,542,51.7,ranked,-16,0,down,0,0,unchanged,-16,0,down
+METROBRAND,METRO BRANDS LIMITED,Consumer Cyclical,559,51.7,ranked,335,53.9,ranked,335,53.9,ranked,-224,-2.2,down,0,0,unchanged,-224,-2.2,down
+IGL,INDRAPRASTHA GAS LTD,Utilities,560,51.7,ranked,438,52.8,ranked,438,52.8,ranked,-122,-1.1,down,0,0,unchanged,-122,-1.1,down
+EIEL,ENVIRO INFRA ENGINEERS L,Industrials,561,51.7,ranked,342,53.8,ranked,342,53.8,ranked,-219,-2.1,down,0,0,unchanged,-219,-2.1,down
+LTTS,L&T TECHNOLOGY SER. LTD.,Technology,562,51.7,ranked,935,47.7,ranked,935,47.7,ranked,373,4,up,0,0,unchanged,373,4,up
+IRB,IRB INFRA DEV LTD.,Industrials,563,51.7,ranked,911,48,ranked,911,48,ranked,348,3.7,up,0,0,unchanged,348,3.7,up
+SOBHA,SOBHA LIMITED,Real Estate,564,51.7,ranked,869,48.5,ranked,869,48.5,ranked,305,3.2,up,0,0,unchanged,305,3.2,up
+NOVARTIND,NOVARTIS INDIA LIMITED,Healthcare,565,51.6,ranked,688,50.4,ranked,688,50.4,ranked,123,1.2,up,0,0,unchanged,123,1.2,up
+SPECTRUM,SPECTRUM ELECTRIC IND LTD,Industrials,566,51.6,ranked,516,52,ranked,516,52,ranked,-50,-0.4,down,0,0,unchanged,-50,-0.4,down
+DOLATALGO,DOLAT ALGOTECH LIMITED,Financial Services,567,51.6,ranked,1038,46.2,ranked,1038,46.2,ranked,471,5.4,up,0,0,unchanged,471,5.4,up
+PRICOLLTD,PRICOL LIMITED,Consumer Cyclical,568,51.6,ranked,234,55.1,ranked,234,55.1,ranked,-334,-3.5,down,0,0,unchanged,-334,-3.5,down
+SURAJEST,SURAJ ESTATE DEVELOPERS L,Real Estate,569,51.6,ranked,815,49.1,ranked,815,49.1,ranked,246,2.5,up,0,0,unchanged,246,2.5,up
+VBL,VARUN BEVERAGES LIMITED,Consumer Defensive,570,51.6,ranked,710,50.2,ranked,710,50.2,ranked,140,1.4,up,0,0,unchanged,140,1.4,up
+KANSAINER,KANSAI NEROLAC PAINTS LTD,Basic Materials,571,51.6,ranked,546,51.7,ranked,546,51.7,ranked,-25,-0.1,down,0,0,unchanged,-25,-0.1,down
+RALLIS,RALLIS INDIA LTD,Basic Materials,572,51.6,ranked,592,51.3,ranked,592,51.3,ranked,20,0.3,up,0,0,unchanged,20,0.3,up
+UEL,UJAAS ENERGY LIMITED,Technology,573,51.5,ranked,1070,45.7,ranked,1070,45.7,ranked,497,5.8,up,0,0,unchanged,497,5.8,up
+AFSL,ABANS FINANCIAL SRVCS LTD,Financial Services,574,51.5,ranked,978,47.1,ranked,978,47.1,ranked,404,4.4,up,0,0,unchanged,404,4.4,up
+EVEREADY,EVEREADY INDS. IND.  LTD.,Industrials,575,51.5,ranked,500,52.1,ranked,500,52.1,ranked,-75,-0.6,down,0,0,unchanged,-75,-0.6,down
+DATAPATTNS,DATA PATTERNS INDIA LTD,Industrials,576,51.5,ranked,639,50.9,ranked,639,50.9,ranked,63,0.6,up,0,0,unchanged,63,0.6,up
+JYOTHYLAB,JYOTHY LABS LIMITED,Consumer Defensive,577,51.5,ranked,254,54.9,ranked,254,54.9,ranked,-323,-3.4,down,0,0,unchanged,-323,-3.4,down
+SBICARD,SBI CARDS & PAY SER LTD,Financial Services,578,51.5,ranked,674,50.6,ranked,674,50.6,ranked,96,0.9,up,0,0,unchanged,96,0.9,up
+ESCORTS,ESCORTS KUBOTA LIMITED,Industrials,579,51.5,ranked,325,54,ranked,325,54,ranked,-254,-2.5,down,0,0,unchanged,-254,-2.5,down
+AADHARHFC,AADHAR HOUSING FINANCE L,Financial Services,580,51.5,ranked,183,55.9,ranked,183,55.9,ranked,-397,-4.4,down,0,0,unchanged,-397,-4.4,down
+ERIS,ERIS LIFESCIENCES LIMITED,Healthcare,581,51.5,ranked,95,57.5,ranked,95,57.5,ranked,-486,-6,down,0,0,unchanged,-486,-6,down
+JSWCEMENT,JSW CEMENT LIMITED,Basic Materials,582,51.5,ranked,331,53.9,ranked,331,53.9,ranked,-251,-2.4,down,0,0,unchanged,-251,-2.4,down
+WABAG,VA TECH WABAG LTD,Industrials,583,51.5,ranked,572,51.5,ranked,572,51.5,ranked,-11,0,down,0,0,unchanged,-11,0,down
+YATHARTH,YATHARTH HOSP & TRA C S L,Healthcare,584,51.5,ranked,278,54.5,ranked,278,54.5,ranked,-306,-3,down,0,0,unchanged,-306,-3,down
+DATAMATICS,DATAMATICS GLOBAL SER LTD,Technology,585,51.5,ranked,738,49.9,ranked,738,49.9,ranked,153,1.6,up,0,0,unchanged,153,1.6,up
+MIDWESTLTD,MIDWEST LIMITED,Basic Materials,586,51.5,ranked,633,50.9,ranked,633,50.9,ranked,47,0.6,up,0,0,unchanged,47,0.6,up
+NRBBEARING,NRB BEARING LIMITED,Consumer Cyclical,587,51.5,ranked,507,52.1,ranked,507,52.1,ranked,-80,-0.6,down,0,0,unchanged,-80,-0.6,down
+FOSECOIND,FOSECO INDIA LTD,Basic Materials,588,51.4,ranked,551,51.6,ranked,551,51.6,ranked,-37,-0.2,down,0,0,unchanged,-37,-0.2,down
+SARDAEN,SARDA ENERGY & MIN LTD,Basic Materials,589,51.4,ranked,247,55,ranked,247,55,ranked,-342,-3.6,down,0,0,unchanged,-342,-3.6,down
+KSL,KALYANI STEELS LIMITED,Basic Materials,590,51.4,ranked,687,50.5,ranked,687,50.5,ranked,97,0.9,up,0,0,unchanged,97,0.9,up
+CIPLA,CIPLA LTD,Healthcare,591,51.4,ranked,636,50.9,ranked,636,50.9,ranked,45,0.5,up,0,0,unchanged,45,0.5,up
+FRACTAL,FRACTAL ANALYTICS LIMITED,Technology,592,51.4,ranked,703,50.3,ranked,703,50.3,ranked,111,1.1,up,0,0,unchanged,111,1.1,up
+AVALON,AVALON TECHNOLOGIES LTD,Technology,593,51.4,ranked,548,51.7,ranked,548,51.7,ranked,-45,-0.3,down,0,0,unchanged,-45,-0.3,down
+EMIL,ELECTRONICS MART IND LTD,Consumer Cyclical,594,51.4,ranked,594,51.3,ranked,594,51.3,ranked,0,0.1,unchanged,0,0,unchanged,0,0.1,unchanged
+BAJAJFINSV,BAJAJ FINSERV LTD.,Financial Services,595,51.3,ranked,681,50.5,ranked,681,50.5,ranked,86,0.8,up,0,0,unchanged,86,0.8,up
+ABCAPITAL,ADITYA BIRLA CAPITAL LTD.,Financial Services,596,51.3,ranked,644,50.8,ranked,644,50.8,ranked,48,0.5,up,0,0,unchanged,48,0.5,up
+AIAENG,AIA ENGINEERING LIMITED,Industrials,597,51.3,ranked,146,56.6,ranked,146,56.6,ranked,-451,-5.3,down,0,0,unchanged,-451,-5.3,down
+SHAILY,SHAILY ENG PLASTICS LTD,Basic Materials,598,51.3,ranked,396,53.3,ranked,396,53.3,ranked,-202,-2,down,0,0,unchanged,-202,-2,down
+ORKLAINDIA,ORKLA INDIA LIMITED,Consumer Defensive,599,51.3,ranked,193,55.7,ranked,193,55.7,ranked,-406,-4.4,down,0,0,unchanged,-406,-4.4,down
+BLUEJET,BLUE JET HEALTHCARE LTD,Healthcare,600,51.3,ranked,653,50.8,ranked,653,50.8,ranked,53,0.5,up,0,0,unchanged,53,0.5,up
+MAHLIFE,MAHINDRA LIFESPACE DEVLTD,Real Estate,601,51.3,ranked,838,48.8,ranked,838,48.8,ranked,237,2.5,up,0,0,unchanged,237,2.5,up
+SENCO,SENCO GOLD LIMITED,Consumer Cyclical,602,51.3,ranked,230,55.2,ranked,230,55.2,ranked,-372,-3.9,down,0,0,unchanged,-372,-3.9,down
+CCAVENUE,AVENUESAI LIMITED,Technology,603,51.3,ranked,166,56.2,ranked,166,56.2,ranked,-437,-4.9,down,0,0,unchanged,-437,-4.9,down
+SANDHAR,SANDHAR TECHNOLOGIES LTD,Consumer Cyclical,604,51.3,ranked,781,49.5,ranked,781,49.5,ranked,177,1.8,up,0,0,unchanged,177,1.8,up
+MARATHON,MARATHON NXTGEN REALT LTD,Real Estate,605,51.2,ranked,747,49.8,ranked,747,49.8,ranked,142,1.4,up,0,0,unchanged,142,1.4,up
+KOVAI,KOVAI MEDICAL CENTER & HO,Healthcare,606,51.2,ranked,553,51.6,ranked,553,51.6,ranked,-53,-0.4,down,0,0,unchanged,-53,-0.4,down
+YASHO,YASHO INDUSTRIES LIMITED,Basic Materials,607,51.2,ranked,876,48.5,ranked,876,48.5,ranked,269,2.7,up,0,0,unchanged,269,2.7,up
+TALBROAUTO,TALBROS AUTO. COMP. LTD,Consumer Cyclical,608,51.2,ranked,616,51.1,ranked,616,51.1,ranked,8,0.1,up,0,0,unchanged,8,0.1,up
+IOB,INDIAN OVERSEAS BANK,Financial Services,609,51.2,ranked,914,48,ranked,914,48,ranked,305,3.2,up,0,0,unchanged,305,3.2,up
+DABUR,DABUR INDIA LTD,Consumer Defensive,610,51.2,ranked,786,49.4,ranked,786,49.4,ranked,176,1.8,up,0,0,unchanged,176,1.8,up
+IKS,INVENTURUS KNOWLEDGE SO L,Healthcare,611,51.2,ranked,259,54.8,ranked,259,54.8,ranked,-352,-3.6,down,0,0,unchanged,-352,-3.6,down
+GRINDWELL,GRINDWELL NORTON LIMITED,Industrials,612,51.2,ranked,513,52.1,ranked,513,52.1,ranked,-99,-0.9,down,0,0,unchanged,-99,-0.9,down
+CIEINDIA,CIE AUTOMOTIVE INDIA LTD,Consumer Cyclical,613,51.2,ranked,465,52.5,ranked,465,52.5,ranked,-148,-1.3,down,0,0,unchanged,-148,-1.3,down
+RITES,RITES LIMITED,Industrials,614,51.2,ranked,338,53.9,ranked,338,53.9,ranked,-276,-2.7,down,0,0,unchanged,-276,-2.7,down
+CEINSYS,CEINSYS TECH LIMITED,Industrials,615,51.1,ranked,110,57.2,ranked,110,57.2,ranked,-505,-6.1,down,0,0,unchanged,-505,-6.1,down
+WEWORK,WEWORK INDIA MANAGEMENT L,Real Estate,616,51.1,ranked,504,52.1,ranked,504,52.1,ranked,-112,-1,down,0,0,unchanged,-112,-1,down
+BIL,BHARTIYA INTERNATIONAL,Consumer Cyclical,617,51.1,ranked,878,48.5,ranked,878,48.5,ranked,261,2.6,up,0,0,unchanged,261,2.6,up
+WIPRO,WIPRO LTD,Technology,618,51.1,ranked,635,50.9,ranked,635,50.9,ranked,17,0.2,up,0,0,unchanged,17,0.2,up
+AUBANK,AU SMALL FINANCE BANK LTD,Financial Services,619,51.1,ranked,794,49.3,ranked,794,49.3,ranked,175,1.8,up,0,0,unchanged,175,1.8,up
+3MINDIA,3M INDIA LIMITED,Industrials,620,51.1,ranked,364,53.5,ranked,364,53.5,ranked,-256,-2.4,down,0,0,unchanged,-256,-2.4,down
+SHYAMMETL,SHYAM METALICS AND ENGY L,Basic Materials,621,51.1,ranked,236,55.1,ranked,236,55.1,ranked,-385,-4,down,0,0,unchanged,-385,-4,down
+SYRMA,SYRMA SGS TECHNOLOGY LTD,Technology,622,51.1,ranked,484,52.3,ranked,484,52.3,ranked,-138,-1.2,down,0,0,unchanged,-138,-1.2,down
+JMFINANCIL,JM FINANCIAL LIMITED,Financial Services,623,51.1,ranked,996,46.8,ranked,996,46.8,ranked,373,4.3,up,0,0,unchanged,373,4.3,up
+STARCEMENT,STAR CEMENT LIMITED,Basic Materials,624,51.1,ranked,238,55.1,ranked,238,55.1,ranked,-386,-4,down,0,0,unchanged,-386,-4,down
+EQUITASBNK,EQUITAS SMALL FIN BNK LTD,Financial Services,625,51.1,ranked,925,47.8,ranked,925,47.8,ranked,300,3.3,up,0,0,unchanged,300,3.3,up
+BALAMINES,BALAJI AMINES LIMITED,Basic Materials,626,51.1,ranked,818,49,ranked,818,49,ranked,192,2.1,up,0,0,unchanged,192,2.1,up
+SAATVIKGL,SAATVIK GREEN ENERGY LTD,Technology,627,51.1,ranked,358,53.6,ranked,358,53.6,ranked,-269,-2.5,down,0,0,unchanged,-269,-2.5,down
+UNIMECH,UNIMECH AEROSPACE N MFG L,Industrials,628,51.1,ranked,839,48.8,ranked,839,48.8,ranked,211,2.3,up,0,0,unchanged,211,2.3,up
+PAISALO,PAISALO DIGITAL LIMITED,Financial Services,629,51.1,ranked,761,49.7,ranked,761,49.7,ranked,132,1.4,up,0,0,unchanged,132,1.4,up
+GREENPLY,GREENPLY INDUSTRIES LTD,Basic Materials,630,51.1,ranked,422,53,ranked,422,53,ranked,-208,-1.9,down,0,0,unchanged,-208,-1.9,down
+SAMBHV,SAMBHV STEEL TUBES LTD,Basic Materials,631,51,ranked,357,53.6,ranked,357,53.6,ranked,-274,-2.6,down,0,0,unchanged,-274,-2.6,down
+THEJO,THEJO ENGINEERING LIMITED,Industrials,632,51,ranked,662,50.7,ranked,662,50.7,ranked,30,0.3,up,0,0,unchanged,30,0.3,up
+SPIC,SPIC LTD,Basic Materials,633,51,ranked,843,48.8,ranked,843,48.8,ranked,210,2.2,up,0,0,unchanged,210,2.2,up
+PGHH,P&G HYGIENE & HEALTH CARE,Consumer Defensive,634,51,ranked,583,51.4,ranked,583,51.4,ranked,-51,-0.4,down,0,0,unchanged,-51,-0.4,down
+CRAFTSMAN,CRAFTSMAN AUTOMATION LTD,Consumer Cyclical,635,51,ranked,727,50,ranked,727,50,ranked,92,1,up,0,0,unchanged,92,1,up
+GRAVITA,GRAVITA INDIA LIMITED,Industrials,636,51,ranked,669,50.7,ranked,669,50.7,ranked,33,0.3,up,0,0,unchanged,33,0.3,up
+BLACKBUCK,BLACKBUCK LIMITED,Technology,637,51,ranked,285,54.4,ranked,285,54.4,ranked,-352,-3.4,down,0,0,unchanged,-352,-3.4,down
+IFBIND,IFB INDUSTRIES LTD,Consumer Cyclical,638,51,ranked,466,52.5,ranked,466,52.5,ranked,-172,-1.5,down,0,0,unchanged,-172,-1.5,down
+LANDMARK,LANDMARK CARS LIMITED,Consumer Cyclical,639,51,ranked,836,48.8,ranked,836,48.8,ranked,197,2.2,up,0,0,unchanged,197,2.2,up
+GRAUWEIL,GRAUER & WEIL IND LTD,Basic Materials,640,50.9,ranked,160,56.4,ranked,160,56.4,ranked,-480,-5.5,down,0,0,unchanged,-480,-5.5,down
+RAMCOIND,RAMCO INDUSTRIES LIMITED,Industrials,641,50.9,ranked,295,54.3,ranked,295,54.3,ranked,-346,-3.4,down,0,0,unchanged,-346,-3.4,down
+HONDAPOWER,HONDA I POWER PRODUCT LTD,Industrials,642,50.9,ranked,959,47.3,ranked,959,47.3,ranked,317,3.6,up,0,0,unchanged,317,3.6,up
+IMPAL,IND MOTOR PART & ACC LTD,Consumer Cyclical,643,50.9,ranked,801,49.3,ranked,801,49.3,ranked,158,1.6,up,0,0,unchanged,158,1.6,up
+TATACAP,TATA CAPITAL LIMITED,Financial Services,644,50.9,ranked,807,49.1,ranked,807,49.1,ranked,163,1.8,up,0,0,unchanged,163,1.8,up
+LENSKART,LENSKART SOLUTIONS LTD,Healthcare,645,50.9,ranked,886,48.3,ranked,886,48.3,ranked,241,2.6,up,0,0,unchanged,241,2.6,up
+SRF,SRF LTD,Industrials,646,50.9,ranked,1092,45.1,ranked,1092,45.1,ranked,446,5.8,up,0,0,unchanged,446,5.8,up
+TRITURBINE,TRIVENI TURBINE LIMITED,Industrials,647,50.9,ranked,512,52.1,ranked,512,52.1,ranked,-135,-1.2,down,0,0,unchanged,-135,-1.2,down
+KPIL,KALPATARU PROJECT INT LTD,Industrials,648,50.9,ranked,307,54.2,ranked,307,54.2,ranked,-341,-3.3,down,0,0,unchanged,-341,-3.3,down
+FINPIPE,FINOLEX INDUSTRIES LTD,Industrials,649,50.9,ranked,213,55.4,ranked,213,55.4,ranked,-436,-4.5,down,0,0,unchanged,-436,-4.5,down
+SUDEEPPHRM,SUDEEP PHARMA LIMITED,Healthcare,650,50.9,ranked,835,48.8,ranked,835,48.8,ranked,185,2.1,up,0,0,unchanged,185,2.1,up
+ETHOSLTD,ETHOS LIMITED,Consumer Cyclical,651,50.9,ranked,857,48.6,ranked,857,48.6,ranked,206,2.3,up,0,0,unchanged,206,2.3,up
+WAAREERTL,WAAREE RENEWABLE TECH LTD,Industrials,652,50.8,ranked,293,54.3,ranked,293,54.3,ranked,-359,-3.5,down,0,0,unchanged,-359,-3.5,down
+VIDYAWIRES,VIDYA WIRES LIMITED,Industrials,653,50.8,ranked,303,54.2,ranked,303,54.2,ranked,-350,-3.4,down,0,0,unchanged,-350,-3.4,down
+LGEINDIA,LG ELECTRONICS INDIA LTD,Technology,654,50.8,ranked,756,49.7,ranked,756,49.7,ranked,102,1.1,up,0,0,unchanged,102,1.1,up
+BIRLACORPN,BIRLA CORPORATION LTD,Basic Materials,655,50.8,ranked,597,51.3,ranked,597,51.3,ranked,-58,-0.5,down,0,0,unchanged,-58,-0.5,down
+KMEW,KNOWLEDGE MARINE & EN W L,Industrials,656,50.8,ranked,515,52.1,ranked,515,52.1,ranked,-141,-1.3,down,0,0,unchanged,-141,-1.3,down
+OSWALPUMPS,OSWAL PUMPS LIMITED,Industrials,657,50.8,ranked,41,59.2,ranked,41,59.2,ranked,-616,-8.4,down,0,0,unchanged,-616,-8.4,down
+TATVA,TATVA CHIN PHARM CHEM LTD,Basic Materials,658,50.8,ranked,671,50.6,ranked,671,50.6,ranked,13,0.2,up,0,0,unchanged,13,0.2,up
+NAVA,NAVA LIMITED,Industrials,659,50.7,ranked,517,52,ranked,517,52,ranked,-142,-1.3,down,0,0,unchanged,-142,-1.3,down
+BLISSGVS,BLISS GVS PHARMA LTD,Healthcare,660,50.7,ranked,257,54.8,ranked,257,54.8,ranked,-403,-4.1,down,0,0,unchanged,-403,-4.1,down
+FMGOETZE,FEDERAL-MOGUL GOETZE (IND,Consumer Cyclical,661,50.7,ranked,220,55.2,ranked,220,55.2,ranked,-441,-4.5,down,0,0,unchanged,-441,-4.5,down
+KEI,KEI INDUSTRIES LTD.,Industrials,662,50.7,ranked,849,48.6,ranked,849,48.6,ranked,187,2.1,up,0,0,unchanged,187,2.1,up
+NLCINDIA,NLC INDIA LIMITED,Utilities,663,50.7,ranked,607,51.2,ranked,607,51.2,ranked,-56,-0.5,down,0,0,unchanged,-56,-0.5,down
+ENDURANCE,ENDURANCE TECHNO. LTD.,Consumer Cyclical,664,50.7,ranked,300,54.3,ranked,300,54.3,ranked,-364,-3.6,down,0,0,unchanged,-364,-3.6,down
+SUMICHEM,SUMITOMO CHEM INDIA LTD,Basic Materials,665,50.7,ranked,274,54.6,ranked,274,54.6,ranked,-391,-3.9,down,0,0,unchanged,-391,-3.9,down
+FINEORG,FINE ORGANIC IND. LTD.,Basic Materials,666,50.7,ranked,780,49.5,ranked,780,49.5,ranked,114,1.2,up,0,0,unchanged,114,1.2,up
+INGERRAND,INGERSOLL-RAND INDIA LTD,Industrials,667,50.7,ranked,773,49.6,ranked,773,49.6,ranked,106,1.1,up,0,0,unchanged,106,1.1,up
+POLYMED,POLY MEDICURE LIMITED,Healthcare,668,50.7,ranked,921,47.9,ranked,921,47.9,ranked,253,2.8,up,0,0,unchanged,253,2.8,up
+CAMPUS,CAMPUS ACTIVEWEAR LIMITED,Consumer Cyclical,669,50.7,ranked,826,48.9,ranked,826,48.9,ranked,157,1.8,up,0,0,unchanged,157,1.8,up
+GPTINFRA,GPT INFRAPROJECTS LTD,Industrials,670,50.6,ranked,372,53.4,ranked,372,53.4,ranked,-298,-2.8,down,0,0,unchanged,-298,-2.8,down
+AMNPLST,AMINES & PLASTICIZERS LTD,Basic Materials,671,50.6,ranked,731,50,ranked,731,50,ranked,60,0.6,up,0,0,unchanged,60,0.6,up
+IREDA,INDIAN RENEWABLE ENERGY,Financial Services,672,50.6,ranked,946,47.5,ranked,946,47.5,ranked,274,3.1,up,0,0,unchanged,274,3.1,up
+POONAWALLA,POONAWALLA FINCORP LTD,Financial Services,673,50.6,ranked,677,50.5,ranked,677,50.5,ranked,4,0.1,up,0,0,unchanged,4,0.1,up
+NOCIL,NOCIL LIMITED,Basic Materials,674,50.6,ranked,1213,42.5,ranked,1213,42.5,ranked,539,8.1,up,0,0,unchanged,539,8.1,up
+MMFL,MM FORGINGS LTD,Industrials,675,50.6,ranked,399,53.3,ranked,399,53.3,ranked,-276,-2.7,down,0,0,unchanged,-276,-2.7,down
+HINDUNILVR,HINDUSTAN UNILEVER LTD.,Consumer Defensive,676,50.5,ranked,634,50.9,ranked,634,50.9,ranked,-42,-0.4,down,0,0,unchanged,-42,-0.4,down
+POWERGRID,POWER GRID CORP. LTD.,Utilities,677,50.5,ranked,580,51.4,ranked,580,51.4,ranked,-97,-0.9,down,0,0,unchanged,-97,-0.9,down
+BERGEPAINT,BERGER PAINTS (I) LTD,Basic Materials,678,50.5,ranked,929,47.7,ranked,929,47.7,ranked,251,2.8,up,0,0,unchanged,251,2.8,up
+PTCIL,PTC INDUSTRIES LIMITED,Industrials,679,50.5,ranked,480,52.3,ranked,480,52.3,ranked,-199,-1.8,down,0,0,unchanged,-199,-1.8,down
+ACE,ACTION CONST EQUIP LTD,Industrials,680,50.5,ranked,906,48.1,ranked,906,48.1,ranked,226,2.4,up,0,0,unchanged,226,2.4,up
+EUREKAFORB,EUREKA FORBES LIMITED,Consumer Cyclical,681,50.5,ranked,827,48.9,ranked,827,48.9,ranked,146,1.6,up,0,0,unchanged,146,1.6,up
+HEIDELBERG,HEIDELBERGCEMENT (I) LTD,Basic Materials,682,50.5,ranked,858,48.6,ranked,858,48.6,ranked,176,1.9,up,0,0,unchanged,176,1.9,up
+GPTHEALTH,GPT HEALTHCARE LIMITED,Healthcare,683,50.5,ranked,873,48.5,ranked,873,48.5,ranked,190,2,up,0,0,unchanged,190,2,up
+IDBI,IDBI BANK LIMITED,Financial Services,684,50.4,ranked,360,53.5,ranked,360,53.5,ranked,-324,-3.1,down,0,0,unchanged,-324,-3.1,down
+MAITHANALL,MAITHAN ALLOYS LTD,Basic Materials,685,50.4,ranked,385,53.3,ranked,385,53.3,ranked,-300,-2.9,down,0,0,unchanged,-300,-2.9,down
+SETL,STANDARD ENGNG TCNLGY LTD,Industrials,686,50.4,ranked,472,52.4,ranked,472,52.4,ranked,-214,-2,down,0,0,unchanged,-214,-2,down
+KRISHNADEF,KRISHNA DEF AND ALD IND L,Industrials,687,50.4,ranked,215,55.3,ranked,215,55.3,ranked,-472,-4.9,down,0,0,unchanged,-472,-4.9,down
+TITAN,TITAN COMPANY LIMITED,Consumer Cyclical,688,50.4,ranked,559,51.6,ranked,559,51.6,ranked,-129,-1.2,down,0,0,unchanged,-129,-1.2,down
+GRSE,GARDEN REACH SHIP&ENG LTD,Industrials,689,50.4,ranked,910,48,ranked,910,48,ranked,221,2.4,up,0,0,unchanged,221,2.4,up
+JUBLFOOD,JUBILANT FOODWORKS LTD,Consumer Cyclical,690,50.4,ranked,779,49.5,ranked,779,49.5,ranked,89,0.9,up,0,0,unchanged,89,0.9,up
+FSL,FIRSTSOURCE SOLU. LTD.,Technology,691,50.4,ranked,355,53.7,ranked,355,53.7,ranked,-336,-3.3,down,0,0,unchanged,-336,-3.3,down
+SENORES,SENORES PHARMACEUTICALS L,Healthcare,692,50.4,ranked,226,55.2,ranked,226,55.2,ranked,-466,-4.8,down,0,0,unchanged,-466,-4.8,down
+HARSHA,HARSHA ENGINEERS INT LTD,Industrials,693,50.4,ranked,519,52,ranked,519,52,ranked,-174,-1.6,down,0,0,unchanged,-174,-1.6,down
+JNKINDIA,JNK INDIA LIMITED,Industrials,694,50.4,ranked,700,50.4,ranked,700,50.4,ranked,6,0,up,0,0,unchanged,6,0,up
+TNPL,TAMILNADU NEWSPRT & PAPER,Basic Materials,695,50.4,ranked,969,47.2,ranked,969,47.2,ranked,274,3.2,up,0,0,unchanged,274,3.2,up
+INDSWFTLAB,IND SWIFT LABORATORIES LT,Healthcare,696,50.3,ranked,1078,45.5,ranked,1078,45.5,ranked,382,4.8,up,0,0,unchanged,382,4.8,up
+BUTTERFLY,BTRFLY GANDHI APPL LTD,Consumer Cyclical,697,50.3,ranked,464,52.5,ranked,464,52.5,ranked,-233,-2.2,down,0,0,unchanged,-233,-2.2,down
+BOSCHLTD,BOSCH LIMITED,Consumer Cyclical,698,50.3,ranked,854,48.6,ranked,854,48.6,ranked,156,1.7,up,0,0,unchanged,156,1.7,up
+LTF,L&T FINANCE LIMITED,Financial Services,699,50.3,ranked,538,51.8,ranked,538,51.8,ranked,-161,-1.5,down,0,0,unchanged,-161,-1.5,down
+PATANJALI,PATANJALI FOODS LIMITED,Consumer Defensive,700,50.3,ranked,879,48.4,ranked,879,48.4,ranked,179,1.9,up,0,0,unchanged,179,1.9,up
+TATAELXSI,TATA ELXSI LIMITED,Technology,701,50.3,ranked,1093,45.1,ranked,1093,45.1,ranked,392,5.2,up,0,0,unchanged,392,5.2,up
+CSBBANK,CSB BANK LIMITED,Financial Services,702,50.3,ranked,845,48.7,ranked,845,48.7,ranked,143,1.6,up,0,0,unchanged,143,1.6,up
+BANARISUG,BANNARI AMMAN SUGARS LTD,Consumer Defensive,703,50.3,ranked,724,50.1,ranked,724,50.1,ranked,21,0.2,up,0,0,unchanged,21,0.2,up
+DLINKINDIA,D-LINK INDIA LTD,Technology,704,50.3,ranked,798,49.3,ranked,798,49.3,ranked,94,1,up,0,0,unchanged,94,1,up
+SIGNPOST,SIGNPOST INDIA LIMITED,Communication Services,705,50.3,ranked,202,55.5,ranked,202,55.5,ranked,-503,-5.2,down,0,0,unchanged,-503,-5.2,down
+UNITDSPR,UNITED SPIRITS LIMITED,Consumer Defensive,706,50.2,ranked,544,51.7,ranked,544,51.7,ranked,-162,-1.5,down,0,0,unchanged,-162,-1.5,down
+GUJGASLTD,GUJARAT ENERGY LIMITED,,707,50.2,ranked,457,52.6,ranked,457,52.6,ranked,-250,-2.4,down,0,0,unchanged,-250,-2.4,down
+AAVAS,AAVAS FINANCIERS LIMITED,Financial Services,708,50.2,ranked,530,51.9,ranked,530,51.9,ranked,-178,-1.7,down,0,0,unchanged,-178,-1.7,down
+AVL,ADITYA VISION LIMITED,Consumer Cyclical,709,50.2,ranked,420,53,ranked,420,53,ranked,-289,-2.8,down,0,0,unchanged,-289,-2.8,down
+VENUSPIPES,VENUS PIPES & TUBES LTD,Basic Materials,710,50.2,ranked,698,50.4,ranked,698,50.4,ranked,-12,-0.2,down,0,0,unchanged,-12,-0.2,down
+GLOBUSSPR,GLOBUS SPIRITS LTD,Consumer Defensive,711,50.2,ranked,755,49.8,ranked,755,49.8,ranked,44,0.4,up,0,0,unchanged,44,0.4,up
+EPACKPEB,EPACK PREFAB TECHN LTD,Industrials,712,50.2,ranked,261,54.8,ranked,261,54.8,ranked,-451,-4.6,down,0,0,unchanged,-451,-4.6,down
+ARMANFIN,ARMAN FIN SERV LTD,Financial Services,713,50.2,ranked,848,48.7,ranked,848,48.7,ranked,135,1.5,up,0,0,unchanged,135,1.5,up
+ASIANENE,ASIAN ENERGY SERVICES LTD,Energy,714,50.2,ranked,841,48.8,ranked,841,48.8,ranked,127,1.4,up,0,0,unchanged,127,1.4,up
+JAYBARMARU,JAY BHARAT MARUTI LTD,Consumer Cyclical,715,50.2,ranked,131,56.8,ranked,131,56.8,ranked,-584,-6.6,down,0,0,unchanged,-584,-6.6,down
+EXCELINDUS,EXCEL INDUSTRIES LTD,Basic Materials,716,50.2,ranked,702,50.3,ranked,702,50.3,ranked,-14,-0.1,down,0,0,unchanged,-14,-0.1,down
+TORNTPHARM,TORRENT PHARMACEUTICALS L,Healthcare,717,50.1,ranked,770,49.6,ranked,770,49.6,ranked,53,0.5,up,0,0,unchanged,53,0.5,up
+TIMKEN,TIMKEN INDIA LTD.,Industrials,718,50.1,ranked,772,49.6,ranked,772,49.6,ranked,54,0.5,up,0,0,unchanged,54,0.5,up
+SANSERA,SANSERA ENGINEERING LTD,Consumer Cyclical,719,50.1,ranked,366,53.5,ranked,366,53.5,ranked,-353,-3.4,down,0,0,unchanged,-353,-3.4,down
+AARTIIND,AARTI INDUSTRIES LTD,Basic Materials,720,50.1,ranked,1178,43.3,ranked,1178,43.3,ranked,458,6.8,up,0,0,unchanged,458,6.8,up
+J&KBANK,J & K BANK LTD.,Financial Services,721,50.1,ranked,656,50.7,ranked,656,50.7,ranked,-65,-0.6,down,0,0,unchanged,-65,-0.6,down
+JKLAKSHMI,JK LAKSHMI CEMENT LTD,Basic Materials,722,50.1,ranked,965,47.2,ranked,965,47.2,ranked,243,2.9,up,0,0,unchanged,243,2.9,up
+BECTORFOOD,MRS BECTORS FOOD SPE LTD,Consumer Defensive,723,50.1,ranked,575,51.5,ranked,575,51.5,ranked,-148,-1.4,down,0,0,unchanged,-148,-1.4,down
+UNIVCABLES,UNIVERSAL CABLES LTD,Industrials,724,50.1,ranked,1044,46.1,ranked,1044,46.1,ranked,320,4,up,0,0,unchanged,320,4,up
+SANSTAR,SANSTAR LIMITED,Basic Materials,725,50.1,ranked,1048,46.1,ranked,1048,46.1,ranked,323,4,up,0,0,unchanged,323,4,up
+PUNJABCHEM,PUNJAB CHEM & CROP PROT L,Basic Materials,726,50.1,ranked,672,50.6,ranked,672,50.6,ranked,-54,-0.5,down,0,0,unchanged,-54,-0.5,down
+KOTAKBANK,KOTAK MAHINDRA BANK LTD,Financial Services,727,50,ranked,769,49.6,ranked,769,49.6,ranked,42,0.4,up,0,0,unchanged,42,0.4,up
+DALBHARAT,DALMIA BHARAT LIMITED,Basic Materials,728,50,ranked,736,49.9,ranked,736,49.9,ranked,8,0.1,up,0,0,unchanged,8,0.1,up
+LICHSGFIN,LIC HOUSING FINANCE LTD,Financial Services,729,50,ranked,757,49.7,ranked,757,49.7,ranked,28,0.3,up,0,0,unchanged,28,0.3,up
+PINELABS,PINE LABS LIMITED,Technology,730,50,ranked,970,47.2,ranked,970,47.2,ranked,240,2.8,up,0,0,unchanged,240,2.8,up
+HCG,HEALTHCARE GLOB. ENT. LTD,Healthcare,731,50,ranked,966,47.2,ranked,966,47.2,ranked,235,2.8,up,0,0,unchanged,235,2.8,up
+AMAGI,AMAGI MEDIA LABS LIMITED,Technology,732,50,ranked,874,48.5,ranked,874,48.5,ranked,142,1.5,up,0,0,unchanged,142,1.5,up
+JAMNAAUTO,JAMNA AUTO IND LTD,Consumer Cyclical,733,50,ranked,129,56.9,ranked,129,56.9,ranked,-604,-6.9,down,0,0,unchanged,-604,-6.9,down
+TIMEX,TIMEX GROUP INDIA LTD.,Consumer Cyclical,734,50,ranked,401,53.2,ranked,401,53.2,ranked,-333,-3.2,down,0,0,unchanged,-333,-3.2,down
+CARRARO,CARRARO INDIA LIMITED,Consumer Cyclical,735,50,ranked,209,55.4,ranked,209,55.4,ranked,-526,-5.4,down,0,0,unchanged,-526,-5.4,down
+GOCLCORP,GOCL CORPORATION LIMITED,Basic Materials,736,50,ranked,207,55.4,ranked,207,55.4,ranked,-529,-5.4,down,0,0,unchanged,-529,-5.4,down
+DCW,DCW LTD,Basic Materials,737,50,ranked,1015,46.5,ranked,1015,46.5,ranked,278,3.5,up,0,0,unchanged,278,3.5,up
+KRISHIVAL,KRISHIVAL FOODS LIMITED,Consumer Defensive,738,50,ranked,973,47.2,ranked,973,47.2,ranked,235,2.8,up,0,0,unchanged,235,2.8,up
+CEMPRO,CEMINDIA PROJECTS LIMITED,Industrials,739,49.9,ranked,229,55.2,ranked,229,55.2,ranked,-510,-5.3,down,0,0,unchanged,-510,-5.3,down
+AVANTIFEED,AVANTI FEEDS LIMITED,Consumer Defensive,740,49.9,ranked,850,48.6,ranked,850,48.6,ranked,110,1.3,up,0,0,unchanged,110,1.3,up
+JKTYRE,JK TYRE & INDUSTRIES LTD,Consumer Cyclical,741,49.9,ranked,147,56.6,ranked,147,56.6,ranked,-594,-6.7,down,0,0,unchanged,-594,-6.7,down
+INTELLECT,INTELLECT DESIGN ARENA,Technology,742,49.9,ranked,775,49.6,ranked,775,49.6,ranked,33,0.3,up,0,0,unchanged,33,0.3,up
+SUDARSCHEM,SUDARSHAN CHEMICAL INDS L,Basic Materials,743,49.9,ranked,645,50.8,ranked,645,50.8,ranked,-98,-0.9,down,0,0,unchanged,-98,-0.9,down
+KSHINTL,KSH INTERNATIONAL LIMITED,Industrials,744,49.9,ranked,509,52.1,ranked,509,52.1,ranked,-235,-2.2,down,0,0,unchanged,-235,-2.2,down
+JSFB,JANA SMALL FIN BANK LTD,Financial Services,745,49.9,ranked,737,49.9,ranked,737,49.9,ranked,-8,0,down,0,0,unchanged,-8,0,down
+JAYKAY,JAYKAY ENTERPRISES LTD,Industrials,746,49.9,ranked,444,52.7,ranked,444,52.7,ranked,-302,-2.8,down,0,0,unchanged,-302,-2.8,down
+VINCOFE,VINTAGE COFFEE N BVRGS L,Consumer Defensive,747,49.9,ranked,800,49.3,ranked,800,49.3,ranked,53,0.6,up,0,0,unchanged,53,0.6,up
+DLF,DLF LIMITED,Real Estate,748,49.8,ranked,311,54.2,ranked,311,54.2,ranked,-437,-4.4,down,0,0,unchanged,-437,-4.4,down
+MOTILALOFS,MOTILAL OSWAL FIN LTD,Financial Services,749,49.8,ranked,320,54,ranked,320,54,ranked,-429,-4.2,down,0,0,unchanged,-429,-4.2,down
+NCC,NCC LIMITED,Industrials,750,49.8,ranked,856,48.6,ranked,856,48.6,ranked,106,1.2,up,0,0,unchanged,106,1.2,up
+MANINDS,MAN INDUSTRIES (I) LTD.,Basic Materials,751,49.8,ranked,1051,46,ranked,1051,46,ranked,300,3.8,up,0,0,unchanged,300,3.8,up
+MUTHOOTMF,MUTHOOT MICROFIN LIMITED,Financial Services,752,49.8,ranked,1049,46.1,ranked,1049,46.1,ranked,297,3.7,up,0,0,unchanged,297,3.7,up
+MOREPENLAB,MOREPEN LAB. LTD,Healthcare,753,49.8,ranked,1189,43.2,ranked,1189,43.2,ranked,436,6.6,up,0,0,unchanged,436,6.6,up
+NGLFINE,NGL FINE CHEM LIMITED,Healthcare,754,49.8,ranked,455,52.6,ranked,455,52.6,ranked,-299,-2.8,down,0,0,unchanged,-299,-2.8,down
+ORICONENT,ORICON ENTERPRISES LTD,Consumer Cyclical,755,49.8,ranked,986,47,ranked,986,47,ranked,231,2.8,up,0,0,unchanged,231,2.8,up
+MMTC,MMTC LIMITED,Industrials,756,49.8,ranked,540,51.7,ranked,540,51.7,ranked,-216,-1.9,down,0,0,unchanged,-216,-1.9,down
+SHREEJISPG,SHREEJI SHIPPING GLOBAL L,Industrials,757,49.8,ranked,630,50.9,ranked,630,50.9,ranked,-127,-1.1,down,0,0,unchanged,-127,-1.1,down
+TATACONSUM,TATA CONSUMER PRODUCT LTD,Consumer Defensive,758,49.7,ranked,862,48.5,ranked,862,48.5,ranked,104,1.2,up,0,0,unchanged,104,1.2,up
+GODREJCP,GODREJ CONSUMER PRODUCTS,Consumer Defensive,759,49.7,ranked,637,50.9,ranked,637,50.9,ranked,-122,-1.2,down,0,0,unchanged,-122,-1.2,down
+DIXON,DIXON TECHNO (INDIA) LTD,Technology,760,49.7,ranked,1217,42.4,ranked,1217,42.4,ranked,457,7.3,up,0,0,unchanged,457,7.3,up
+PIIND,PI INDUSTRIES LTD,Basic Materials,761,49.7,ranked,866,48.5,ranked,866,48.5,ranked,105,1.2,up,0,0,unchanged,105,1.2,up
+SUNDRMFAST,SUNDRAM FASTENERS LTD,Consumer Cyclical,762,49.7,ranked,609,51.2,ranked,609,51.2,ranked,-153,-1.5,down,0,0,unchanged,-153,-1.5,down
+HITECH,HI-TECH PIPES LIMITED,Basic Materials,763,49.7,ranked,708,50.3,ranked,708,50.3,ranked,-55,-0.6,down,0,0,unchanged,-55,-0.6,down
+BAJAJHLDNG,BAJAJ HOLDINGS & INVS LTD,Financial Services,764,49.7,ranked,599,51.2,ranked,599,51.2,ranked,-165,-1.5,down,0,0,unchanged,-165,-1.5,down
+INDIQUBE,INDIQUBE SPACES LIMITED,Real Estate,765,49.7,ranked,993,46.9,ranked,993,46.9,ranked,228,2.8,up,0,0,unchanged,228,2.8,up
+ASHOKLEY,ASHOK LEYLAND LTD,Industrials,766,49.6,ranked,344,53.8,ranked,344,53.8,ranked,-422,-4.2,down,0,0,unchanged,-422,-4.2,down
+COROMANDEL,COROMANDEL INTERNTL. LTD,Basic Materials,767,49.6,ranked,588,51.4,ranked,588,51.4,ranked,-179,-1.8,down,0,0,unchanged,-179,-1.8,down
+SUNDARMFIN,SUNDARAM FINANCE LTD,Financial Services,768,49.6,ranked,1059,45.8,ranked,1059,45.8,ranked,291,3.8,up,0,0,unchanged,291,3.8,up
+AGARWALEYE,DR AGARWALS HEALTH CARE L,Healthcare,769,49.6,ranked,743,49.8,ranked,743,49.8,ranked,-26,-0.2,down,0,0,unchanged,-26,-0.2,down
+DOMS,DOMS INDUSTRIES LIMITED,Industrials,770,49.6,ranked,383,53.4,ranked,383,53.4,ranked,-387,-3.8,down,0,0,unchanged,-387,-3.8,down
+SUZLON,SUZLON ENERGY LIMITED,Industrials,771,49.5,ranked,393,53.3,ranked,393,53.3,ranked,-378,-3.8,down,0,0,unchanged,-378,-3.8,down
+ASHOKA,ASHOKA BUILDCON LTD,Industrials,772,49.5,ranked,481,52.3,ranked,481,52.3,ranked,-291,-2.8,down,0,0,unchanged,-291,-2.8,down
+ORIENTCEM,ORIENT CEMENT LTD.,Basic Materials,773,49.5,ranked,429,52.9,ranked,429,52.9,ranked,-344,-3.4,down,0,0,unchanged,-344,-3.4,down
+JASH,JASH ENGINEERING LIMITED,Industrials,774,49.5,ranked,790,49.4,ranked,790,49.4,ranked,16,0.1,up,0,0,unchanged,16,0.1,up
+REPCOHOME,REPCO HOME FINANCE LTD,Financial Services,775,49.5,ranked,565,51.6,ranked,565,51.6,ranked,-210,-2.1,down,0,0,unchanged,-210,-2.1,down
+CAPACITE,CAPACITE INFRAPROJECT LTD,Industrials,776,49.5,ranked,893,48.2,ranked,893,48.2,ranked,117,1.3,up,0,0,unchanged,117,1.3,up
+SHILCTECH,SHILCHAR TECHNOLOGIES LTD,Industrials,777,49.5,ranked,783,49.5,ranked,783,49.5,ranked,6,0,up,0,0,unchanged,6,0,up
+COSMOFIRST,COSMO FIRST LIMITED,Consumer Cyclical,778,49.5,ranked,877,48.5,ranked,877,48.5,ranked,99,1,up,0,0,unchanged,99,1,up
+PAUSHAKLTD,PAUSHAK LIMITED,Basic Materials,779,49.5,ranked,680,50.5,ranked,680,50.5,ranked,-99,-1,down,0,0,unchanged,-99,-1,down
+TATASTEEL,TATA STEEL LIMITED,Basic Materials,780,49.4,ranked,437,52.8,ranked,437,52.8,ranked,-343,-3.4,down,0,0,unchanged,-343,-3.4,down
+BRITANNIA,BRITANNIA INDUSTRIES LTD,Consumer Defensive,781,49.4,ranked,606,51.2,ranked,606,51.2,ranked,-175,-1.8,down,0,0,unchanged,-175,-1.8,down
+SUPRAJIT,SUPRAJIT ENGINEERING LTD,Consumer Cyclical,782,49.4,ranked,628,51,ranked,628,51,ranked,-154,-1.6,down,0,0,unchanged,-154,-1.6,down
+JPPOWER,JAIPRAKASH POWER VEN. LTD,Utilities,783,49.4,ranked,1126,44.5,ranked,1126,44.5,ranked,343,4.9,up,0,0,unchanged,343,4.9,up
+APLAPOLLO,APL APOLLO TUBES LTD,Basic Materials,784,49.3,ranked,476,52.4,ranked,476,52.4,ranked,-308,-3.1,down,0,0,unchanged,-308,-3.1,down
+PNBHOUSING,PNB HOUSING FIN LTD.,Financial Services,785,49.3,ranked,618,51.1,ranked,618,51.1,ranked,-167,-1.8,down,0,0,unchanged,-167,-1.8,down
+RBLBANK,RBL BANK LIMITED,Financial Services,786,49.3,ranked,918,47.9,ranked,918,47.9,ranked,132,1.4,up,0,0,unchanged,132,1.4,up
+JLHL,JUPITER LIFE LINE HOSP L,Healthcare,787,49.3,ranked,759,49.7,ranked,759,49.7,ranked,-28,-0.4,down,0,0,unchanged,-28,-0.4,down
+SIS,SIS LIMITED,Industrials,788,49.3,ranked,506,52.1,ranked,506,52.1,ranked,-282,-2.8,down,0,0,unchanged,-282,-2.8,down
+VSTTILLERS,VST TILLERS TRACTORS LTD,Industrials,789,49.3,ranked,872,48.5,ranked,872,48.5,ranked,83,0.8,up,0,0,unchanged,83,0.8,up
+JUBLCPL,JUBILANT AGRI N CON PRO L,Basic Materials,790,49.3,ranked,302,54.2,ranked,302,54.2,ranked,-488,-4.9,down,0,0,unchanged,-488,-4.9,down
+FISCHER,FISCHER MEDICAL VENTURE L,Healthcare,791,49.3,ranked,951,47.5,ranked,951,47.5,ranked,160,1.8,up,0,0,unchanged,160,1.8,up
+CENTURYPLY,CENTURY PLYBOARDS (I) LTD,Basic Materials,792,49.2,ranked,947,47.5,ranked,947,47.5,ranked,155,1.7,up,0,0,unchanged,155,1.7,up
+ARE&M,AMARA RAJA ENERGY MOB LTD,Industrials,793,49.2,ranked,627,51,ranked,627,51,ranked,-166,-1.8,down,0,0,unchanged,-166,-1.8,down
+MINDACORP,MINDA CORPORATION LTD,Consumer Cyclical,794,49.2,ranked,621,51.1,ranked,621,51.1,ranked,-173,-1.9,down,0,0,unchanged,-173,-1.9,down
+PTC,PTC INDIA LIMITED,Utilities,795,49.2,ranked,820,49,ranked,820,49,ranked,25,0.2,up,0,0,unchanged,25,0.2,up
+VERANDA,VERANDA LEARNING SOL LTD,Consumer Defensive,796,49.2,ranked,784,49.5,ranked,784,49.5,ranked,-12,-0.3,down,0,0,unchanged,-12,-0.3,down
+INDORAMA,INDO RAMA SYNTHETICS LTD,Consumer Cyclical,797,49.2,ranked,473,52.4,ranked,473,52.4,ranked,-324,-3.2,down,0,0,unchanged,-324,-3.2,down
+SWIGGY,SWIGGY LIMITED,Consumer Cyclical,798,49.2,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+RELTD,RAVINDRA ENERGY LIMITED,Technology,799,49.2,ranked,750,49.8,ranked,750,49.8,ranked,-49,-0.6,down,0,0,unchanged,-49,-0.6,down
+KAPSTON,KAPSTON SERVICES LIMITED,Industrials,800,49.2,ranked,740,49.9,ranked,740,49.9,ranked,-60,-0.7,down,0,0,unchanged,-60,-0.7,down
+CONCOR,CONTAINER CORP OF IND LTD,Industrials,801,49.1,ranked,595,51.3,ranked,595,51.3,ranked,-206,-2.2,down,0,0,unchanged,-206,-2.2,down
+NIVABUPA,NIVA BUPA HEALTH INS CO L,Financial Services,802,49.1,ranked,803,49.2,ranked,803,49.2,ranked,1,-0.1,up,0,0,unchanged,1,-0.1,up
+KDDL,KDDL LIMITED,Consumer Cyclical,803,49.1,ranked,939,47.6,ranked,939,47.6,ranked,136,1.5,up,0,0,unchanged,136,1.5,up
+CENTRALBK,CENTRAL BANK OF INDIA,Financial Services,804,49.1,ranked,999,46.8,ranked,999,46.8,ranked,195,2.3,up,0,0,unchanged,195,2.3,up
+REDTAPE,REDTAPE LIMITED,Consumer Cyclical,805,49.1,ranked,600,51.2,ranked,600,51.2,ranked,-205,-2.1,down,0,0,unchanged,-205,-2.1,down
+SMARTWORKS,SMARTWORKS COWORKING SP L,Real Estate,806,49.1,ranked,631,50.9,ranked,631,50.9,ranked,-175,-1.8,down,0,0,unchanged,-175,-1.8,down
+VIKRAN,VIKRAN ENGINEERING LTD,Industrials,807,49.1,ranked,405,53.1,ranked,405,53.1,ranked,-402,-4,down,0,0,unchanged,-402,-4,down
+GALAPREC,GALA PRECISION ENG LTD,Industrials,808,49.1,ranked,614,51.1,ranked,614,51.1,ranked,-194,-2,down,0,0,unchanged,-194,-2,down
+INSECTICID,INSECTICIDES (I) LTD,Basic Materials,809,49.1,ranked,603,51.2,ranked,603,51.2,ranked,-206,-2.1,down,0,0,unchanged,-206,-2.1,down
+POLICYBZR,PB FINTECH LIMITED,Financial Services,810,49,ranked,922,47.9,ranked,922,47.9,ranked,112,1.1,up,0,0,unchanged,112,1.1,up
+HDBFS,HDB FINANCIAL SERVICES L,Financial Services,811,49,ranked,795,49.3,ranked,795,49.3,ranked,-16,-0.3,down,0,0,unchanged,-16,-0.3,down
+360ONE,360 ONE WAM LIMITED,Financial Services,812,49,ranked,694,50.4,ranked,694,50.4,ranked,-118,-1.4,down,0,0,unchanged,-118,-1.4,down
+BALKRISIND,BALKRISHNA IND. LTD,Consumer Cyclical,813,49,ranked,819,49,ranked,819,49,ranked,6,0,up,0,0,unchanged,6,0,up
+CLEANMAX,CLEAN MAX ENVIRO EN SOL L,Utilities,814,49,ranked,508,52.1,ranked,508,52.1,ranked,-306,-3.1,down,0,0,unchanged,-306,-3.1,down
+PRECWIRE,PRECISION WIRES INDIA LTD,Industrials,815,49,ranked,870,48.5,ranked,870,48.5,ranked,55,0.5,up,0,0,unchanged,55,0.5,up
+CYIENTDLM,CYIENT DLM LIMITED,Industrials,816,49,ranked,1266,40.5,ranked,1266,40.5,ranked,450,8.5,up,0,0,unchanged,450,8.5,up
+SAIPARENT,SAI PARENTERALS LIMITED,Healthcare,817,49,ranked,979,47.1,ranked,979,47.1,ranked,162,1.9,up,0,0,unchanged,162,1.9,up
+SPMLINFRA,SPML INFRA LIMITED,Industrials,818,49,ranked,623,51,ranked,623,51,ranked,-195,-2,down,0,0,unchanged,-195,-2,down
+AMRUTANJAN,AMRUTAJAN HEALTH LTD,Healthcare,819,49,ranked,601,51.2,ranked,601,51.2,ranked,-218,-2.2,down,0,0,unchanged,-218,-2.2,down
+RKFORGE,RAMKRISHNA FORGINGS LTD,Industrials,820,48.9,ranked,1180,43.3,ranked,1180,43.3,ranked,360,5.6,up,0,0,unchanged,360,5.6,up
+SHAKTIPUMP,SHAKTI PUMPS (I) LTD,Industrials,821,48.9,ranked,1025,46.4,ranked,1025,46.4,ranked,204,2.5,up,0,0,unchanged,204,2.5,up
+CARYSIL,CARYSIL LIMITED,Consumer Cyclical,822,48.9,ranked,889,48.3,ranked,889,48.3,ranked,67,0.6,up,0,0,unchanged,67,0.6,up
+ASALCBR,ASSO ALCOHOLS & BREW LTD,Consumer Defensive,823,48.9,ranked,810,49.1,ranked,810,49.1,ranked,-13,-0.2,down,0,0,unchanged,-13,-0.2,down
+BANKBARODA,BANK OF BARODA,Financial Services,824,48.9,ranked,732,49.9,ranked,732,49.9,ranked,-92,-1,down,0,0,unchanged,-92,-1,down
+VINDHYATEL,VINDHYA TELELINKS LTD,Industrials,825,48.9,ranked,1188,43.2,ranked,1188,43.2,ranked,363,5.7,up,0,0,unchanged,363,5.7,up
+WINDLAS,WINDLAS BIOTECH LIMITED,Healthcare,826,48.9,ranked,557,51.6,ranked,557,51.6,ranked,-269,-2.7,down,0,0,unchanged,-269,-2.7,down
+JINDRILL,JINDAL DRILLING IND. LTD,Energy,827,48.9,ranked,937,47.7,ranked,937,47.7,ranked,110,1.2,up,0,0,unchanged,110,1.2,up
+MANAKCOAT,MAN COAT METAL & IND LTD,Industrials,828,48.9,ranked,768,49.7,ranked,768,49.7,ranked,-60,-0.8,down,0,0,unchanged,-60,-0.8,down
+LT,LARSEN & TOUBRO LTD.,Industrials,829,48.8,ranked,962,47.2,ranked,962,47.2,ranked,133,1.6,up,0,0,unchanged,133,1.6,up
+PNB,PUNJAB NATIONAL BANK,Financial Services,830,48.8,ranked,692,50.4,ranked,692,50.4,ranked,-138,-1.6,down,0,0,unchanged,-138,-1.6,down
+INOXINDIA,INOX INDIA LIMITED,Industrials,831,48.8,ranked,531,51.9,ranked,531,51.9,ranked,-300,-3.1,down,0,0,unchanged,-300,-3.1,down
+GREAVESCOT,GREAVES COTTON LTD.,Industrials,832,48.8,ranked,532,51.8,ranked,532,51.8,ranked,-300,-3,down,0,0,unchanged,-300,-3,down
+PACEDIGITK,PACE DIGITEK LIMITED,Technology,833,48.8,ranked,341,53.8,ranked,341,53.8,ranked,-492,-5,down,0,0,unchanged,-492,-5,down
+PSB,PUNJAB & SIND BANK,Financial Services,834,48.8,ranked,1031,46.3,ranked,1031,46.3,ranked,197,2.5,up,0,0,unchanged,197,2.5,up
+PVRINOX,PVR INOX LIMITED,Communication Services,835,48.8,ranked,330,53.9,ranked,330,53.9,ranked,-505,-5.1,down,0,0,unchanged,-505,-5.1,down
+ZYDUSLIFE,ZYDUS LIFESCIENCES LTD,Healthcare,836,48.7,ranked,667,50.7,ranked,667,50.7,ranked,-169,-2,down,0,0,unchanged,-169,-2,down
+PAGEIND,PAGE INDUSTRIES LTD,Consumer Cyclical,837,48.7,ranked,467,52.5,ranked,467,52.5,ranked,-370,-3.8,down,0,0,unchanged,-370,-3.8,down
+BIKAJI,BIKAJI FOODS INTERN LTD,Consumer Defensive,838,48.7,ranked,562,51.6,ranked,562,51.6,ranked,-276,-2.9,down,0,0,unchanged,-276,-2.9,down
+TVSHLTD,TVS HOLDINGS LIMITED,Consumer Cyclical,839,48.7,ranked,883,48.4,ranked,883,48.4,ranked,44,0.3,up,0,0,unchanged,44,0.3,up
+GALLANTT,GALLANTT ISPAT LIMITED,Basic Materials,840,48.7,ranked,752,49.8,ranked,752,49.8,ranked,-88,-1.1,down,0,0,unchanged,-88,-1.1,down
+KRISHANA,KRISHANA PHOSCHEM LIMITED,Basic Materials,841,48.7,ranked,816,49.1,ranked,816,49.1,ranked,-25,-0.4,down,0,0,unchanged,-25,-0.4,down
+RACLGEAR,RACL GEARTECH LIMITED,Consumer Cyclical,842,48.7,ranked,664,50.7,ranked,664,50.7,ranked,-178,-2,down,0,0,unchanged,-178,-2,down
+LINDEINDIA,LINDE INDIA LIMITED,Basic Materials,843,48.6,ranked,981,47,ranked,981,47,ranked,138,1.6,up,0,0,unchanged,138,1.6,up
+NH,NARAYANA HRUDAYALAYA LTD.,Healthcare,844,48.6,ranked,571,51.5,ranked,571,51.5,ranked,-273,-2.9,down,0,0,unchanged,-273,-2.9,down
+CHALET,CHALET HOTELS LIMITED,Consumer Cyclical,845,48.6,ranked,275,54.6,ranked,275,54.6,ranked,-570,-6,down,0,0,unchanged,-570,-6,down
+SJVN,SJVN LTD,Utilities,846,48.6,ranked,830,48.9,ranked,830,48.9,ranked,-16,-0.3,down,0,0,unchanged,-16,-0.3,down
+BELRISE,BELRISE INDUSTRIES LTD,Consumer Cyclical,847,48.6,ranked,651,50.8,ranked,651,50.8,ranked,-196,-2.2,down,0,0,unchanged,-196,-2.2,down
+RATNAMANI,RATNAMANI MET & TUB LTD.,Basic Materials,848,48.6,ranked,912,48,ranked,912,48,ranked,64,0.6,up,0,0,unchanged,64,0.6,up
+NDRAUTO,NDR AUTO COMPONENTS LTD,Consumer Cyclical,849,48.6,ranked,892,48.3,ranked,892,48.3,ranked,43,0.3,up,0,0,unchanged,43,0.3,up
+GOODYEAR,GOODYEAR INDIA LIMITED,Consumer Cyclical,850,48.6,ranked,329,53.9,ranked,329,53.9,ranked,-521,-5.3,down,0,0,unchanged,-521,-5.3,down
+ENTERO,ENTERO HEALTHCARE SOLU L,Healthcare,851,48.5,ranked,746,49.8,ranked,746,49.8,ranked,-105,-1.3,down,0,0,unchanged,-105,-1.3,down
+TSFINV,TSF INVESTMENTS LIMITED,Financial Services,852,48.5,ranked,370,53.4,ranked,370,53.4,ranked,-482,-4.9,down,0,0,unchanged,-482,-4.9,down
+POWERICA,POWERICA LIMITED,Industrials,853,48.5,ranked,471,52.4,ranked,471,52.4,ranked,-382,-3.9,down,0,0,unchanged,-382,-3.9,down
+DREDGECORP,DREDGING CORP OF INDIA,Industrials,854,48.5,ranked,1097,45,ranked,1097,45,ranked,243,3.5,up,0,0,unchanged,243,3.5,up
+MWL,MANGALAM WORLDWIDE LTD,Basic Materials,855,48.5,ranked,722,50.1,ranked,722,50.1,ranked,-133,-1.6,down,0,0,unchanged,-133,-1.6,down
+ASTERDM,ASTER DM QUALITY CARE LTD,Healthcare,856,48.4,ranked,582,51.4,ranked,582,51.4,ranked,-274,-3,down,0,0,unchanged,-274,-3,down
+KIRLOSENG,KIRLOSKAR OIL ENG LTD,Industrials,857,48.4,ranked,648,50.8,ranked,648,50.8,ranked,-209,-2.4,down,0,0,unchanged,-209,-2.4,down
+ARVINDFASN,ARVIND FASHIONS LIMITED,Consumer Cyclical,858,48.4,ranked,715,50.2,ranked,715,50.2,ranked,-143,-1.8,down,0,0,unchanged,-143,-1.8,down
+WENDT,WENDT (INDIA) LIMITED,Industrials,859,48.4,ranked,1236,41.7,ranked,1236,41.7,ranked,377,6.7,up,0,0,unchanged,377,6.7,up
+RML,RANE (MADRAS) LIMITED,Consumer Cyclical,860,48.4,ranked,1032,46.3,ranked,1032,46.3,ranked,172,2.1,up,0,0,unchanged,172,2.1,up
+ANDHRAPAP,ANDHRA PAPER LIMITED,Basic Materials,861,48.4,ranked,897,48.2,ranked,897,48.2,ranked,36,0.2,up,0,0,unchanged,36,0.2,up
+JIOFIN,JIO FIN SERVICES LTD,Financial Services,862,48.3,ranked,1084,45.3,ranked,1084,45.3,ranked,222,3,up,0,0,unchanged,222,3,up
+NUVOCO,NUVOCO VISTAS CORP LTD,Basic Materials,863,48.3,ranked,305,54.2,ranked,305,54.2,ranked,-558,-5.9,down,0,0,unchanged,-558,-5.9,down
+VMART,VMART RETAIL LTD,Consumer Cyclical,864,48.3,ranked,1131,44.3,ranked,1131,44.3,ranked,267,4,up,0,0,unchanged,267,4,up
+PSPPROJECT,PSP PROJECTS LIMITED,Industrials,865,48.3,ranked,642,50.8,ranked,642,50.8,ranked,-223,-2.5,down,0,0,unchanged,-223,-2.5,down
+NATCOPHARM,NATCO PHARMA LTD.,Healthcare,866,48.3,ranked,844,48.7,ranked,844,48.7,ranked,-22,-0.4,down,0,0,unchanged,-22,-0.4,down
+PARAGMILK,PARAG MILK FOODS LTD.,Consumer Defensive,867,48.3,ranked,852,48.6,ranked,852,48.6,ranked,-15,-0.3,down,0,0,unchanged,-15,-0.3,down
+BHARATRAS,BHARAT RASAYAN LTD,Basic Materials,868,48.3,ranked,719,50.2,ranked,719,50.2,ranked,-149,-1.9,down,0,0,unchanged,-149,-1.9,down
+ROTO,ROTO PUMPS LIMITED,Industrials,869,48.3,ranked,1064,45.8,ranked,1064,45.8,ranked,195,2.5,up,0,0,unchanged,195,2.5,up
+TRENT,TRENT LTD,Consumer Cyclical,870,48.2,ranked,833,48.8,ranked,833,48.8,ranked,-37,-0.6,down,0,0,unchanged,-37,-0.6,down
+ASAHIINDIA,ASAHI INDIA GLASS LIMITED,Consumer Cyclical,871,48.2,ranked,917,47.9,ranked,917,47.9,ranked,46,0.3,up,0,0,unchanged,46,0.3,up
+JAINREC,JAIN RESOURCE RECYCLING L,Basic Materials,872,48.2,ranked,787,49.4,ranked,787,49.4,ranked,-85,-1.2,down,0,0,unchanged,-85,-1.2,down
+METROPOLIS,METROPOLIS HEALTHCARE LTD,Healthcare,873,48.2,ranked,398,53.3,ranked,398,53.3,ranked,-475,-5.1,down,0,0,unchanged,-475,-5.1,down
+GREENLAM,GREENLAM INDUSTRIES LTD.,Consumer Cyclical,874,48.2,ranked,956,47.3,ranked,956,47.3,ranked,82,0.9,up,0,0,unchanged,82,0.9,up
+SPAL,S. P. APPARELS LIMITED,Consumer Cyclical,875,48.2,ranked,931,47.7,ranked,931,47.7,ranked,56,0.5,up,0,0,unchanged,56,0.5,up
+GICRE,GENERAL INS CORP OF INDIA,Financial Services,876,48.2,ranked,865,48.5,ranked,865,48.5,ranked,-11,-0.3,down,0,0,unchanged,-11,-0.3,down
+NAVNETEDUL,NAVNEET EDUCATION LTD,Communication Services,877,48.2,ranked,829,48.9,ranked,829,48.9,ranked,-48,-0.7,down,0,0,unchanged,-48,-0.7,down
+HERITGFOOD,HERITAGE FOODS LTD,Consumer Defensive,878,48.2,ranked,1063,45.8,ranked,1063,45.8,ranked,185,2.4,up,0,0,unchanged,185,2.4,up
+WELENT,WELSPUN ENTERPRISES LTD.,Industrials,879,48.2,ranked,204,55.5,ranked,204,55.5,ranked,-675,-7.3,down,0,0,unchanged,-675,-7.3,down
+ONEPOINT,ONE POINT ONE SOL LTD,Industrials,880,48.2,ranked,1073,45.6,ranked,1073,45.6,ranked,193,2.6,up,0,0,unchanged,193,2.6,up
+BHARATWIRE,BHARAT WIRE ROPES LTD.,Basic Materials,881,48.2,ranked,823,49,ranked,823,49,ranked,-58,-0.8,down,0,0,unchanged,-58,-0.8,down
+NYKAA,FSN E COMMERCE VENTURES,Consumer Cyclical,882,48.1,ranked,604,51.2,ranked,604,51.2,ranked,-278,-3.1,down,0,0,unchanged,-278,-3.1,down
+FLUOROCHEM,GUJARAT FLUOROCHEM LTD,Basic Materials,883,48.1,ranked,1162,43.6,ranked,1162,43.6,ranked,279,4.5,up,0,0,unchanged,279,4.5,up
+NESCO,NESCO LTD.,Industrials,884,48.1,ranked,605,51.2,ranked,605,51.2,ranked,-279,-3.1,down,0,0,unchanged,-279,-3.1,down
+SUBROS,SUBROS LIMITED,Consumer Cyclical,885,48.1,ranked,514,52.1,ranked,514,52.1,ranked,-371,-4,down,0,0,unchanged,-371,-4,down
+TCIEXP,TCI EXPRESS LIMITED,Industrials,886,48.1,ranked,894,48.2,ranked,894,48.2,ranked,8,-0.1,up,0,0,unchanged,8,-0.1,up
+EKC,EVEREST KANTO CYLINDERLTD,Industrials,887,48.1,ranked,493,52.2,ranked,493,52.2,ranked,-394,-4.1,down,0,0,unchanged,-394,-4.1,down
+KIRLOSIND,KIRLOSKAR INDUSTRIES LTD,Industrials,888,48.1,ranked,896,48.2,ranked,896,48.2,ranked,8,-0.1,up,0,0,unchanged,8,-0.1,up
+ATHERENERG,ATHER ENERGY LIMITED,Consumer Cyclical,889,48.1,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+COLPAL,COLGATE PALMOLIVE LTD.,Consumer Defensive,890,48,ranked,638,50.9,ranked,638,50.9,ranked,-252,-2.9,down,0,0,unchanged,-252,-2.9,down
+SAILIFE,SAI LIFE SCIENCES LIMITED,Healthcare,891,48,ranked,668,50.7,ranked,668,50.7,ranked,-223,-2.7,down,0,0,unchanged,-223,-2.7,down
+JINDALSAW,JINDAL SAW LIMITED,Basic Materials,892,48,ranked,758,49.7,ranked,758,49.7,ranked,-134,-1.7,down,0,0,unchanged,-134,-1.7,down
+GODREJAGRO,GODREJ AGROVET LIMITED,Consumer Defensive,893,48,ranked,347,53.8,ranked,347,53.8,ranked,-546,-5.8,down,0,0,unchanged,-546,-5.8,down
+BLUESTONE,BLUESTONE JEWEL LFSTL LTD,Consumer Cyclical,894,48,ranked,745,49.8,ranked,745,49.8,ranked,-149,-1.8,down,0,0,unchanged,-149,-1.8,down
+IPL,INDIA PESTICIDES LIMITED,Basic Materials,895,48,ranked,556,51.6,ranked,556,51.6,ranked,-339,-3.6,down,0,0,unchanged,-339,-3.6,down
+RAMKY,RAMKY INFRA LTD,Industrials,896,48,ranked,748,49.8,ranked,748,49.8,ranked,-148,-1.8,down,0,0,unchanged,-148,-1.8,down
+APOLLOHOSP,APOLLO HOSPITALS ENTER. L,Healthcare,897,47.9,ranked,683,50.5,ranked,683,50.5,ranked,-214,-2.6,down,0,0,unchanged,-214,-2.6,down
+PAYTM,ONE 97 COMMUNICATIONS LTD,Technology,898,47.9,ranked,997,46.8,ranked,997,46.8,ranked,99,1.1,up,0,0,unchanged,99,1.1,up
+HEG,HEG LTD,Industrials,899,47.9,ranked,579,51.4,ranked,579,51.4,ranked,-320,-3.5,down,0,0,unchanged,-320,-3.5,down
+CDSL,CENTRAL DEPO SER (I) LTD,Financial Services,900,47.9,ranked,867,48.5,ranked,867,48.5,ranked,-33,-0.6,down,0,0,unchanged,-33,-0.6,down
+LATENTVIEW,LATENT VIEW ANALYTICS LTD,Industrials,901,47.9,ranked,760,49.7,ranked,760,49.7,ranked,-141,-1.8,down,0,0,unchanged,-141,-1.8,down
+PITTIENG,PITTI ENGINEERING LIMITED,Industrials,902,47.9,ranked,1087,45.3,ranked,1087,45.3,ranked,185,2.6,up,0,0,unchanged,185,2.6,up
+BHARATSE,BHARAT SEATS LIMITED,Consumer Cyclical,903,47.9,ranked,721,50.2,ranked,721,50.2,ranked,-182,-2.3,down,0,0,unchanged,-182,-2.3,down
+KIRLOSBROS,KIRLOSKAR BROTHERS LTD,Industrials,904,47.9,ranked,1011,46.6,ranked,1011,46.6,ranked,107,1.3,up,0,0,unchanged,107,1.3,up
+PFS,PTC INDIA FIN SERV LTD,Financial Services,905,47.9,ranked,822,49,ranked,822,49,ranked,-83,-1.1,down,0,0,unchanged,-83,-1.1,down
+PHOENIXLTD,THE PHOENIX MILLS LTD,Real Estate,906,47.8,ranked,428,52.9,ranked,428,52.9,ranked,-478,-5.1,down,0,0,unchanged,-478,-5.1,down
+WELSPUNLIV,WELSPUN LIVING LIMITED,Consumer Cyclical,907,47.8,ranked,1260,41,ranked,1260,41,ranked,353,6.8,up,0,0,unchanged,353,6.8,up
+TBOTEK,TBO TEK LIMITED,Consumer Cyclical,908,47.8,ranked,774,49.6,ranked,774,49.6,ranked,-134,-1.8,down,0,0,unchanged,-134,-1.8,down
+ARVIND,ARVIND LIMITED,Consumer Cyclical,909,47.8,ranked,610,51.2,ranked,610,51.2,ranked,-299,-3.4,down,0,0,unchanged,-299,-3.4,down
+NAZARA,NAZARA TECHNOLOGIES LTD,Communication Services,910,47.8,ranked,957,47.3,ranked,957,47.3,ranked,47,0.5,up,0,0,unchanged,47,0.5,up
+HNDFDS,HINDUSTAN FOODS LIMITED,Industrials,911,47.8,ranked,788,49.4,ranked,788,49.4,ranked,-123,-1.6,down,0,0,unchanged,-123,-1.6,down
+MRF,MRF LTD,Consumer Cyclical,912,47.8,ranked,734,49.9,ranked,734,49.9,ranked,-178,-2.1,down,0,0,unchanged,-178,-2.1,down
+CROMPTON,CROMPT GREA CON ELEC LTD,Consumer Cyclical,913,47.8,ranked,763,49.7,ranked,763,49.7,ranked,-150,-1.9,down,0,0,unchanged,-150,-1.9,down
+HIKAL,HIKAL LIMITED,Healthcare,914,47.8,ranked,813,49.1,ranked,813,49.1,ranked,-101,-1.3,down,0,0,unchanged,-101,-1.3,down
+EIDPARRY,EID PARRY INDIA LTD,Basic Materials,915,47.8,ranked,406,53.1,ranked,406,53.1,ranked,-509,-5.3,down,0,0,unchanged,-509,-5.3,down
+ADFFOODS,ADF FOODS LIMITED,Consumer Defensive,916,47.8,ranked,375,53.4,ranked,375,53.4,ranked,-541,-5.6,down,0,0,unchanged,-541,-5.6,down
+PRAKASH,PRAKASH INDUSTRIES LTD,Basic Materials,917,47.8,ranked,821,49,ranked,821,49,ranked,-96,-1.2,down,0,0,unchanged,-96,-1.2,down
+BLSE,BLS E-SERVICES LIMITED,Industrials,918,47.8,ranked,840,48.8,ranked,840,48.8,ranked,-78,-1,down,0,0,unchanged,-78,-1,down
+INA,INSOLATION ENERGY LIMITED,Technology,919,47.8,ranked,433,52.8,ranked,433,52.8,ranked,-486,-5,down,0,0,unchanged,-486,-5,down
+FORTIS,FORTIS HEALTHCARE LTD,Healthcare,920,47.7,ranked,626,51,ranked,626,51,ranked,-294,-3.3,down,0,0,unchanged,-294,-3.3,down
+VMM,VISHAL MEGA MART LIMITED,Consumer Cyclical,921,47.7,ranked,570,51.5,ranked,570,51.5,ranked,-351,-3.8,down,0,0,unchanged,-351,-3.8,down
+ALKEM,ALKEM LABORATORIES LTD.,Healthcare,922,47.7,ranked,712,50.2,ranked,712,50.2,ranked,-210,-2.5,down,0,0,unchanged,-210,-2.5,down
+ELECON,ELECON ENG. CO. LTD,Industrials,923,47.7,ranked,1158,43.7,ranked,1158,43.7,ranked,235,4,up,0,0,unchanged,235,4,up
+KNRCON,KNR CONSTRU LTD.,Industrials,924,47.7,ranked,1067,45.7,ranked,1067,45.7,ranked,143,2,up,0,0,unchanged,143,2,up
+PARKHOTELS,PARKHOTELS,Consumer Cyclical,925,47.7,ranked,1004,46.7,ranked,1004,46.7,ranked,79,1,up,0,0,unchanged,79,1,up
+TRANSRAILL,TRANSRAIL LIGHTING LTD,Industrials,926,47.7,ranked,988,46.9,ranked,988,46.9,ranked,62,0.8,up,0,0,unchanged,62,0.8,up
+SMSPHARMA,SMS PHARMACEUTICALS LTD.,Healthcare,927,47.7,ranked,812,49.1,ranked,812,49.1,ranked,-115,-1.4,down,0,0,unchanged,-115,-1.4,down
+HAPPSTMNDS,HAPPIEST MINDS TECHNO LTD,Technology,928,47.6,ranked,524,52,ranked,524,52,ranked,-404,-4.4,down,0,0,unchanged,-404,-4.4,down
+TEXRAIL,TEXMACO RAIL & ENG. LTD.,Industrials,929,47.6,ranked,789,49.4,ranked,789,49.4,ranked,-140,-1.8,down,0,0,unchanged,-140,-1.8,down
+LXCHEM,LAXMI ORGANIC INDUS LTD,Basic Materials,930,47.6,ranked,1296,38.9,ranked,1296,38.9,ranked,366,8.7,up,0,0,unchanged,366,8.7,up
+TEAMLEASE,TEAMLEASE SERVICES LTD.,Industrials,931,47.6,ranked,749,49.8,ranked,749,49.8,ranked,-182,-2.2,down,0,0,unchanged,-182,-2.2,down
+NILKAMAL,NILKAMAL LIMITED,Consumer Cyclical,932,47.6,ranked,241,55.1,ranked,241,55.1,ranked,-691,-7.5,down,0,0,unchanged,-691,-7.5,down
+ASHAPURMIN,ASHAPURA MINECHEM LTD,Basic Materials,933,47.6,ranked,453,52.6,ranked,453,52.6,ranked,-480,-5,down,0,0,unchanged,-480,-5,down
+POKARNA,POKARNA LIMITED,Industrials,934,47.6,ranked,1216,42.5,ranked,1216,42.5,ranked,282,5.1,up,0,0,unchanged,282,5.1,up
+BFINVEST,BF INVESTMENT LIMITED,Financial Services,935,47.6,ranked,842,48.8,ranked,842,48.8,ranked,-93,-1.2,down,0,0,unchanged,-93,-1.2,down
+PLATIND,PLATINUM INDUSTRIES LTD,Basic Materials,936,47.6,ranked,266,54.7,ranked,266,54.7,ranked,-670,-7.1,down,0,0,unchanged,-670,-7.1,down
+SCILAL,SHIPPING CORP OF ILA LTD,Real Estate,937,47.6,ranked,952,47.5,ranked,952,47.5,ranked,15,0.1,up,0,0,unchanged,15,0.1,up
+SKFINDIA,SKF INDIA LTD,Industrials,938,47.5,ranked,837,48.8,ranked,837,48.8,ranked,-101,-1.3,down,0,0,unchanged,-101,-1.3,down
+KPITTECH,KPIT TECHNOLOGIES LIMITED,Technology,939,47.5,ranked,808,49.1,ranked,808,49.1,ranked,-131,-1.6,down,0,0,unchanged,-131,-1.6,down
+SYNGENE,SYNGENE INTERNATIONAL LTD,Healthcare,940,47.5,ranked,919,47.9,ranked,919,47.9,ranked,-21,-0.4,down,0,0,unchanged,-21,-0.4,down
+WHIRLPOOL,WHIRLPOOL OF INDIA LTD,Consumer Cyclical,941,47.5,ranked,1014,46.5,ranked,1014,46.5,ranked,73,1,up,0,0,unchanged,73,1,up
+ATULAUTO,ATUL AUTO LIMITED,Consumer Cyclical,942,47.5,ranked,974,47.2,ranked,974,47.2,ranked,32,0.3,up,0,0,unchanged,32,0.3,up
+ITDC,INDIA TOUR. DEV. CO. LTD.,Consumer Cyclical,943,47.5,ranked,977,47.1,ranked,977,47.1,ranked,34,0.4,up,0,0,unchanged,34,0.4,up
+GMRAIRPORT,GMR AIRPORTS LIMITED,Industrials,944,47.5,ranked,410,53,ranked,410,53,ranked,-534,-5.5,down,0,0,unchanged,-534,-5.5,down
+VHL,VARDHMAN HOLDINGS LIMITED,Financial Services,945,47.5,ranked,1016,46.5,ranked,1016,46.5,ranked,71,1,up,0,0,unchanged,71,1,up
+EXIDEIND,EXIDE INDUSTRIES LTD,Consumer Cyclical,946,47.4,ranked,1066,45.7,ranked,1066,45.7,ranked,120,1.7,up,0,0,unchanged,120,1.7,up
+ACC,ACC LIMITED,Basic Materials,947,47.4,ranked,825,48.9,ranked,825,48.9,ranked,-122,-1.5,down,0,0,unchanged,-122,-1.5,down
+JINDALSTEL,JINDAL STEEL LIMITED,Basic Materials,948,47.4,ranked,797,49.3,ranked,797,49.3,ranked,-151,-1.9,down,0,0,unchanged,-151,-1.9,down
+VIKRAMSOLR,VIKRAM SOLAR LIMITED,Technology,949,47.4,ranked,286,54.4,ranked,286,54.4,ranked,-663,-7,down,0,0,unchanged,-663,-7,down
+VISHNU,VISHNU CHEMICALS LIMITED,Basic Materials,950,47.4,ranked,1042,46.1,ranked,1042,46.1,ranked,92,1.3,up,0,0,unchanged,92,1.3,up
+AARTIDRUGS,AARTI DRUGS LTD.,Healthcare,951,47.4,ranked,1108,44.8,ranked,1108,44.8,ranked,157,2.6,up,0,0,unchanged,157,2.6,up
+AYMSYNTEX,AYM SYNTEX LIMITED,Consumer Cyclical,952,47.4,ranked,942,47.6,ranked,942,47.6,ranked,-10,-0.2,down,0,0,unchanged,-10,-0.2,down
+MEESHO,MEESHO LIMITED,Consumer Cyclical,953,47.4,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+SHREECEM,SHREE CEMENT LIMITED,Basic Materials,954,47.3,ranked,733,49.9,ranked,733,49.9,ranked,-221,-2.6,down,0,0,unchanged,-221,-2.6,down
+BIOCON,BIOCON LIMITED.,Healthcare,955,47.3,ranked,1271,40.3,ranked,1271,40.3,ranked,316,7,up,0,0,unchanged,316,7,up
+CEIGALL,CEIGALL INDIA LIMITED,Industrials,956,47.3,ranked,593,51.3,ranked,593,51.3,ranked,-363,-4,down,0,0,unchanged,-363,-4,down
+SIGNATURE,SIGNATUREGLOBAL INDIA LTD,Real Estate,957,47.3,ranked,695,50.4,ranked,695,50.4,ranked,-262,-3.1,down,0,0,unchanged,-262,-3.1,down
+GUFICBIO,GUFIC BIOSCIENCES LTD.,Healthcare,958,47.3,ranked,659,50.7,ranked,659,50.7,ranked,-299,-3.4,down,0,0,unchanged,-299,-3.4,down
+SMLMAH,SML MAHINDRA LIMITED,Consumer Cyclical,959,47.3,ranked,936,47.7,ranked,936,47.7,ranked,-23,-0.4,down,0,0,unchanged,-23,-0.4,down
+MAZDOCK,MAZAGON DOCK SHIPBUIL LTD,Industrials,960,47.2,ranked,900,48.1,ranked,900,48.1,ranked,-60,-0.9,down,0,0,unchanged,-60,-0.9,down
+ICICIPRULI,ICICI PRU LIFE INS CO LTD,Financial Services,961,47.2,ranked,1115,44.6,ranked,1115,44.6,ranked,154,2.6,up,0,0,unchanged,154,2.6,up
+ELGIEQUIP,ELGI EQUIPMENTS LTD,Industrials,962,47.2,ranked,868,48.5,ranked,868,48.5,ranked,-94,-1.3,down,0,0,unchanged,-94,-1.3,down
+BANSALWIRE,BANSAL WIRE INDUSTRIES L,Basic Materials,963,47.2,ranked,706,50.3,ranked,706,50.3,ranked,-257,-3.1,down,0,0,unchanged,-257,-3.1,down
+BETA,BETA DRUGS LIMITED,Healthcare,964,47.2,ranked,1088,45.3,ranked,1088,45.3,ranked,124,1.9,up,0,0,unchanged,124,1.9,up
+ABREL,ADITYA BIRLA REAL EST LTD,Real Estate,965,47.2,ranked,1132,44.3,ranked,1132,44.3,ranked,167,2.9,up,0,0,unchanged,167,2.9,up
+MIDHANI,MISHRA DHATU NIGAM LTD,Basic Materials,966,47.1,ranked,1040,46.1,ranked,1040,46.1,ranked,74,1,up,0,0,unchanged,74,1,up
+UGROCAP,UGRO CAPITAL LIMITED,Financial Services,967,47.1,ranked,958,47.3,ranked,958,47.3,ranked,-9,-0.2,down,0,0,unchanged,-9,-0.2,down
+GMRP&UI,GMR POW AND URBAN INFRA L,Energy,968,47.1,ranked,602,51.2,ranked,602,51.2,ranked,-366,-4.1,down,0,0,unchanged,-366,-4.1,down
+DBL,DILIP BUILDCON LIMITED,Industrials,969,47.1,ranked,1112,44.7,ranked,1112,44.7,ranked,143,2.4,up,0,0,unchanged,143,2.4,up
+INOXGREEN,INOX GREEN ENERGY SER LTD,Utilities,970,47.1,ranked,567,51.5,ranked,567,51.5,ranked,-403,-4.4,down,0,0,unchanged,-403,-4.4,down
+SIMPLEXINF,SIMPLEX INFRASTRUCTURES L,Industrials,971,47.1,ranked,1248,41.4,ranked,1248,41.4,ranked,277,5.7,up,0,0,unchanged,277,5.7,up
+DHANBANK,DHANLAXMI BANK LIMITED,Financial Services,972,47.1,ranked,1074,45.6,ranked,1074,45.6,ranked,102,1.5,up,0,0,unchanged,102,1.5,up
+UNICHEMLAB,UNICHEM LABORATORIES LTD,Healthcare,973,47.1,ranked,984,47,ranked,984,47,ranked,11,0.1,up,0,0,unchanged,11,0.1,up
+WOCKPHARMA,WOCKHARDT LIMITED,Healthcare,974,47.1,ranked,915,48,ranked,915,48,ranked,-59,-0.9,down,0,0,unchanged,-59,-0.9,down
+MANKIND,MANKIND PHARMA LIMITED,Healthcare,975,47,ranked,987,46.9,ranked,987,46.9,ranked,12,0.1,up,0,0,unchanged,12,0.1,up
+CESC,CESC LTD,Utilities,976,47,ranked,650,50.8,ranked,650,50.8,ranked,-326,-3.8,down,0,0,unchanged,-326,-3.8,down
+ICIL,INDO COUNT INDUSTRIES LTD,Consumer Cyclical,977,47,ranked,705,50.3,ranked,705,50.3,ranked,-272,-3.3,down,0,0,unchanged,-272,-3.3,down
+GMDCLTD,GUJARAT MINERAL DEV CORP,Energy,978,47,ranked,1225,42.1,ranked,1225,42.1,ranked,247,4.9,up,0,0,unchanged,247,4.9,up
+AURUM,AURUM PROPTECH LIMITED,Real Estate,979,47,ranked,891,48.3,ranked,891,48.3,ranked,-88,-1.3,down,0,0,unchanged,-88,-1.3,down
+ARKADE,ARKADE DEVELOPERS LIMITED,Real Estate,980,47,ranked,489,52.2,ranked,489,52.2,ranked,-491,-5.2,down,0,0,unchanged,-491,-5.2,down
+RAYMONDREL,RAYMOND REALTY LIMITED,Real Estate,981,47,ranked,250,54.9,ranked,250,54.9,ranked,-731,-7.9,down,0,0,unchanged,-731,-7.9,down
+CGPOWER,CG POWER AND IND SOL LTD,Industrials,982,46.9,ranked,806,49.1,ranked,806,49.1,ranked,-176,-2.2,down,0,0,unchanged,-176,-2.2,down
+BBOX,BLACK BOX LIMITED,Technology,983,46.9,ranked,1107,44.8,ranked,1107,44.8,ranked,124,2.1,up,0,0,unchanged,124,2.1,up
+STOVEKRAFT,STOVE KRAFT LIMITED,Consumer Cyclical,984,46.9,ranked,629,51,ranked,629,51,ranked,-355,-4.1,down,0,0,unchanged,-355,-4.1,down
+ASTRAMICRO,ASTRA MICROWAVE LTD,Technology,985,46.9,ranked,397,53.3,ranked,397,53.3,ranked,-588,-6.4,down,0,0,unchanged,-588,-6.4,down
+AQYLON,AQYLON NEXUS LIMITED,Communication Services,986,46.9,ranked,1058,45.9,ranked,1058,45.9,ranked,72,1,up,0,0,unchanged,72,1,up
+ABB,ABB INDIA LIMITED,Industrials,987,46.8,ranked,859,48.6,ranked,859,48.6,ranked,-128,-1.8,down,0,0,unchanged,-128,-1.8,down
+KAYNES,KAYNES TECHNOLOGY IND LTD,Technology,988,46.8,ranked,1034,46.2,ranked,1034,46.2,ranked,46,0.6,up,0,0,unchanged,46,0.6,up
+RAILTEL,RAILTEL CORP OF IND LTD,Communication Services,989,46.8,ranked,933,47.7,ranked,933,47.7,ranked,-56,-0.9,down,0,0,unchanged,-56,-0.9,down
+UCOBANK,UCO BANK,Financial Services,990,46.8,ranked,1144,43.9,ranked,1144,43.9,ranked,154,2.9,up,0,0,unchanged,154,2.9,up
+MOL,MEGHMANI ORGANICS LIMITED,Basic Materials,991,46.8,ranked,1284,39.6,ranked,1284,39.6,ranked,293,7.2,up,0,0,unchanged,293,7.2,up
+BALAJITELE,BALAJI TELEFILMS LIMITED.,Communication Services,992,46.8,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+JKCEMENT,JK CEMENT LIMITED,Basic Materials,993,46.7,ranked,1027,46.3,ranked,1027,46.3,ranked,34,0.4,up,0,0,unchanged,34,0.4,up
+SONATSOFTW,SONATA SOFTWARE LTD,Technology,994,46.7,ranked,697,50.4,ranked,697,50.4,ranked,-297,-3.7,down,0,0,unchanged,-297,-3.7,down
+AARTIPHARM,AARTI PHARMALABS LIMITED,Healthcare,995,46.7,ranked,1256,41.1,ranked,1256,41.1,ranked,261,5.6,up,0,0,unchanged,261,5.6,up
+SHRIPISTON,SPR AUTO TECHNOLOGIES LTD,Consumer Cyclical,996,46.7,ranked,899,48.2,ranked,899,48.2,ranked,-97,-1.5,down,0,0,unchanged,-97,-1.5,down
+SUMMITSEC,SUMMIT SECURITIES LTD,Financial Services,997,46.7,ranked,1056,46,ranked,1056,46,ranked,59,0.7,up,0,0,unchanged,59,0.7,up
+ASTRAZEN,ASTRAZENECA PHARMA IND LT,Healthcare,998,46.7,ranked,1120,44.6,ranked,1120,44.6,ranked,122,2.1,up,0,0,unchanged,122,2.1,up
+AETHER,AETHER INDUSTRIES LIMITED,Basic Materials,999,46.6,ranked,704,50.3,ranked,704,50.3,ranked,-295,-3.7,down,0,0,unchanged,-295,-3.7,down
+PDSL,PDS LIMITED,Industrials,1000,46.6,ranked,1168,43.5,ranked,1168,43.5,ranked,168,3.1,up,0,0,unchanged,168,3.1,up
+CEATLTD,CEAT LIMITED,Consumer Cyclical,1001,46.6,ranked,976,47.1,ranked,976,47.1,ranked,-25,-0.5,down,0,0,unchanged,-25,-0.5,down
+PARAS,PARAS DEF AND SPCE TECH L,Industrials,1002,46.6,ranked,574,51.5,ranked,574,51.5,ranked,-428,-4.9,down,0,0,unchanged,-428,-4.9,down
+AHLUCONT,AHLUWALIA CONT IND LTD,Industrials,1003,46.6,ranked,655,50.8,ranked,655,50.8,ranked,-348,-4.2,down,0,0,unchanged,-348,-4.2,down
+AGIIL,AGI INFRA LIMITED,Real Estate,1004,46.6,ranked,1072,45.6,ranked,1072,45.6,ranked,68,1,up,0,0,unchanged,68,1,up
+JINDALPOLY,JINDAL POLY FILMS LIMITED,Consumer Cyclical,1005,46.6,ranked,940,47.6,ranked,940,47.6,ranked,-65,-1,down,0,0,unchanged,-65,-1,down
+TITAGARH,TITAGARH RAIL SYSTEMS LTD,Industrials,1006,46.5,ranked,1277,40.1,ranked,1277,40.1,ranked,271,6.4,up,0,0,unchanged,271,6.4,up
+JYOTICNC,JYOTI CNC AUTOMATION LTD,Industrials,1007,46.5,ranked,676,50.6,ranked,676,50.6,ranked,-331,-4.1,down,0,0,unchanged,-331,-4.1,down
+SUNFLAG,SUNFLAG IRON AND STEEL CO,Basic Materials,1008,46.5,ranked,1053,46,ranked,1053,46,ranked,45,0.5,up,0,0,unchanged,45,0.5,up
+GSPCROP,GSP CROP SCIENCE LIMITED,Basic Materials,1009,46.5,ranked,720,50.2,ranked,720,50.2,ranked,-289,-3.7,down,0,0,unchanged,-289,-3.7,down
+AMBUJACEM,AMBUJA CEMENTS LTD,Basic Materials,1010,46.4,ranked,824,48.9,ranked,824,48.9,ranked,-186,-2.5,down,0,0,unchanged,-186,-2.5,down
+INDIANHUME,INDIAN HUME PIPE CO. LTD.,Industrials,1011,46.4,ranked,1176,43.4,ranked,1176,43.4,ranked,165,3,up,0,0,unchanged,165,3,up
+TORNTPOWER,TORRENT POWER LTD,Utilities,1012,46.4,ranked,1028,46.3,ranked,1028,46.3,ranked,16,0.1,up,0,0,unchanged,16,0.1,up
+KSB,KSB LIMITED,Industrials,1013,46.4,ranked,1045,46.1,ranked,1045,46.1,ranked,32,0.3,up,0,0,unchanged,32,0.3,up
+SURAKSHA,SURAKSHA DIAGNOSTIC LTD,Healthcare,1014,46.4,ranked,1210,42.7,ranked,1210,42.7,ranked,196,3.7,up,0,0,unchanged,196,3.7,up
+JINDWORLD,JINDAL WORLDWIDE LTD,Consumer Cyclical,1015,46.4,ranked,1171,43.5,ranked,1171,43.5,ranked,156,2.9,up,0,0,unchanged,156,2.9,up
+SFL,SHEELA FOAM LIMITED,Consumer Cyclical,1016,46.3,ranked,871,48.5,ranked,871,48.5,ranked,-145,-2.2,down,0,0,unchanged,-145,-2.2,down
+HGINFRA,H.G.INFRA ENGINEERING LTD,Industrials,1017,46.3,ranked,995,46.8,ranked,995,46.8,ranked,-22,-0.5,down,0,0,unchanged,-22,-0.5,down
+SUVEN,SUVEN LIFE SCIENCES LTD,Healthcare,1018,46.3,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+NBCC,NBCC (INDIA) LIMITED,Industrials,1019,46.2,ranked,1085,45.3,ranked,1085,45.3,ranked,66,0.9,up,0,0,unchanged,66,0.9,up
+UFLEX,UFLEX LIMITED,Consumer Cyclical,1020,46.2,ranked,949,47.5,ranked,949,47.5,ranked,-71,-1.3,down,0,0,unchanged,-71,-1.3,down
+CARBORUNIV,CARBORUNDUM UNIVERSAL LTD,Industrials,1021,46.1,ranked,1043,46.1,ranked,1043,46.1,ranked,22,0,up,0,0,unchanged,22,0,up
+ROSSARI,ROSSARI BIOTECH LIMITED,Basic Materials,1022,46.1,ranked,930,47.7,ranked,930,47.7,ranked,-92,-1.6,down,0,0,unchanged,-92,-1.6,down
+ADVAIT,ADVAIT ENRGY TRANSITION L,Industrials,1023,46.1,ranked,884,48.4,ranked,884,48.4,ranked,-139,-2.3,down,0,0,unchanged,-139,-2.3,down
+NFL,NATIONAL FERT. LTD,Basic Materials,1024,46.1,ranked,1195,43,ranked,1195,43,ranked,171,3.1,up,0,0,unchanged,171,3.1,up
+UFBL,UNITED FOODBRANDS LIMITED,Consumer Cyclical,1025,46.1,ranked,1047,46.1,ranked,1047,46.1,ranked,22,0,up,0,0,unchanged,22,0,up
+KPIGREEN,KPI GREEN ENERGY LIMITED,Utilities,1026,46.1,ranked,678,50.5,ranked,678,50.5,ranked,-348,-4.4,down,0,0,unchanged,-348,-4.4,down
+HSCL,HIMADRI SPECIALITY CHEM L,Basic Materials,1027,46,ranked,1114,44.7,ranked,1114,44.7,ranked,87,1.3,up,0,0,unchanged,87,1.3,up
+PICCADIL,PICCADILY AGRO INDUSTRI L,Consumer Defensive,1028,46,ranked,658,50.7,ranked,658,50.7,ranked,-370,-4.7,down,0,0,unchanged,-370,-4.7,down
+ROSSTECH,ROSSELL TECHSYS LIMITED,Industrials,1029,46,ranked,1238,41.7,ranked,1238,41.7,ranked,209,4.3,up,0,0,unchanged,209,4.3,up
+BAJAJHCARE,BAJAJ HEALTHCARE LIMITED,Healthcare,1030,46,ranked,941,47.6,ranked,941,47.6,ranked,-89,-1.6,down,0,0,unchanged,-89,-1.6,down
+TATACOMM,TATA COMMUNICATIONS LTD,Communication Services,1031,45.9,ranked,1193,43,ranked,1193,43,ranked,162,2.9,up,0,0,unchanged,162,2.9,up
+ICICIGI,ICICI LOMBARD GIC LIMITED,Financial Services,1032,45.9,ranked,1203,42.8,ranked,1203,42.8,ranked,171,3.1,up,0,0,unchanged,171,3.1,up
+INDIAGLYCO,INDIA GLYCOLS LTD,Basic Materials,1033,45.9,ranked,799,49.3,ranked,799,49.3,ranked,-234,-3.4,down,0,0,unchanged,-234,-3.4,down
+PURVA,PURAVANKARA LIMITED,Real Estate,1034,45.9,ranked,1007,46.7,ranked,1007,46.7,ranked,-27,-0.8,down,0,0,unchanged,-27,-0.8,down
+IGARASHI,IGARASHI MOTORS INDIA LTD,Consumer Cyclical,1035,45.9,ranked,1244,41.6,ranked,1244,41.6,ranked,209,4.3,up,0,0,unchanged,209,4.3,up
+DEN,DEN NETWORKS LTD,Communication Services,1036,45.9,ranked,1055,46,ranked,1055,46,ranked,19,-0.1,up,0,0,unchanged,19,-0.1,up
+ORISSAMINE,ORISSA MIN DEV CO LTD,Basic Materials,1037,45.9,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+PCBL,PCBL CHEMICAL LIMITED,Basic Materials,1038,45.8,ranked,1250,41.2,ranked,1250,41.2,ranked,212,4.6,up,0,0,unchanged,212,4.6,up
+ALKYLAMINE,ALKYL AMINES CHEM. LTD,Basic Materials,1039,45.8,ranked,1035,46.2,ranked,1035,46.2,ranked,-4,-0.4,down,0,0,unchanged,-4,-0.4,down
+HFCL,HFCL LIMITED,Technology,1040,45.8,ranked,1062,45.8,ranked,1062,45.8,ranked,22,0,up,0,0,unchanged,22,0,up
+NHPC,NHPC LTD,Utilities,1041,45.7,ranked,495,52.2,ranked,495,52.2,ranked,-546,-6.5,down,0,0,unchanged,-546,-6.5,down
+ZYDUSWELL,ZYDUS WELLNESS LIMITED,Consumer Defensive,1042,45.7,ranked,1102,44.9,ranked,1102,44.9,ranked,60,0.8,up,0,0,unchanged,60,0.8,up
+TEGA,TEGA INDUSTRIES LIMITED,Industrials,1043,45.7,ranked,1274,40.2,ranked,1274,40.2,ranked,231,5.5,up,0,0,unchanged,231,5.5,up
+MEDPLUS,MEDPLUS HEALTH SERV LTD,Healthcare,1044,45.7,ranked,948,47.5,ranked,948,47.5,ranked,-96,-1.8,down,0,0,unchanged,-96,-1.8,down
+FUSION,FUSION FINANCE LIMITED,Financial Services,1045,45.7,ranked,1164,43.6,ranked,1164,43.6,ranked,119,2.1,up,0,0,unchanged,119,2.1,up
+XPROINDIA,XPRO INDIA LIMITED,Basic Materials,1046,45.7,ranked,989,46.9,ranked,989,46.9,ranked,-57,-1.2,down,0,0,unchanged,-57,-1.2,down
+HATHWAY,HATHWAY CABLE & DATACOM,Communication Services,1047,45.7,ranked,882,48.4,ranked,882,48.4,ranked,-165,-2.7,down,0,0,unchanged,-165,-2.7,down
+AZAD,AZAD ENGINEERING LIMITED,Industrials,1048,45.6,ranked,632,50.9,ranked,632,50.9,ranked,-416,-5.3,down,0,0,unchanged,-416,-5.3,down
+INOXWIND,INOX WIND LIMITED,Industrials,1049,45.6,ranked,982,47,ranked,982,47,ranked,-67,-1.4,down,0,0,unchanged,-67,-1.4,down
+GUJTHEM,GUJARAT THEMIS BIOSYN LTD,Healthcare,1050,45.6,ranked,1150,43.8,ranked,1150,43.8,ranked,100,1.8,up,0,0,unchanged,100,1.8,up
+ORIENTHOT,ORIENT HOTELS LTD,Consumer Cyclical,1051,45.6,ranked,983,47,ranked,983,47,ranked,-68,-1.4,down,0,0,unchanged,-68,-1.4,down
+RANEHOLDIN,RANE HOLDINGS LIMITED,Consumer Cyclical,1052,45.6,ranked,518,52,ranked,518,52,ranked,-534,-6.4,down,0,0,unchanged,-534,-6.4,down
+ELPROINTL,ELPRO INTERNATIONAL LTD,Consumer Discretionary,1053,45.6,ranked,924,47.9,ranked,924,47.9,ranked,-129,-2.3,down,0,0,unchanged,-129,-2.3,down
+SOUTHBANK,THE SOUTH INDIAN BANK LTD,Financial Services,1054,45.5,ranked,964,47.2,ranked,964,47.2,ranked,-90,-1.7,down,0,0,unchanged,-90,-1.7,down
+VARROC,VARROC ENGINEERING LTD.,Consumer Cyclical,1055,45.5,ranked,809,49.1,ranked,809,49.1,ranked,-246,-3.6,down,0,0,unchanged,-246,-3.6,down
+PROTEAN,PROTEAN EGOV TECHNO LTD,Technology,1056,45.5,ranked,718,50.2,ranked,718,50.2,ranked,-338,-4.7,down,0,0,unchanged,-338,-4.7,down
+SHREEPUSHK,SHRE PUSH CHEM & FERT LTD,Basic Materials,1057,45.5,ranked,1077,45.5,ranked,1077,45.5,ranked,20,0,up,0,0,unchanged,20,0,up
+KPEL,K.P. ENERGY LIMITED,Industrials,1058,45.5,ranked,660,50.7,ranked,660,50.7,ranked,-398,-5.2,down,0,0,unchanged,-398,-5.2,down
+ARFIN,ARFIN INDIA LIMITED,Basic Materials,1059,45.5,ranked,1165,43.6,ranked,1165,43.6,ranked,106,1.9,up,0,0,unchanged,106,1.9,up
+BHEL,BHEL,Industrials,1060,45.4,ranked,975,47.2,ranked,975,47.2,ranked,-85,-1.8,down,0,0,unchanged,-85,-1.8,down
+CHOICEIN,CHOICE INTERNATIONAL LTD,Financial Services,1061,45.4,ranked,744,49.8,ranked,744,49.8,ranked,-317,-4.4,down,0,0,unchanged,-317,-4.4,down
+RESPONIND,RESPONSIVE INDUSTRIES LTD,Basic Materials,1062,45.4,ranked,1082,45.4,ranked,1082,45.4,ranked,20,0,up,0,0,unchanged,20,0,up
+ALLTIME,ALL TIME PLASTICS LIMITED,Consumer Defensive,1063,45.4,ranked,832,48.9,ranked,832,48.9,ranked,-231,-3.5,down,0,0,unchanged,-231,-3.5,down
+SOLEX,SOLEX ENERGY LIMITED,Technology,1064,45.4,ranked,541,51.7,ranked,541,51.7,ranked,-523,-6.3,down,0,0,unchanged,-523,-6.3,down
+GTLINFRA,GTL INFRA.LTD,Technology,1065,45.4,ranked,1110,44.8,ranked,1110,44.8,ranked,45,0.6,up,0,0,unchanged,45,0.6,up
+SBILIFE,SBI LIFE INSURANCE CO LTD,Financial Services,1066,45.3,ranked,1179,43.3,ranked,1179,43.3,ranked,113,2,up,0,0,unchanged,113,2,up
+BANDHANBNK,BANDHAN BANK LIMITED,Financial Services,1067,45.3,ranked,902,48.1,ranked,902,48.1,ranked,-165,-2.8,down,0,0,unchanged,-165,-2.8,down
+PRESTIGE,PRESTIGE ESTATE LTD,Real Estate,1068,45.3,ranked,299,54.3,ranked,299,54.3,ranked,-769,-9,down,0,0,unchanged,-769,-9,down
+DEVYANI,DEVYANI INTERNATIONAL LTD,Consumer Cyclical,1069,45.3,ranked,1098,45,ranked,1098,45,ranked,29,0.3,up,0,0,unchanged,29,0.3,up
+BLUSPRING,BLUSPRING ENTERPRISES LTD,Industrials,1070,45.3,ranked,1057,46,ranked,1057,46,ranked,-13,-0.7,down,0,0,unchanged,-13,-0.7,down
+MADRASFERT,MADRAS FERTILISERS LTD,Basic Materials,1071,45.3,ranked,961,47.3,ranked,961,47.3,ranked,-110,-2,down,0,0,unchanged,-110,-2,down
+AEGISVOPAK,AEGIS VOPAK TERMINALS LTD,Energy,1072,45.2,ranked,994,46.8,ranked,994,46.8,ranked,-78,-1.6,down,0,0,unchanged,-78,-1.6,down
+CENTUM,CENTUM ELECTRONICS LTD,Technology,1073,45.2,ranked,1285,39.5,ranked,1285,39.5,ranked,212,5.7,up,0,0,unchanged,212,5.7,up
+LMW,LMW LIMITED,Industrials,1074,45.2,ranked,1295,39,ranked,1295,39,ranked,221,6.2,up,0,0,unchanged,221,6.2,up
+AVANTEL,AVANTEL LIMITED,Technology,1075,45.2,ranked,971,47.2,ranked,971,47.2,ranked,-104,-2,down,0,0,unchanged,-104,-2,down
+MARSONS,MARSONS LIMITED,Industrials,1076,45.2,ranked,679,50.5,ranked,679,50.5,ranked,-397,-5.3,down,0,0,unchanged,-397,-5.3,down
+BAJAJHFL,BAJAJ HOUSING FINANCE LTD,Financial Services,1077,45.1,ranked,932,47.7,ranked,932,47.7,ranked,-145,-2.6,down,0,0,unchanged,-145,-2.6,down
+HONAUT,HONEYWELL AUTOMATION IND,Industrials,1078,45.1,ranked,963,47.2,ranked,963,47.2,ranked,-115,-2.1,down,0,0,unchanged,-115,-2.1,down
+JUBLPHARMA,JUBILANT PHARMOVA LTD,Healthcare,1079,45.1,ranked,1101,44.9,ranked,1101,44.9,ranked,22,0.2,up,0,0,unchanged,22,0.2,up
+ABDL,ALLIED BLEND N DISTILS L,Consumer Defensive,1080,45.1,ranked,1013,46.5,ranked,1013,46.5,ranked,-67,-1.4,down,0,0,unchanged,-67,-1.4,down
+RCF,RASHTRIYA CHEMICALS & FER,Basic Materials,1081,45.1,ranked,881,48.4,ranked,881,48.4,ranked,-200,-3.3,down,0,0,unchanged,-200,-3.3,down
+DSSL,DYNACONS SYS & SOLN LTD,Technology,1082,45.1,ranked,885,48.4,ranked,885,48.4,ranked,-197,-3.3,down,0,0,unchanged,-197,-3.3,down
+HARDWYN,HARDWYN INDIA LIMITED,Industrials,1083,45.1,ranked,898,48.2,ranked,898,48.2,ranked,-185,-3.1,down,0,0,unchanged,-185,-3.1,down
+EMSLIMITED,EMS LIMITED,Industrials,1084,45.1,ranked,831,48.9,ranked,831,48.9,ranked,-253,-3.8,down,0,0,unchanged,-253,-3.8,down
+IMAGICAA,IMAGICAAWORLD ENT LTD,Communication Services,1085,45,ranked,1104,44.9,ranked,1104,44.9,ranked,19,0.1,up,0,0,unchanged,19,0.1,up
+ZENTEC,ZEN TECHNOLOGIES LIMITED,Industrials,1086,45,ranked,1212,42.5,ranked,1212,42.5,ranked,126,2.5,up,0,0,unchanged,126,2.5,up
+BHAGCHEM,BHAGIRADHA CHEM & INDS L,Basic Materials,1087,45,ranked,1190,43.2,ranked,1190,43.2,ranked,103,1.8,up,0,0,unchanged,103,1.8,up
+GKWLIMITED,GKW LIMITED,Industrials,1088,45,ranked,916,48,ranked,916,48,ranked,-172,-3,down,0,0,unchanged,-172,-3,down
+DRREDDY,DR. REDDY S LABORATORIES,Healthcare,1089,44.9,ranked,1105,44.8,ranked,1105,44.8,ranked,16,0.1,up,0,0,unchanged,16,0.1,up
+UNOMINDA,UNO MINDA LIMITED,Consumer Cyclical,1090,44.9,ranked,834,48.8,ranked,834,48.8,ranked,-256,-3.9,down,0,0,unchanged,-256,-3.9,down
+KEC,KEC INTL. LIMITED,Industrials,1091,44.9,ranked,1138,44.1,ranked,1138,44.1,ranked,47,0.8,up,0,0,unchanged,47,0.8,up
+SYMPHONY,SYMPHONY LIMITED,Consumer Cyclical,1092,44.9,ranked,950,47.5,ranked,950,47.5,ranked,-142,-2.6,down,0,0,unchanged,-142,-2.6,down
+SHALBY,SHALBY LIMITED,Healthcare,1093,44.9,ranked,1099,45,ranked,1099,45,ranked,6,-0.1,up,0,0,unchanged,6,-0.1,up
+MBAPL,MADHYA BHARAT AGRO P. LTD,Basic Materials,1094,44.9,ranked,1130,44.4,ranked,1130,44.4,ranked,36,0.5,up,0,0,unchanged,36,0.5,up
+SIGMAADV,SIGMA ADVANCED SYSTEM LTD,Industrials,1095,44.9,ranked,589,51.3,ranked,589,51.3,ranked,-506,-6.4,down,0,0,unchanged,-506,-6.4,down
+GOCOLORS,GO FASHION INDIA LTD,Consumer Cyclical,1096,44.8,ranked,1141,44,ranked,1141,44,ranked,45,0.8,up,0,0,unchanged,45,0.8,up
+RHETAN,RHETAN TMT LIMITED,Basic Materials,1097,44.8,ranked,1019,46.5,ranked,1019,46.5,ranked,-78,-1.7,down,0,0,unchanged,-78,-1.7,down
+TASTYBITE,TASTY BITE EATABLES LTD,Consumer Defensive,1098,44.8,ranked,861,48.6,ranked,861,48.6,ranked,-237,-3.8,down,0,0,unchanged,-237,-3.8,down
+HGS,HINDUJA GLOBAL SOLS. LTD.,Industrials,1099,44.8,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+BHARATFORG,BHARAT FORGE LTD,Consumer Cyclical,1100,44.6,ranked,1154,43.7,ranked,1154,43.7,ranked,54,0.9,up,0,0,unchanged,54,0.9,up
+THOMASCOOK,THOMAS COOK (INDIA) LTD,Consumer Cyclical,1101,44.5,ranked,1233,41.8,ranked,1233,41.8,ranked,132,2.7,up,0,0,unchanged,132,2.7,up
+ANUP,THE ANUP ENGINEERING LTD,Industrials,1102,44.5,ranked,888,48.3,ranked,888,48.3,ranked,-214,-3.8,down,0,0,unchanged,-214,-3.8,down
+SANATHAN,SANATHAN TEXTILES LIMITED,Consumer Cyclical,1103,44.5,ranked,908,48.1,ranked,908,48.1,ranked,-195,-3.6,down,0,0,unchanged,-195,-3.6,down
+SHANTIGEAR,SHANTHI GEARS LTD,Industrials,1104,44.5,ranked,972,47.2,ranked,972,47.2,ranked,-132,-2.7,down,0,0,unchanged,-132,-2.7,down
+PRECAM,PRECISION CAMSHAFTS LTD.,Consumer Cyclical,1105,44.5,ranked,1151,43.8,ranked,1151,43.8,ranked,46,0.7,up,0,0,unchanged,46,0.7,up
+ARSSBL,ANAND RATHI SH N STK BR L,Financial Services,1106,44.5,ranked,1139,44.1,ranked,1139,44.1,ranked,33,0.4,up,0,0,unchanged,33,0.4,up
+ABLBL,ADITYA BIRLA LIFES BRAN L,Consumer Cyclical,1107,44.4,ranked,905,48.1,ranked,905,48.1,ranked,-202,-3.7,down,0,0,unchanged,-202,-3.7,down
+IXIGO,LE TRAVENUES TECHNOLOGY L,Consumer Cyclical,1108,44.4,ranked,378,53.4,ranked,378,53.4,ranked,-730,-9,down,0,0,unchanged,-730,-9,down
+RAYMONDLSL,RAYMOND LIFESTYLE LIMITED,Consumer Cyclical,1109,44.4,ranked,1030,46.3,ranked,1030,46.3,ranked,-79,-1.9,down,0,0,unchanged,-79,-1.9,down
+TI,TILAKNAGAR INDUSTRIES LTD,Consumer Defensive,1110,44.4,ranked,728,50,ranked,728,50,ranked,-382,-5.6,down,0,0,unchanged,-382,-5.6,down
+OPTIEMUS,OPTIEMUS INFRACOM LTD,Technology,1111,44.4,ranked,1145,43.9,ranked,1145,43.9,ranked,34,0.5,up,0,0,unchanged,34,0.5,up
+WEL,WONDER ELECTRICALS LTD,Consumer Cyclical,1112,44.4,ranked,1311,36.8,ranked,1311,36.8,ranked,199,7.6,up,0,0,unchanged,199,7.6,up
+SBC,SBC EXPORTS LIMITED,Industrials,1113,44.4,ranked,1125,44.5,ranked,1125,44.5,ranked,12,-0.1,up,0,0,unchanged,12,-0.1,up
+TATATECH,TATA TECHNOLOGIES LIMITED,Technology,1114,44.3,ranked,1148,43.8,ranked,1148,43.8,ranked,34,0.5,up,0,0,unchanged,34,0.5,up
+HARIOMPIPE,HARIOM PIPE INDUSTRIES L,Basic Materials,1115,44.3,ranked,643,50.8,ranked,643,50.8,ranked,-472,-6.5,down,0,0,unchanged,-472,-6.5,down
+SWELECTES,SWELECT ENERGY SYS LTD,Technology,1116,44.3,ranked,1017,46.5,ranked,1017,46.5,ranked,-99,-2.2,down,0,0,unchanged,-99,-2.2,down
+GEOJITFSL,GEOJIT FINANCIAL SER L,Financial Services,1117,44.3,ranked,1083,45.4,ranked,1083,45.4,ranked,-34,-1.1,down,0,0,unchanged,-34,-1.1,down
+MTNL,MAHANAGAR TELEPHONE NIGAM,Communication Services,1118,44.3,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+NTPCGREEN,NTPC GREEN ENERGY LIMITED,Utilities,1119,44.2,ranked,1226,42.1,ranked,1226,42.1,ranked,107,2.1,up,0,0,unchanged,107,2.1,up
+MAXESTATES,MAX ESTATES LIMITED,Real Estate,1120,44.2,ranked,1046,46.1,ranked,1046,46.1,ranked,-74,-1.9,down,0,0,unchanged,-74,-1.9,down
+BFUTILITIE,BF UTILITIES LIMITED,Industrials,1121,44.2,ranked,804,49.2,ranked,804,49.2,ranked,-317,-5,down,0,0,unchanged,-317,-5,down
+TTML,TATA TELESERV(MAHARASTRA),Communication Services,1122,44.2,ranked,1100,45,ranked,1100,45,ranked,-22,-0.8,down,0,0,unchanged,-22,-0.8,down
+EMBDL,EMBASSY DEVELOPMENTS LTD,Real Estate,1123,44.1,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+NIACL,THE NEW INDIA ASSU CO LTD,Financial Services,1124,44,ranked,855,48.6,ranked,855,48.6,ranked,-269,-4.6,down,0,0,unchanged,-269,-4.6,down
+DALMIASUG,DALMIA BHARAT SUG IN LTD,Consumer Defensive,1125,44,ranked,1089,45.2,ranked,1089,45.2,ranked,-36,-1.2,down,0,0,unchanged,-36,-1.2,down
+KOLTEPATIL,KOLTE PATIL DEV. LTD.,Real Estate,1126,44,ranked,1206,42.8,ranked,1206,42.8,ranked,80,1.2,up,0,0,unchanged,80,1.2,up
+URBANCO,URBAN COMPANY LIMITED,Technology,1127,44,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+JYOTISTRUC,JYOTI STRUCTURES LTD,Industrials,1128,44,ranked,1136,44.2,ranked,1136,44.2,ranked,8,-0.2,up,0,0,unchanged,8,-0.2,up
+MAHLOG,MAHINDRA LOGISTIC LIMITED,Industrials,1129,43.9,ranked,1109,44.8,ranked,1109,44.8,ranked,-20,-0.9,down,0,0,unchanged,-20,-0.9,down
+GREENPANEL,GREENPANEL INDUSTRIES LTD,Basic Materials,1130,43.9,ranked,1234,41.7,ranked,1234,41.7,ranked,104,2.2,up,0,0,unchanged,104,2.2,up
+BOROLTD,BOROSIL LIMITED,Consumer Cyclical,1131,43.9,ranked,1081,45.4,ranked,1081,45.4,ranked,-50,-1.5,down,0,0,unchanged,-50,-1.5,down
+DELTACORP,DELTA CORP LIMITED,Consumer Cyclical,1132,43.9,ranked,1134,44.2,ranked,1134,44.2,ranked,2,-0.3,up,0,0,unchanged,2,-0.3,up
+ESAFSFB,ESAF SMALL FINANCE BANK L,Financial Services,1133,43.9,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+HATSUN,HATSUN AGRO PRODUCT LTD.,Consumer Defensive,1134,43.8,ranked,1106,44.8,ranked,1106,44.8,ranked,-28,-1,down,0,0,unchanged,-28,-1,down
+LUXIND,LUX INDUSTRIES LIMITED,Consumer Cyclical,1135,43.8,ranked,1117,44.6,ranked,1117,44.6,ranked,-18,-0.8,down,0,0,unchanged,-18,-0.8,down
+MUFIN,MUFIN GREEN FINANCE LTD,Financial Services,1136,43.8,ranked,1177,43.4,ranked,1177,43.4,ranked,41,0.4,up,0,0,unchanged,41,0.4,up
+BOSCH-HCIL,BOSCH HOME COMFRT IND LTD,Consumer Cyclical,1137,43.8,ranked,1299,38.5,ranked,1299,38.5,ranked,162,5.3,up,0,0,unchanged,162,5.3,up
+OAL,ORIENTAL AROMATICS LTD,Basic Materials,1138,43.8,ranked,1037,46.2,ranked,1037,46.2,ranked,-101,-2.4,down,0,0,unchanged,-101,-2.4,down
+ARIHANTSUP,ARIHANT SUPERSTRUCT LTD,Real Estate,1139,43.8,ranked,805,49.2,ranked,805,49.2,ranked,-334,-5.4,down,0,0,unchanged,-334,-5.4,down
+GREENPOWER,ORIENT GREEN POWER CO LTD,Utilities,1140,43.8,ranked,1020,46.5,ranked,1020,46.5,ranked,-120,-2.7,down,0,0,unchanged,-120,-2.7,down
+NEOGEN,NEOGEN CHEMICALS LIMITED,Basic Materials,1141,43.7,ranked,1129,44.4,ranked,1129,44.4,ranked,-12,-0.7,down,0,0,unchanged,-12,-0.7,down
+TARIL,TRANS & RECTI. LTD,Industrials,1142,43.7,ranked,1128,44.4,ranked,1128,44.4,ranked,-14,-0.7,down,0,0,unchanged,-14,-0.7,down
+SKIPPER,SKIPPER LIMITED,Industrials,1143,43.7,ranked,1010,46.6,ranked,1010,46.6,ranked,-133,-2.9,down,0,0,unchanged,-133,-2.9,down
+PRABHA,PRABHA ENERGY LIMITED,Energy,1144,43.7,ranked,1185,43.3,ranked,1185,43.3,ranked,41,0.4,up,0,0,unchanged,41,0.4,up
+PENIND,PENNAR INDUSTRIES LTD,Industrials,1145,43.6,ranked,955,47.4,ranked,955,47.4,ranked,-190,-3.8,down,0,0,unchanged,-190,-3.8,down
+BALRAMCHIN,BALRAMPUR CHINI MILLS LTD,Consumer Defensive,1146,43.6,ranked,1155,43.7,ranked,1155,43.7,ranked,9,-0.1,up,0,0,unchanged,9,-0.1,up
+JTEKTINDIA,JTEKT INDIA LIMITED,Consumer Cyclical,1147,43.6,ranked,1069,45.7,ranked,1069,45.7,ranked,-78,-2.1,down,0,0,unchanged,-78,-2.1,down
+WHEELS,WHEELS INDIA LTD,Consumer Cyclical,1148,43.6,ranked,1245,41.5,ranked,1245,41.5,ranked,97,2.1,up,0,0,unchanged,97,2.1,up
+BBL,BHARAT BIJLEE LTD,Industrials,1149,43.6,ranked,1194,43,ranked,1194,43,ranked,45,0.6,up,0,0,unchanged,45,0.6,up
+DCAL,DISHMAN CARBO AMCIS LTD,Healthcare,1150,43.6,ranked,927,47.8,ranked,927,47.8,ranked,-223,-4.2,down,0,0,unchanged,-223,-4.2,down
+E2E,E2E NETWORKS LIMITED,Technology,1151,43.6,ranked,1094,45.1,ranked,1094,45.1,ranked,-57,-1.5,down,0,0,unchanged,-57,-1.5,down
+NSLNISP,NMDC STEEL LIMITED,Basic Materials,1152,43.6,ranked,1096,45.1,ranked,1096,45.1,ranked,-56,-1.5,down,0,0,unchanged,-56,-1.5,down
+MAXHEALTH,MAX HEALTHCARE INS LTD,Healthcare,1153,43.5,ranked,864,48.5,ranked,864,48.5,ranked,-289,-5,down,0,0,unchanged,-289,-5,down
+TRIDENT,TRIDENT LIMITED,Consumer Cyclical,1154,43.5,ranked,1174,43.4,ranked,1174,43.4,ranked,20,0.1,up,0,0,unchanged,20,0.1,up
+RELAXO,RELAXO FOOT LTD.,Consumer Cyclical,1155,43.5,ranked,954,47.4,ranked,954,47.4,ranked,-201,-3.9,down,0,0,unchanged,-201,-3.9,down
+RAMCOSYS,RAMCO SYSTEMS LTD.,Technology,1156,43.5,ranked,418,53,ranked,418,53,ranked,-738,-9.5,down,0,0,unchanged,-738,-9.5,down
+SHREDIGCEM,SHREE DIGVIJAY CEM CO LTD,Basic Materials,1157,43.5,ranked,1220,42.4,ranked,1220,42.4,ranked,63,1.1,up,0,0,unchanged,63,1.1,up
+RENUKA,SHREE RENUKA SUGARS LTD,Consumer Defensive,1158,43.5,ranked,,,insufficient overall coverage,,,insufficient overall coverage,,,newly ranked,,,unranked,,,newly ranked
+ASHIANA,ASHIANA HOUSING LTD,Real Estate,1159,43.4,ranked,1119,44.6,ranked,1119,44.6,ranked,-40,-1.2,down,0,0,unchanged,-40,-1.2,down
+CENTRUM,CENTRUM CAPITAL LIMITED,Financial Services,1160,43.4,ranked,1259,41.1,ranked,1259,41.1,ranked,99,2.3,up,0,0,unchanged,99,2.3,up
+HPL,HPL ELECTRIC & POWER LTD,Industrials,1161,43.3,ranked,1235,41.7,ranked,1235,41.7,ranked,74,1.6,up,0,0,unchanged,74,1.6,up
+STEELXIND,STEEL EXCHANGE INDIA LTD,Basic Materials,1162,43.3,ranked,1002,46.8,ranked,1002,46.8,ranked,-160,-3.5,down,0,0,unchanged,-160,-3.5,down
+HINDOILEXP,HINDUSTAN OIL EXPLORATION,Energy,1163,43.3,ranked,1227,42.1,ranked,1227,42.1,ranked,64,1.2,up,0,0,unchanged,64,1.2,up
+HINDWAREAP,HINDWARE HME INOVATON LTD,Consumer Cyclical,1164,43.3,ranked,1172,43.5,ranked,1172,43.5,ranked,8,-0.2,up,0,0,unchanged,8,-0.2,up
+INDUSINDBK,INDUSIND BANK LIMITED,Financial Services,1165,43.2,ranked,1123,44.5,ranked,1123,44.5,ranked,-42,-1.3,down,0,0,unchanged,-42,-1.3,down
+ZEEL,ZEE ENTERTAINMENT ENT LTD,Communication Services,1166,43.2,ranked,895,48.2,ranked,895,48.2,ranked,-271,-5,down,0,0,unchanged,-271,-5,down
+PATELENG,PATEL ENGINEERING LTD.,Industrials,1167,43.2,ranked,1103,44.9,ranked,1103,44.9,ranked,-64,-1.7,down,0,0,unchanged,-64,-1.7,down
+OLECTRA,OLECTRA GREENTECH LIMITED,Industrials,1168,43.2,ranked,967,47.2,ranked,967,47.2,ranked,-201,-4,down,0,0,unchanged,-201,-4,down
+SOLARA,SOLARA ACTIVE PHA SCI LTD,Healthcare,1169,43.2,ranked,1065,45.8,ranked,1065,45.8,ranked,-104,-2.6,down,0,0,unchanged,-104,-2.6,down
+HDFCLIFE,HDFC LIFE INS CO LTD,Financial Services,1170,43.1,ranked,1191,43.1,ranked,1191,43.1,ranked,21,0,up,0,0,unchanged,21,0,up
+ANURAS,ANUPAM RASAYAN INDIA LTD,Basic Materials,1171,43.1,ranked,1282,39.7,ranked,1282,39.7,ranked,111,3.4,up,0,0,unchanged,111,3.4,up
+YATRA,YATRA ONLINE LIMITED,Consumer Cyclical,1172,43.1,ranked,923,47.9,ranked,923,47.9,ranked,-249,-4.8,down,0,0,unchanged,-249,-4.8,down
+NELCAST,NELCAST LIMITED,Industrials,1173,43.1,ranked,1207,42.8,ranked,1207,42.8,ranked,34,0.3,up,0,0,unchanged,34,0.3,up
+MARINE,MARINE ELECTRICAL (I) LTD,Industrials,1174,43.1,ranked,1181,43.3,ranked,1181,43.3,ranked,7,-0.2,up,0,0,unchanged,7,-0.2,up
+RPSGVENT,RPSG VENTURES LIMITED,Technology,1175,43.1,ranked,1079,45.5,ranked,1079,45.5,ranked,-96,-2.4,down,0,0,unchanged,-96,-2.4,down
+SEPC,SEPC LIMITED,Industrials,1176,43.1,ranked,1000,46.8,ranked,1000,46.8,ranked,-176,-3.7,down,0,0,unchanged,-176,-3.7,down
+WINDMACHIN,WINDSOR MACHINES LIMITED,Industrials,1177,43.1,ranked,1184,43.3,ranked,1184,43.3,ranked,7,-0.2,up,0,0,unchanged,7,-0.2,up
+MICEL,MIC ELECTRONICS LTD,Technology,1178,43.1,ranked,1292,39.2,ranked,1292,39.2,ranked,114,3.9,up,0,0,unchanged,114,3.9,up
+QUADFUTURE,QUADRANT FUTURE TEK LTD,Industrials,1179,43.1,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+KIOCL,KIOCL LIMITED,Basic Materials,1180,43.1,ranked,1137,44.2,ranked,1137,44.2,ranked,-43,-1.1,down,0,0,unchanged,-43,-1.1,down
+TATAPOWER,TATA POWER CO LTD,Utilities,1181,43,ranked,1253,41.1,ranked,1253,41.1,ranked,72,1.9,up,0,0,unchanged,72,1.9,up
+BATAINDIA,BATA INDIA LTD,Consumer Cyclical,1182,43,ranked,1209,42.7,ranked,1209,42.7,ranked,27,0.3,up,0,0,unchanged,27,0.3,up
+SUNDROP,SUNDROP BRANDS LIMITED,Consumer Defensive,1183,43,ranked,1223,42.2,ranked,1223,42.2,ranked,40,0.8,up,0,0,unchanged,40,0.8,up
+SCHNEIDER,SCHNEIDER ELECTRIC INFRA,Industrials,1184,43,ranked,1060,45.8,ranked,1060,45.8,ranked,-124,-2.8,down,0,0,unchanged,-124,-2.8,down
+HUBTOWN,HUBTOWN LIMITED,Real Estate,1185,43,ranked,527,51.9,ranked,527,51.9,ranked,-658,-8.9,down,0,0,unchanged,-658,-8.9,down
+PASHUPATI,PASHUPATI COTSPIN LIMITED,Consumer Cyclical,1186,43,ranked,1308,37.4,ranked,1308,37.4,ranked,122,5.6,up,0,0,unchanged,122,5.6,up
+DMART,AVENUE SUPERMARTS LIMITED,Consumer Defensive,1187,42.9,ranked,991,46.9,ranked,991,46.9,ranked,-196,-4,down,0,0,unchanged,-196,-4,down
+GOKEX,GOKALDAS EXPORTS LTD.,Consumer Cyclical,1188,42.9,ranked,1075,45.5,ranked,1075,45.5,ranked,-113,-2.6,down,0,0,unchanged,-113,-2.6,down
+ADANIENT,ADANI ENTERPRISES LIMITED,Energy,1189,42.9,ranked,1157,43.7,ranked,1157,43.7,ranked,-32,-0.8,down,0,0,unchanged,-32,-0.8,down
+TIINDIA,TUBE INVEST OF INDIA LTD,Industrials,1190,42.9,ranked,1205,42.8,ranked,1205,42.8,ranked,15,0.1,up,0,0,unchanged,15,0.1,up
+GODREJPROP,GODREJ PROPERTIES LTD,Real Estate,1191,42.9,ranked,771,49.6,ranked,771,49.6,ranked,-420,-6.7,down,0,0,unchanged,-420,-6.7,down
+MOBIKWIK,ONE MOBIKWIK SYSTEMS LTD,Technology,1192,42.9,ranked,1018,46.5,ranked,1018,46.5,ranked,-174,-3.6,down,0,0,unchanged,-174,-3.6,down
+SALZERELEC,SALZER ELECTRONICS LTD,Industrials,1193,42.9,ranked,1142,44,ranked,1142,44,ranked,-51,-1.1,down,0,0,unchanged,-51,-1.1,down
+BEML,BEML LIMITED,Industrials,1194,42.8,ranked,1280,39.8,ranked,1280,39.8,ranked,86,3,up,0,0,unchanged,86,3,up
+INDIACEM,THE INDIA CEMENTS LIMITED,Basic Materials,1195,42.8,ranked,1219,42.4,ranked,1219,42.4,ranked,24,0.4,up,0,0,unchanged,24,0.4,up
+SINDHUTRAD,SINDHU TRADE LINKS LTD,Industrials,1196,42.8,ranked,1202,42.9,ranked,1202,42.9,ranked,6,-0.1,up,0,0,unchanged,6,-0.1,up
+BIRLANU,BIRLANU LIMITED,Industrials,1197,42.8,ranked,1283,39.7,ranked,1283,39.7,ranked,86,3.1,up,0,0,unchanged,86,3.1,up
+PGEL,PG ELECTROPLAST LTD,Technology,1198,42.7,ranked,1231,41.9,ranked,1231,41.9,ranked,33,0.8,up,0,0,unchanged,33,0.8,up
+WAKEFIT,WAKEFIT INNOVATIONS LTD,Consumer Cyclical,1199,42.7,ranked,875,48.5,ranked,875,48.5,ranked,-324,-5.8,down,0,0,unchanged,-324,-5.8,down
+COHANCE,COHANCE LIFESCIENCES LTD,Healthcare,1200,42.7,ranked,1169,43.5,ranked,1169,43.5,ranked,-31,-0.8,down,0,0,unchanged,-31,-0.8,down
+ACI,ARCHEAN CHEMICAL IND LTD,Basic Materials,1201,42.7,ranked,1197,42.9,ranked,1197,42.9,ranked,-4,-0.2,down,0,0,unchanged,-4,-0.2,down
+SERVOTECH,SERVOTECH REN POW SYS LTD,Industrials,1202,42.7,ranked,1268,40.4,ranked,1268,40.4,ranked,66,2.3,up,0,0,unchanged,66,2.3,up
+GRMOVER,GRM OVERSEAS LIMITED,Consumer Defensive,1203,42.7,ranked,613,51.1,ranked,613,51.1,ranked,-590,-8.4,down,0,0,unchanged,-590,-8.4,down
+DIGITIDE,DIGITIDE SOLUTIONS LTD,Industrials,1204,42.7,ranked,1003,46.8,ranked,1003,46.8,ranked,-201,-4.1,down,0,0,unchanged,-201,-4.1,down
+SAGCEM,SAGAR CEMENTS LIMITED,Basic Materials,1205,42.6,ranked,990,46.9,ranked,990,46.9,ranked,-215,-4.3,down,0,0,unchanged,-215,-4.3,down
+IDEA,VODAFONE IDEA LIMITED,Communication Services,1206,42.6,ranked,1147,43.9,ranked,1147,43.9,ranked,-59,-1.3,down,0,0,unchanged,-59,-1.3,down
+SWANCORP,SWAN CORP LIMITED,Industrials,1207,42.6,ranked,1264,40.8,ranked,1264,40.8,ranked,57,1.8,up,0,0,unchanged,57,1.8,up
+QUICKHEAL,QUICK HEAL TECH LTD,Technology,1208,42.6,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+AWHCL,ANTONY WASTE HDG CELL LTD,Industrials,1209,42.5,ranked,1118,44.6,ranked,1118,44.6,ranked,-91,-2.1,down,0,0,unchanged,-91,-2.1,down
+JSWENERGY,JSW ENERGY LIMITED,Utilities,1210,42.4,ranked,1143,43.9,ranked,1143,43.9,ranked,-67,-1.5,down,0,0,unchanged,-67,-1.5,down
+SULA,SULA VINEYARDS LIMITED,Consumer Defensive,1211,42.4,ranked,1214,42.5,ranked,1214,42.5,ranked,3,-0.1,up,0,0,unchanged,3,-0.1,up
+ATGL,ADANI TOTAL GAS LIMITED,Utilities,1212,42.4,ranked,1124,44.5,ranked,1124,44.5,ranked,-88,-2.1,down,0,0,unchanged,-88,-2.1,down
+THEMISMED,THEMIS MEDICARE LTD.,Healthcare,1213,42.4,ranked,1273,40.3,ranked,1273,40.3,ranked,60,2.1,up,0,0,unchanged,60,2.1,up
+APOLLO,APOLLO MICRO SYSTEMS LTD,Industrials,1214,42.3,ranked,1039,46.1,ranked,1039,46.1,ranked,-175,-3.8,down,0,0,unchanged,-175,-3.8,down
+AFCONS,AFCONS INFRASTRUCTURE LTD,Industrials,1215,42.3,ranked,1187,43.2,ranked,1187,43.2,ranked,-28,-0.9,down,0,0,unchanged,-28,-0.9,down
+SAPPHIRE,SAPPHIRE FOODS INDIA LTD,Consumer Cyclical,1216,42.3,ranked,1026,46.4,ranked,1026,46.4,ranked,-190,-4.1,down,0,0,unchanged,-190,-4.1,down
+GENESYS,GENESYS INTL CORPN LTD,Technology,1217,42.3,ranked,938,47.7,ranked,938,47.7,ranked,-279,-5.4,down,0,0,unchanged,-279,-5.4,down
+TATAINVEST,TATA INVESTMENT CORP LTD,Financial Services,1218,42.3,ranked,998,46.8,ranked,998,46.8,ranked,-220,-4.5,down,0,0,unchanged,-220,-4.5,down
+KWIL,KWALITY WALL'S (INDIA) L,Consumer Defensive,1219,42.3,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+ISGEC,ISGEC HEAVY ENG LTD,Industrials,1220,42.2,ranked,1218,42.4,ranked,1218,42.4,ranked,-2,-0.2,down,0,0,unchanged,-2,-0.2,down
+LLOYDSENT,LLOYDS ENTERPRISES LTD,Basic Materials,1221,42.1,ranked,926,47.8,ranked,926,47.8,ranked,-295,-5.7,down,0,0,unchanged,-295,-5.7,down
+UNITECH,UNITECH LTD,Real Estate,1222,42.1,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+TMPV,TATA MOTORS PASS VEH LTD,Consumer Cyclical,1223,42,ranked,1246,41.4,ranked,1246,41.4,ranked,23,0.6,up,0,0,unchanged,23,0.6,up
+HEMIPROP,HEMISPHERE PROP IND LTD,Real Estate,1224,42,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+ALOKINDS,ALOK INDUSTRIES LIMITED,Consumer Cyclical,1225,42,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+ADANIGREEN,ADANI GREEN ENERGY LTD,Utilities,1226,41.8,ranked,863,48.5,ranked,863,48.5,ranked,-363,-6.7,down,0,0,unchanged,-363,-6.7,down
+TATACHEM,TATA CHEMICALS LTD,Basic Materials,1227,41.8,ranked,1224,42.2,ranked,1224,42.2,ranked,-3,-0.4,down,0,0,unchanged,-3,-0.4,down
+RPOWER,RELIANCE POWER LTD.,Utilities,1228,41.7,ranked,1297,38.8,ranked,1297,38.8,ranked,69,2.9,up,0,0,unchanged,69,2.9,up
+BLKASHYAP,B.L.KASHYAP & SON LTD,Industrials,1229,41.7,ranked,1021,46.5,ranked,1021,46.5,ranked,-208,-4.8,down,0,0,unchanged,-208,-4.8,down
+ABFRL,ADITYA BIRLA FASHION & RT,Consumer Cyclical,1230,41.7,ranked,1153,43.8,ranked,1153,43.8,ranked,-77,-2.1,down,0,0,unchanged,-77,-2.1,down
+CANHLIFE,CANARA HSBC LIFE INS CO L,Financial Services,1231,41.6,ranked,1199,42.9,ranked,1199,42.9,ranked,-32,-1.3,down,0,0,unchanged,-32,-1.3,down
+DELHIVERY,DELHIVERY LIMITED,Industrials,1232,41.6,ranked,1005,46.7,ranked,1005,46.7,ranked,-227,-5.1,down,0,0,unchanged,-227,-5.1,down
+BLUESTARCO,BLUE STAR LIMITED,Industrials,1233,41.6,ranked,1208,42.7,ranked,1208,42.7,ranked,-25,-1.1,down,0,0,unchanged,-25,-1.1,down
+IDFCFIRSTB,IDFC FIRST BANK LIMITED,Financial Services,1234,41.6,ranked,1254,41.1,ranked,1254,41.1,ranked,20,0.5,up,0,0,unchanged,20,0.5,up
+HIRECT,HIND RECTIFIER LIMITED,Industrials,1235,41.6,ranked,1272,40.3,ranked,1272,40.3,ranked,37,1.3,up,0,0,unchanged,37,1.3,up
+NITCO,NITCO LIMITED,Industrials,1236,41.6,ranked,1091,45.2,ranked,1091,45.2,ranked,-145,-3.6,down,0,0,unchanged,-145,-3.6,down
+IRFC,INDIAN RAILWAY FIN CORP L,Financial Services,1237,41.5,ranked,1255,41.1,ranked,1255,41.1,ranked,18,0.4,up,0,0,unchanged,18,0.4,up
+UBL,UNITED BREWERIES LTD,Consumer Defensive,1238,41.5,ranked,1204,42.8,ranked,1204,42.8,ranked,-34,-1.3,down,0,0,unchanged,-34,-1.3,down
+NSIL,NALWA SONS INVESTMENT LTD,Financial Services,1239,41.5,ranked,1121,44.6,ranked,1121,44.6,ranked,-118,-3.1,down,0,0,unchanged,-118,-3.1,down
+WESTLIFE,WESTLIFE FOODWORLD LTD,Consumer Cyclical,1240,41.4,ranked,1276,40.1,ranked,1276,40.1,ranked,36,1.3,up,0,0,unchanged,36,1.3,up
+JBMA,JBM AUTO LIMITED,Consumer Cyclical,1241,41.4,ranked,1257,41.1,ranked,1257,41.1,ranked,16,0.3,up,0,0,unchanged,16,0.3,up
+AEQUS,AEQUS LIMITED,Industrials,1242,41.4,ranked,992,46.9,ranked,992,46.9,ranked,-250,-5.5,down,0,0,unchanged,-250,-5.5,down
+BAJEL,BAJEL PROJECTS LIMITED,Utilities,1243,41.3,ranked,1076,45.5,ranked,1076,45.5,ranked,-167,-4.2,down,0,0,unchanged,-167,-4.2,down
+PRAJIND,PRAJ INDUSTRIES LTD,Industrials,1244,41.2,ranked,1314,36.4,ranked,1314,36.4,ranked,70,4.8,up,0,0,unchanged,70,4.8,up
+TVSSRICHAK,TVS SRICHAKRA LIMITED,Consumer Cyclical,1245,41.2,ranked,1175,43.4,ranked,1175,43.4,ranked,-70,-2.2,down,0,0,unchanged,-70,-2.2,down
+KALPATARU,KALPATARU LIMITED,Real Estate,1246,41.2,ranked,1198,42.9,ranked,1198,42.9,ranked,-48,-1.7,down,0,0,unchanged,-48,-1.7,down
+MAHSCOOTER,MAHARASHTRA SCOOTERS LTD,Financial Services,1247,41.2,ranked,1221,42.4,ranked,1221,42.4,ranked,-26,-1.2,down,0,0,unchanged,-26,-1.2,down
+PARACABLES,PARAMOUNT COMM LTD,Technology,1248,41.1,ranked,1146,43.9,ranked,1146,43.9,ranked,-102,-2.8,down,0,0,unchanged,-102,-2.8,down
+UTKARSHBNK,UTKARSH SMALL FIN BANK L,Financial Services,1249,41,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+GODREJIND,GODREJ INDUSTRIES LTD,Industrials,1250,41,ranked,526,51.9,ranked,526,51.9,ranked,-724,-10.9,down,0,0,unchanged,-724,-10.9,down
+DIAMONDYD,PRATAAP SNACKS LIMITED,Consumer Defensive,1251,40.9,ranked,1232,41.9,ranked,1232,41.9,ranked,-19,-1,down,0,0,unchanged,-19,-1,down
+MSPL,MSP STEEL & POWER LTD.,Basic Materials,1252,40.9,ranked,1161,43.7,ranked,1161,43.7,ranked,-91,-2.8,down,0,0,unchanged,-91,-2.8,down
+TARSONS,TARSONS PRODUCTS LIMITED,Healthcare,1253,40.9,ranked,1033,46.3,ranked,1033,46.3,ranked,-220,-5.4,down,0,0,unchanged,-220,-5.4,down
+5PAISA,5PAISA CAPITAL LIMITED,Financial Services,1254,40.8,ranked,1159,43.7,ranked,1159,43.7,ranked,-95,-2.9,down,0,0,unchanged,-95,-2.9,down
+CHEMPLASTS,CHEMPLAST SANMAR LIMITED,Basic Materials,1255,40.8,ranked,1167,43.6,ranked,1167,43.6,ranked,-88,-2.8,down,0,0,unchanged,-88,-2.8,down
+JISLDVREQS,JAIN DVR EQUITY SHARES,Industrials,1256,40.8,ranked,1229,42,ranked,1229,42,ranked,-27,-1.2,down,0,0,unchanged,-27,-1.2,down
+PNBGILTS,PNB GILTS LIMITED,Financial Services,1257,40.8,ranked,1240,41.7,ranked,1240,41.7,ranked,-17,-0.9,down,0,0,unchanged,-17,-0.9,down
+VOLTAS,VOLTAS LTD,Consumer Cyclical,1258,40.7,ranked,1309,37.3,ranked,1309,37.3,ranked,51,3.4,up,0,0,unchanged,51,3.4,up
+BOMDYEING,BOMBAY DYEING & MFG. CO L,Consumer Cyclical,1259,40.7,ranked,1122,44.6,ranked,1122,44.6,ranked,-137,-3.9,down,0,0,unchanged,-137,-3.9,down
+SGMART,SG MART LIMITED,Industrials,1260,40.5,ranked,1080,45.4,ranked,1080,45.4,ranked,-180,-4.9,down,0,0,unchanged,-180,-4.9,down
+RATNAVEER,RATNAVEER PRECISION ENG L,Basic Materials,1261,40.4,ranked,814,49.1,ranked,814,49.1,ranked,-447,-8.7,down,0,0,unchanged,-447,-8.7,down
+RICOAUTO,RICO AUTO INDUSTRIES LTD,Consumer Cyclical,1262,40.4,ranked,1239,41.7,ranked,1239,41.7,ranked,-23,-1.3,down,0,0,unchanged,-23,-1.3,down
+NETWORK18,NETWORK18 MEDIA & INV LTD,Communication Services,1263,40.4,ranked,1249,41.4,ranked,1249,41.4,ranked,-14,-1,down,0,0,unchanged,-14,-1,down
+KIMS,KRISHNA INST OF MED SCI L,Healthcare,1264,40.3,ranked,1215,42.5,ranked,1215,42.5,ranked,-49,-2.2,down,0,0,unchanged,-49,-2.2,down
+ALLCARGO,ALLCARGO LOGISTICS LTD,Industrials,1265,40.3,ranked,1230,42,ranked,1230,42,ranked,-35,-1.7,down,0,0,unchanged,-35,-1.7,down
+FAZE3Q,FAZE THREE LIMITED,Consumer Cyclical,1266,40.3,ranked,985,47,ranked,985,47,ranked,-281,-6.7,down,0,0,unchanged,-281,-6.7,down
+SPANDANA,SPANDANA SPHOORTY FIN LTD,Financial Services,1267,40.3,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+RAYMOND,RAYMOND LTD,Industrials,1268,40.2,ranked,1237,41.7,ranked,1237,41.7,ranked,-31,-1.5,down,0,0,unchanged,-31,-1.5,down
+INDIGO,INTERGLOBE AVIATION LTD,Industrials,1269,40.2,ranked,944,47.6,ranked,944,47.6,ranked,-325,-7.4,down,0,0,unchanged,-325,-7.4,down
+THERMAX,THERMAX LTD,Industrials,1270,40.1,ranked,1127,44.4,ranked,1127,44.4,ranked,-143,-4.3,down,0,0,unchanged,-143,-4.3,down
+RAMCOCEM,THE RAMCO CEMENTS LIMITED,Basic Materials,1271,40.1,ranked,1116,44.6,ranked,1116,44.6,ranked,-155,-4.5,down,0,0,unchanged,-155,-4.5,down
+SHRIRAMPPS,SHRIRAM PROPERTIES LTD,Real Estate,1272,40.1,ranked,913,48,ranked,913,48,ranked,-359,-7.9,down,0,0,unchanged,-359,-7.9,down
+KICL,KALYANI INVEST CO LTD,Financial Services,1273,40.1,ranked,1201,42.9,ranked,1201,42.9,ranked,-72,-2.8,down,0,0,unchanged,-72,-2.8,down
+GODIGIT,GO DIGIT GENERAL INS LTD,Financial Services,1274,40,ranked,1024,46.4,ranked,1024,46.4,ranked,-250,-6.4,down,0,0,unchanged,-250,-6.4,down
+IONEXCHANG,ION EXCHANGE (INDIA) LTD,Industrials,1275,40,ranked,1293,39.1,ranked,1293,39.1,ranked,18,0.9,up,0,0,unchanged,18,0.9,up
+TARC,TARC LIMITED,Real Estate,1276,40,ranked,1170,43.5,ranked,1170,43.5,ranked,-106,-3.5,down,0,0,unchanged,-106,-3.5,down
+INDOSTAR,INDOSTAR CAPITAL FIN LTD,Financial Services,1277,40,ranked,960,47.3,ranked,960,47.3,ranked,-317,-7.3,down,0,0,unchanged,-317,-7.3,down
+ASIANHOTNR,ASIAN HOTELS (NORTH) LTD,Consumer Cyclical,1278,40,ranked,1222,42.4,ranked,1222,42.4,ranked,-56,-2.4,down,0,0,unchanged,-56,-2.4,down
+PANACEABIO,PANACEA BIOTEC LTD,Healthcare,1279,40,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+ZOTA,ZOTA HEALTH CARE LIMITED,Healthcare,1280,40,ranked,1242,41.7,ranked,1242,41.7,ranked,-38,-1.7,down,0,0,unchanged,-38,-1.7,down
+PWL,PHYSICSWALLAH LIMITED,Consumer Defensive,1281,39.9,ranked,1001,46.8,ranked,1001,46.8,ranked,-280,-6.9,down,0,0,unchanged,-280,-6.9,down
+WALCHANNAG,WALCHANDNAGAR INDUSTRIES,Industrials,1282,39.9,ranked,1252,41.2,ranked,1252,41.2,ranked,-30,-1.3,down,0,0,unchanged,-30,-1.3,down
+MHRIL,MAHINDRA HOLIDAYS LTD,Consumer Cyclical,1283,39.8,ranked,1149,43.8,ranked,1149,43.8,ranked,-134,-4,down,0,0,unchanged,-134,-4,down
+ELECTHERM,ELECTROTHERM (I) LTD.,Basic Materials,1284,39.8,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+TEJASNET,TEJAS NETWORKS LIMITED,Technology,1285,39.7,ranked,1317,36.1,ranked,1317,36.1,ranked,32,3.6,up,0,0,unchanged,32,3.6,up
+MAMATA,MAMATA MACHINERY LIMITED,Industrials,1286,39.6,ranked,1279,39.9,ranked,1279,39.9,ranked,-7,-0.3,down,0,0,unchanged,-7,-0.3,down
+TRIVENI,TRIVENI ENGG. & INDS. LTD,Consumer Defensive,1287,39.4,ranked,1186,43.2,ranked,1186,43.2,ranked,-101,-3.8,down,0,0,unchanged,-101,-3.8,down
+PILANIINVS,PILANI INV & IND COR LTD,Financial Services,1288,39.3,ranked,1278,40,ranked,1278,40,ranked,-10,-0.7,down,0,0,unchanged,-10,-0.7,down
+ONESOURCE,ONESOURCE SPECL PHARMA L,Healthcare,1289,39.2,ranked,1286,39.5,ranked,1286,39.5,ranked,-3,-0.3,down,0,0,unchanged,-3,-0.3,down
+NIBE,NIBE LIMITED,Industrials,1290,39.2,ranked,1182,43.3,ranked,1182,43.3,ranked,-108,-4.1,down,0,0,unchanged,-108,-4.1,down
+TIRUMALCHM,THIRUMALAI CHEMICALS LTD,Basic Materials,1291,39.2,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+EXICOM,EXICOM TELE SYSTEMS LTD,Industrials,1292,39.2,ranked,1211,42.7,ranked,1211,42.7,ranked,-81,-3.5,down,0,0,unchanged,-81,-3.5,down
+RBA,RESTAURANT BRAND ASIA LTD,Consumer Cyclical,1293,39.1,ranked,1251,41.2,ranked,1251,41.2,ranked,-42,-2.1,down,0,0,unchanged,-42,-2.1,down
+LGHL,LAXMI GOLDORNA HOUSE LTD,Consumer Cyclical,1294,39.1,ranked,1267,40.5,ranked,1267,40.5,ranked,-27,-1.4,down,0,0,unchanged,-27,-1.4,down
+RTNPOWER,RATTANINDIA POWER LIMITED,Utilities,1295,39,ranked,1301,38.4,ranked,1301,38.4,ranked,6,0.6,up,0,0,unchanged,6,0.6,up
+SWSOLAR,STRLNG & WIL REN ENE LTD,Technology,1296,38.9,ranked,1291,39.2,ranked,1291,39.2,ranked,-5,-0.3,down,0,0,unchanged,-5,-0.3,down
+ELECTCAST,ELECTROSTEEL CASTINGS LTD,Industrials,1297,38.8,ranked,1261,40.8,ranked,1261,40.8,ranked,-36,-2,down,0,0,unchanged,-36,-2,down
+COCHINSHIP,COCHIN SHIPYARD LIMITED,Industrials,1298,38.7,ranked,1307,37.6,ranked,1307,37.6,ranked,9,1.1,up,0,0,unchanged,9,1.1,up
+YESBANK,YES BANK LIMITED,Financial Services,1299,38.6,ranked,1262,40.8,ranked,1262,40.8,ranked,-37,-2.2,down,0,0,unchanged,-37,-2.2,down
+ORCHPHARMA,ORCHID PHARMA LIMITED,Healthcare,1300,38.6,ranked,1133,44.2,ranked,1133,44.2,ranked,-167,-5.6,down,0,0,unchanged,-167,-5.6,down
+IFCI,IFCI LTD,Financial Services,1301,38.6,ranked,1192,43.1,ranked,1192,43.1,ranked,-109,-4.5,down,0,0,unchanged,-109,-4.5,down
+INDOCO,INDOCO REMEDIES LTD.,Healthcare,1302,38.6,ranked,1183,43.3,ranked,1183,43.3,ranked,-119,-4.7,down,0,0,unchanged,-119,-4.7,down
+BAJAJHIND,BAJAJ HINDUSTHAN SUGAR LT,Consumer Defensive,1303,38.6,ranked,1241,41.7,ranked,1241,41.7,ranked,-62,-3.1,down,0,0,unchanged,-62,-3.1,down
+TVSSCS,TVS SUPPLY CHAIN SOL L,Industrials,1304,38.5,ranked,1022,46.5,ranked,1022,46.5,ranked,-282,-8,down,0,0,unchanged,-282,-8,down
+TEXINFRA,TEXMACO INFRA & HOLDG LTD,Real Estate,1305,38.5,ranked,1166,43.6,ranked,1166,43.6,ranked,-139,-5.1,down,0,0,unchanged,-139,-5.1,down
+SUMEETINDS,SUMEET IND LIMITED,Consumer Cyclical,1306,38.4,ranked,1173,43.5,ranked,1173,43.5,ranked,-133,-5.1,down,0,0,unchanged,-133,-5.1,down
+ASIANTILES,ASIAN GRANITO IND. LTD.,Industrials,1307,38.3,ranked,1140,44.1,ranked,1140,44.1,ranked,-167,-5.8,down,0,0,unchanged,-167,-5.8,down
+FIRSTCRY,BRAINBEES SOLUTIONS LTD,Consumer Cyclical,1308,38.3,ranked,1152,43.8,ranked,1152,43.8,ranked,-156,-5.5,down,0,0,unchanged,-156,-5.5,down
+PPLPHARMA,PIRAMAL PHARMA LIMITED,Healthcare,1309,38.1,ranked,1200,42.9,ranked,1200,42.9,ranked,-109,-4.8,down,0,0,unchanged,-109,-4.8,down
+AXISCADES,AXISCADES TECH LTD,Industrials,1310,38.1,ranked,1288,39.4,ranked,1288,39.4,ranked,-22,-1.3,down,0,0,unchanged,-22,-1.3,down
+DYNAMATECH,DYNAMATIC TECHNOLOGIES,Consumer Cyclical,1311,38,ranked,1323,33.4,ranked,1323,33.4,ranked,12,4.6,up,0,0,unchanged,12,4.6,up
+JINDALPHOT,JINDAL PHOTO LIMITED,Financial Services,1312,38,ranked,1270,40.4,ranked,1270,40.4,ranked,-42,-2.4,down,0,0,unchanged,-42,-2.4,down
+ITI,ITI LTD,Technology,1313,38,ranked,1305,37.9,ranked,1305,37.9,ranked,-8,0.1,down,0,0,unchanged,-8,0.1,down
+ORIENTTECH,ORIENT TECHNOLOGIES LTD,Technology,1314,37.9,ranked,1310,37.3,ranked,1310,37.3,ranked,-4,0.6,down,0,0,unchanged,-4,0.6,down
+AMBER,AMBER ENTERPRISES (I) LTD,Consumer Cyclical,1315,37.7,ranked,1243,41.6,ranked,1243,41.6,ranked,-72,-3.9,down,0,0,unchanged,-72,-3.9,down
+BDL,BHARAT DYNAMICS LIMITED,Industrials,1316,37.5,ranked,1304,38.1,ranked,1304,38.1,ranked,-12,-0.6,down,0,0,unchanged,-12,-0.6,down
+HCC,HINDUSTAN CONSTRUCTION CO,Industrials,1317,37.4,ranked,1281,39.8,ranked,1281,39.8,ranked,-36,-2.4,down,0,0,unchanged,-36,-2.4,down
+JISLJALEQS,JAIN IRRIGATION SYSTEMS,Industrials,1318,37.4,ranked,1302,38.4,ranked,1302,38.4,ranked,-16,-1,down,0,0,unchanged,-16,-1,down
+HLEGLAS,HLE GLASCOAT LIMITED,Industrials,1319,37.3,ranked,1135,44.2,ranked,1135,44.2,ranked,-184,-6.9,down,0,0,unchanged,-184,-6.9,down
+TIL,TIL LTD,Industrials,1320,37.3,ranked,1289,39.3,ranked,1289,39.3,ranked,-31,-2,down,0,0,unchanged,-31,-2,down
+JWL,JUPITER WAGONS LIMITED,Industrials,1321,37.2,ranked,1318,35.8,ranked,1318,35.8,ranked,-3,1.4,down,0,0,unchanged,-3,1.4,down
+PREMEXPLN,PREMIER EXPLOSIVES LTD,Basic Materials,1322,37.2,ranked,1113,44.7,ranked,1113,44.7,ranked,-209,-7.5,down,0,0,unchanged,-209,-7.5,down
+MANGLMCEM,MANGALAM CEMENT LTD,Basic Materials,1323,37.2,ranked,1090,45.2,ranked,1090,45.2,ranked,-233,-8,down,0,0,unchanged,-233,-8,down
+OLAELEC,OLA ELECTRIC MOBILITY LTD,Consumer Cyclical,1324,37,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+SDBL,SOM DIST & BREW LTD,Consumer Defensive,1325,36.9,ranked,1303,38.2,ranked,1303,38.2,ranked,-22,-1.3,down,0,0,unchanged,-22,-1.3,down
+VIPIND,VIP INDUSTRIES LTD,Consumer Cyclical,1326,36.7,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+IRCON,IRCON INTERNATIONAL LTD,Industrials,1327,36.6,ranked,1312,36.7,ranked,1312,36.7,ranked,-15,-0.1,down,0,0,unchanged,-15,-0.1,down
+CAMLINFINE,CAMLIN FINE SCIENCES LTD,Basic Materials,1328,36.6,ranked,1275,40.2,ranked,1275,40.2,ranked,-53,-3.6,down,0,0,unchanged,-53,-3.6,down
+SALASAR,SALASAR TECHNO ENGG. LTD.,Basic Materials,1329,36.5,ranked,1290,39.3,ranked,1290,39.3,ranked,-39,-2.8,down,0,0,unchanged,-39,-2.8,down
+SHOPERSTOP,SHOPPERS STOP LIMITED,Consumer Cyclical,1330,36.4,ranked,1160,43.7,ranked,1160,43.7,ranked,-170,-7.3,down,0,0,unchanged,-170,-7.3,down
+RIIL,RELIANCE INDUSTRIAL INFRA,Industrials,1331,36.4,ranked,1313,36.5,ranked,1313,36.5,ranked,-18,-0.1,down,0,0,unchanged,-18,-0.1,down
+EASEMYTRIP,EASY TRIP PLANNERS LTD,Consumer Cyclical,1332,36.4,ranked,1298,38.6,ranked,1298,38.6,ranked,-34,-2.2,down,0,0,unchanged,-34,-2.2,down
+SAMMAANCAP,SAMMAAN CAPITAL LIMITED,Financial Services,1333,36.2,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+RELIGARE,RELIGARE ENTER. LTD.,Financial Services,1334,36,ranked,1269,40.4,ranked,1269,40.4,ranked,-65,-4.4,down,0,0,unchanged,-65,-4.4,down
+GODAVARIB,GODAVARI BIOREFINERIES L,Basic Materials,1335,35.8,ranked,1287,39.4,ranked,1287,39.4,ranked,-48,-3.6,down,0,0,unchanged,-48,-3.6,down
+ICEMAKE,ICE MAKE REFRIGERAT LTD,Industrials,1336,35.8,ranked,1294,39.1,ranked,1294,39.1,ranked,-42,-3.3,down,0,0,unchanged,-42,-3.3,down
+MFSL,MAX FINANCIAL SERV LTD,Financial Services,1337,35.7,ranked,1263,40.8,ranked,1263,40.8,ranked,-74,-5.1,down,0,0,unchanged,-74,-5.1,down
+BAJAJELEC,BAJAJ ELECT.LTD,Consumer Cyclical,1338,35.7,ranked,1322,34.9,ranked,1322,34.9,ranked,-16,0.8,down,0,0,unchanged,-16,0.8,down
+MOSCHIP,MOSCHIP TECHNOLOGIES LTD,Technology,1339,35.7,ranked,1258,41.1,ranked,1258,41.1,ranked,-81,-5.4,down,0,0,unchanged,-81,-5.4,down
+FACT,FACT LTD,Basic Materials,1340,35.7,ranked,1321,35.3,ranked,1321,35.3,ranked,-19,0.4,down,0,0,unchanged,-19,0.4,down
+RTNINDIA,RATTANINDIA ENT LIMITED,Consumer Cyclical,1341,35.7,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+PRSMJOHNSN,PRISM JOHNSON LIMITED,Basic Materials,1342,35.4,ranked,1228,42,ranked,1228,42,ranked,-114,-6.6,down,0,0,unchanged,-114,-6.6,down
+APOLLOPIPE,APOLLO PIPES LIMITED,Industrials,1343,35.2,ranked,1319,35.7,ranked,1319,35.7,ranked,-24,-0.5,down,0,0,unchanged,-24,-0.5,down
+RVNL,RAIL VIKAS NIGAM LIMITED,Industrials,1344,34.9,ranked,1324,32.8,ranked,1324,32.8,ranked,-20,2.1,down,0,0,unchanged,-20,2.1,down
+JSWHL,JSW HOLDINGS LIMITED,Financial Services,1345,34.9,ranked,1315,36.3,ranked,1315,36.3,ranked,-30,-1.4,down,0,0,unchanged,-30,-1.4,down
+EPACK,EPACK DURABLE LIMITED,Consumer Cyclical,1346,34.8,ranked,1316,36.2,ranked,1316,36.2,ranked,-30,-1.4,down,0,0,unchanged,-30,-1.4,down
+NACLIND,NACL INDUSTRIES LIMITED,Basic Materials,1347,34.8,ranked,1095,45.1,ranked,1095,45.1,ranked,-252,-10.3,down,0,0,unchanged,-252,-10.3,down
+FINOPB,FINO PAYMENTS BANK LTD,Financial Services,1348,34.7,ranked,1265,40.6,ranked,1265,40.6,ranked,-83,-5.9,down,0,0,unchanged,-83,-5.9,down
+NELCO,NELCO LTD,Technology,1349,33.9,ranked,1306,37.7,ranked,1306,37.7,ranked,-43,-3.8,down,0,0,unchanged,-43,-3.8,down
+KITEX,KITEX GARMENTS LTD,Consumer Cyclical,1350,33.7,ranked,1300,38.5,ranked,1300,38.5,ranked,-50,-4.8,down,0,0,unchanged,-50,-4.8,down
+DCXINDIA,DCX SYSTEMS LIMITED,Industrials,1351,32.1,ranked,1320,35.4,ranked,1320,35.4,ranked,-31,-3.3,down,0,0,unchanged,-31,-3.3,down
+ASTEC,ASTEC LIFESCIENCES LTD,Basic Materials,1352,31.5,ranked,,,insufficient valuation data,,,insufficient valuation data,,,newly ranked,,,unranked,,,newly ranked
+OMAXE,OMAXE LIMITED,Real Estate,,,insufficient valuation data,,,insufficient overall coverage,,,insufficient overall coverage,,,unranked,,,unranked,,,unranked

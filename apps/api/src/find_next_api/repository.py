@@ -3,12 +3,10 @@ from __future__ import annotations
 import json
 from collections.abc import Iterable
 from datetime import UTC, datetime
-from pathlib import Path
 from typing import Any
 
 import psycopg
 from find_next_pipeline.legacy import clean_legacy_stock
-from find_next_pipeline.paths import SNAPSHOT_DIR
 from psycopg.rows import dict_row
 
 SOURCE_PATHS = {
@@ -177,22 +175,47 @@ GROUP BY provider
 ORDER BY provider
 """
 
-LIVE_FIELD_MAP = {
-    "current_price": "currentPrice",
-    "previous_close": "previousClose",
-    "fifty_two_week_high": "fiftyTwoWeekHigh",
-    "fifty_two_week_low": "fiftyTwoWeekLow",
-    "day_open": "dayOpen",
-    "day_high": "dayHigh",
-    "day_low": "dayLow",
-    "day_volume": "dayVolume",
-    "market_cap": "marketCap",
-    "trailing_pe": "trailingPE",
-    "price_to_book": "priceToBook",
-    "roe_pct": "roe_pct",
-    "profit_margin_pct": "profitMargins",
-    "sector": "sector",
-}
+LATEST_RANKING_RUN_SQL = """
+SELECT id FROM ranking_runs ORDER BY created_at DESC LIMIT 1
+"""
+
+RANKED_STOCKS_SQL = """
+SELECT
+    instruments.ticker,
+    ranked_stocks.rank,
+    ranked_stocks.score,
+    ranked_stocks.score_status,
+    ranked_stocks.factors,
+    ranked_stocks.data_coverage
+FROM ranked_stocks
+JOIN instruments ON instruments.id = ranked_stocks.instrument_id
+WHERE ranked_stocks.run_id = %s
+"""
+
+# factors JSONB keys carried straight onto the stock dict under the same name.
+RANKED_STOCKS_FACTOR_FIELDS = (
+    "g_quality",
+    "g_smart_money",
+    "g_valuation",
+    "g_growth",
+    "g_price_setup",
+    "g_analyst",
+    "g_momentum",
+    "model_score",
+    "rank_vs_staged",
+    "score_vs_staged",
+    "movement_vs_staged",
+)
+
+# Renames only. A field absent from this map passes through under its own name —
+# it is NOT filtered out.
+#
+# This used to be an allow-list, and every observation field missing from it was
+# silently dropped. Four providers' worth of new fields (delivery, 52-week distance,
+# moving averages) reached Postgres and never reached the scorer, which went on ranking
+# from stale archived CSV values while fresh ones sat unused one table away. A
+# hand-maintained list of "fields we accept" fails open the wrong way: forgetting an
+# entry loses data quietly instead of erroring.
 
 COVERAGE_GROUPS = {
     "quality": (
@@ -224,7 +247,7 @@ COVERAGE_GROUPS = {
     ),
     "price_setup": ("pct_below_52w_high", "px_vs_50dma"),
     "analyst": ("upside_pct", "recommendationMean", "numberOfAnalystOpinions"),
-    "momentum": ("fiftyTwoWeekChangePercent", "px_vs_200dma"),
+    "momentum": ("fiftyTwoWeekChangePercent", "px_vs_200dma", "rsi14"),
 }
 
 COVERAGE_WEIGHTS = {
@@ -287,6 +310,53 @@ def parse_database_record(record: dict[str, Any]) -> dict[str, Any]:
     return parsed
 
 
+CURRENT_METRICS_SQL = """
+SELECT stock_instruments.ticker,
+       current_metrics.field,
+       current_metrics.numeric_value,
+       current_metrics.text_value,
+       current_metrics.origin
+FROM current_metrics
+JOIN stock_instruments ON stock_instruments.id = current_metrics.instrument_id
+"""
+
+
+FIELD_TIMESTAMPS_SQL = """
+SELECT current_metrics.field, current_metrics.observed_at
+FROM current_metrics
+JOIN stock_instruments ON stock_instruments.id = current_metrics.instrument_id
+WHERE stock_instruments.ticker = %s
+"""
+
+
+def stocks_from_current_metrics(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Pivot the current_metrics view into one dict per stock.
+
+    Replaces a three-stage Python merge (archive CSVs, then live observations, then the
+    ranking run). The view already resolves precedence in SQL, and doing it once there
+    rather than once here means the scoring job and the API cannot disagree about what a
+    stock's ROE is — which they did: the view said 0.0748 while this module served
+    0.0893 from the archive.
+
+    `clean_legacy_stock` still runs per stock: the ownership sanity rule (promoter plus
+    institutional cannot exceed 100%) is a property of the record, not of the source.
+    """
+    stocks: dict[str, dict[str, Any]] = {}
+    origins: dict[str, dict[str, str]] = {}
+    for row in rows:
+        ticker = str(row["ticker"]).upper()
+        stock = stocks.setdefault(ticker, {"ticker": ticker})
+        value = row["numeric_value"] if row["numeric_value"] is not None else row["text_value"]
+        if value is None:
+            continue
+        stock[row["field"]] = float(value) if row["numeric_value"] is not None else value
+        origins.setdefault(ticker, {})[row["field"]] = row["origin"]
+    for ticker, stock in stocks.items():
+        # Kept so the dashboard can still show where each value came from.
+        stock["field_origins"] = origins.get(ticker, {})
+    return [clean_legacy_stock(stock) for stock in stocks.values()]
+
+
 def merge_stock_sources(
     ranking: Iterable[dict[str, Any]],
     supporting: Iterable[Iterable[dict[str, Any]]],
@@ -308,45 +378,6 @@ def merge_stock_sources(
                 if field not in stocks[ticker] or stocks[ticker][field] is None:
                     stocks[ticker][field] = value
     return [clean_legacy_stock(stock) for stock in stocks.values()]
-
-
-def apply_live_metrics(
-    stocks: list[dict[str, Any]],
-    rows: Iterable[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    by_ticker = {str(stock.get("ticker", "")).upper(): stock for stock in stocks}
-    for row in rows:
-        stock = by_ticker.get(str(row["ticker"]).upper())
-        target = LIVE_FIELD_MAP.get(row["field"])
-        if stock is None or target is None:
-            continue
-        value = row["numeric_value"] if row["numeric_value"] is not None else row["text_value"]
-        if value is None:
-            continue
-        numeric = _numeric(value)
-        if row["field"] == "profit_margin_pct" and numeric is not None:
-            value = numeric / 100
-        elif numeric is not None and row["text_value"] is None:
-            value = numeric
-        stock[target] = value
-        stock.setdefault("live_fields", {})[target] = {
-            "provider": row["provider"],
-            "observed_at": row["observed_at"].isoformat(),
-        }
-
-    for stock in stocks:
-        price = _numeric(stock.get("currentPrice"))
-        high = _numeric(stock.get("fiftyTwoWeekHigh"))
-        low = _numeric(stock.get("fiftyTwoWeekLow"))
-        market_cap = _numeric(stock.get("marketCap"))
-        if price is not None and high and high > 0:
-            stock["pct_below_52w_high"] = round((high - price) / high * 100, 2)
-        if price is not None and low and low > 0:
-            stock["pct_above_52w_low"] = round((price - low) / low * 100, 2)
-        if market_cap is not None:
-            stock["mcap_cr"] = round(market_cap / 10_000_000, 2)
-        _recalculate_coverage(stock)
-    return stocks
 
 
 def _has_metric(stock: dict[str, Any], metric: str) -> bool:
@@ -398,21 +429,24 @@ def _recalculate_coverage(stock: dict[str, Any]) -> None:
 
 
 class DashboardRepository:
-    def __init__(
-        self,
-        snapshot_dir: Path = SNAPSHOT_DIR,
-        database_url: str | None = None,
-    ) -> None:
-        self.snapshot_path = snapshot_dir / "dashboard-data.json"
+    def __init__(self, database_url: str | None = None) -> None:
         self.database_url = normalize_database_url(database_url) if database_url else None
 
     def load(self) -> dict[str, Any]:
-        if self.database_url:
-            try:
-                return self._load_database()
-            except (psycopg.Error, KeyError, TypeError, ValueError):
-                return self._load_snapshot(fallback=True)
-        return self._load_snapshot(fallback=False)
+        """Read the dashboard from TimescaleDB. Raises if it cannot.
+
+        This used to fall back to a tracked `dashboard-data.json` whenever the query
+        raised. That fallback was worse than an outage: on 2026-09-04 a broken column
+        reference in CURRENT_METRICS_SQL sent it down this path and the API answered
+        200 OK with six-week-old data for every one of 1,353 stocks. The only tell was
+        `data_status: "fallback"`, which nothing alerted on. A failure that looks like
+        success does not get fixed.
+        """
+        if not self.database_url:
+            raise RuntimeError(
+                "DATABASE_URL is not configured; the API serves only from TimescaleDB"
+            )
+        return self._load_database()
 
     def _load_database(self) -> dict[str, Any]:
         with psycopg.connect(
@@ -421,10 +455,12 @@ class DashboardRepository:
             row_factory=dict_row,
         ) as connection:
             with connection.cursor() as cursor:
+                cursor.execute(CURRENT_METRICS_SQL)
+                current_rows = cursor.fetchall()
+                # Still queried, but only to describe provenance and freshness in the
+                # payload — no longer a source of stock values.
                 cursor.execute(LATEST_SOURCE_SQL, (list(SOURCE_PATHS.values()),))
                 rows = cursor.fetchall()
-                cursor.execute(LATEST_LIVE_METRICS_SQL)
-                live_rows = cursor.fetchall()
                 cursor.execute(LIVE_SOURCE_SQL)
                 live_source_rows = cursor.fetchall()
 
@@ -444,18 +480,9 @@ class DashboardRepository:
                 "sha256": row["content_sha256"],
             }
 
-        if not records["ranking"]:
-            raise ValueError("Latest ranking source is missing from PostgreSQL")
-        stocks = merge_stock_sources(
-            records["ranking"],
-            (
-                records["fundamentals"],
-                records["screen"],
-                records["shareholding"],
-                records["rank_history"],
-            ),
-        )
-        stocks = apply_live_metrics(stocks, live_rows)
+        if not current_rows:
+            raise ValueError("current_metrics returned no rows")
+        stocks = stocks_from_current_metrics(current_rows)
         sources = [metadata[key] for key in SOURCE_PATHS if key in metadata]
         sources.extend(
             {
@@ -488,38 +515,40 @@ class DashboardRepository:
             },
             "data_status": "ready",
             "storage_backend": "postgres",
-            "served_from": (
-                "TimescaleDB · archive + live observations"
-                if live_rows
-                else "TimescaleDB · archive schema"
-            ),
+            # Named after what actually resolved the values, so a payload that quietly
+            # fell back to the archive says so.
+            "served_from": "TimescaleDB · current_metrics ("
+            + ", ".join(sorted({row["origin"] for row in current_rows}))
+            + ")",
         }
 
-    def _load_snapshot(self, *, fallback: bool) -> dict[str, Any]:
-        if not self.snapshot_path.exists():
-            return {
-                "schema_version": 3,
-                "record_count": 0,
-                "generated_at": None,
-                "stocks": [],
-                "sources": [],
-                "data_status": "empty",
-                "storage_backend": "none",
-                "served_from": "No data source",
-            }
-        payload = json.loads(self.snapshot_path.read_text(encoding="utf-8"))
-        stocks = [clean_legacy_stock(stock) for stock in payload.get("stocks", [])]
-        payload["stocks"] = stocks
-        payload["record_count"] = len(stocks)
-        payload["data_status"] = "fallback" if fallback else "ready"
-        payload["storage_backend"] = "json"
-        payload["served_from"] = "JSON fallback" if fallback else self.snapshot_path.name
-        payload.setdefault("sources", [])
-        return payload
-
     def get_stock(self, ticker: str) -> dict[str, Any] | None:
+        """One stock, with a per-field `observed_at`.
+
+        The timestamps live here rather than on /api/v1/dashboard on purpose. Every cell
+        in `current_metrics` carries an `observed_at`, but shipping 86 of them for all
+        1,353 stocks would roughly double a payload that is already 6 MB, to send bytes
+        that are only ever read for the one stock someone expanded. Placement follows the
+        access pattern: if the table itself ever shows an "updated" column for every row,
+        this belongs in the bulk payload instead.
+        """
         ticker = ticker.upper()
-        return next(
+        stock = next(
             (stock for stock in self.load()["stocks"] if stock.get("ticker", "").upper() == ticker),
             None,
         )
+        if stock is None:
+            return None
+        with psycopg.connect(
+            self.database_url, connect_timeout=3, row_factory=dict_row
+        ) as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(FIELD_TIMESTAMPS_SQL, (ticker,))
+                rows = cursor.fetchall()
+        # Keyed by the same field names as `field_origins`, so the two line up.
+        stock["field_updated_at"] = {
+            row["field"]: row["observed_at"].isoformat()
+            for row in rows
+            if row["observed_at"] is not None
+        }
+        return stock

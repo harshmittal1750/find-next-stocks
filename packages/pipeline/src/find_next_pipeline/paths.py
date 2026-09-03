@@ -15,5 +15,4 @@ ROOT = repository_root()
 DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 EXPORT_DIR = DATA_DIR / "exports"
-SNAPSHOT_DIR = DATA_DIR / "snapshots"
 WAREHOUSE_DIR = DATA_DIR / "warehouse"

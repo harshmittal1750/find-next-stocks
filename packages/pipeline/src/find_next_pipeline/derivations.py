@@ -23,8 +23,14 @@ __all__ = [
     "beta",
     "beta_from_closes",
     "daily_returns",
+    "moving_average",
+    "pct_above_low",
+    "pct_below_high",
     "price_change_pct",
+    "rsi",
+    "rsi_signal",
     "trailing_peg",
+    "window_change_pct",
 ]
 
 
@@ -169,3 +175,82 @@ def price_change_pct(
     if start_day == end_day or start_price <= 0:
         return None
     return round((end_price / start_price - 1.0) * 100.0, 4)
+
+
+def rsi(closes: Sequence[float], period: int = 14) -> float | None:
+    """Wilder's RSI over the full series.
+
+    Wilder smoothing is recursive, so the result depends on how much history you feed
+    it: 15 closes gives a number that will not match any chart. Pass everything you
+    have — a year of dailies converges.
+    """
+    values = [c for c in (_finite(x) for x in closes) if c is not None]
+    if len(values) < period + 1:
+        return None
+
+    seed = list(zip(values[:period], values[1 : period + 1], strict=True))
+    avg_gain = sum(max(b - a, 0.0) for a, b in seed) / period
+    avg_loss = sum(max(a - b, 0.0) for a, b in seed) / period
+
+    for a, b in zip(values[period:-1], values[period + 1 :], strict=True):
+        change = b - a
+        avg_gain = (avg_gain * (period - 1) + max(change, 0.0)) / period
+        avg_loss = (avg_loss * (period - 1) + max(-change, 0.0)) / period
+
+    if avg_loss == 0:
+        return 100.0 if avg_gain > 0 else 50.0
+    return round(100 - 100 / (1 + avg_gain / avg_loss), 2)
+
+
+def rsi_signal(value: float | None, low: float = 30.0, high: float = 70.0) -> str | None:
+    if value is None:
+        return None
+    return "oversold" if value <= low else "overbought" if value >= high else "neutral"
+
+
+def moving_average(closes: Sequence[float], period: int) -> float | None:
+    """Mean of the last `period` closes. None if the stock has not traded that long."""
+    values = [c for c in (_finite(x) for x in closes) if c is not None]
+    if len(values) < period:
+        return None
+    return round(fmean(values[-period:]), 4)
+
+
+def pct_below_high(closes: Sequence[float], window: int = 252) -> float | None:
+    """How far below its window high the last close sits, as a positive percent.
+
+    Computed on closing prices, so it will read slightly lower than a provider's
+    52-week figure, which uses intraday highs. Consistency with `price_bars` matters
+    more here than matching Yahoo to the decimal: every price factor in the model reads
+    the same series.
+    """
+    values = [c for c in (_finite(x) for x in closes) if c is not None][-window:]
+    if not values:
+        return None
+    peak = max(values)
+    if peak <= 0:
+        return None
+    return round((peak - values[-1]) / peak * 100.0, 4)
+
+
+def pct_above_low(closes: Sequence[float], window: int = 252) -> float | None:
+    """How far above its window low the last close sits, as a positive percent."""
+    values = [c for c in (_finite(x) for x in closes) if c is not None][-window:]
+    if not values:
+        return None
+    trough = min(values)
+    if trough <= 0:
+        return None
+    return round((values[-1] - trough) / trough * 100.0, 4)
+
+
+def window_change_pct(closes: Sequence[float], window: int = 252) -> float | None:
+    """Total return across the last `window` sessions, as a percent.
+
+    Both ends come from the same adjusted series, so a split cannot manufacture a move —
+    the same reason price_change_pct takes one series rather than two prices.
+    """
+    values = [c for c in (_finite(x) for x in closes) if c is not None][-window:]
+    if len(values) < 2 or values[0] <= 0:
+        return None
+    return round((values[-1] / values[0] - 1.0) * 100.0, 4)

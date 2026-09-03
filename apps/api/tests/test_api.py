@@ -25,8 +25,12 @@ def test_refresh_manifest_reports_provider_availability() -> None:
     providers = {item["provider"]: item for item in response.json()["providers"]}
     assert providers["nse"]["available"] is True
     assert providers["yahoo"]["available"] is True
-    assert providers["bse"]["available"] is False
-    assert providers["bse"]["reason"]
+    # BSE was enabled by owner decision; it needs no credentials, so it is available.
+    assert providers["bse"]["available"] is True
+    # A provider that genuinely cannot run must still say why, rather than failing
+    # silently at refresh time.
+    assert providers["upstox"]["available"] is False
+    assert providers["upstox"]["reason"]
 
 
 def test_refresh_request_passes_only_selected_providers(monkeypatch) -> None:
@@ -80,15 +84,22 @@ def test_quality_coverage_separates_obtainable_from_raw() -> None:
 
 
 def test_quality_gaps_explains_each_blank() -> None:
+    """Every blank gets a reason from the known set.
+
+    Deliberately not asserting that a named stock is missing a named field: an earlier
+    version pinned OMAXE's blank `rank`, which stopped being blank the moment the
+    database had real data. That tested the snapshot, not the endpoint.
+    """
     response = client.get("/api/v1/quality/gaps/OMAXE")
 
     assert response.status_code == 200
     gaps = response.json()["gaps"]
-    # A blank rank is the model declining to score, not a provider failing us.
-    assert gaps["rank"] == "derived"
-    # No broker covers this stock, so the target price cannot exist.
-    assert gaps["recommendationMean"] == "analyst"
-    assert "recoverable" not in {gaps.get("rank"), gaps.get("recommendationMean")}
+    known = {"recoverable", "analyst", "undefined", "not_applicable", "derived",
+             "descriptive", "unknown"}
+    assert set(gaps.values()) <= known, gaps
+    # Whatever is blank, pipeline bookkeeping is never reported as a provider gap.
+    for field in ("rank", "final_score", "current_rank"):
+        assert gaps.get(field, "derived") == "derived"
 
 
 def test_quality_gaps_rejects_an_unknown_ticker() -> None:

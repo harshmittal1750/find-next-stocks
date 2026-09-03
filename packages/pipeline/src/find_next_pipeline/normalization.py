@@ -14,6 +14,11 @@ PERCENT_FIELDS = {
     "profit_margin_pct",
 }
 
+# A share of a company is bounded: nobody can own 120% or -5% of it, and that rule is
+# what catches provider unit errors. A *return* or a *margin* is not bounded either way —
+# a loss-making R&D company really does post ROE of -1989%. Range-checking those threw
+# away 413 correct figures from exactly the distressed small-caps a screener exists to
+# find, so the check applies only to ownership.
 OWNERSHIP_FIELDS = {"promoter_pct", "institutional_pct"}
 
 DEFAULT_PROVIDER_PRIORITY = {
@@ -74,7 +79,7 @@ def normalize_observation(observation: MetricObservation) -> MetricObservation:
 
     normalized.value = round(numeric, 6)
     normalized.unit = "percent"
-    if not 0 <= numeric <= 100:
+    if normalized.field in OWNERSHIP_FIELDS and not 0 <= numeric <= 100:
         normalized.is_valid = False
         normalized.issues.append(
             ValidationIssue(

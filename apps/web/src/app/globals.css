@@ -1,9 +1,48 @@
 @import "tailwindcss";
 
+/*
+  Theming.
+
+  The components hard-code Tailwind's `stone-*` scale in roughly 150 places, always as a
+  scale: 950 for the page, 900 for panels, 800 for hairlines, 100–300 for text, 500–700
+  for muted text. Rather than rewrite every call site into semantic tokens, light mode
+  redefines the scale itself — Tailwind v4 compiles `bg-stone-900` to
+  `var(--color-stone-900)`, so remapping those variables re-skins the whole app.
+
+  The remap is tuned, not a straight inversion. Inverting would send `text-stone-600`
+  (muted body text) to stone-400, which is too pale to read on white; the mid-tones are
+  therefore chosen for contrast on a light ground rather than mirrored.
+*/
+
 :root {
   --background: #0c0a09;
   --foreground: #f5f5f4;
   --accent: #d97745;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --background: #faf9f8;
+  --foreground: #1c1917;
+  /* #d97745 reaches only ~3:1 on white, and #b85c2e ~4.3:1. Measured at 4.5:1+. */
+  --accent: #a34d1f;
+  color-scheme: light;
+
+  /* Surfaces: darkest becomes lightest. */
+  --color-stone-950: #faf9f8; /* page */
+  --color-stone-900: #ffffff; /* panels */
+  --color-stone-800: #e7e5e4; /* hairlines, the most-used border */
+  /* The dark theme uses 700 for de-emphasised but still-readable text ("View all
+     data"). Mirroring that lightness onto white measured 3.59:1, below AA, so this
+     step is darkened for legibility even though it compresses the muted range. */
+  --color-stone-700: #767069;
+  --color-stone-600: #6b625c; /* muted body text — must stay readable */
+  --color-stone-500: #78716c;
+  --color-stone-400: #57534e;
+  --color-stone-300: #44403c;
+  --color-stone-200: #292524;
+  --color-stone-100: #1c1917; /* primary text */
+  --color-stone-50: #0c0a09;
 }
 
 @theme inline {
@@ -34,4 +73,39 @@ a,
 input,
 select {
   -webkit-tap-highlight-color: transparent;
+}
+
+/*
+  The toggle renders both icons and CSS chooses, so no theme-dependent markup reaches
+  hydration. Dark shows the moon (what you are in), light shows the sun.
+*/
+.theme-icon {
+  display: none;
+}
+:root[data-theme="dark"] .theme-icon--moon,
+:root[data-theme="light"] .theme-icon--sun {
+  display: block;
+}
+/* Before the init script resolves a theme, fall back to the dark-mode glyph. */
+:root:not([data-theme]) .theme-icon--moon {
+  display: block;
+}
+
+/*
+  Suppress transitions while the theme switches. Without this every element with a colour
+  transition animates independently and the change reads as a smear.
+*/
+:root[data-theme-switching] *,
+:root[data-theme-switching] *::before,
+:root[data-theme-switching] *::after {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

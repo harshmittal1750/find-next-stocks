@@ -3,6 +3,7 @@
 import { Fragment, useMemo, useState } from "react";
 
 import { DataRefreshControl } from "@/components/data-refresh-control";
+import { ThemeToggle } from "@/components/theme-toggle";
 import type { DashboardPayload, Stock } from "@/lib/types";
 
 type SortKey =
@@ -18,6 +19,7 @@ type SortKey =
   | "promoter_pct"
   | "institutional_pct"
   | "pct_below_52w_high"
+  | "rsi14"
   | "upside_pct"
   | "mcap_cr"
   | "rank_vs_staged";
@@ -45,6 +47,7 @@ const COLUMNS: Array<{ key: SortKey; label: string; align?: "right" }> = [
   { key: "promoter_pct", label: "Promoter", align: "right" },
   { key: "institutional_pct", label: "Institution", align: "right" },
   { key: "pct_below_52w_high", label: "Below high", align: "right" },
+  { key: "rsi14", label: "RSI (14)", align: "right" },
   { key: "upside_pct", label: "Upside", align: "right" },
   { key: "mcap_cr", label: "Market cap", align: "right" },
   { key: "rank_vs_staged", label: "Rank change", align: "right" },
@@ -63,6 +66,7 @@ const DEFAULT_DIRECTION: Record<SortKey, SortDirection> = {
   promoter_pct: "desc",
   institutional_pct: "desc",
   pct_below_52w_high: "desc",
+  rsi14: "asc",
   upside_pct: "desc",
   mcap_cr: "desc",
   rank_vs_staged: "desc",
@@ -128,20 +132,39 @@ function compareStocks(left: Stock, right: Stock, key: SortKey, direction: SortD
 function DetailGroup({
   title,
   metrics,
+  origins,
 }: {
   title: string;
-  metrics: Array<[string, string]>;
+  // [label, formatted value, source field name]. The field name is what links the row
+  // back to `field_origins`; rows without one are never marked.
+  metrics: Array<[string, string, string?]>;
+  origins?: Record<string, string>;
 }) {
   return (
     <div>
       <h4 className="font-mono text-[10px] uppercase tracking-[0.16em] text-stone-600">{title}</h4>
       <dl className="mt-3 grid grid-cols-2 gap-x-5 gap-y-3">
-        {metrics.map(([label, value]) => (
-          <div className="border-t border-stone-800/80 pt-2" key={label}>
-            <dt className="text-[11px] text-stone-600">{label}</dt>
-            <dd className="mt-1 font-mono text-xs text-stone-300">{value}</dd>
-          </div>
-        ))}
+        {metrics.map(([label, value, field]) => {
+          // An archived value is real but was not fetched this run, and until now it
+          // rendered identically to a fresh one.
+          const archived = field !== undefined && origins?.[field] === "archive";
+          return (
+            <div className="border-t border-stone-800/80 pt-2" key={label}>
+              <dt className="text-[11px] text-stone-600">{label}</dt>
+              <dd className="mt-1 font-mono text-xs text-stone-300">
+                {value}
+                {archived ? (
+                  <span
+                    className="ml-1 align-super text-[9px] uppercase tracking-wider text-stone-500"
+                    title="From the imported CSV snapshot, not fetched this run"
+                  >
+                    arch
+                  </span>
+                ) : null}
+              </dd>
+            </div>
+          );
+        })}
       </dl>
     </div>
   );
@@ -152,35 +175,42 @@ function StockDetails({ stock }: { stock: Stock }) {
     <div className="grid gap-7 bg-stone-950/70 px-4 py-6 lg:grid-cols-4 lg:px-6">
       <DetailGroup
         metrics={[
-          ["Forward P/E", number(stock.forwardPE)],
-          ["PEG ratio", number(stock.pegRatio)],
-          ["ROA", ratioPercent(stock.returnOnAssets)],
-          ["Current ratio", number(stock.currentRatio)],
-          ["Quick ratio", number(stock.quickRatio)],
-          ["Free cash flow", currency(stock.freeCashflow)],
+          ["Forward P/E", number(stock.forwardPE), "forwardPE"],
+          ["PEG ratio", number(stock.pegRatio), "pegRatio"],
+          ["ROA", ratioPercent(stock.returnOnAssets), "returnOnAssets"],
+          ["Current ratio", number(stock.currentRatio), "currentRatio"],
+          ["Quick ratio", number(stock.quickRatio), "quickRatio"],
+          ["Free cash flow", currency(stock.freeCashflow), "freeCashflow"],
         ]}
+        origins={stock.field_origins}
         title="Fundamentals"
       />
       <DetailGroup
         metrics={[
-          ["Revenue growth", ratioPercent(stock.revenueGrowth)],
-          ["Earnings growth", ratioPercent(stock.earningsGrowth)],
-          ["Quarterly earnings", ratioPercent(stock.earningsQuarterlyGrowth)],
-          ["Profit margin", ratioPercent(stock.profitMargins)],
-          ["Operating margin", ratioPercent(stock.operatingMargins)],
-          ["EBITDA margin", ratioPercent(stock.ebitdaMargins)],
+          ["Revenue growth", ratioPercent(stock.revenueGrowth), "revenueGrowth"],
+          ["Earnings growth", ratioPercent(stock.earningsGrowth), "earningsGrowth"],
+          ["Quarterly earnings", ratioPercent(stock.earningsQuarterlyGrowth), "earningsQuarterlyGrowth"],
+          ["Profit margin", ratioPercent(stock.profitMargins), "profitMargins"],
+          ["Operating margin", ratioPercent(stock.operatingMargins), "operatingMargins"],
+          ["EBITDA margin", ratioPercent(stock.ebitdaMargins), "ebitdaMargins"],
         ]}
+        origins={stock.field_origins}
         title="Growth & margins"
       />
       <DetailGroup
         metrics={[
           ["52-week range", `${currency(stock.fiftyTwoWeekLow)} – ${currency(stock.fiftyTwoWeekHigh)}`],
-          ["50-day average", currency(stock.fiftyDayAverage)],
-          ["200-day average", currency(stock.twoHundredDayAverage)],
+          ["50-day average", currency(stock.fiftyDayAverage), "fiftyDayAverage"],
+          ["200-day average", currency(stock.twoHundredDayAverage), "twoHundredDayAverage"],
           ["Above 52w low", number(stock.pct_above_52w_low, "%")],
-          ["Delivery average", number(stock.avg_delivery_pct, "%")],
-          ["Beta", number(stock.beta)],
+          ["Delivery average", number(stock.avg_delivery_pct, "%"), "avg_delivery_pct"],
+          ["Beta", number(stock.beta), "beta"],
+          [
+            "RSI (14)",
+            stock.rsi14 == null ? "—" : `${number(stock.rsi14)}${stock.rsiSignal ? ` · ${stock.rsiSignal}` : ""}`,
+          ],
         ]}
+        origins={stock.field_origins}
         title="Market setup"
       />
       <DetailGroup
@@ -191,10 +221,11 @@ function StockDetails({ stock }: { stock: Stock }) {
           ["Smart money", number(stock.g_smart_money)],
           ["Price setup", number(stock.g_price_setup)],
           ["Momentum", number(stock.g_momentum)],
-          ["Analyst target", currency(stock.targetMeanPrice)],
-          ["Analyst opinions", number(stock.numberOfAnalystOpinions)],
+          ["Analyst target", currency(stock.targetMeanPrice), "targetMeanPrice"],
+          ["Analyst opinions", number(stock.numberOfAnalystOpinions), "numberOfAnalystOpinions"],
           ["Score change", signed(stock.score_vs_staged)],
         ]}
+        origins={stock.field_origins}
         title="Model & analyst"
       />
       {stock.data_quality?.issues.length ? (
@@ -300,6 +331,7 @@ export function StockExplorer({ dashboard }: { dashboard: DashboardPayload }) {
             {statusLabel}
           </div>
           <DataRefreshControl />
+          <ThemeToggle />
         </div>
       </header>
 
@@ -538,6 +570,7 @@ export function StockExplorer({ dashboard }: { dashboard: DashboardPayload }) {
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.promoter_pct, "%")}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.institutional_pct, "%")}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.pct_below_52w_high, "%")}</td>
+                          <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.rsi14)}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{signed(stock.upside_pct, "%")}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{crores(stock.mcap_cr)}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{signed(stock.rank_vs_staged)}</td>

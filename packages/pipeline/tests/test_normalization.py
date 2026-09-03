@@ -65,3 +65,32 @@ def test_overlapping_ownership_rejects_lower_priority_bucket() -> None:
     rejected = next(item for item in normalized if item.field == "institutional_pct")
     assert rejected.is_valid is False
     assert rejected.issues[0].code == "ownership_total_exceeds_100"
+
+
+def test_returns_and_margins_are_not_range_checked() -> None:
+    """Regression: 413 correct BSE figures were rejected as percent_out_of_range.
+
+    SPARC is loss-making, so ROE of -1989% is the real number. Bounding it discarded
+    the distressed small-caps a screener exists to surface.
+    """
+    for field, value in (("roe_pct", -1989.17), ("profit_margin_pct", -2193.15),
+                         ("roe_pct", 148.0)):
+        result = normalize_observation(
+            MetricObservation(
+                ticker="SPARC", field=field, value=value, unit="percent", provider="bse"
+            )
+        )
+        assert result.is_valid, (field, value, result.issues)
+
+
+def test_ownership_is_still_bounded() -> None:
+    """The GALLANTT case: a promoter stake over 100% is a provider error, not a signal."""
+    for value in (107.481, -3.0):
+        result = normalize_observation(
+            MetricObservation(
+                ticker="GALLANTT", field="promoter_pct", value=value,
+                unit="percent", provider="yahoo",
+            )
+        )
+        assert not result.is_valid
+        assert result.issues[0].code == "percent_out_of_range"

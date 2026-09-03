@@ -12,6 +12,10 @@ dependencies = [
     "pydantic>=2.11,<3",
     "pydantic-settings>=2.10,<3",
     "typer>=0.16,<1",
+    # Yahoo rotates a cookie+crumb scheme on the endpoints that carry holder data.
+    # Hand-rolling it in httpx returned 429 and could not even be tested; yfinance
+    # tracks the scheme and worked while raw requests were throttled.
+    "yfinance>=0.2.60,<0.3",
 ]
 
 [project.scripts]

@@ -53,9 +53,31 @@ class CanonicalMetric(BaseModel):
     observation_id: UUID
 
 
+class PriceBar(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    ticker: str
+    ts: datetime
+    interval: str = "1d"
+    open: float | None = None
+    high: float | None = None
+    low: float | None = None
+    close: float | None = None
+    adjusted_close: float | None = None
+    volume: float | None = None
+    provider: str
+    raw_request_id: UUID | None = None
+
+    @field_validator("ticker")
+    @classmethod
+    def normalize_ticker(cls, value: str) -> str:
+        return value.strip().upper()
+
+
 class ProviderResult(BaseModel):
     provider: str
     observations: list[MetricObservation] = Field(default_factory=list)
+    price_bars: list[PriceBar] = Field(default_factory=list)
     issues: list[ValidationIssue] = Field(default_factory=list)
 
 

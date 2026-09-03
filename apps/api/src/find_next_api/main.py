@@ -5,6 +5,7 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query, status
 from fastapi.middleware.cors import CORSMiddleware
 from find_next_pipeline.coverage import coverage_summary, explain_gap, is_blank
+from find_next_pipeline.postgres_store import PostgresObservationWarehouse
 from pydantic import BaseModel
 
 from find_next_api.config import get_settings
@@ -13,9 +14,12 @@ from find_next_api.repository import DashboardRepository
 
 settings = get_settings()
 repository = DashboardRepository(database_url=settings.effective_database_url)
+warehouse = PostgresObservationWarehouse(settings.effective_database_url)
 refresh_manager = RefreshJobManager(
     settings.effective_database_url,
-    provider_specs(settings),
+    provider_specs(settings, warehouse),
+    warehouse=warehouse,
+    repository=repository,
 )
 
 
@@ -38,7 +42,13 @@ app.add_middleware(
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    payload = repository.load()
+    try:
+        payload = repository.load()
+    except Exception as exc:  # noqa: BLE001 - any failure to read the DB is unhealthy
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=f"Cannot read dashboard data from TimescaleDB: {exc}",
+        ) from exc
     return {
         "status": "ok" if payload["data_status"] == "ready" else "degraded",
         "storage_backend": payload.get("storage_backend", "unknown"),
@@ -48,7 +58,19 @@ def health() -> dict[str, str]:
 
 @app.get("/api/v1/dashboard")
 def dashboard() -> dict[str, Any]:
-    return repository.load()
+    """503 rather than a plausible-looking empty page.
+
+    There used to be a JSON snapshot behind this and a bare `except` in front of it, so a
+    broken query answered 200 OK with six-week-old data. Both are gone: if TimescaleDB
+    cannot answer, callers are told so.
+    """
+    try:
+        return repository.load()
+    except Exception as exc:  # noqa: BLE001 - surfaced to the caller, not swallowed
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=f"Dashboard data unavailable: {exc}",
+        ) from exc
 
 
 @app.get("/api/v1/refresh")
