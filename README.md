@@ -88,11 +88,12 @@ One refresh runs at a time; starting another while one is active returns the exi
 response carries a `job_id` you can poll at `/api/v1/refresh/{job_id}`.
 
 Providers that need no credentials: **nse**, **nse_delivery**, **bse**, **yahoo**,
-**yahoo_holders**, **derived**. These are added when their key is in `.env`:
+**yahoo_holders**, **yahoo_roe**, **screener**, **derived**. Credentialed providers are
+enabled when their key is in `.env`:
 
 ```bash
 ALPHA_VANTAGE_API_KEY=your-key
-UPSTOX_ANALYTICS_TOKEN=your-token   # or UPSTOX_ACCESS_TOKEN
+UPSTOX_ANALYTICS_TOKEN=your-token   # enables quotes + company fundamentals
 FMP_API_KEY=your-key
 ```
 
@@ -100,6 +101,19 @@ A provider without credentials shows as a **skipped stage**, never as a silent s
 
 Order matters in one place: `derived` computes RSI, beta and moving averages *from stored price
 bars*, so it has to run after `yahoo` has written them. It is appended last for that reason.
+
+ROE uses field-level source trust rather than a magnitude cutoff. Screener is the adjudicator
+where its public page is available; Upstox Fundamentals is the full-universe fallback for ROE
+and ROCE. A greater-than-10x BSE/Yahoo disagreement forms the small, low-rate Screener review
+set. BSE and Yahoo observations remain available for audit but cannot override those reported
+return ratios. Upstox's P/E, P/B, ROA and EV/EBITDA are also archived, but do not enter the
+canonical view: cross-checking found corporate-action errors in P/E and P/B. ROCE is stored
+separately and never substituted for ROE.
+
+The scoreable universe is the `stock_instruments` database view: active equities only.
+Exchange lifecycle changes are applied as migrations, preserving historical observations by
+instrument ID. For example, GUJGASLTD is retained as an alias of GUJENERGY, while suspended
+JBCHEPHARM remains in history but cannot reach the API, frontend, or a new ranking run.
 
 ---
 

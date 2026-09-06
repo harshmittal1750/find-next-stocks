@@ -10,6 +10,7 @@ PERCENT_FIELDS = {
     "promoter_pct",
     "institutional_pct",
     "roe_pct",
+    "roce_pct",
     "return_on_assets_pct",
     "profit_margin_pct",
 }
@@ -23,6 +24,8 @@ OWNERSHIP_FIELDS = {"promoter_pct", "institutional_pct"}
 
 DEFAULT_PROVIDER_PRIORITY = {
     "exchange_filing": 10,
+    "screener": 12,
+    "upstox_fundamentals": 12,
     "nse": 15,
     "bse": 15,
     "company_filing": 20,
@@ -30,6 +33,7 @@ DEFAULT_PROVIDER_PRIORITY = {
     "alpha_vantage": 40,
     "fmp": 50,
     "yahoo": 80,
+    "yahoo_roe": 25,
     "legacy_dashboard": 90,
 }
 
@@ -46,6 +50,7 @@ def _coerce_float(value: Any) -> float | None:
 def normalize_observation(observation: MetricObservation) -> MetricObservation:
     """Normalize units and attach validation issues without losing the raw observation."""
     normalized = observation.model_copy(deep=True)
+
     if normalized.field not in PERCENT_FIELDS:
         return normalized
 

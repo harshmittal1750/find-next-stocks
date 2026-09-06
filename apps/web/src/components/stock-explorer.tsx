@@ -15,6 +15,7 @@ type SortKey =
   | "trailingPE"
   | "priceToBook"
   | "roe_pct"
+  | "roce_pct"
   | "debtToEquity"
   | "promoter_pct"
   | "institutional_pct"
@@ -43,6 +44,7 @@ const COLUMNS: Array<{ key: SortKey; label: string; align?: "right" }> = [
   { key: "trailingPE", label: "P/E", align: "right" },
   { key: "priceToBook", label: "P/B", align: "right" },
   { key: "roe_pct", label: "ROE", align: "right" },
+  { key: "roce_pct", label: "ROCE", align: "right" },
   { key: "debtToEquity", label: "Debt/Eq", align: "right" },
   { key: "promoter_pct", label: "Promoter", align: "right" },
   { key: "institutional_pct", label: "Institution", align: "right" },
@@ -62,6 +64,7 @@ const DEFAULT_DIRECTION: Record<SortKey, SortDirection> = {
   trailingPE: "asc",
   priceToBook: "asc",
   roe_pct: "desc",
+  roce_pct: "desc",
   debtToEquity: "asc",
   promoter_pct: "desc",
   institutional_pct: "desc",
@@ -175,6 +178,8 @@ function StockDetails({ stock }: { stock: Stock }) {
     <div className="grid gap-7 bg-stone-950/70 px-4 py-6 lg:grid-cols-4 lg:px-6">
       <DetailGroup
         metrics={[
+          ["ROE", number(stock.roe_pct, "%"), "roe_pct"],
+          ["ROCE", number(stock.roce_pct, "%"), "roce_pct"],
           ["Forward P/E", number(stock.forwardPE), "forwardPE"],
           ["PEG ratio", number(stock.pegRatio), "pegRatio"],
           ["ROA", ratioPercent(stock.returnOnAssets), "returnOnAssets"],
@@ -566,6 +571,7 @@ export function StockExplorer({ dashboard }: { dashboard: DashboardPayload }) {
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.trailingPE)}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.priceToBook)}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.roe_pct, "%")}</td>
+                          <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.roce_pct, "%")}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.debtToEquity)}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.promoter_pct, "%")}</td>
                           <td className="px-3 py-4 text-right font-mono text-xs text-stone-400">{number(stock.institutional_pct, "%")}</td>

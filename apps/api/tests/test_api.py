@@ -29,8 +29,10 @@ def test_refresh_manifest_reports_provider_availability() -> None:
     assert providers["bse"]["available"] is True
     # A provider that genuinely cannot run must still say why, rather than failing
     # silently at refresh time.
-    assert providers["upstox"]["available"] is False
-    assert providers["upstox"]["reason"]
+    assert providers["fmp"]["available"] is False
+    assert providers["fmp"]["reason"]
+    assert providers["yahoo_roe"]["available"] is True
+    assert providers["screener"]["available"] is True
 
 
 def test_refresh_request_passes_only_selected_providers(monkeypatch) -> None:

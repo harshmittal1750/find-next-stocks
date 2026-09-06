@@ -20,9 +20,12 @@ from find_next_pipeline.providers import (
     DerivedMetricsProvider,
     NseDeliveryProvider,
     NseValuationProvider,
+    ScreenerReturnsProvider,
+    UpstoxFundamentalsProvider,
     UpstoxQuoteProvider,
     YahooChartProvider,
     YahooHoldersProvider,
+    YahooRoeProvider,
 )
 from find_next_pipeline.providers.base import MarketDataProvider
 from find_next_pipeline.providers.derived import BENCHMARK_TICKER
@@ -87,6 +90,19 @@ def provider_specs(
             else "Add UPSTOX_ANALYTICS_TOKEN or UPSTOX_ACCESS_TOKEN to .env",
         ),
         ProviderSpec(
+            provider="upstox_fundamentals",
+            label="Upstox company fundamentals",
+            factory=(lambda client: UpstoxFundamentalsProvider(client, upstox_token))
+            if upstox_token
+            else None,
+            # The official endpoint accepts one ISIN per request. Batches expose useful
+            # progress while the provider's own rate gate stays under 500 requests/min.
+            batch_size=100,
+            skip_reason=None
+            if upstox_token
+            else "Add UPSTOX_ANALYTICS_TOKEN or UPSTOX_ACCESS_TOKEN to .env",
+        ),
+        ProviderSpec(
             provider="yahoo",
             label="Yahoo market history",
             factory=lambda client: YahooChartProvider(client),
@@ -98,7 +114,9 @@ def provider_specs(
             label="Yahoo ownership",
             # One call per stock through yfinance, which handles Yahoo's rotating
             # cookie+crumb. Batched so progress advances and a throttle shows up early.
-            factory=lambda client: YahooHoldersProvider(),
+            # Use the manager's store so raw payload rows and observation request IDs
+            # are persisted together. A private store wrote files but left no DB link.
+            factory=lambda client: YahooHoldersProvider(raw_store=client.raw_store),
             batch_size=100,
         ),
         ProviderSpec(
@@ -123,6 +141,20 @@ def provider_specs(
             # One request per stock, so batch for progress reporting. The provider caps
             # its own in-flight requests; this only controls how often the UI advances.
             batch_size=100,
+        ),
+        ProviderSpec(
+            provider="yahoo_roe",
+            label="Yahoo annual-statement ROE",
+            factory=lambda client: YahooRoeProvider(client),
+            batch_size=100,
+        ),
+        ProviderSpec(
+            provider="screener",
+            label="Screener reported ROE and ROCE",
+            # Screener is an adjudicator, not a bulk feed. The warehouse applies the
+            # same conflict rule to every stock and returns only the small review set.
+            factory=lambda client: ScreenerReturnsProvider(client, review_reader=warehouse),
+            batch_size=50,
         ),
         ProviderSpec(
             provider="fmp",

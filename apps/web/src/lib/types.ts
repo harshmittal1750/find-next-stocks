@@ -21,6 +21,7 @@ export type Stock = {
   priceToBook?: number | null;
   pegRatio?: number | null;
   roe_pct: number | null;
+  roce_pct?: number | null;
   returnOnAssets?: number | null;
   debtToEquity?: number | null;
   currentRatio?: number | null;

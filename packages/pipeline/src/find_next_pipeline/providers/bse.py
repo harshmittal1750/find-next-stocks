@@ -264,7 +264,28 @@ class BseFundamentalsProvider:
             ("operating_margin_pct", _preferred(payload, "ConOPM", "OPM", nonzero=True), "percent"),
             ("trailing_eps", _preferred(payload, "ConEPS", "EPS", nonzero=True), "INR"),
         ]
+        # ROE and P/B share a denominator: shareholders' equity. `price_to_book` above
+        # already refuses a non-positive reading, and an ROE computed on that same
+        # negative equity is no more meaningful -- ASIANHOTNR publishes ROE 3974.28%
+        # against a P/B of -707.41, and Screener puts its return near 3%. Accepting one
+        # while rejecting the other was our inconsistency, not BSE's. 14 stocks sit in
+        # this state, among them Vodafone Idea, MTNL, GTL Infra and Unitech: companies
+        # with genuinely negative net worth, where the ratio has no meaning to recover.
+        #
+        # The marker is emitted so the warehouse can act on this for rows already stored.
+        # Suppressing the value here only helps future fetches: metric_observations is
+        # append-only and the views take the newest *valid* row, so an existing ROE keeps
+        # winning until something marks it unusable.
+        book_value = _number(payload.get("ConPB"))
+        if book_value is None:
+            book_value = _number(payload.get("PB"))
+        equity_is_negative = book_value is not None and book_value <= 0
+        if equity_is_negative:
+            with_basis = [entry for entry in with_basis if entry[0] != "roe_pct"]
+
         candidates: list[tuple[str, Any, str | None]] = [
+            *(([("book_value_sign", "negative" if equity_is_negative else "positive", None)])
+              if book_value is not None else []),
             *((field, _value(pair), unit) for field, pair, unit in with_basis),
             *(
                 (f"{field}_basis", pair[1], None)

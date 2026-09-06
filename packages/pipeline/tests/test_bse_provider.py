@@ -200,3 +200,41 @@ def test_uniformly_standalone_fields_are_not_excluded() -> None:
 def test_consolidated_pe_stays_valid() -> None:
     by_field = {o.field: o for o in _fetch(FakeClient(), ["RELIANCE"]).observations}
     assert by_field["trailing_pe"].is_valid is True
+
+
+def _emitted(header: dict) -> dict:
+    """Field -> value for a single stock, given the header BSE would return for it."""
+    header = {**header, "SecurityCode": "500325"}
+    result = _fetch(FakeClient(header), ["RELIANCE"])
+    return {o.field: o.value for o in result.observations}
+
+
+def test_negative_equity_suppresses_roe_but_not_the_rest() -> None:
+    """ASIANHOTNR: BSE publishes ROE 3974.28% against a P/B of -707.41.
+
+    Return on equity divides by shareholders' equity. When that equity is negative the
+    quotient is arithmetic, not a return -- and the provider already refuses the P/B
+    built on the same denominator, so accepting the ROE was our inconsistency.
+    """
+    payload = {
+        "SecurityId": "ASIANHOTNR",
+        "ROE": "3974.28", "PB": "-707.41", "EPS": "-21.63",
+        "NPM": "-4.56", "OPM": "17.96",
+    }
+    fields = _emitted(payload)
+    assert "roe_pct" not in fields
+    assert fields.get("book_value_sign") == "negative"
+    # Everything not built on equity survives: one bad denominator is not a bad payload.
+    assert fields["profit_margin_pct"] == -4.56
+    assert fields["operating_margin_pct"] == 17.96
+
+
+def test_positive_equity_keeps_a_large_roe() -> None:
+    """The rule is the denominator's sign, never the answer's size.
+
+    KIRIINDUS reports 1561% on a P/B of 10.08, consistent with its own EPS and book
+    value. NESTLEIND earns ~97%. Rejecting by magnitude would discard both.
+    """
+    fields = _emitted({"SecurityId": "KIRIINDUS", "ROE": "1561.09", "PB": "10.08"})
+    assert fields["roe_pct"] == 1561.09
+    assert fields["book_value_sign"] == "positive"

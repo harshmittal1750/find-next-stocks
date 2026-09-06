@@ -34,6 +34,7 @@ NUMERIC_FIELDS = {
     "priceToBook",
     "pegRatio",
     "roe_pct",
+    "roce_pct",
     "returnOnEquity",
     "returnOnAssets",
     "debtToEquity",

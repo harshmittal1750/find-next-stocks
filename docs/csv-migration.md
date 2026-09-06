@@ -201,6 +201,198 @@ Ordered by dependency. Each is done when its check passes — not when the code 
       Previously each had its own copy, so filtering one left the camelCase name the
       scorer reads still serving all 202.
 
+- [x] **BUGFIX 013. The basis guard filtered after deduplication.** 009/010 applied the
+      standalone-basis exclusion *after* `DISTINCT ON` had already picked one row per
+      field. When BSE's standalone `trailing_pe` was the newest observation it won the
+      pick and was then deleted -- and NSE's older, valid, consolidated value never got
+      considered, because dedup had discarded it. The guard left a hole instead of
+      falling through, and `current_metrics` filled the hole from the archive.
+
+      Cost while it was live: **202 stocks served an archived `trailingPE`** and 189 an
+      archived `trailingEps`, every one of them while a valid NSE observation sat in the
+      table. P/E moves with price daily, so archived is not merely stale but wrong -- and
+      `trailingPE` feeds the valuation scoring group. Migration `013` filters first, then
+      deduplicates: a filter that runs after a pick can only remove; one that runs before
+      it can choose.
+
+      Result: `trailingPE` archive 231 -> 61, observation 1,075 -> 1,245. Zero
+      standalone rows served (guard intact). Re-scoring corrected **813 ranks, max 90
+      places**. Of the 170 newly-live values, 155 agree with `current_price / trailingEps`
+      within 25%.
+
+      `trailingEps` did not improve (still 247 archive): BSE is its only source, so
+      excluding BSE standalone leaves nothing. NSE publishes P/E but not EPS.
+
+- [x] **BUGFIX 014/015. A P/E is unusable when the exchanges disagree, not when it is
+      large.** Reported from the dashboard: GODAVARIB showed 5,550 where Screener shows
+      42.6. The archived BSE payload reads `ConEPS: "0.04"`, `ConPE: "5550.15"` -- the
+      company is near break-even, 245.25 / 0.04 really is ~6,100. Correct arithmetic,
+      meaningless valuation. A price-over-EPS cross-check cannot catch it, because BSE's
+      P/E agrees with BSE's own EPS.
+
+      **First attempt was wrong and was reverted.** A `MAX_MEANINGFUL_PE = 300` bound
+      looked principled and deleted a correct figure: UEL has EPS 0.29 against a price of
+      230.10, so its P/E near 793 is right and Screener independently shows 820. Magnitude
+      cannot separate the cases -- GODAVARIB's EPS is 0.04 and wrong, UEL's is 0.29 and
+      right, and both are tiny. Caught by the user, not by me.
+
+      What separates them is whether the two exchanges agree:
+
+      | | BSE | NSE | ratio | Screener | verdict |
+      |---|---|---|---|---|---|
+      | UEL | 744.4 | 744.4 | 1.0 | 820 | trust |
+      | GODAVARIB | 5,550.2 | 38.6 | 144 | 42.6 | trust neither |
+
+      Of the 1,182 stocks quoted on both, 1,006 agree within 10% and 1,119 within 50%;
+      only **27 differ by more than 3x**, and that set is exactly the suspect one. On
+      disagreement there is no provider to prefer -- BSE was right for ROLEXRINGS (31.34
+      against NSE's 1.58) and wrong for GODAVARIB -- so the honest output is no P/E.
+
+      Second rule, equally unambiguous: **44 stocks carried a positive P/E on negative
+      earnings** (NETWORK18: 5,027.7 on an EPS of -0.21). That is not a large ratio, it is
+      an impossible one.
+
+      Both live in the `pe_unusable` view, defined once and consumed by `live_metrics`
+      *and* `current_metrics`. Applying it only to observations moved the bad number
+      instead of removing it -- GODAVARIB immediately re-appeared at 4,916 from the CSV,
+      the same shape as the 013 ordering bug and 5c-2b-fix before it. Suppressing a value
+      without deciding what fills the gap is not a fix.
+
+      Result: UEL 744.4, INDOCO 814.2, ETERNAL 727.8, MAXESTATES 714.8 all kept -- high
+      but cross-confirmed. PFC 3.4x, VEDL 3.7x, KIRIINDUS 0.65x kept: **the low end is
+      never bounded**, since a cheap stock is the point of the screener, and bounding it
+      would repeat the ROE mistake. 116 stocks now carry no P/E, which is what "no
+      trustworthy figure" should look like.
+
+- [x] **BUGFIX 016. ROE against negative equity.** Reported from the dashboard:
+      ASIANHOTNR showed an ROE of 3,974% where Screener puts its return near 3%. The
+      archived BSE payload carries `ROE: "3974.28"` and, in the same object,
+      `PB: "-707.41"`. Negative price-to-book means negative shareholders' equity, and a
+      loss divided by negative equity is a positive number that is not a return.
+
+      **The inconsistency was ours.** `bse.py` line 258 already refuses `price_to_book`
+      when non-positive, and line 261 accepted the ROE built on that identical
+      denominator. Same equity, two verdicts.
+
+      14 stocks are affected and the list reads exactly as you would expect: Vodafone
+      Idea, MTNL, GTL Infra, Unitech, Alok Industries, Asian Hotels -- companies with
+      genuinely negative net worth.
+
+      **A correction to an earlier note in this file.** SPARC's -1989% was cited as proof
+      that a real ROE can be enormous, and used to justify dropping the 0-100 range check.
+      Dropping the check was still right -- it was discarding 413 correct values -- but
+      the example was wrong: SPARC's P/B is -82.65, so it belongs to this set, not to the
+      set of legitimate extremes.
+
+      Magnitude is emphatically **not** the test; the sign of the denominator is.
+      KIRIINDUS reports 1,561% against a P/B of 10.08, consistent with its own EPS and
+      book value. NESTLEIND earns ~97%, COALINDIA ~102%, HINDZINC ~222%. All kept. This
+      is the same lesson as UEL's P/E of 793: a big number is not evidence of an error.
+
+      Absence of a book value is likewise not evidence. 12 stocks publish an ROE with no
+      P/B at all and 9 are ordinary (FACT 30.7%, KARURVYSYA 21.5%) -- so "no P/B" was
+      deliberately left out of the rule rather than folded in as a convenient proxy.
+
+      Mechanism: `bse.py` emits a `book_value_sign` marker and withholds `roe_pct`; the
+      `roe_unusable` view keys off that marker and both `live_metrics` and
+      `current_metrics` consume it. The marker exists because suppressing at the provider
+      alone fixes nothing for rows already stored -- the log is append-only and the views
+      take the newest *valid* row, so the old ROE keeps winning. Filtering
+      `current_metrics` too stops the CSV refilling the gap, the same trap as 013 and 015.
+      Because `legacy_aliased_metrics` derives `returnOnEquity` from `live_metrics`, one
+      exclusion removes both spellings.
+
+- [x] **BUGFIX 017. TATACAP, HDBFS and PIRAMALFIN report an ROE ~100x too high.** BSE publishes 2,609%,
+      1,983% and 1,233% where the archived Yahoo figures are 12.0%, 12.3% and 5.4%. All
+      three are NBFCs for which BSE publishes no book value, so the negative-equity rule
+      above cannot see them and absence of a P/B is not by itself evidence -- 9 other
+      stocks in that same state are fine. The implemented rule cross-checks against the
+      archived `returnOnEquity`, with a threshold chosen on measured disagreement rather
+      than guessed, in the manner of `pe_unusable`.
+
+      Across 1,093 stocks where both readings have an absolute value of at least 2%,
+      only four disagree by more than 50x: these three and ASIANHOTNR (already excluded
+      by 016). The next-largest disagreement is 32.3x, so 50x is an observed separation,
+      not a generic upper bound. Migration 017 adds that cross-source rule to
+      `roe_unusable`; TATACAP, HDBFS and PIRAMALFIN now remain blank instead of allowing
+      either the bad BSE number or a silent archive refill.
+
+      Screener's 8.58% figure cited for TATACAP is **ROCE**, not ROE. The frontend is
+      correctly labelled ROE, and we do not substitute ROCE for ROE: they use different
+      denominators and must be sourced and scored as separate fields. After rescoring,
+      695 ranks moved (maximum 371 places), showing why invalid ratios must be blocked
+      before scoring.
+
+- [x] **BUGFIX 018. Replace ROE suppression with current multi-provider resolution.**
+      Blanking TATACAP prevented its BSE value of 2,609% from corrupting the score, but
+      it did not supply the correct value. The permanent rule now applies to every stock:
+      compare BSE with Yahoo annual net income divided by average shareholders' equity;
+      send negative-equity or >50x disagreements to Screener for a third-source decision.
+      The same Screener page stores ROCE separately as `roce_pct`; ROE and ROCE are never
+      substituted.
+
+      Raw Screener HTML and raw Yahoo timeseries JSON are archived before parsing. Source
+      disagreements remain in `metric_observations`; `live_metrics` alone selects the
+      canonical value using deterministic field-level priority. A Screener schema change,
+      missing statement history, or request failure is collected as a provider issue.
+      Migration 018 removes the stale CSV comparison introduced by 017. Migration 019
+      limits Screener to the automatically detected review set after a full-universe run
+      hit its public-page rate limit, and gives non-conflicting BSE values precedence over
+      Yahoo's calculated fallback.
+
+- [x] **BUGFIX 020. Scope third-source precedence to the review set.** The interrupted
+      bulk trial left 21 valid Screener ROEs for ordinary stocks. They remain in the
+      append-only observation log, but no random subset should use a different source
+      policy. Screener ROE now wins only for instruments in `roe_bse_conflict`; its ROCE
+      remains usable because no other provider currently supplies that separate field.
+
+      *Run evidence (2026-09-06 IST):* Yahoo wrote 1,329 annual ROEs from 1,353 stocks;
+      24 missing/non-positive-equity cases were grouped under
+      `insufficient_statement_history`. The global comparison selected 17 reviews.
+      Screener temporarily refused this machine's connections after the abandoned bulk
+      attempt, so TATACAP's earlier archived response
+      was replayed through the same parser and now resolves to ROE 12.4%, ROCE 8.58%.
+      This limitation is explicit: exact Screener parity for the remaining 16 is pending
+      source access, not silently claimed as complete.
+
+- [x] **BUGFIX 021. Fail closed while third-source evidence is unavailable.** Selecting
+      Yahoo merely because its disputed number is smaller is not resolution. For any
+      stock in `roe_bse_conflict`, both bulk-source ROEs are now excluded unless a valid
+      Screener observation exists. TATACAP remains at 12.4%; the other 16 reviews carry
+      no ROE and coverage handles the missing scoring input until source access returns.
+      `roe_unusable` also blocks the legacy CSV from silently refilling those cells.
+
+- [x] **BUGFIX 022. Add official Upstox return ratios and narrow trust by field.** The
+      Upstox Fundamentals API resolves companies by ISIN and returns structured key ratios.
+      A full-universe run archived 1,352 responses and wrote **8,016 observations** with
+      three collected issues. Upstox ROE/ROCE agreed closely with all 22 available Screener
+      comparisons (mean absolute differences 1.07 and 1.20 percentage points), fixing the
+      provider-wide BSE basis problem: KIRIINDUS now resolves to ROE -1.55% instead of
+      1,561.1%; ASIANHOTNR to ROE 0.37% / ROCE 2.67% instead of ROE 3,974%; TATACAP keeps
+      Screener's 12.4% / 8.58% because Screener remains first priority where available.
+
+      Trust is deliberately field-scoped. Upstox also returned P/E, P/B, ROA and
+      EV/EBITDA, but UEL exposed corporate-action errors of roughly 10x/100x in Upstox
+      P/E/P/B while its ROE/ROCE matched Screener. Those four fields remain append-only
+      audit evidence and are excluded from `live_metrics`; they cannot affect scoring.
+      The BSE/Yahoo review threshold is now 10x (26 current reviews, including KIRIINDUS),
+      and Screener requests are explicitly paced and retried. Local Screener access remains
+      blocked at the network edge; the error collector grouped all 26 failures, while the
+      trusted Upstox fallback kept the return fields populated.
+
+- [ ] **NSE `trailing_pe` is not trustworthy for every stock.** Surfaced by 013. NSE and
+      BSE agree within 5% on only 867 of the 1,182 stocks carrying both, and **52 differ
+      by more than 50%**. ROLEXRINGS is the clearest: NSE says 1.58, BSE says 31.34, and
+      price / EPS (174.83 / 5.58 = 31.3) settles it in BSE's favour. Five of the 170
+      stocks 013 moved onto NSE data are off by more than 100% against price / EPS.
+
+      A cross-field guard (reject a `trailing_pe` that disagrees with
+      `current_price / trailing_eps` beyond a threshold) would catch them, but the
+      threshold is the open question: these are exactly the stocks whose EPS is
+      standalone, and a holding company's consolidated P/E can differ from its standalone
+      one for real reasons. Needs a decision before it is built, or it will reject good
+      data to remove bad.
+
 - [ ] **5c-2c. Financial statements.** What actually remains of the old 5c, ~15 fields:
       `bookValue`, `currentRatio`, `quickRatio`, `debtToEquity`, `enterpriseValue`,
       `enterpriseToEbitda`, `freeCashflow`, `grossMargins`, `operatingMargins`,
@@ -356,6 +548,13 @@ Ordered by dependency. Each is done when its check passes — not when the code 
       like `trailingPE`, rejected because a marked value beats a missing one.
 
 ## Notes
+
+- Migration `023_instrument_lifecycle.sql` makes `stock_instruments` active-equities-only.
+  It preserves the GUJGASLTD -> GUJENERGY rename as an instrument alias and marks
+  JBCHEPHARM inactive after its exchange suspension. JISLDVREQS remains active: Upstox
+  returns a successful empty ratio set for that DVR share class, which is now reported as
+  `provider_empty_payload` rather than falsely classified as a schema break. Existing
+  issuer-level Yahoo evidence remains the canonical fallback.
 
 - The archive is not deleted at the end. It keeps the original bytes and SHA-256 of every
   legacy file, which is what lets us prove a ported metric matches what the CSV said.

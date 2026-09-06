@@ -272,6 +272,74 @@ class PostgresObservationWarehouse:
             for ticker, by_day in self.read_dated_closes_bulk(tickers, limit).items()
         }
 
+    def roe_review_tickers(
+        self,
+        tickers: Iterable[str],
+        *,
+        ratio_threshold: float = 10,
+        minimum_absolute_return: float = 2,
+    ) -> list[str]:
+        """Stocks whose BSE ROE needs a third-source decision.
+
+        A company enters review when BSE reports negative equity, or when BSE and the
+        independently calculated Yahoo annual-statement ROE differ by more than the
+        measured 10x separation. Near-zero values are excluded from ratio comparisons;
+        dividing by 0.01% creates an enormous multiplier without useful evidence.
+        """
+        names = sorted({ticker.strip().upper() for ticker in tickers if ticker})
+        if not names:
+            return []
+        with psycopg.connect(self.database_url) as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    """
+                    WITH latest_bse AS (
+                        SELECT DISTINCT ON (instrument_id)
+                            instrument_id, numeric_value
+                        FROM metric_observations
+                        WHERE field = 'roe_pct' AND provider = 'bse' AND is_valid
+                        ORDER BY instrument_id, observed_at DESC, id DESC
+                    ),
+                    latest_yahoo AS (
+                        SELECT DISTINCT ON (instrument_id)
+                            instrument_id, numeric_value
+                        FROM metric_observations
+                        WHERE field = 'roe_pct' AND provider = 'yahoo_roe' AND is_valid
+                        ORDER BY instrument_id, observed_at DESC, id DESC
+                    ),
+                    latest_sign AS (
+                        SELECT DISTINCT ON (instrument_id)
+                            instrument_id, text_value
+                        FROM metric_observations
+                        WHERE field = 'book_value_sign' AND provider = 'bse' AND is_valid
+                        ORDER BY instrument_id, observed_at DESC, id DESC
+                    )
+                    SELECT instruments.ticker
+                    FROM stock_instruments AS instruments
+                    LEFT JOIN latest_bse AS bse ON bse.instrument_id = instruments.id
+                    LEFT JOIN latest_yahoo AS yahoo ON yahoo.instrument_id = instruments.id
+                    LEFT JOIN latest_sign AS sign ON sign.instrument_id = instruments.id
+                    WHERE instruments.ticker = ANY(%s)
+                      AND (
+                        sign.text_value = 'negative'
+                        OR (
+                            abs(bse.numeric_value) >= %s
+                            AND abs(yahoo.numeric_value) >= %s
+                            AND greatest(abs(bse.numeric_value), abs(yahoo.numeric_value))
+                                / least(abs(bse.numeric_value), abs(yahoo.numeric_value)) > %s
+                        )
+                      )
+                    ORDER BY instruments.ticker
+                    """,
+                    (
+                        names,
+                        minimum_absolute_return,
+                        minimum_absolute_return,
+                        ratio_threshold,
+                    ),
+                )
+                return [ticker for (ticker,) in cursor]
+
     def latest_ranking_run(self) -> dict[str, dict[str, Any]] | None:
         """{ticker: {"rank", "score"}} for the most recent scoring run, or None if
         no run has ever been written — the dashboard falls back to the archived CSV
