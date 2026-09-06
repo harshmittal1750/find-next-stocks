@@ -88,3 +88,14 @@ SET active = FALSE,
         'https://noticeblue.com/circulars/644d5591-9ea0-4f0f-8e42-647e6cb0c2c1',
     updated_at = now()
 WHERE ticker = 'JBCHEPHARM' AND exchange = 'NSE';
+
+-- Listings retain exchange identity; observations retain reporting period and basis.
+ALTER TABLE instruments ADD COLUMN IF NOT EXISTS bse_code TEXT;
+ALTER TABLE instruments ADD COLUMN IF NOT EXISTS universe_request_id UUID REFERENCES raw_api_responses(request_id);
+ALTER TABLE metric_observations ADD COLUMN IF NOT EXISTS period_end DATE;
+ALTER TABLE metric_observations ADD COLUMN IF NOT EXISTS accounting_basis TEXT;
+
+-- Identical bodies from different requests still have different provenance/timestamps.
+ALTER TABLE raw_api_responses DROP CONSTRAINT IF EXISTS raw_api_responses_provider_content_sha256_key;
+CREATE INDEX IF NOT EXISTS raw_api_responses_content_lookup ON raw_api_responses(provider, content_sha256);
+CREATE INDEX IF NOT EXISTS instruments_isin_lookup ON instruments(isin);

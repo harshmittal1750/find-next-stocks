@@ -25,9 +25,7 @@ class PostgresObservationWarehouse:
     """Append-only provider observations for the shared PostgreSQL store."""
 
     def __init__(self, database_url: str) -> None:
-        self.database_url = database_url.replace(
-            "postgresql+asyncpg://", "postgresql://", 1
-        )
+        self.database_url = database_url.replace("postgresql+asyncpg://", "postgresql://", 1)
 
     def ensure_instruments(self, stocks: Iterable[dict[str, Any]]) -> int:
         rows = [
@@ -35,6 +33,7 @@ class PostgresObservationWarehouse:
                 str(stock.get("ticker") or "").strip().upper(),
                 str(stock.get("shortName") or stock.get("ticker") or "").strip(),
                 stock.get("sector"),
+                stock.get("exchange", "NSE"),
             )
             for stock in stocks
             if stock.get("ticker")
@@ -43,8 +42,8 @@ class PostgresObservationWarehouse:
             with connection.cursor() as cursor:
                 cursor.executemany(
                     """
-                    INSERT INTO instruments (ticker, exchange, company_name, sector)
-                    VALUES (%s, 'NSE', %s, %s)
+                    INSERT INTO instruments (ticker, company_name, sector, exchange)
+                    VALUES (%s, %s, %s, %s)
                     ON CONFLICT (ticker, exchange) DO UPDATE SET
                         company_name = COALESCE(EXCLUDED.company_name, instruments.company_name),
                         sector = COALESCE(EXCLUDED.sector, instruments.sector),
@@ -53,6 +52,112 @@ class PostgresObservationWarehouse:
                     rows,
                 )
         return len(rows)
+
+    def sync_universe(self, stocks: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Apply a complete, archived exchange snapshot without deleting history."""
+        if not stocks:
+            raise ValueError("Cannot synchronize an empty universe")
+        with psycopg.connect(self.database_url) as connection:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT count(*) FROM stock_instruments")
+                existing_count = cursor.fetchone()[0]
+                if len(stocks) < existing_count * 0.9:
+                    raise ValueError(
+                        "Universe shrank by more than 10%; review sources before applying"
+                    )
+                seen = []
+                for stock in stocks:
+                    cursor.execute(
+                        "SELECT id, ticker, exchange, isin FROM instruments "
+                        "WHERE kind = 'EQUITY' AND (isin = %s OR (ticker = %s AND exchange = %s))",
+                        (stock["isin"], stock["ticker"], stock["exchange"]),
+                    )
+                    matches = cursor.fetchall()
+                    if len(matches) > 1:
+                        raise ValueError(f"Conflicting instrument identities for {stock['ticker']}")
+                    if matches:
+                        instrument_id, old_ticker, old_exchange, old_isin = matches[0]
+                        if old_isin and old_isin != stock["isin"]:
+                            raise ValueError(
+                                f"ISIN changed for {stock['ticker']}; identity review required"
+                            )
+                        if (old_ticker, old_exchange) != (stock["ticker"], stock["exchange"]):
+                            cursor.execute(
+                                "INSERT INTO instrument_ticker_aliases "
+                                "(instrument_id,ticker,exchange,source) "
+                                "VALUES (%s,%s,%s,%s) ON CONFLICT DO NOTHING",
+                                (instrument_id, old_ticker, old_exchange, stock["raw_request_id"]),
+                            )
+                        cursor.execute(
+                            "UPDATE instruments SET ticker=%s, exchange=%s, isin=%s, "
+                            "company_name=%s, "
+                            "bse_code=%s, universe_request_id=%s, active=true, "
+                            "inactive_at=NULL, updated_at=now() "
+                            "WHERE id=%s",
+                            (
+                                stock["ticker"],
+                                stock["exchange"],
+                                stock["isin"],
+                                stock["shortName"],
+                                stock.get("bse_code"),
+                                stock["raw_request_id"],
+                                instrument_id,
+                            ),
+                        )
+                    else:
+                        cursor.execute(
+                            "INSERT INTO instruments "
+                            "(ticker,exchange,isin,company_name,bse_code,universe_request_id) "
+                            "VALUES (%s,%s,%s,%s,%s,%s) RETURNING id",
+                            (
+                                stock["ticker"],
+                                stock["exchange"],
+                                stock["isin"],
+                                stock["shortName"],
+                                stock.get("bse_code"),
+                                stock["raw_request_id"],
+                            ),
+                        )
+                        instrument_id = cursor.fetchone()[0]
+                    seen.append(instrument_id)
+                cursor.execute(
+                    "UPDATE instruments SET active=false, inactive_at=CURRENT_DATE, "
+                    "lifecycle_note='Absent from complete NSE/BSE active equity snapshot', "
+                    "updated_at=now() "
+                    "WHERE kind='EQUITY' AND active AND NOT (id=ANY(%s))",
+                    (seen,),
+                )
+        return self.read_instruments()
+
+    def read_instruments(self) -> list[dict[str, Any]]:
+        with psycopg.connect(self.database_url, row_factory=psycopg.rows.dict_row) as connection:
+            return connection.execute(
+                'SELECT ticker, exchange, isin, bse_code, company_name AS "shortName", sector '
+                "FROM stock_instruments ORDER BY ticker"
+            ).fetchall()
+
+    def fresh_tickers(self, provider: str, max_age_days: int) -> set[str]:
+        """Tickers this provider already covered within `max_age_days`.
+
+        Financial statements are quarterly facts. Refetching all 5,428 of them on every
+        run spends 21,712 requests -- roughly six hours of an account limited to 1,900
+        per 30 minutes -- to re-learn numbers that cannot have changed. It also means a
+        job killed at stock 3,000 restarts at zero, which is how a four-hour run produced
+        307 stocks.
+        """
+        with psycopg.connect(self.database_url) as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    """
+                    SELECT DISTINCT instruments.ticker
+                    FROM metric_observations AS o
+                    JOIN instruments ON instruments.id = o.instrument_id
+                    WHERE o.provider = %s
+                      AND o.observed_at > now() - make_interval(days => %s)
+                    """,
+                    (provider, max_age_days),
+                )
+                return {row[0] for row in cursor}
 
     def last_refreshes(self, providers: Iterable[str]) -> dict[str, str]:
         names = sorted(set(providers))
@@ -95,8 +200,8 @@ class PostgresObservationWarehouse:
                             request_id, provider, endpoint, requested_at, received_at,
                             status_code, content_sha256, storage_path, request_params
                         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        ON CONFLICT (provider, content_sha256) DO UPDATE SET
-                            provider = EXCLUDED.provider
+                        ON CONFLICT (request_id) DO UPDATE SET
+                            request_id = EXCLUDED.request_id
                         RETURNING request_id
                         """,
                         (
@@ -138,8 +243,8 @@ class PostgresObservationWarehouse:
                         INSERT INTO metric_observations (
                             instrument_id, field, numeric_value, text_value, unit,
                             provider, endpoint, observed_at, raw_request_id,
-                            is_valid, validation_issues
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            is_valid, validation_issues, period_end, accounting_basis
+                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                         ON CONFLICT (instrument_id, field, provider, observed_at) DO NOTHING
                         """,
                         (
@@ -151,9 +256,11 @@ class PostgresObservationWarehouse:
                             item.provider,
                             item.endpoint,
                             item.observed_at,
-                            request_ids.get(item.raw_request_id),
+                            request_ids.get(item.raw_request_id, item.raw_request_id),
                             item.is_valid,
                             Jsonb([issue.model_dump(mode="json") for issue in item.issues]),
+                            item.period_end,
+                            item.accounting_basis,
                         ),
                     )
                     observation_count += max(cursor.rowcount, 0)
@@ -259,13 +366,9 @@ class PostgresObservationWarehouse:
                     # A day may carry bars from more than one provider; last write wins,
                     # and ORDER BY ts makes that deterministic.
                     closes[ticker][ts.date() if hasattr(ts, "date") else ts] = float(close)
-        return {
-            ticker: dict(sorted(by_day.items())[-limit:]) for ticker, by_day in closes.items()
-        }
+        return {ticker: dict(sorted(by_day.items())[-limit:]) for ticker, by_day in closes.items()}
 
-    def read_closes_bulk(
-        self, tickers: Iterable[str], limit: int = 260
-    ) -> dict[str, list[float]]:
+    def read_closes_bulk(self, tickers: Iterable[str], limit: int = 260) -> dict[str, list[float]]:
         """Chronological daily closes per ticker, for RSI and other history derivations."""
         return {
             ticker: list(by_day.values())

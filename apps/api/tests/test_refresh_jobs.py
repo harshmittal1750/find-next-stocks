@@ -212,3 +212,34 @@ def test_repeated_batch_failures_are_reported_by_kind_and_count() -> None:
     # And the single schema failure survives alongside them.
     assert "ValueError" in message
     assert stage["status"] == "failed"
+
+
+def test_refresh_discovers_full_universe_before_fetching(monkeypatch):
+    class DiscoveredWarehouse(FakeWarehouse):
+        def sync_universe(self, stocks):
+            self.prepared = len(stocks)
+            return stocks
+
+    async def discover(client):
+        return [
+            {"ticker": f"SMALL{i}", "universe_note": "Broker master fallback"}
+            for i in range(4)
+        ]
+
+    monkeypatch.setattr('find_next_api.refresh_jobs.discover_equities', discover)
+    warehouse = DiscoveredWarehouse()
+    manager = RefreshJobManager(
+        'postgresql://unused',
+        [ProviderSpec(provider='fake', label='Fake', factory=lambda client: FakeProvider())],
+        warehouse=warehouse,
+        discover_universe=True,
+    )
+    started, _ = manager.start([])
+    job = wait_for_terminal(manager, started['job_id'])
+    manager.shutdown()
+    assert job['total_stocks'] == 4
+    assert job['observations_written'] == 4
+    assert job['status'] == 'completed_with_warnings'
+    prepare = job['stages'][0]
+    assert prepare['total'] == prepare['processed'] == 4
+    assert 'Broker master fallback' in prepare['message']

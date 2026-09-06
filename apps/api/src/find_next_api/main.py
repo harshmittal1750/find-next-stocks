@@ -20,6 +20,7 @@ refresh_manager = RefreshJobManager(
     provider_specs(settings, warehouse),
     warehouse=warehouse,
     repository=repository,
+    discover_universe=True,
 )
 
 
@@ -83,10 +84,7 @@ def latest_refresh() -> dict[str, Any]:
 
 @app.post("/api/v1/refresh", status_code=status.HTTP_202_ACCEPTED)
 def start_refresh(request: RefreshRequest | None = None) -> dict[str, Any]:
-    payload = repository.load()
-    stocks = payload.get("stocks", [])
-    if not stocks:
-        raise HTTPException(status_code=503, detail="No stock universe is available")
+    stocks = warehouse.read_instruments()
     manifest = refresh_manager.manifest()
     availability = {item["provider"]: item["available"] for item in manifest}
     requested = (

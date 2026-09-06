@@ -89,8 +89,19 @@ CREATE OR REPLACE VIEW live_metrics AS
 WITH all_valid AS (
     SELECT o.id, o.instrument_id, o.field, o.numeric_value, o.text_value,
            o.unit, o.provider, o.observed_at
-    FROM metric_observations AS o
+    FROM (
+        SELECT DISTINCT ON (instrument_id, field, provider) *
+        FROM metric_observations
+        ORDER BY instrument_id, field, provider, observed_at DESC, id DESC
+    ) AS o
     WHERE o.is_valid
+      AND (
+          o.provider NOT IN ('upstox_statements', 'upstox_shareholding')
+          OR (o.period_end <= CURRENT_DATE AND o.period_end >= CURRENT_DATE -
+              CASE WHEN o.provider = 'upstox_shareholding' OR o.field = 'earnings_quarterly_growth'
+                        OR o.field LIKE 'quarterly_%'
+                   THEN 200 ELSE 550 END)
+      )
 ),
 basis AS (
     SELECT DISTINCT ON (instrument_id, provider, metric)
@@ -134,6 +145,9 @@ ORDER BY
     instrument_id,
     field,
     CASE
+        WHEN provider = 'upstox_shareholding' THEN 0
+        WHEN provider = 'upstox_statements' THEN 0
+        WHEN field = 'current_price' AND provider = 'upstox' THEN 0
         WHEN field IN ('roe_pct', 'roce_pct') AND provider = 'screener' THEN 0
         WHEN field IN ('roe_pct', 'roce_pct')
              AND provider = 'upstox_fundamentals' THEN 1
@@ -156,6 +170,11 @@ SELECT
 FROM live_metrics AS live
 JOIN (
     VALUES
+        ('current_ratio',        'currentRatio',       1.0),
+        ('revenue_growth',       'revenueGrowth',      1.0),
+        ('earnings_growth',      'earningsGrowth',     1.0),
+        ('earnings_quarterly_growth', 'earningsQuarterlyGrowth', 1.0),
+        ('net_profit_margin',    'profitMargins',      1.0),
         ('current_price',        'currentPrice',       1.0),
         ('market_cap',           'marketCap',          1.0),
         ('fifty_two_week_high',  'fiftyTwoWeekHigh',   1.0),
@@ -170,7 +189,10 @@ JOIN (
         ('market_cap',           'mcap_cr',             0.0000001)
 ) AS mapping(live_field, legacy_field, factor)
   ON mapping.live_field = live.field
-WHERE live.numeric_value IS NOT NULL;
+WHERE live.numeric_value IS NOT NULL
+  AND NOT (live.field = 'profit_margin_pct' AND mapping.legacy_field = 'profitMargins'
+           AND EXISTS (SELECT 1 FROM live_metrics AS reported
+                       WHERE reported.instrument_id = live.instrument_id AND reported.field = 'net_profit_margin'));
 
 CREATE OR REPLACE VIEW current_metrics AS
 WITH latest_run AS (
@@ -239,7 +261,10 @@ archived AS (
           'movement_vs_pushed', 'staged_movement_vs_pushed',
           'ownership_score', 'shareholding_score',
           'reasons', 'shareholding_reasons',
-          'score'
+          'score', 'rank', 'final_score', 'model_score', 'score_status',
+          'data_cov', 'quality_cov', 'valuation_cov',
+          'g_quality', 'g_smart_money', 'g_valuation', 'g_growth',
+          'g_price_setup', 'g_analyst', 'g_momentum'
       ])
       AND NULLIF(kv.value #>> '{}', '') IS NOT NULL
     ORDER BY symbols.instrument_id, kv.key, f.source_modified_at DESC

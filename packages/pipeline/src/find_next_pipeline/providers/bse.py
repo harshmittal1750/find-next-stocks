@@ -117,11 +117,15 @@ class BseFundamentalsProvider:
 
     name = "bse"
 
-    def __init__(self, client: ArchivedHttpClient, concurrency: int = 4) -> None:
+    def __init__(
+        self, client: ArchivedHttpClient, concurrency: int = 4, *, instrument_reader=None
+    ) -> None:
+        self.instrument_reader = instrument_reader
         self.client = client
         # BSE tolerates far less parallelism than a bulk file endpoint.
         self.concurrency = max(1, concurrency)
         self._master: dict[str, dict[str, Any]] | None = None
+        self._master_request_id: UUID | None = None
 
     async def fetch(self, tickers: list[str]) -> ProviderResult:
         result = ProviderResult(provider=self.name)
@@ -186,7 +190,12 @@ class BseFundamentalsProvider:
                     )
                 )
                 continue
-            result.observations.extend(self._observations(ticker, row, payload, envelope_id))
+            observations = self._observations(ticker, row, payload, envelope_id)
+            for observation in observations:
+                if observation.field == "market_cap":
+                    observation.raw_request_id = self._master_request_id
+                    observation.endpoint = MASTER_ENDPOINT
+            result.observations.extend(observations)
         return result
 
     async def _load_master(self) -> dict[str, dict[str, Any]]:
@@ -197,7 +206,7 @@ class BseFundamentalsProvider:
         """
         if self._master is not None:
             return self._master
-        _envelope, payload = await self.client.get_json(
+        envelope, payload = await self.client.get_json(
             provider=self.name,
             endpoint=MASTER_ENDPOINT,
             params={
@@ -211,6 +220,7 @@ class BseFundamentalsProvider:
         )
         if not isinstance(payload, list):
             raise RuntimeError("security master returned an unexpected schema")
+        self._master_request_id = envelope.request_id
 
         best: dict[str, dict[str, Any]] = {}
         for row in payload:
@@ -222,6 +232,13 @@ class BseFundamentalsProvider:
                 _number(incumbent.get("Mktcap")) or -1
             ):
                 best[symbol] = row
+        if self.instrument_reader is not None:
+            by_code = {str(row["SCRIP_CD"]): row for row in payload}
+            best = {
+                _normal(r["ticker"]): by_code[r["bse_code"]]
+                for r in self.instrument_reader.read_instruments()
+                if r.get("bse_code") in by_code
+            }
         self._master = best
         return best
 
@@ -284,8 +301,11 @@ class BseFundamentalsProvider:
             with_basis = [entry for entry in with_basis if entry[0] != "roe_pct"]
 
         candidates: list[tuple[str, Any, str | None]] = [
-            *(([("book_value_sign", "negative" if equity_is_negative else "positive", None)])
-              if book_value is not None else []),
+            *(
+                ([("book_value_sign", "negative" if equity_is_negative else "positive", None)])
+                if book_value is not None
+                else []
+            ),
             *((field, _value(pair), unit) for field, pair, unit in with_basis),
             *(
                 (f"{field}_basis", pair[1], None)
@@ -304,7 +324,8 @@ class BseFundamentalsProvider:
         # Which fields arrived on a non-comparable basis, so the observation can be kept
         # and flagged rather than dropped — the raw reading stays auditable.
         standalone_mixed = {
-            field for field, pair, _unit in with_basis
+            field
+            for field, pair, _unit in with_basis
             if pair is not None and pair[1] == "standalone" and field in MIXED_BASIS_FIELDS
         }
 

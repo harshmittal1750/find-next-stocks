@@ -47,14 +47,22 @@ curl http://127.0.0.1:8000/api/v1/refresh
 Only one refresh runs at a time. Poll `/api/v1/refresh/{job_id}` for a specific job.
 `derived` runs after Yahoo because it uses stored price bars.
 
+Every refresh discovers NSE main-board/SME and active BSE equities without a market-cap
+or liquidity cutoff. Dual listings are joined by ISIN; BSE-only symbols use `500001.BO`.
+If NSE downloads fail, discovery uses the Upstox NSE master and reports the fallback.
+Invalid or substantially incomplete snapshots cannot replace the existing universe.
+
 Public providers: `nse`, `nse_delivery`, `bse`, `yahoo`, `yahoo_holders`, `yahoo_roe`,
 `screener`, and `derived`. Optional `.env` credentials enable additional providers:
 
 - `ALPHA_VANTAGE_API_KEY`
-- `UPSTOX_ANALYTICS_TOKEN` (quotes and company fundamentals)
-- `FMP_API_KEY`
+- `UPSTOX_ANALYTICS_TOKEN` (quotes, key ratios, financial statements, shareholding)
 
 Missing credentials produce a skipped stage; provider failures are reported in job results.
+FMP has no implemented adapter yet. Upstox statement and shareholding backfills make
+individual company requests; a full first run can take hours under its
+[published rate limits](https://upstox.com/developer/api-documentation/rate-limiting/).
+Select specific providers for shorter refreshes; broad public feeds run before statements.
 
 ## Data rules
 
@@ -63,6 +71,12 @@ Missing credentials produce a skipped stage; provider failures are reported in j
 - `current_metrics` is shared by the API and scoring: latest ranking output, valid live
   observations, then imported CSV values. `stock_instruments` includes active equities;
   index bars and inactive instruments remain available for historical analysis.
+- Rankings use fetched inputs only; archived values remain marked reference data.
+  Stocks with insufficient quality, valuation, or overall coverage remain visible but unranked.
+- Upstox statements retain reporting period and accounting basis. Only consolidated
+  statements enter this ranking model; annual periods older than 550 days and quarterly
+  periods older than 200 days are excluded. Growth compares matching year-earlier periods.
+  Shareholding categories must describe the same quarter and total approximately 100%.
 - Screener has first priority for reported ROE/ROCE, followed by Upstox Fundamentals.
   Upstox's other key ratios stay audit-only. Conflicting ROE and unusable P/E are blocked
   across both live and archive sources. ROCE never substitutes for ROE.
@@ -91,7 +105,7 @@ Missing credentials produce a skipped stage; provider failures are reported in j
 
 `make archive-csv` imports legacy CSV bytes, hashes, headers, and ordered rows into
 PostgreSQL's `archive` schema. Source files are deleted only after database verification.
-Keep the archive while live providers still leave scoring inputs missing.
+Keep the archive as historical reference while live providers still leave fields missing.
 
 ## Verify
 

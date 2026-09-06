@@ -11,25 +11,35 @@ class UpstoxQuoteProvider:
     """Upstox full-market quotes using the official daily instrument master."""
 
     name = "upstox"
-    instruments_endpoint = (
-        "https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz"
-    )
+    instruments_endpoint = "https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz"
     quotes_endpoint = "https://api.upstox.com/v2/market-quote/quotes"
     max_instruments_per_request = 450
 
-    def __init__(self, client: ArchivedHttpClient, access_token: str) -> None:
+    def __init__(
+        self, client: ArchivedHttpClient, access_token: str, *, instrument_reader=None
+    ) -> None:
         if not access_token:
             raise ValueError("Upstox access or analytics token is required")
+        self.instrument_reader = instrument_reader
         self.client = client
         self.access_token = access_token
 
     async def fetch(self, tickers: list[str]) -> ProviderResult:
         result = ProviderResult(provider=self.name)
         try:
-            _, instruments = await self.client.get_json(
-                provider=self.name,
-                endpoint=self.instruments_endpoint,
-            )
+            if self.instrument_reader is not None:
+                instruments = [
+                    dict(
+                        segment="NSE_EQ",
+                        trading_symbol=r["ticker"],
+                        instrument_key=f"{r['exchange']}_EQ|{r['isin']}",
+                    )
+                    for r in self.instrument_reader.read_instruments()
+                ]
+            else:
+                _, instruments = await self.client.get_json(
+                    provider=self.name, endpoint=self.instruments_endpoint
+                )
         except Exception as exc:
             result.issues.append(
                 ValidationIssue(
@@ -86,9 +96,7 @@ class UpstoxQuoteProvider:
                 ticker = self._ticker_for_quote(response_key, quote, by_key)
                 if ticker is None:
                     continue
-                result.observations.extend(
-                    self._observations(ticker, quote, envelope.request_id)
-                )
+                result.observations.extend(self._observations(ticker, quote, envelope.request_id))
         return result
 
     @staticmethod

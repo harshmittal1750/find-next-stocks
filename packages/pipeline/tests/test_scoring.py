@@ -102,3 +102,18 @@ def test_financial_services_skips_bank_inapplicable_metrics() -> None:
     # The bank isn't penalized in coverage for lacking metrics that don't apply to it.
     assert scored["BANK"]["quality_cov"] > 0
     assert scored["BANK"]["score_status"] == "ranked"
+
+
+def test_archive_only_stock_is_not_ranked_against_fresh_data():
+    archived = _stock("ARCHIVED")
+    archived["field_origins"] = {field: "archive" for field in FULL_METRICS}
+    result = {r["ticker"]: r for r in score_universe([_stock("LIVE"), archived])}
+    assert result["ARCHIVED"]["rank"] is None
+    assert result["ARCHIVED"]["data_cov"] == 0
+    assert result["LIVE"]["rank"] == 1
+
+
+def test_entire_universe_with_identity_only_remains_visible_unranked():
+    result = score_universe([{"ticker": "NEW", "shortName": "New Co"}])
+    assert len(result) == 1
+    assert result[0]["rank"] is None

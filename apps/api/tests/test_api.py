@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from find_next_api.main import app, refresh_manager, repository
+from find_next_api.main import app, refresh_manager, warehouse
 
 client = TestClient(app)
 
@@ -37,7 +37,7 @@ def test_refresh_manifest_reports_provider_availability() -> None:
 
 def test_refresh_request_passes_only_selected_providers(monkeypatch) -> None:
     selected: dict[str, set[str]] = {}
-    monkeypatch.setattr(repository, "load", lambda: {"stocks": [{"ticker": "AAA"}]})
+    monkeypatch.setattr(warehouse, "read_instruments", lambda: [{"ticker": "AAA"}])
     monkeypatch.setattr(
         refresh_manager,
         "manifest",
@@ -61,7 +61,7 @@ def test_refresh_request_passes_only_selected_providers(monkeypatch) -> None:
 
 
 def test_refresh_request_rejects_unavailable_provider(monkeypatch) -> None:
-    monkeypatch.setattr(repository, "load", lambda: {"stocks": [{"ticker": "AAA"}]})
+    monkeypatch.setattr(warehouse, "read_instruments", lambda: [{"ticker": "AAA"}])
     monkeypatch.setattr(
         refresh_manager,
         "manifest",

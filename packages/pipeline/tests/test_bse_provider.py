@@ -238,3 +238,15 @@ def test_positive_equity_keeps_a_large_roe() -> None:
     fields = _emitted({"SecurityId": "KIRIINDUS", "ROE": "1561.09", "PB": "10.08"})
     assert fields["roe_pct"] == 1561.09
     assert fields["book_value_sign"] == "positive"
+
+
+def test_verified_bse_code_wins_over_symbol_and_size():
+    reader = SimpleNamespace(read_instruments=lambda: [
+        {"ticker": "111111.BO", "bse_code": "111111"},
+    ])
+    provider = BseFundamentalsProvider(FakeClient(), instrument_reader=reader)
+    result = asyncio.run(provider.fetch(["111111.BO"]))
+    cap = next(o for o in result.observations if o.field == "market_cap")
+    assert cap.value == 10 * 1e7
+    assert cap.raw_request_id == provider._master_request_id
+    assert cap.endpoint.endswith("ListofScripData/w")

@@ -5,7 +5,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-MODEL_VERSION = "rank_all_v1"
+MODEL_VERSION = "live_verified_v2"
 
 # Ported from legacy/2026-05-31-undervalued-fundamentally-strong-stocks/scripts/rank_all.py —
 # same weights, same groups, same thresholds. See that file's docstring and
@@ -99,10 +99,14 @@ def _derive_extra_factors(df: pd.DataFrame) -> pd.DataFrame:
     """
 
     def g(column: str) -> pd.Series:
-        return pd.to_numeric(df[column], errors="coerce") if column in df else np.nan
+        return (
+            pd.to_numeric(df[column], errors="coerce")
+            if column in df
+            else pd.Series(np.nan, index=df.index)
+        )
 
     df["roe_pct"] = g("returnOnEquity") * 100
-    df["ebitda_margin"] = g("ebitdaMargins").fillna(g("profitMargins")) * 100
+    df["ebitda_margin"] = g("ebitdaMargins") * 100
     df["pct_below_52w_high"] = (
         (g("fiftyTwoWeekHigh") - g("currentPrice")) / g("fiftyTwoWeekHigh") * 100
     ).clip(upper=PCT_BELOW_CAP)
@@ -119,11 +123,9 @@ def _derive_extra_factors(df: pd.DataFrame) -> pd.DataFrame:
         if column in df:
             values = pd.to_numeric(df[column], errors="coerce")
             df[column] = values.where(values > 0)
-    profit_margin = pd.to_numeric(df.get("profitMargins"), errors="coerce")
-    df["roe_pct"] = df["roe_pct"].clip(-100, 150)
+    profit_margin = g("profitMargins")
     df.loc[(profit_margin < 0) & (df["roe_pct"] > 50), "roe_pct"] = np.nan
-    df["returnOnAssets"] = pd.to_numeric(df.get("returnOnAssets"), errors="coerce").clip(-1, 1)
-    df["ebitda_margin"] = df["ebitda_margin"].clip(-100, 100)
+    df["returnOnAssets"] = g("returnOnAssets")
 
     if "institutional_pct" not in df or df["institutional_pct"].isna().all():
         df["institutional_pct"] = g("heldPercentInstitutions") * 100
@@ -179,7 +181,16 @@ def score_universe(
     total = sum(w.values())
     w = {k: v / total for k, v in w.items()}
 
-    df = pd.DataFrame(stocks)
+    # Legacy CSV values remain visible, but must not make old stocks look better
+    # researched than newly discovered equities. Score only independently fetched data.
+    inputs = []
+    for stock in stocks:
+        row = dict(stock)
+        for field, origin in stock.get("field_origins", {}).items():
+            if origin == "archive" and field not in {"sector", "industry", "shortName"}:
+                row[field] = None
+        inputs.append(row)
+    df = pd.DataFrame(inputs)
     if df.empty or "ticker" not in df:
         return []
     df = _derive_extra_factors(df)

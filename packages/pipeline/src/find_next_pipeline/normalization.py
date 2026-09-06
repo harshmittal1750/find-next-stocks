@@ -9,6 +9,9 @@ from find_next_pipeline.models import CanonicalMetric, MetricObservation, Severi
 PERCENT_FIELDS = {
     "promoter_pct",
     "institutional_pct",
+    "fii_pct",
+    "other_dii_pct",
+    "mutual_funds_pct",
     "roe_pct",
     "roce_pct",
     "return_on_assets_pct",
@@ -20,12 +23,16 @@ PERCENT_FIELDS = {
 # a loss-making R&D company really does post ROE of -1989%. Range-checking those threw
 # away 413 correct figures from exactly the distressed small-caps a screener exists to
 # find, so the check applies only to ownership.
-OWNERSHIP_FIELDS = {"promoter_pct", "institutional_pct"}
+OWNERSHIP_FIELDS = {
+    "promoter_pct", "institutional_pct", "fii_pct", "other_dii_pct", "mutual_funds_pct"
+}
 
 DEFAULT_PROVIDER_PRIORITY = {
     "exchange_filing": 10,
     "screener": 12,
     "upstox_fundamentals": 12,
+    "upstox_statements": 10,
+    "upstox_shareholding": 10,
     "nse": 15,
     "bse": 15,
     "company_filing": 20,

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from enum import StrEnum
 from typing import Any
 from uuid import UUID, uuid4
@@ -26,6 +26,8 @@ class MetricObservation(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     observation_id: UUID = Field(default_factory=uuid4)
+    period_end: date | None = None
+    accounting_basis: str | None = None
     ticker: str
     field: str
     value: float | int | str | None

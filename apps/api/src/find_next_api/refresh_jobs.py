@@ -17,6 +17,7 @@ from find_next_pipeline.postgres_store import PostgresObservationWarehouse
 from find_next_pipeline.providers import (
     AlphaVantageProvider,
     BseFundamentalsProvider,
+    BseResultsProvider,
     DerivedMetricsProvider,
     NseDeliveryProvider,
     NseValuationProvider,
@@ -30,7 +31,12 @@ from find_next_pipeline.providers import (
 from find_next_pipeline.providers.base import MarketDataProvider
 from find_next_pipeline.providers.derived import BENCHMARK_TICKER
 from find_next_pipeline.providers.http import ArchivedHttpClient
+from find_next_pipeline.providers.upstox_statements import (
+    UpstoxShareholdingProvider,
+    UpstoxStatementsProvider,
+)
 from find_next_pipeline.raw_store import RawJsonStore
+from find_next_pipeline.universe import discover_equities
 
 from find_next_api.config import Settings
 from find_next_api.scoring_jobs import run_scoring
@@ -82,7 +88,11 @@ def provider_specs(
         ProviderSpec(
             provider="upstox",
             label="Upstox market quotes",
-            factory=(lambda client: UpstoxQuoteProvider(client, upstox_token))
+            factory=(
+                lambda client: UpstoxQuoteProvider(
+                    client, upstox_token, instrument_reader=warehouse
+                )
+            )
             if upstox_token
             else None,
             skip_reason=None
@@ -92,7 +102,11 @@ def provider_specs(
         ProviderSpec(
             provider="upstox_fundamentals",
             label="Upstox company fundamentals",
-            factory=(lambda client: UpstoxFundamentalsProvider(client, upstox_token))
+            factory=(
+                lambda client: UpstoxFundamentalsProvider(
+                    client, upstox_token, instrument_reader=warehouse
+                )
+            )
             if upstox_token
             else None,
             # The official endpoint accepts one ISIN per request. Batches expose useful
@@ -122,9 +136,7 @@ def provider_specs(
         ProviderSpec(
             provider="alpha_vantage",
             label="Alpha Vantage fundamentals",
-            factory=(lambda client: AlphaVantageProvider(client, alpha_key))
-            if alpha_key
-            else None,
+            factory=(lambda client: AlphaVantageProvider(client, alpha_key)) if alpha_key else None,
             batch_size=max(1, settings.refresh_alpha_vantage_batch_size),
             skip_reason=None if alpha_key else "Add ALPHA_VANTAGE_API_KEY to .env",
         ),
@@ -137,9 +149,17 @@ def provider_specs(
         ProviderSpec(
             provider="bse",
             label="BSE fundamentals",
-            factory=lambda client: BseFundamentalsProvider(client),
+            factory=lambda client: BseFundamentalsProvider(client, instrument_reader=warehouse),
             # One request per stock, so batch for progress reporting. The provider caps
             # its own in-flight requests; this only controls how often the UI advances.
+            batch_size=100,
+        ),
+        ProviderSpec(
+            provider="bse_results",
+            label="BSE filed results",
+            factory=lambda client: BseResultsProvider(client, instrument_reader=warehouse),
+            # One request per stock against the same host as `bse`, and free of any
+            # rate-limit budget the Upstox stages need.
             batch_size=100,
         ),
         ProviderSpec(
@@ -163,6 +183,28 @@ def provider_specs(
             skip_reason="Provider adapter has not been migrated to the new pipeline",
         ),
     ]
+    specs.append(specs.pop(3))
+    if warehouse is not None and upstox_token:
+        specs.extend(
+            [
+                ProviderSpec(
+                    provider="upstox_shareholding",
+                    label="Upstox reported shareholding",
+                    factory=lambda client: UpstoxShareholdingProvider(
+                        client, upstox_token, warehouse
+                    ),
+                    batch_size=100,
+                ),
+                ProviderSpec(
+                    provider="upstox_statements",
+                    label="Upstox financial statements",
+                    factory=lambda client: UpstoxStatementsProvider(
+                        client, upstox_token, warehouse
+                    ),
+                    batch_size=100,
+                ),
+            ]
+        )
     if warehouse is not None:
         # Reads price_bars written by the providers above (Yahoo today), so it must run
         # after them — appending here keeps it last without an explicit stage ordering.
@@ -185,7 +227,9 @@ class RefreshJobManager:
         warehouse: ObservationWarehouse | None = None,
         raw_store_factory: Callable[[], RawJsonStore] = RawJsonStore,
         repository: Any | None = None,
+        discover_universe: bool = False,
     ) -> None:
+        self.discover_universe = discover_universe
         self.database_url = database_url
         self.specs = specs
         self.warehouse = warehouse or PostgresObservationWarehouse(database_url)
@@ -202,9 +246,7 @@ class RefreshJobManager:
 
     def manifest(self) -> list[dict[str, Any]]:
         try:
-            last_refreshes = self.warehouse.last_refreshes(
-                [spec.provider for spec in self.specs]
-            )
+            last_refreshes = self.warehouse.last_refreshes([spec.provider for spec in self.specs])
         except Exception:
             last_refreshes = {}
         return [
@@ -299,14 +341,42 @@ class RefreshJobManager:
                 message="Preparing the stock universe",
             )
             self._start_stage(job_id, "prepare", len(stocks))
-            prepared = self.warehouse.ensure_instruments(stocks)
+            if self.discover_universe:
+                store = self.raw_store_factory()
+
+                async def discover():
+                    async with ArchivedHttpClient(store) as client:
+                        return await discover_equities(client)
+
+                try:
+                    discovered = asyncio.run(discover())
+                finally:
+                    persisted = self.warehouse.write(store.drain_saved(), [])
+                    self._increment_totals(
+                        job_id, observations=0, raw_responses=persisted.raw_responses
+                    )
+                universe_notes = sorted(
+                    {r["universe_note"] for r in discovered if r.get("universe_note")}
+                )
+                warnings = bool(universe_notes)
+                stocks = self.warehouse.sync_universe(discovered)
+                prepared = len(stocks)
+                self._update_job(job_id, total_stocks=prepared)
+                self._start_stage(job_id, "prepare", prepared)
+            else:
+                prepared = self.warehouse.ensure_instruments(stocks)
             self._finish_stage(
                 job_id,
                 "prepare",
                 status="completed",
                 processed=prepared,
                 observations=0,
-                message=f"Prepared {prepared:,} NSE instruments",
+                message=f"Prepared {prepared:,} Indian equity instruments"
+                + (
+                    "; " + "; ".join(universe_notes)
+                    if self.discover_universe and universe_notes
+                    else ""
+                ),
             )
 
             tickers = [str(stock["ticker"]).upper() for stock in stocks if stock.get("ticker")]
@@ -413,7 +483,12 @@ class RefreshJobManager:
         failures = FailureTally()
         for batch in batches:
             try:
-                result: ProviderResult = asyncio.run(provider.fetch(batch))
+
+                async def fetch_batch(batch=batch):
+                    async with client:
+                        return await provider.fetch(batch)
+
+                result: ProviderResult = asyncio.run(fetch_batch())
                 _, normalized = select_canonical_metrics(result.observations)
                 persisted = self.warehouse.write(store.drain_saved(), normalized)
                 observations += persisted.observations
@@ -453,8 +528,7 @@ class RefreshJobManager:
         elif issues:
             status = "completed"
             message = (
-                f"Stored {observations:,} observations with "
-                f"{issues} provider issue(s){breakdown}"
+                f"Stored {observations:,} observations with {issues} provider issue(s){breakdown}"
             )
         else:
             status = "completed"

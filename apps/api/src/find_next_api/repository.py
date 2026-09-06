@@ -382,10 +382,6 @@ def merge_stock_sources(
 
 
 def _has_metric(stock: dict[str, Any], metric: str) -> bool:
-    if metric == "ebitdaMargins":
-        return _numeric(stock.get("ebitdaMargins")) is not None or _numeric(
-            stock.get("profitMargins")
-        ) is not None
     if metric == "fwd_eps_growth":
         trailing = _numeric(stock.get("trailingEps"))
         return (
@@ -481,8 +477,6 @@ class DashboardRepository:
                 "sha256": row["content_sha256"],
             }
 
-        if not current_rows:
-            raise ValueError("current_metrics returned no rows")
         stocks = stocks_from_current_metrics(current_rows)
         sources = [metadata[key] for key in SOURCE_PATHS if key in metadata]
         sources.extend(
@@ -498,7 +492,8 @@ class DashboardRepository:
             if row["source_modified_at"] is not None
         )
         latest_source_at = max(
-            datetime.fromisoformat(source["source_modified_at"]) for source in sources
+            (datetime.fromisoformat(source["source_modified_at"]) for source in sources),
+            default=datetime.now(UTC),
         )
         field_count = len({field for stock in stocks for field in stock})
         return {

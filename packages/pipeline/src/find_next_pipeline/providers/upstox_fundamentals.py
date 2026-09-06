@@ -20,10 +20,9 @@ from find_next_pipeline.models import (
     ValidationIssue,
 )
 from find_next_pipeline.providers.http import ArchivedHttpClient
+from find_next_pipeline.providers.rate_limit import ACCOUNT_WINDOW
 
-INSTRUMENTS_ENDPOINT = (
-    "https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz"
-)
+INSTRUMENTS_ENDPOINT = "https://assets.upstox.com/market-quote/instruments/exchange/NSE.json.gz"
 RATIOS_ENDPOINT = "https://api.upstox.com/v2/fundamentals/{isin}/key-ratios"
 
 # The documented limit for standard APIs is 500/minute.  Starting at most one request
@@ -89,19 +88,27 @@ class UpstoxFundamentalsProvider:
         concurrency: int = DEFAULT_CONCURRENCY,
         request_interval_seconds: float = DEFAULT_REQUEST_INTERVAL_SECONDS,
         attempts: int = DEFAULT_ATTEMPTS,
+        instrument_reader=None,
     ) -> None:
         if not access_token:
             raise ValueError("Upstox access or analytics token is required")
+        self.instrument_reader = instrument_reader
         self.client = client
         self.access_token = access_token
         self.concurrency = max(1, concurrency)
         self.request_interval_seconds = max(0.0, request_interval_seconds)
         self.attempts = max(1, attempts)
         self._instrument_payload: Any | None = None
+        self._request_windows = ACCOUNT_WINDOW
 
     async def fetch(self, tickers: list[str]) -> ProviderResult:
         result = ProviderResult(provider=self.name)
         try:
+            if self._instrument_payload is None and self.instrument_reader is not None:
+                self._instrument_payload = [
+                    dict(segment="NSE_EQ", trading_symbol=r["ticker"], isin=r["isin"])
+                    for r in self.instrument_reader.read_instruments()
+                ]
             if self._instrument_payload is None:
                 _, self._instrument_payload = await self.client.get_json(
                     provider=self.name,
@@ -145,6 +152,8 @@ class UpstoxFundamentalsProvider:
                 delay = next_request_at - loop.time()
                 if delay > 0:
                     await asyncio.sleep(delay)
+                if self.request_interval_seconds:
+                    await self._request_windows.acquire()
                 next_request_at = loop.time() + self.request_interval_seconds
 
         async def one(ticker: str, isin: str):
@@ -200,9 +209,7 @@ class UpstoxFundamentalsProvider:
                 result.issues.append(
                     ValidationIssue(
                         code=(
-                            "provider_empty_payload"
-                            if empty_success
-                            else "provider_schema_invalid"
+                            "provider_empty_payload" if empty_success else "provider_schema_invalid"
                         ),
                         message=(
                             f"Upstox publishes no key ratios for {ticker}"
