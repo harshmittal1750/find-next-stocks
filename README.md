@@ -1,206 +1,102 @@
 # Find Next Stocks
 
-A provenance-first research platform for Indian equities (NSE, 1,353 stocks). Python fetches and
-normalizes every provider response, FastAPI exposes the research model, and Next.js renders the
-dashboard.
+Indian-equity research dashboard: Python ingestion → PostgreSQL/TimescaleDB → FastAPI →
+Next.js. Provider observations and raw payloads retain their provenance; canonical views
+choose which values the dashboard and scoring engine use.
 
-Raw observations are never overwritten by a preferred value: every candidate is retained, and the
-canonical choice records which source and validation rule produced it.
+## Run locally
 
-**This is a research tool, not investment advice.**
-
----
-
-## Run it
-
-### 1. Prerequisites
-
-| Need | Version | Notes |
-| --- | --- | --- |
-| Python | 3.13 | with [`uv`](https://docs.astral.sh/uv/) |
-| Node.js | 20.9+ | with npm |
-| Docker | any | Colima works on macOS: `colima start` |
-
-### 2. Configure and install
+Requires Python 3.13, `uv`, Node.js 20.9+, npm, and Docker.
 
 ```bash
 cp .env.example .env
 make install
-```
-
-The defaults in `.env.example` work as-is for local development. `POSTGRES_PASSWORD` must match
-the password inside `DATABASE_URL` — Docker Compose reads the same `.env` file to *create* the
-database that the API then logs into.
-
-### 3. Start the database
-
-```bash
 make db-up
+make api                 # terminal 1
+make web                 # terminal 2
 ```
 
-TimescaleDB comes up on `127.0.0.1:5434`. On the **first** start — and only the first — Docker
-runs every file in `infra/db/init/` in numeric order to build the schema and views.
+`POSTGRES_PASSWORD` must match the password in `DATABASE_URL`. The database listens on
+`127.0.0.1:5434`. Dashboard: <http://127.0.0.1:3000>; API docs:
+<http://127.0.0.1:8000/docs>. Set `API_BASE_URL` to change the dashboard's API origin.
 
-> **Adding a migration later?** The init scripts do not re-run on an existing volume. Apply new
-> files yourself, in order:
->
-> ```bash
-> docker exec -i find-next-stocks-timescaledb-1 psql -U findstocks -d findstocks -v ON_ERROR_STOP=1 < infra/db/init/012_drop_legacy_score.sql
-> ```
->
-> To rebuild from scratch instead, `make db-down && docker volume rm find-next-stocks_timescale-data && make db-up`. This deletes all stored data.
-
-### 4. Start the app
-
-Two terminals:
+Docker applies `infra/db/init/*.sql` in filename order only when initializing an empty
+volume. The four files contain base tables, the CSV archive, instrument setup, and current
+metric views. Superseded view migrations have been consolidated into these definitions.
+For an existing database, apply changed SQL explicitly; restarting Docker does not apply it:
 
 ```bash
-make api
+for sql in infra/db/init/*.sql; do
+  docker compose exec -T timescaledb psql -U findstocks -d findstocks -v ON_ERROR_STOP=1 < "$sql" || break
+done
 ```
 
-```bash
-make web
-```
+Use your configured database/user if different. Back up an existing database before schema
+changes. `make db-down` stops the database without deleting its volume.
 
-| What | Where |
-| --- | --- |
-| Dashboard | <http://127.0.0.1:3000> |
-| API docs | <http://127.0.0.1:8000/docs> |
-| Health | <http://127.0.0.1:8000/health> |
+## Refresh data
 
-A fresh database has no stocks in it yet — run a refresh next.
-
----
-
-## Refresh provider data
-
-Click **Refresh all data** in the dashboard header, or drive it over HTTP:
+A fresh database needs data. Use **Refresh all data** in the dashboard, or:
 
 ```bash
-curl -X POST http://127.0.0.1:8000/api/v1/refresh -H 'Content-Type: application/json' -d '{"providers":["yahoo","derived"]}'
-```
-
-```bash
+curl -X POST http://127.0.0.1:8000/api/v1/refresh \
+  -H 'Content-Type: application/json' -d '{"providers":["yahoo","derived"]}'
 curl http://127.0.0.1:8000/api/v1/refresh
 ```
 
-One refresh runs at a time; starting another while one is active returns the existing job. The
-response carries a `job_id` you can poll at `/api/v1/refresh/{job_id}`.
+Only one refresh runs at a time. Poll `/api/v1/refresh/{job_id}` for a specific job.
+`derived` runs after Yahoo because it uses stored price bars.
 
-Providers that need no credentials: **nse**, **nse_delivery**, **bse**, **yahoo**,
-**yahoo_holders**, **yahoo_roe**, **screener**, **derived**. Credentialed providers are
-enabled when their key is in `.env`:
+Public providers: `nse`, `nse_delivery`, `bse`, `yahoo`, `yahoo_holders`, `yahoo_roe`,
+`screener`, and `derived`. Optional `.env` credentials enable additional providers:
 
-```bash
-ALPHA_VANTAGE_API_KEY=your-key
-UPSTOX_ANALYTICS_TOKEN=your-token   # enables quotes + company fundamentals
-FMP_API_KEY=your-key
-```
+- `ALPHA_VANTAGE_API_KEY`
+- `UPSTOX_ANALYTICS_TOKEN` (quotes and company fundamentals)
+- `FMP_API_KEY`
 
-A provider without credentials shows as a **skipped stage**, never as a silent success.
+Missing credentials produce a skipped stage; provider failures are reported in job results.
 
-Order matters in one place: `derived` computes RSI, beta and moving averages *from stored price
-bars*, so it has to run after `yahoo` has written them. It is appended last for that reason.
+## Data rules
 
-ROE uses field-level source trust rather than a magnitude cutoff. Screener is the adjudicator
-where its public page is available; Upstox Fundamentals is the full-universe fallback for ROE
-and ROCE. A greater-than-10x BSE/Yahoo disagreement forms the small, low-rate Screener review
-set. BSE and Yahoo observations remain available for audit but cannot override those reported
-return ratios. Upstox's P/E, P/B, ROA and EV/EBITDA are also archived, but do not enter the
-canonical view: cross-checking found corporate-action errors in P/E and P/B. ROCE is stored
-separately and never substituted for ROE.
+- Archive immutable provider JSON before parsing. Retain source, endpoint, timestamp, raw
+  request ID, and validation issues. Source conflicts remain available for audit.
+- `current_metrics` is shared by the API and scoring: latest ranking output, valid live
+  observations, then imported CSV values. `stock_instruments` includes active equities;
+  index bars and inactive instruments remain available for historical analysis.
+- Screener has first priority for reported ROE/ROCE, followed by Upstox Fundamentals.
+  Upstox's other key ratios stay audit-only. Conflicting ROE and unusable P/E are blocked
+  across both live and archive sources. ROCE never substitutes for ROE.
+- Ownership outside 0–100% is invalid, never clamped. Yahoo insider ownership is only an
+  approximation of promoter ownership, and its holder payload is archived after yfinance
+  has decoded the HTTP response.
+- Archived fields carry an `arch` marker. `/api/v1/stocks/{ticker}` exposes `field_origins`
+  and `field_updated_at`; archive timestamps describe import time, not original collection.
+- Database failures return an explicit error; the API does not serve an old JSON fallback.
+- Coverage distinguishes recoverable, analyst, undefined, not-applicable, derived, and
+  unknown gaps. Inspect `/api/v1/quality/coverage` and `/api/v1/quality/gaps/{ticker}`.
 
-The scoreable universe is the `stock_instruments` database view: active equities only.
-Exchange lifecycle changes are applied as migrations, preserving historical observations by
-instrument ID. For example, GUJGASLTD is retained as an alias of GUJENERGY, while suspended
-JBCHEPHARM remains in history but cannot reach the API, frontend, or a new ranking run.
+## Repository
 
----
+| Path | Purpose |
+| --- | --- |
+| `apps/api/` | HTTP routes, database reads, refresh and scoring jobs |
+| `apps/web/` | Dashboard; interactive React stays in leaf client components |
+| `packages/pipeline/` | Providers, archiving, normalization, validation, scoring |
+| `infra/db/init/` | Database tables, instrument setup, and canonical views |
+| `data/raw/` | Immutable JSON envelopes; ignored by Git |
+| `data/warehouse/` | Local DuckDB analytical mirror; ignored by Git |
+| `data/exports/` | Generated analytical exports; ignored by Git |
+| `legacy/` | Preserved original research snapshot |
+| [docs/todo.md](docs/todo.md) | Remaining data work |
 
-## Everyday commands
+`make archive-csv` imports legacy CSV bytes, hashes, headers, and ordered rows into
+PostgreSQL's `archive` schema. Source files are deleted only after database verification.
+Keep the archive while live providers still leave scoring inputs missing.
+
+## Verify
 
 ```bash
 make test
-```
-
-```bash
 make lint
-```
-
-```bash
-make db-down
-```
-
----
-
-## Where data comes from
-
-Every value the API serves resolves through the `current_metrics` view, which picks **one**
-source per (stock, field) by precedence:
-
-| Priority | Origin | Meaning |
-| --- | --- | --- |
-| 1 | `ranking` | this run's own scoring output (`rank`, `final_score`, group scores) |
-| 2 | `observation` | a live provider fetch, validated |
-| 3 | `archive` | the imported legacy CSV snapshot |
-
-Roughly 53% of served cells are live observations, 20% scoring output, and 27% still archive —
-mostly financial-statement and analyst fields no free provider covers. Archived values are marked
-`arch` in the dashboard so they never pass as freshly fetched. See `docs/csv-migration.md` for
-what remains.
-
-**There is no fallback.** If TimescaleDB cannot answer, `/api/v1/dashboard` returns **503** and
-`/health` fails. This is deliberate: a tracked JSON snapshot used to sit behind a bare `except`,
-and on 2026-09-04 a broken query quietly served six-week-old data as `200 OK` for all 1,353
-stocks. An outage you can see beats a success you can't trust.
-
-### Per-field timestamps
-
-`/api/v1/stocks/{ticker}` returns `field_updated_at` and `field_origins` — one entry per field:
-
-```bash
-curl -s http://127.0.0.1:8000/api/v1/stocks/RELIANCE | python3 -m json.tool | grep -A3 field_updated_at
-```
-
-They are on the single-stock endpoint rather than the 6 MB bulk payload because they are only
-read for a stock someone expanded.
-
-> For `archive` fields the timestamp is when the CSV was **imported**, not when the data was
-> collected — the underlying figures are older than the date shown. Check `field_origins` before
-> trusting a timestamp.
-
----
-
-## Repository map
-
-| Path | What |
-| --- | --- |
-| `apps/api/` | FastAPI routes, repository, refresh jobs, scoring jobs |
-| `apps/web/` | Next.js dashboard |
-| `packages/pipeline/` | provider contracts, raw JSON archive, normalization, validation, scoring |
-| `infra/db/init/` | schema and view migrations, applied in numeric order |
-| `data/raw/` | immutable provider payloads, archived before parsing |
-| `data/exports/` | analytical exports |
-| `legacy/` | read-only copy of the original research |
-| `docs/architecture.md` | source selection, conflict handling, storage decisions |
-| `docs/csv-migration.md` | migration checklist and what is still archive-served |
-
----
-
-## Ownership sanity rule
-
-Some APIs return ownership as fractions. Yahoo's `heldPercentInsiders=1.07481` means **107.481%**
-after conversion — not 1.07481%. Values outside 0–100 are kept in the raw observation log but
-rejected from the canonical record. If promoter and institutional buckets together exceed 100.5%,
-the lower-priority institutional observation is flagged rather than shown as valid.
-
-## Legacy CSV archive
-
-Legacy CSVs are stored losslessly in PostgreSQL. `archive.csv_files` keeps the original bytes,
-SHA-256 digest, ordered header, source path and row count; `archive.csv_rows` stores each ordered
-cell array plus a header-keyed JSONB record. The importer deletes source files only after the
-database independently verifies bytes, sizes, headers and row counts.
-
-```bash
-make archive-csv
+npm --prefix apps/web run build
 ```
